@@ -7,8 +7,7 @@ function show(type)
             row.style.display = '';
             row.className = (count++ % 2) ? rowColor : altColor;
         }
-        else
-            row.style.display = 'none';
+        else row.style.display = 'none';
     }
     updateTabs(type);
 }
