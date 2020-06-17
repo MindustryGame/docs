@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":18,"i1":18,"i2":6,"i3":18,"i4":18,"i5":18,"i6":18,"i7":18,"i8":18,"i9":18,"i10":18,"i11":18,"i12":18};
+var methods = {"i0":18,"i1":18,"i2":6,"i3":18,"i4":18,"i5":18,"i6":18,"i7":18,"i8":18,"i9":18,"i10":18,"i11":18,"i12":18,"i13":18};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -199,14 +199,22 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>default boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../mindustry/world/blocks/Autotiler.html#lookingAt-mindustry.world.Tile-int-int-int-int-mindustry.world.Block-">lookingAt</a></span>(<a href="../../../mindustry/world/Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../mindustry/world/blocks/Autotiler.html#lookingAt-mindustry.world.Tile-int-int-int-mindustry.world.Block-">lookingAt</a></span>(<a href="../../../mindustry/world/Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile,
          int&nbsp;rotation,
          int&nbsp;otherx,
          int&nbsp;othery,
-         int&nbsp;otherrot,
          <a href="../../../mindustry/world/Block.html" title="class in mindustry.world">Block</a>&nbsp;otherblock)</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
+<td class="colFirst"><code>default boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../mindustry/world/blocks/Autotiler.html#lookingAtEither-mindustry.world.Tile-int-int-int-int-mindustry.world.Block-">lookingAtEither</a></span>(<a href="../../../mindustry/world/Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile,
+               int&nbsp;rotation,
+               int&nbsp;otherx,
+               int&nbsp;othery,
+               int&nbsp;otherrot,
+               <a href="../../../mindustry/world/Block.html" title="class in mindustry.world">Block</a>&nbsp;otherblock)</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>default boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../mindustry/world/blocks/Autotiler.html#notLookingAt-mindustry.world.Tile-int-int-int-int-mindustry.world.Block-">notLookingAt</a></span>(<a href="../../../mindustry/world/Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile,
             int&nbsp;rotation,
@@ -215,7 +223,7 @@ var activeTableTab = "activeTableTab";
             int&nbsp;otherrot,
             <a href="../../../mindustry/world/Block.html" title="class in mindustry.world">Block</a>&nbsp;otherblock)</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>default arc.graphics.g2d.TextureRegion</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../mindustry/world/blocks/Autotiler.html#sliced-arc.graphics.g2d.TextureRegion-int-">sliced</a></span>(arc.graphics.g2d.TextureRegion&nbsp;input,
       int&nbsp;mode)</code>
@@ -225,11 +233,11 @@ var activeTableTab = "activeTableTab";
  mode == 2 -> top</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>default arc.graphics.g2d.TextureRegion</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../mindustry/world/blocks/Autotiler.html#topHalf-arc.graphics.g2d.TextureRegion-">topHalf</a></span>(arc.graphics.g2d.TextureRegion&nbsp;input)</code>&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>default void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../mindustry/world/blocks/Autotiler.html#transformCase-int-int:A-">transformCase</a></span>(int&nbsp;num,
              int[]&nbsp;bits)</code>&nbsp;</td>
@@ -396,7 +404,26 @@ var activeTableTab = "activeTableTab";
 </dl>
 </li>
 </ul>
-<a name="lookingAt-mindustry.world.Tile-int-int-int-int-mindustry.world.Block-">
+<a name="lookingAtEither-mindustry.world.Tile-int-int-int-int-mindustry.world.Block-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lookingAtEither</h4>
+<pre>default&nbsp;boolean&nbsp;lookingAtEither(<a href="../../../mindustry/world/Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile,
+                                int&nbsp;rotation,
+                                int&nbsp;otherx,
+                                int&nbsp;othery,
+                                int&nbsp;otherrot,
+                                <a href="../../../mindustry/world/Block.html" title="class in mindustry.world">Block</a>&nbsp;otherblock)</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether this tile is looking at the other tile, or the other tile is looking at this one.
+ If the other tile does not rotate, it is always considered to be facing this one.</dd>
+</dl>
+</li>
+</ul>
+<a name="lookingAt-mindustry.world.Tile-int-int-int-mindustry.world.Block-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -406,12 +433,10 @@ var activeTableTab = "activeTableTab";
                           int&nbsp;rotation,
                           int&nbsp;otherx,
                           int&nbsp;othery,
-                          int&nbsp;otherrot,
                           <a href="../../../mindustry/world/Block.html" title="class in mindustry.world">Block</a>&nbsp;otherblock)</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>whether this tile is looking at the other tile, or the other tile is looking at this one.
- If the other tile does not rotate, it is always considered to be facing this one.</dd>
+<dd>whether this tile is looking at the other tile.</dd>
 </dl>
 </li>
 </ul>
