@@ -17,6 +17,12 @@
     catch(err) {
     }
 //-->
+var methods = {"i0":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
 </script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -69,13 +75,13 @@
 <li>Nested&nbsp;|&nbsp;</li>
 <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.top">
@@ -156,15 +162,21 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/content/TechTree.TechNode.html#progress">progress</a></span></code>
+<div class="block">Research progress, in seconds.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../mindustry/type/ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/content/TechTree.TechNode.html#requirements">requirements</a></span></code>
 <div class="block">Item requirements for this content.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/content/TechTree.TechNode.html#turns">turns</a></span></code>
-<div class="block">Research turns required to research this content.</div>
+<tr class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/content/TechTree.TechNode.html#time">time</a></span></code>
+<div class="block">Time required to research this content, in seconds.</div>
 </td>
 </tr>
 </table>
@@ -176,6 +188,19 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/content/TechTree.TechNode.html#save--">save</a></span>()</code>
+<div class="block">Flushes research progress to settings.</div>
+</td>
+</tr>
+</table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
@@ -247,24 +272,52 @@ extends java.lang.Object</pre>
 <div class="block">Extra objectives needed to research this. TODO implement</div>
 </li>
 </ul>
-<a name="turns">
+<a name="time">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>turns</h4>
-<pre>public&nbsp;int turns</pre>
-<div class="block">Research turns required to research this content.</div>
+<h4>time</h4>
+<pre>public&nbsp;float time</pre>
+<div class="block">Time required to research this content, in seconds.</div>
 </li>
 </ul>
 <a name="children">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>children</h4>
 <pre>public final&nbsp;arc.struct.Seq&lt;<a href="../../mindustry/content/TechTree.TechNode.html" title="class in mindustry.content">TechTree.TechNode</a>&gt; children</pre>
 <div class="block">Nodes that depend on this node.</div>
+</li>
+</ul>
+<a name="progress">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>progress</h4>
+<pre>public&nbsp;float progress</pre>
+<div class="block">Research progress, in seconds.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="save--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>save</h4>
+<pre>public&nbsp;void&nbsp;save()</pre>
+<div class="block">Flushes research progress to settings.</div>
 </li>
 </ul>
 </li>
@@ -322,13 +375,13 @@ extends java.lang.Object</pre>
 <li>Nested&nbsp;|&nbsp;</li>
 <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.bottom">
