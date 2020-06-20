@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":6,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var methods = {"i0":10,"i1":10,"i2":6,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -185,6 +185,12 @@ extends <a href="../../mindustry/ctype/MappableContent.html" title="class in min
 <div class="block">Localized, formal name.</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/ctype/UnlockableContent.html#unlocked">unlocked</a></span></code>
+<div class="block">Unlock state.</div>
+</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a name="fields.inherited.from.class.mindustry.ctype.MappableContent">
@@ -270,10 +276,16 @@ extends <a href="../../mindustry/ctype/MappableContent.html" title="class in min
 </td>
 </tr>
 <tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/ctype/UnlockableContent.html#unlock--">unlock</a></span>()</code>
+<div class="block">Makes this piece of content unlocked; if it already unlocked, nothing happens.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/ctype/UnlockableContent.html#unlocked--">unlocked</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/ctype/UnlockableContent.html#unlockedNow--">unlockedNow</a></span>()</code>&nbsp;</td>
 </tr>
@@ -353,11 +365,21 @@ extends <a href="../../mindustry/ctype/MappableContent.html" title="class in min
 <a name="cicons">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>cicons</h4>
 <pre>protected&nbsp;arc.graphics.g2d.TextureRegion[] cicons</pre>
 <div class="block">Icons by Cicon ID.</div>
+</li>
+</ul>
+<a name="unlocked">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>unlocked</h4>
+<pre>protected&nbsp;boolean unlocked</pre>
+<div class="block">Unlock state. Loaded from settings. Do not modify outside of the constructor.</div>
 </li>
 </ul>
 </li>
@@ -442,6 +464,16 @@ extends <a href="../../mindustry/ctype/MappableContent.html" title="class in min
 <h4>isHidden</h4>
 <pre>public&nbsp;boolean&nbsp;isHidden()</pre>
 <div class="block">Whether this content is always hidden in the content database dialog.</div>
+</li>
+</ul>
+<a name="unlock--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>unlock</h4>
+<pre>public&nbsp;void&nbsp;unlock()</pre>
+<div class="block">Makes this piece of content unlocked; if it already unlocked, nothing happens.</div>
 </li>
 </ul>
 <a name="unlocked--">
