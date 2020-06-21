@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public final class <span class="typeNameLabel">LaunchPayloadEntity</span>
 extends java.lang.Object
-implements <a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a>, <a href="../../mindustry/gen/LaunchPayloadc.html" title="interface in mindustry.gen">LaunchPayloadc</a>, <a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a>, <a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>, <a href="../../mindustry/gen/Drawc.html" title="interface in mindustry.gen">Drawc</a></pre>
+implements <a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a>, <a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="../../mindustry/gen/LaunchPayloadc.html" title="interface in mindustry.gen">LaunchPayloadc</a>, <a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a>, <a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>, <a href="../../mindustry/gen/Drawc.html" title="interface in mindustry.gen">Drawc</a></pre>
 </li>
 </ul>
 </div>
@@ -425,13 +425,6 @@ implements <a href="../../mindustry/gen/Posc.html" title="interface in mindustry
 <h3>Methods inherited from interface&nbsp;arc.math.Scaled</h3>
 <code>fin, finpow, fout, fout, fout, fslope</code></li>
 </ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.arc.math.geom.Position">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;arc.math.geom.Position</h3>
-<code>angleTo, angleTo, dst, dst, dst2, dst2, within, within</code></li>
-</ul>
 </li>
 </ul>
 </li>
@@ -446,6 +439,15 @@ implements <a href="../../mindustry/gen/Posc.html" title="interface in mindustry
 <!--   -->
 </a>
 <h3>Field Detail</h3>
+<a name="team">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>team</h4>
+<pre>public&nbsp;<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a> team</pre>
+</li>
+</ul>
 <a name="x">
 <!--   -->
 </a>
@@ -462,24 +464,6 @@ implements <a href="../../mindustry/gen/Posc.html" title="interface in mindustry
 <li class="blockList">
 <h4>y</h4>
 <pre>public&nbsp;float y</pre>
-</li>
-</ul>
-<a name="time">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>time</h4>
-<pre>public&nbsp;float time</pre>
-</li>
-</ul>
-<a name="lifetime">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>lifetime</h4>
-<pre>public&nbsp;float lifetime</pre>
 </li>
 </ul>
 <a name="stacks">
@@ -500,13 +484,22 @@ implements <a href="../../mindustry/gen/Posc.html" title="interface in mindustry
 <pre>public transient&nbsp;arc.util.Interval in</pre>
 </li>
 </ul>
-<a name="team">
+<a name="time">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>team</h4>
-<pre>public&nbsp;<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a> team</pre>
+<h4>time</h4>
+<pre>public&nbsp;float time</pre>
+</li>
+</ul>
+<a name="lifetime">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lifetime</h4>
+<pre>public&nbsp;float lifetime</pre>
 </li>
 </ul>
 <a name="added">
@@ -1021,6 +1014,32 @@ implements <a href="../../mindustry/gen/Posc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
+<a name="team--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>team</h4>
+<pre>public final&nbsp;<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Teamc.html#team--">team</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="team-mindustry.game.Team-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>team</h4>
+<pre>public final&nbsp;void&nbsp;team(<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Teamc.html#team-mindustry.game.Team-">team</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="x--">
 <!--   -->
 </a>
@@ -1070,58 +1089,6 @@ implements <a href="../../mindustry/gen/Posc.html" title="interface in mindustry
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Posc.html#y-float-">y</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="time--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>time</h4>
-<pre>public final&nbsp;float&nbsp;time()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Timedc.html#time--">time</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="time-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>time</h4>
-<pre>public final&nbsp;void&nbsp;time(float&nbsp;time)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Timedc.html#time-float-">time</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="lifetime--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>lifetime</h4>
-<pre>public final&nbsp;float&nbsp;lifetime()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Timedc.html#lifetime--">lifetime</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="lifetime-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>lifetime</h4>
-<pre>public final&nbsp;void&nbsp;lifetime(float&nbsp;lifetime)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Timedc.html#lifetime-float-">lifetime</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1177,29 +1144,55 @@ implements <a href="../../mindustry/gen/Posc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="team--">
+<a name="time--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>team</h4>
-<pre>public final&nbsp;<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team()</pre>
+<h4>time</h4>
+<pre>public final&nbsp;float&nbsp;time()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Teamc.html#team--">team</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Timedc.html#time--">time</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="team-mindustry.game.Team-">
+<a name="time-float-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>team</h4>
-<pre>public final&nbsp;void&nbsp;team(<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</pre>
+<h4>time</h4>
+<pre>public final&nbsp;void&nbsp;time(float&nbsp;time)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Teamc.html#team-mindustry.game.Team-">team</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Timedc.html#time-float-">time</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="lifetime--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lifetime</h4>
+<pre>public final&nbsp;float&nbsp;lifetime()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Timedc.html#lifetime--">lifetime</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="lifetime-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lifetime</h4>
+<pre>public final&nbsp;void&nbsp;lifetime(float&nbsp;lifetime)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Timedc.html#lifetime-float-">lifetime</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
 </dl>
 </li>
 </ul>
