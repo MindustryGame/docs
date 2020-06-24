@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public final class <span class="typeNameLabel">EffectEntity</span>
 extends java.lang.Object
-implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Drawc.html" title="interface in mindustry.gen">Drawc</a>, <a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>, <a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a>, <a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="../../mindustry/gen/Rotc.html" title="interface in mindustry.gen">Rotc</a>, <a href="../../mindustry/gen/Effectc.html" title="interface in mindustry.gen">Effectc</a>, <a href="../../mindustry/gen/Childc.html" title="interface in mindustry.gen">Childc</a></pre>
+implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>, <a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="../../mindustry/gen/Childc.html" title="interface in mindustry.gen">Childc</a>, <a href="../../mindustry/gen/Effectc.html" title="interface in mindustry.gen">Effectc</a>, <a href="../../mindustry/gen/Drawc.html" title="interface in mindustry.gen">Drawc</a>, <a href="../../mindustry/gen/Rotc.html" title="interface in mindustry.gen">Rotc</a>, <a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></pre>
 </li>
 </ul>
 </div>
@@ -447,6 +447,13 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Drawc.ht
 <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li>
 </ul>
 <ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.arc.math.geom.Position">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;arc.math.geom.Position</h3>
+<code>angleTo, angleTo, dst, dst, dst2, dst2, within, within</code></li>
+</ul>
+<ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.arc.math.Scaled">
 <!--   -->
 </a>
@@ -485,24 +492,6 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Drawc.ht
 <pre>public transient&nbsp;int id</pre>
 </li>
 </ul>
-<a name="time">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>time</h4>
-<pre>public&nbsp;float time</pre>
-</li>
-</ul>
-<a name="lifetime">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>lifetime</h4>
-<pre>public&nbsp;float lifetime</pre>
-</li>
-</ul>
 <a name="x">
 <!--   -->
 </a>
@@ -521,13 +510,31 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Drawc.ht
 <pre>public&nbsp;float y</pre>
 </li>
 </ul>
-<a name="rotation">
+<a name="parent">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>rotation</h4>
-<pre>public&nbsp;float rotation</pre>
+<h4>parent</h4>
+<pre>public&nbsp;<a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a> parent</pre>
+</li>
+</ul>
+<a name="offsetX">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>offsetX</h4>
+<pre>public&nbsp;float offsetX</pre>
+</li>
+</ul>
+<a name="offsetY">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>offsetY</h4>
+<pre>public&nbsp;float offsetY</pre>
 </li>
 </ul>
 <a name="color">
@@ -557,31 +564,31 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Drawc.ht
 <pre>public&nbsp;java.lang.Object data</pre>
 </li>
 </ul>
-<a name="parent">
+<a name="rotation">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>parent</h4>
-<pre>public&nbsp;<a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a> parent</pre>
+<h4>rotation</h4>
+<pre>public&nbsp;float rotation</pre>
 </li>
 </ul>
-<a name="offsetX">
+<a name="time">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>offsetX</h4>
-<pre>public&nbsp;float offsetX</pre>
+<h4>time</h4>
+<pre>public&nbsp;float time</pre>
 </li>
 </ul>
-<a name="offsetY">
+<a name="lifetime">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>offsetY</h4>
-<pre>public&nbsp;float offsetY</pre>
+<h4>lifetime</h4>
+<pre>public&nbsp;float lifetime</pre>
 </li>
 </ul>
 </li>
@@ -665,18 +672,16 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Drawc.ht
 </dl>
 </li>
 </ul>
-<a name="draw--">
+<a name="remove--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>draw</h4>
-<pre>public final&nbsp;void&nbsp;draw()</pre>
+<h4>remove</h4>
+<pre>public final&nbsp;void&nbsp;remove()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Drawc.html#draw--">draw</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Drawc.html" title="interface in mindustry.gen">Drawc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Effectc.html#draw--">draw</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Effectc.html" title="interface in mindustry.gen">Effectc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Entityc.html#remove--">remove</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -697,29 +702,18 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Drawc.ht
 </dl>
 </li>
 </ul>
-<a name="isNull--">
+<a name="floorOn--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isNull</h4>
-<pre>public final&nbsp;boolean&nbsp;isNull()</pre>
+<h4>floorOn</h4>
+<pre>public final&nbsp;<a href="../../mindustry/world/blocks/environment/Floor.html" title="class in mindustry.world.blocks.environment">Floor</a>&nbsp;floorOn()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Posc.html#floorOn--">Posc</a></code></span></div>
+<div class="block">Returns air if this unit is on a non-air top block.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Entityc.html#isNull--">isNull</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="remove--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>remove</h4>
-<pre>public final&nbsp;void&nbsp;remove()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Entityc.html#remove--">remove</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Posc.html#floorOn--">floorOn</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -736,36 +730,6 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Drawc.ht
 </dl>
 </li>
 </ul>
-<a name="floorOn--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>floorOn</h4>
-<pre>public final&nbsp;<a href="../../mindustry/world/blocks/environment/Floor.html" title="class in mindustry.world.blocks.environment">Floor</a>&nbsp;floorOn()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Posc.html#floorOn--">Posc</a></code></span></div>
-<div class="block">Returns air if this unit is on a non-air top block.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Posc.html#floorOn--">floorOn</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="fin--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>fin</h4>
-<pre>public final&nbsp;float&nbsp;fin()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code>fin</code>&nbsp;in interface&nbsp;<code>arc.math.Scaled</code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Timedc.html#fin--">fin</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
-</dl>
-</li>
-</ul>
 <a name="set-arc.math.geom.Position-">
 <!--   -->
 </a>
@@ -776,6 +740,19 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Drawc.ht
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Posc.html#set-arc.math.geom.Position-">set</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="isNull--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isNull</h4>
+<pre>public final&nbsp;boolean&nbsp;isNull()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Entityc.html#isNull--">isNull</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -954,6 +931,21 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Drawc.ht
 </dl>
 </li>
 </ul>
+<a name="draw--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>draw</h4>
+<pre>public final&nbsp;void&nbsp;draw()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Drawc.html#draw--">draw</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Drawc.html" title="interface in mindustry.gen">Drawc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Effectc.html#draw--">draw</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Effectc.html" title="interface in mindustry.gen">Effectc</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="isAdded--">
 <!--   -->
 </a>
@@ -964,6 +956,21 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Drawc.ht
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Entityc.html#isAdded--">isAdded</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="fin--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fin</h4>
+<pre>public final&nbsp;float&nbsp;fin()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code>fin</code>&nbsp;in interface&nbsp;<code>arc.math.Scaled</code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Timedc.html#fin--">fin</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1041,58 +1048,6 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Drawc.ht
 </dl>
 </li>
 </ul>
-<a name="time--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>time</h4>
-<pre>public final&nbsp;float&nbsp;time()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Timedc.html#time--">time</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="time-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>time</h4>
-<pre>public final&nbsp;void&nbsp;time(float&nbsp;time)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Timedc.html#time-float-">time</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="lifetime--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>lifetime</h4>
-<pre>public final&nbsp;float&nbsp;lifetime()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Timedc.html#lifetime--">lifetime</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="lifetime-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>lifetime</h4>
-<pre>public final&nbsp;void&nbsp;lifetime(float&nbsp;lifetime)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Timedc.html#lifetime-float-">lifetime</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
-</dl>
-</li>
-</ul>
 <a name="x--">
 <!--   -->
 </a>
@@ -1145,29 +1100,81 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Drawc.ht
 </dl>
 </li>
 </ul>
-<a name="rotation--">
+<a name="parent--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>rotation</h4>
-<pre>public final&nbsp;float&nbsp;rotation()</pre>
+<h4>parent</h4>
+<pre>public final&nbsp;<a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>&nbsp;parent()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Rotc.html#rotation--">rotation</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Rotc.html" title="interface in mindustry.gen">Rotc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Childc.html#parent--">parent</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Childc.html" title="interface in mindustry.gen">Childc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="rotation-float-">
+<a name="parent-mindustry.gen.Posc-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>rotation</h4>
-<pre>public final&nbsp;void&nbsp;rotation(float&nbsp;rotation)</pre>
+<h4>parent</h4>
+<pre>public final&nbsp;void&nbsp;parent(<a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>&nbsp;parent)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Rotc.html#rotation-float-">rotation</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Rotc.html" title="interface in mindustry.gen">Rotc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Childc.html#parent-mindustry.gen.Posc-">parent</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Childc.html" title="interface in mindustry.gen">Childc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="offsetX--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>offsetX</h4>
+<pre>public final&nbsp;float&nbsp;offsetX()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Childc.html#offsetX--">offsetX</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Childc.html" title="interface in mindustry.gen">Childc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="offsetX-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>offsetX</h4>
+<pre>public final&nbsp;void&nbsp;offsetX(float&nbsp;offsetX)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Childc.html#offsetX-float-">offsetX</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Childc.html" title="interface in mindustry.gen">Childc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="offsetY--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>offsetY</h4>
+<pre>public final&nbsp;float&nbsp;offsetY()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Childc.html#offsetY--">offsetY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Childc.html" title="interface in mindustry.gen">Childc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="offsetY-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>offsetY</h4>
+<pre>public final&nbsp;void&nbsp;offsetY(float&nbsp;offsetY)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Childc.html#offsetY-float-">offsetY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Childc.html" title="interface in mindustry.gen">Childc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1249,81 +1256,81 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Drawc.ht
 </dl>
 </li>
 </ul>
-<a name="parent--">
+<a name="rotation--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>parent</h4>
-<pre>public final&nbsp;<a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>&nbsp;parent()</pre>
+<h4>rotation</h4>
+<pre>public final&nbsp;float&nbsp;rotation()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Childc.html#parent--">parent</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Childc.html" title="interface in mindustry.gen">Childc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Rotc.html#rotation--">rotation</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Rotc.html" title="interface in mindustry.gen">Rotc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="parent-mindustry.gen.Posc-">
+<a name="rotation-float-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>parent</h4>
-<pre>public final&nbsp;void&nbsp;parent(<a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>&nbsp;parent)</pre>
+<h4>rotation</h4>
+<pre>public final&nbsp;void&nbsp;rotation(float&nbsp;rotation)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Childc.html#parent-mindustry.gen.Posc-">parent</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Childc.html" title="interface in mindustry.gen">Childc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Rotc.html#rotation-float-">rotation</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Rotc.html" title="interface in mindustry.gen">Rotc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="offsetX--">
+<a name="time--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>offsetX</h4>
-<pre>public final&nbsp;float&nbsp;offsetX()</pre>
+<h4>time</h4>
+<pre>public final&nbsp;float&nbsp;time()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Childc.html#offsetX--">offsetX</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Childc.html" title="interface in mindustry.gen">Childc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Timedc.html#time--">time</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="offsetX-float-">
+<a name="time-float-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>offsetX</h4>
-<pre>public final&nbsp;void&nbsp;offsetX(float&nbsp;offsetX)</pre>
+<h4>time</h4>
+<pre>public final&nbsp;void&nbsp;time(float&nbsp;time)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Childc.html#offsetX-float-">offsetX</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Childc.html" title="interface in mindustry.gen">Childc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Timedc.html#time-float-">time</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="offsetY--">
+<a name="lifetime--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>offsetY</h4>
-<pre>public final&nbsp;float&nbsp;offsetY()</pre>
+<h4>lifetime</h4>
+<pre>public final&nbsp;float&nbsp;lifetime()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Childc.html#offsetY--">offsetY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Childc.html" title="interface in mindustry.gen">Childc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Timedc.html#lifetime--">lifetime</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="offsetY-float-">
+<a name="lifetime-float-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>offsetY</h4>
-<pre>public final&nbsp;void&nbsp;offsetY(float&nbsp;offsetY)</pre>
+<h4>lifetime</h4>
+<pre>public final&nbsp;void&nbsp;lifetime(float&nbsp;lifetime)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Childc.html#offsetY-float-">offsetY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Childc.html" title="interface in mindustry.gen">Childc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Timedc.html#lifetime-float-">lifetime</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
 </dl>
 </li>
 </ul>
