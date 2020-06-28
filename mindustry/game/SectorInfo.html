@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -171,6 +171,12 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>arc.struct.ObjectMap&lt;<a href="../../mindustry/type/Item.html" title="class in mindustry.type">Item</a>,<a href="../../mindustry/game/SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/game/SectorInfo.html#production">production</a></span></code>
+<div class="block">Core input statistics.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/game/SectorInfo.html#storageCapacity">storageCapacity</a></span></code>
 <div class="block">Max storage capacity.</div>
@@ -213,36 +219,40 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/game/SectorInfo.html#exportRates--">exportRates</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>arc.struct.ObjectIntMap&lt;<a href="../../mindustry/type/Item.html" title="class in mindustry.type">Item</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/game/SectorInfo.html#getCurrentItems-float-">getCurrentItems</a></span>(float&nbsp;turnsPassed)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/game/SectorInfo.html#getExport-mindustry.type.Item-">getExport</a></span>(<a href="../../mindustry/type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/game/SectorInfo.html#handleItemExport-mindustry.type.Item-int-">handleItemExport</a></span>(<a href="../../mindustry/type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item,
                 int&nbsp;amount)</code>
 <div class="block">Updates export statistics.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/game/SectorInfo.html#handleItemExport-mindustry.type.ItemStack-">handleItemExport</a></span>(<a href="../../mindustry/type/ItemStack.html" title="class in mindustry.type">ItemStack</a>&nbsp;stack)</code>
 <div class="block">Updates export statistics.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/game/SectorInfo.html#handleItemImport-mindustry.type.Item-int-">handleItemImport</a></span>(<a href="../../mindustry/type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item,
                 int&nbsp;amount)</code>
 <div class="block">Subtracts from export statistics.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/game/SectorInfo.html#prepare--">prepare</a></span>()</code>
 <div class="block">Prepare data for writing to a save.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/game/SectorInfo.html#update--">update</a></span>()</code>
 <div class="block">Update averages of various stats.</div>
@@ -270,6 +280,16 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Field Detail</h3>
+<a name="production">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>production</h4>
+<pre>public&nbsp;arc.struct.ObjectMap&lt;<a href="../../mindustry/type/Item.html" title="class in mindustry.type">Item</a>,<a href="../../mindustry/game/SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt; production</pre>
+<div class="block">Core input statistics.</div>
+</li>
+</ul>
 <a name="export">
 <!--   -->
 </a>
@@ -403,7 +423,21 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>update</h4>
 <pre>public&nbsp;void&nbsp;update()</pre>
-<div class="block">Update averages of various stats.</div>
+<div class="block">Update averages of various stats.
+ Called every frame.</div>
+</li>
+</ul>
+<a name="getCurrentItems-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurrentItems</h4>
+<pre>public&nbsp;arc.struct.ObjectIntMap&lt;<a href="../../mindustry/type/Item.html" title="class in mindustry.type">Item</a>&gt;&nbsp;getCurrentItems(float&nbsp;turnsPassed)</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the items in this sector now, taking into account production.</dd>
+</dl>
 </li>
 </ul>
 <a name="exportRates--">
