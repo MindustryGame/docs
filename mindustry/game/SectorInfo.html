@@ -171,12 +171,18 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code><a href="../../mindustry/type/Sector.html" title="class in mindustry.type">Sector</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/game/SectorInfo.html#origin">origin</a></span></code>
+<div class="block">Sector that was launched from.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>arc.struct.ObjectMap&lt;<a href="../../mindustry/type/Item.html" title="class in mindustry.type">Item</a>,<a href="../../mindustry/game/SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/game/SectorInfo.html#production">production</a></span></code>
 <div class="block">Core input statistics.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/game/SectorInfo.html#storageCapacity">storageCapacity</a></span></code>
 <div class="block">Max storage capacity.</div>
@@ -220,7 +226,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>arc.struct.ObjectIntMap&lt;<a href="../../mindustry/type/Item.html" title="class in mindustry.type">Item</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/game/SectorInfo.html#getCurrentItems-float-">getCurrentItems</a></span>(float&nbsp;turnsPassed)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/game/SectorInfo.html#getCurrentItems-mindustry.type.Sector-">getCurrentItems</a></span>(<a href="../../mindustry/type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector)</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>float</code></td>
@@ -333,11 +339,21 @@ extends java.lang.Object</pre>
 <a name="hasCore">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>hasCore</h4>
 <pre>public&nbsp;boolean hasCore</pre>
 <div class="block">Whether a core is available here.</div>
+</li>
+</ul>
+<a name="origin">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>origin</h4>
+<pre>public&nbsp;<a href="../../mindustry/type/Sector.html" title="class in mindustry.type">Sector</a> origin</pre>
+<div class="block">Sector that was launched from.</div>
 </li>
 </ul>
 </li>
@@ -427,16 +443,16 @@ extends java.lang.Object</pre>
  Called every frame.</div>
 </li>
 </ul>
-<a name="getCurrentItems-float-">
+<a name="getCurrentItems-mindustry.type.Sector-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getCurrentItems</h4>
-<pre>public&nbsp;arc.struct.ObjectIntMap&lt;<a href="../../mindustry/type/Item.html" title="class in mindustry.type">Item</a>&gt;&nbsp;getCurrentItems(float&nbsp;turnsPassed)</pre>
+<pre>public&nbsp;arc.struct.ObjectIntMap&lt;<a href="../../mindustry/type/Item.html" title="class in mindustry.type">Item</a>&gt;&nbsp;getCurrentItems(<a href="../../mindustry/type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector)</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the items in this sector now, taking into account production.</dd>
+<dd>the items in this sector now, taking into account production and items recieved.</dd>
 </dl>
 </li>
 </ul>
