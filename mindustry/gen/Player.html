@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">Player</span>
 extends java.lang.Object
-implements <a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a>, <a href="../../mindustry/gen/Drawc.html" title="interface in mindustry.gen">Drawc</a>, <a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="../../mindustry/gen/Playerc.html" title="interface in mindustry.gen">Playerc</a>, <a href="../../mindustry/gen/Timerc.html" title="interface in mindustry.gen">Timerc</a>, <a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></pre>
+implements <a href="../../mindustry/gen/Timerc.html" title="interface in mindustry.gen">Timerc</a>, <a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="../../mindustry/gen/Drawc.html" title="interface in mindustry.gen">Drawc</a>, <a href="../../mindustry/gen/Playerc.html" title="interface in mindustry.gen">Playerc</a>, <a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>, <a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></pre>
 </li>
 </ul>
 </div>
@@ -662,6 +662,13 @@ implements <a href="../../mindustry/gen/Syncc.html" title="interface in mindustr
 <h3>Methods inherited from interface&nbsp;mindustry.entities.units.<a href="../../mindustry/entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a></h3>
 <code><a href="../../mindustry/entities/units/UnitController.html#command-mindustry.entities.units.UnitCommand-">command</a>, <a href="../../mindustry/entities/units/UnitController.html#isBeingControlled-mindustry.gen.Unit-">isBeingControlled</a>, <a href="../../mindustry/entities/units/UnitController.html#removed-mindustry.gen.Unit-">removed</a>, <a href="../../mindustry/entities/units/UnitController.html#updateUnit--">updateUnit</a></code></li>
 </ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.arc.math.geom.Position">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;arc.math.geom.Position</h3>
+<code>angleTo, angleTo, dst, dst, dst2, dst2, within, within</code></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -689,22 +696,13 @@ implements <a href="../../mindustry/gen/Syncc.html" title="interface in mindustr
 </dl>
 </li>
 </ul>
-<a name="lastUpdated">
+<a name="timer">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>lastUpdated</h4>
-<pre>public transient&nbsp;long lastUpdated</pre>
-</li>
-</ul>
-<a name="updateSpacing">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>updateSpacing</h4>
-<pre>public transient&nbsp;long updateSpacing</pre>
+<h4>timer</h4>
+<pre>public transient&nbsp;arc.util.Interval timer</pre>
 </li>
 </ul>
 <a name="x">
@@ -851,15 +849,6 @@ implements <a href="../../mindustry/gen/Syncc.html" title="interface in mindustr
 <pre>public transient&nbsp;float textFadeTime</pre>
 </li>
 </ul>
-<a name="timer">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>timer</h4>
-<pre>public transient&nbsp;arc.util.Interval timer</pre>
-</li>
-</ul>
 <a name="added">
 <!--   -->
 </a>
@@ -872,10 +861,28 @@ implements <a href="../../mindustry/gen/Syncc.html" title="interface in mindustr
 <a name="id">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>id</h4>
 <pre>public transient&nbsp;int id</pre>
+</li>
+</ul>
+<a name="lastUpdated">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lastUpdated</h4>
+<pre>public transient&nbsp;long lastUpdated</pre>
+</li>
+</ul>
+<a name="updateSpacing">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>updateSpacing</h4>
+<pre>public transient&nbsp;long updateSpacing</pre>
 </li>
 </ul>
 </li>
@@ -1693,55 +1700,29 @@ implements <a href="../../mindustry/gen/Syncc.html" title="interface in mindustr
 </dl>
 </li>
 </ul>
-<a name="lastUpdated--">
+<a name="timer--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>lastUpdated</h4>
-<pre>public&nbsp;long&nbsp;lastUpdated()</pre>
+<h4>timer</h4>
+<pre>public&nbsp;arc.util.Interval&nbsp;timer()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Syncc.html#lastUpdated--">lastUpdated</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Timerc.html#timer--">timer</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="lastUpdated-long-">
+<a name="timer-arc.util.Interval-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>lastUpdated</h4>
-<pre>public&nbsp;void&nbsp;lastUpdated(long&nbsp;lastUpdated)</pre>
+<h4>timer</h4>
+<pre>public&nbsp;void&nbsp;timer(arc.util.Interval&nbsp;timer)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Syncc.html#lastUpdated-long-">lastUpdated</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="updateSpacing--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>updateSpacing</h4>
-<pre>public&nbsp;long&nbsp;updateSpacing()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Syncc.html#updateSpacing--">updateSpacing</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="updateSpacing-long-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>updateSpacing</h4>
-<pre>public&nbsp;void&nbsp;updateSpacing(long&nbsp;updateSpacing)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Syncc.html#updateSpacing-long-">updateSpacing</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Timerc.html#timer-arc.util.Interval-">timer</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -2122,32 +2103,6 @@ implements <a href="../../mindustry/gen/Syncc.html" title="interface in mindustr
 </dl>
 </li>
 </ul>
-<a name="timer--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>timer</h4>
-<pre>public&nbsp;arc.util.Interval&nbsp;timer()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Timerc.html#timer--">timer</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="timer-arc.util.Interval-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>timer</h4>
-<pre>public&nbsp;void&nbsp;timer(arc.util.Interval&nbsp;timer)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Timerc.html#timer-arc.util.Interval-">timer</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
-</dl>
-</li>
-</ul>
 <a name="id--">
 <!--   -->
 </a>
@@ -2164,13 +2119,65 @@ implements <a href="../../mindustry/gen/Syncc.html" title="interface in mindustr
 <a name="id-int-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>id</h4>
 <pre>public&nbsp;void&nbsp;id(int&nbsp;id)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Entityc.html#id-int-">id</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="lastUpdated--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lastUpdated</h4>
+<pre>public&nbsp;long&nbsp;lastUpdated()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Syncc.html#lastUpdated--">lastUpdated</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="lastUpdated-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lastUpdated</h4>
+<pre>public&nbsp;void&nbsp;lastUpdated(long&nbsp;lastUpdated)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Syncc.html#lastUpdated-long-">lastUpdated</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="updateSpacing--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateSpacing</h4>
+<pre>public&nbsp;long&nbsp;updateSpacing()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Syncc.html#updateSpacing--">updateSpacing</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="updateSpacing-long-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>updateSpacing</h4>
+<pre>public&nbsp;void&nbsp;updateSpacing(long&nbsp;updateSpacing)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Syncc.html#updateSpacing-long-">updateSpacing</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
 </dl>
 </li>
 </ul>
