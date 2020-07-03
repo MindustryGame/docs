@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10};
+var methods = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -147,38 +147,38 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/Weapon.html#flipped">flipped</a></span></code>
-<div class="block">whether to flip the weapon's position/side on the ship (only valid when mirror is false)</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/Weapon.html#flipSprite">flipSprite</a></span></code>
+<div class="block">whether to flip the weapon's sprite when rendering</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/Weapon.html#flipSprite">flipSprite</a></span></code>
-<div class="block">whether to flip the weapon's position/side on the ship (only valid when mirror is false)</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/Weapon.html#ignoreRotation">ignoreRotation</a></span></code>
 <div class="block">whether shooter rotation is ignored when shooting.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/Weapon.html#inaccuracy">inaccuracy</a></span></code>
 <div class="block">inaccuracy of degrees of each shot</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/Weapon.html#mirror">mirror</a></span></code>
-<div class="block">whether to mirror the weapon (draw two of them, which is the default)</div>
+<div class="block">whether to create a flipped copy of this weapon upon initialization.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/Weapon.html#name">name</a></span></code>
 <div class="block">displayed weapon region</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/Weapon.html#otherSide">otherSide</a></span></code>
+<div class="block">internal value used for alternation - do not change!</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -313,6 +313,10 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../mindustry/type/Weapon.html" title="class in mindustry.type">Weapon</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/Weapon.html#copy--">copy</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/Weapon.html#load--">load</a></span>()</code>&nbsp;</td>
 </tr>
@@ -375,17 +379,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>mirror</h4>
 <pre>public&nbsp;boolean mirror</pre>
-<div class="block">whether to mirror the weapon (draw two of them, which is the default)</div>
-</li>
-</ul>
-<a name="flipped">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>flipped</h4>
-<pre>public&nbsp;boolean flipped</pre>
-<div class="block">whether to flip the weapon's position/side on the ship (only valid when mirror is false)</div>
+<div class="block">whether to create a flipped copy of this weapon upon initialization. default: true</div>
 </li>
 </ul>
 <a name="flipSprite">
@@ -395,7 +389,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>flipSprite</h4>
 <pre>public&nbsp;boolean flipSprite</pre>
-<div class="block">whether to flip the weapon's position/side on the ship (only valid when mirror is false)</div>
+<div class="block">whether to flip the weapon's sprite when rendering</div>
 </li>
 </ul>
 <a name="alternate">
@@ -568,6 +562,16 @@ extends java.lang.Object</pre>
 <div class="block">whether shooter rotation is ignored when shooting.</div>
 </li>
 </ul>
+<a name="otherSide">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>otherSide</h4>
+<pre>public&nbsp;int otherSide</pre>
+<div class="block">internal value used for alternation - do not change!</div>
+</li>
+</ul>
 <a name="shootSound">
 <!--   -->
 </a>
@@ -622,6 +626,15 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="copy--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>copy</h4>
+<pre>public&nbsp;<a href="../../mindustry/type/Weapon.html" title="class in mindustry.type">Weapon</a>&nbsp;copy()</pre>
+</li>
+</ul>
 <a name="load--">
 <!--   -->
 </a>
