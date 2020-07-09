@@ -214,6 +214,14 @@ extends <a href="../../mindustry/ctype/UnlockableContent.html" title="class in m
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#constructor">constructor</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#crashDamageMultiplier">crashDamageMultiplier</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#deathShake">deathShake</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>arc.audio.Sound</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#deathSound">deathSound</a></span></code>&nbsp;</td>
 </tr>
@@ -222,28 +230,44 @@ extends <a href="../../mindustry/ctype/UnlockableContent.html" title="class in m
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#defaultController">defaultController</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#destructibleWreck">destructibleWreck</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#drag">drag</a></span></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#drawCell">drawCell</a></span></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#drawItems">drawItems</a></span></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#engineOffset">engineOffset</a></span></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#engineSize">engineSize</a></span></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#faceTarget">faceTarget</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../mindustry/entities/Effect.html" title="class in mindustry.entities">Effect</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#fallEffect">fallEffect</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#fallSpeed">fallSpeed</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../mindustry/entities/Effect.html" title="class in mindustry.entities">Effect</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#fallThrusterEffect">fallThrusterEffect</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -460,6 +484,14 @@ extends <a href="../../mindustry/ctype/UnlockableContent.html" title="class in m
 <tr class="altColor">
 <td class="colFirst"><code>arc.struct.Seq&lt;<a href="../../mindustry/type/Weapon.html" title="class in mindustry.type">Weapon</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#weapons">weapons</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#wreckHealth">wreckHealth</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>arc.graphics.g2d.TextureRegion[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/type/UnitType.html#wreckRegions">wreckRegions</a></span></code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -811,6 +843,15 @@ extends <a href="../../mindustry/ctype/UnlockableContent.html" title="class in m
 <pre>public&nbsp;float rippleScale</pre>
 </li>
 </ul>
+<a name="fallSpeed">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fallSpeed</h4>
+<pre>public&nbsp;float fallSpeed</pre>
+</li>
+</ul>
 <a name="health">
 <!--   -->
 </a>
@@ -836,6 +877,15 @@ extends <a href="../../mindustry/ctype/UnlockableContent.html" title="class in m
 <li class="blockList">
 <h4>armor</h4>
 <pre>public&nbsp;float armor</pre>
+</li>
+</ul>
+<a name="crashDamageMultiplier">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>crashDamageMultiplier</h4>
+<pre>public&nbsp;float crashDamageMultiplier</pre>
 </li>
 </ul>
 <a name="targetAir">
@@ -901,6 +951,24 @@ extends <a href="../../mindustry/ctype/UnlockableContent.html" title="class in m
 <pre>public&nbsp;boolean canBoost</pre>
 </li>
 </ul>
+<a name="destructibleWreck">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>destructibleWreck</h4>
+<pre>public&nbsp;boolean destructibleWreck</pre>
+</li>
+</ul>
+<a name="wreckHealth">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>wreckHealth</h4>
+<pre>public&nbsp;float wreckHealth</pre>
+</li>
+</ul>
 <a name="sway">
 <!--   -->
 </a>
@@ -935,6 +1003,33 @@ extends <a href="../../mindustry/ctype/UnlockableContent.html" title="class in m
 <li class="blockList">
 <h4>baseElevation</h4>
 <pre>public&nbsp;float baseElevation</pre>
+</li>
+</ul>
+<a name="deathShake">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deathShake</h4>
+<pre>public&nbsp;float deathShake</pre>
+</li>
+</ul>
+<a name="fallEffect">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fallEffect</h4>
+<pre>public&nbsp;<a href="../../mindustry/entities/Effect.html" title="class in mindustry.entities">Effect</a> fallEffect</pre>
+</li>
+</ul>
+<a name="fallThrusterEffect">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fallThrusterEffect</h4>
+<pre>public&nbsp;<a href="../../mindustry/entities/Effect.html" title="class in mindustry.entities">Effect</a> fallThrusterEffect</pre>
 </li>
 </ul>
 <a name="legCount">
@@ -1354,10 +1449,19 @@ extends <a href="../../mindustry/ctype/UnlockableContent.html" title="class in m
 <a name="partCellRegions">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>partCellRegions</h4>
 <pre>public&nbsp;arc.graphics.g2d.TextureRegion[] partCellRegions</pre>
+</li>
+</ul>
+<a name="wreckRegions">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>wreckRegions</h4>
+<pre>public&nbsp;arc.graphics.g2d.TextureRegion[] wreckRegions</pre>
 </li>
 </ul>
 </li>
