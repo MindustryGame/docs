@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public final class <span class="typeNameLabel">LaunchCore</span>
 extends java.lang.Object
-implements <a href="../../mindustry/gen/Drawc.html" title="interface in mindustry.gen">Drawc</a>, <a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a>, <a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>, <a href="../../mindustry/gen/LaunchCorec.html" title="interface in mindustry.gen">LaunchCorec</a></pre>
+implements <a href="../../mindustry/gen/LaunchCorec.html" title="interface in mindustry.gen">LaunchCorec</a>, <a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>, <a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a>, <a href="../../mindustry/gen/Drawc.html" title="interface in mindustry.gen">Drawc</a></pre>
 </li>
 </ul>
 </div>
@@ -405,6 +405,13 @@ implements <a href="../../mindustry/gen/Drawc.html" title="interface in mindustr
 <h3>Methods inherited from interface&nbsp;arc.math.Scaled</h3>
 <code>fin, finpow, fout, fout, fout, fslope</code></li>
 </ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.arc.math.geom.Position">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;arc.math.geom.Position</h3>
+<code>angleTo, angleTo, dst, dst, dst2, dst2, within, within</code></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -419,6 +426,24 @@ implements <a href="../../mindustry/gen/Drawc.html" title="interface in mindustr
 <!--   -->
 </a>
 <h3>Field Detail</h3>
+<a name="in">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>in</h4>
+<pre>public transient&nbsp;arc.util.Interval in</pre>
+</li>
+</ul>
+<a name="block">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>block</h4>
+<pre>public&nbsp;<a href="../../mindustry/world/Block.html" title="class in mindustry.world">Block</a> block</pre>
+</li>
+</ul>
 <a name="x">
 <!--   -->
 </a>
@@ -435,24 +460,6 @@ implements <a href="../../mindustry/gen/Drawc.html" title="interface in mindustr
 <li class="blockList">
 <h4>y</h4>
 <pre>public&nbsp;float y</pre>
-</li>
-</ul>
-<a name="time">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>time</h4>
-<pre>public&nbsp;float time</pre>
-</li>
-</ul>
-<a name="lifetime">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>lifetime</h4>
-<pre>public&nbsp;float lifetime</pre>
 </li>
 </ul>
 <a name="added">
@@ -473,22 +480,22 @@ implements <a href="../../mindustry/gen/Drawc.html" title="interface in mindustr
 <pre>public transient&nbsp;int id</pre>
 </li>
 </ul>
-<a name="in">
+<a name="time">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>in</h4>
-<pre>public transient&nbsp;arc.util.Interval in</pre>
+<h4>time</h4>
+<pre>public&nbsp;float time</pre>
 </li>
 </ul>
-<a name="block">
+<a name="lifetime">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>block</h4>
-<pre>public&nbsp;<a href="../../mindustry/world/Block.html" title="class in mindustry.world">Block</a> block</pre>
+<h4>lifetime</h4>
+<pre>public&nbsp;float lifetime</pre>
 </li>
 </ul>
 </li>
@@ -584,6 +591,19 @@ implements <a href="../../mindustry/gen/Drawc.html" title="interface in mindustr
 <dd><code><a href="../../mindustry/gen/Drawc.html#draw--">draw</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Drawc.html" title="interface in mindustry.gen">Drawc</a></code></dd>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/LaunchCorec.html#draw--">draw</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/LaunchCorec.html" title="interface in mindustry.gen">LaunchCorec</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="isAdded--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isAdded</h4>
+<pre>public&nbsp;boolean&nbsp;isAdded()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Entityc.html#isAdded--">isAdded</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -752,16 +772,17 @@ implements <a href="../../mindustry/gen/Drawc.html" title="interface in mindustr
 </dl>
 </li>
 </ul>
-<a name="cy--">
+<a name="set-float-float-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>cy</h4>
-<pre>public&nbsp;float&nbsp;cy()</pre>
+<h4>set</h4>
+<pre>public&nbsp;void&nbsp;set(float&nbsp;x,
+                float&nbsp;y)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/LaunchCorec.html#cy--">cy</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/LaunchCorec.html" title="interface in mindustry.gen">LaunchCorec</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Posc.html#set-float-float-">set</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -882,16 +903,16 @@ implements <a href="../../mindustry/gen/Drawc.html" title="interface in mindustr
 </dl>
 </li>
 </ul>
-<a name="isAdded--">
+<a name="cy--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isAdded</h4>
-<pre>public&nbsp;boolean&nbsp;isAdded()</pre>
+<h4>cy</h4>
+<pre>public&nbsp;float&nbsp;cy()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Entityc.html#isAdded--">isAdded</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/LaunchCorec.html#cy--">cy</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/LaunchCorec.html" title="interface in mindustry.gen">LaunchCorec</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -905,20 +926,6 @@ implements <a href="../../mindustry/gen/Drawc.html" title="interface in mindustr
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Entityc.html#base--">base</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="set-float-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>set</h4>
-<pre>public&nbsp;void&nbsp;set(float&nbsp;x,
-                float&nbsp;y)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Posc.html#set-float-float-">set</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -954,6 +961,58 @@ implements <a href="../../mindustry/gen/Drawc.html" title="interface in mindustr
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Entityc.html#classId--">classId</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="in--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>in</h4>
+<pre>public&nbsp;arc.util.Interval&nbsp;in()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/LaunchCorec.html#in--">in</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/LaunchCorec.html" title="interface in mindustry.gen">LaunchCorec</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="in-arc.util.Interval-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>in</h4>
+<pre>public&nbsp;void&nbsp;in(arc.util.Interval&nbsp;in)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/LaunchCorec.html#in-arc.util.Interval-">in</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/LaunchCorec.html" title="interface in mindustry.gen">LaunchCorec</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="block--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>block</h4>
+<pre>public&nbsp;<a href="../../mindustry/world/Block.html" title="class in mindustry.world">Block</a>&nbsp;block()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/LaunchCorec.html#block--">block</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/LaunchCorec.html" title="interface in mindustry.gen">LaunchCorec</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="block-mindustry.world.Block-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>block</h4>
+<pre>public&nbsp;void&nbsp;block(<a href="../../mindustry/world/Block.html" title="class in mindustry.world">Block</a>&nbsp;block)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/LaunchCorec.html#block-mindustry.world.Block-">block</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/LaunchCorec.html" title="interface in mindustry.gen">LaunchCorec</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1009,6 +1068,32 @@ implements <a href="../../mindustry/gen/Drawc.html" title="interface in mindustr
 </dl>
 </li>
 </ul>
+<a name="id--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>id</h4>
+<pre>public&nbsp;int&nbsp;id()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Entityc.html#id--">id</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="id-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>id</h4>
+<pre>public&nbsp;void&nbsp;id(int&nbsp;id)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Entityc.html#id-int-">id</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="time--">
 <!--   -->
 </a>
@@ -1051,91 +1136,13 @@ implements <a href="../../mindustry/gen/Drawc.html" title="interface in mindustr
 <a name="lifetime-float-">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>lifetime</h4>
 <pre>public&nbsp;void&nbsp;lifetime(float&nbsp;lifetime)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Timedc.html#lifetime-float-">lifetime</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="id--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>id</h4>
-<pre>public&nbsp;int&nbsp;id()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Entityc.html#id--">id</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="id-int-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>id</h4>
-<pre>public&nbsp;void&nbsp;id(int&nbsp;id)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Entityc.html#id-int-">id</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="in--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>in</h4>
-<pre>public&nbsp;arc.util.Interval&nbsp;in()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/LaunchCorec.html#in--">in</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/LaunchCorec.html" title="interface in mindustry.gen">LaunchCorec</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="in-arc.util.Interval-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>in</h4>
-<pre>public&nbsp;void&nbsp;in(arc.util.Interval&nbsp;in)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/LaunchCorec.html#in-arc.util.Interval-">in</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/LaunchCorec.html" title="interface in mindustry.gen">LaunchCorec</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="block--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>block</h4>
-<pre>public&nbsp;<a href="../../mindustry/world/Block.html" title="class in mindustry.world">Block</a>&nbsp;block()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/LaunchCorec.html#block--">block</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/LaunchCorec.html" title="interface in mindustry.gen">LaunchCorec</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="block-mindustry.world.Block-">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>block</h4>
-<pre>public&nbsp;void&nbsp;block(<a href="../../mindustry/world/Block.html" title="class in mindustry.world">Block</a>&nbsp;block)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/LaunchCorec.html#block-mindustry.world.Block-">block</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/LaunchCorec.html" title="interface in mindustry.gen">LaunchCorec</a></code></dd>
 </dl>
 </li>
 </ul>
