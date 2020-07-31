@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">Bullet</span>
 extends java.lang.Object
-implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.html" title="interface in mindustry.gen">Ownerc</a>, <a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a>, <a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>, <a href="../../mindustry/gen/Timerc.html" title="interface in mindustry.gen">Timerc</a>, <a href="../../mindustry/gen/Shielderc.html" title="interface in mindustry.gen">Shielderc</a>, <a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a>, <a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a>, <a href="../../mindustry/gen/Drawc.html" title="interface in mindustry.gen">Drawc</a>, <a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a>, <a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="../../mindustry/gen/Damagec.html" title="interface in mindustry.gen">Damagec</a>, <a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></pre>
+implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a>, <a href="../../mindustry/gen/Drawc.html" title="interface in mindustry.gen">Drawc</a>, <a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a>, <a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a>, <a href="../../mindustry/gen/Ownerc.html" title="interface in mindustry.gen">Ownerc</a>, <a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a>, <a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a>, <a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>, <a href="../../mindustry/gen/Damagec.html" title="interface in mindustry.gen">Damagec</a>, <a href="../../mindustry/gen/Shielderc.html" title="interface in mindustry.gen">Shielderc</a>, <a href="../../mindustry/gen/Timerc.html" title="interface in mindustry.gen">Timerc</a></pre>
 </li>
 </ul>
 </div>
@@ -621,18 +621,18 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.arc.math.geom.Position">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;arc.math.geom.Position</h3>
-<code>angleTo, angleTo, dst, dst, dst2, dst2, within, within</code></li>
-</ul>
-<ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.arc.math.Scaled">
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;arc.math.Scaled</h3>
 <code>fin, finpow, fout, fout, fout, fslope</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.arc.math.geom.Position">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;arc.math.geom.Position</h3>
+<code>angleTo, angleTo, dst, dst, dst2, dst2, within, within</code></li>
 </ul>
 </li>
 </ul>
@@ -648,13 +648,22 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 <!--   -->
 </a>
 <h3>Field Detail</h3>
-<a name="owner">
+<a name="x">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>owner</h4>
-<pre>public&nbsp;<a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a> owner</pre>
+<h4>x</h4>
+<pre>public&nbsp;float x</pre>
+</li>
+</ul>
+<a name="y">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>y</h4>
+<pre>public&nbsp;float y</pre>
 </li>
 </ul>
 <a name="lastX">
@@ -702,31 +711,58 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 <pre>public transient&nbsp;float hitSize</pre>
 </li>
 </ul>
-<a name="added">
+<a name="collided">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>added</h4>
-<pre>public transient&nbsp;boolean added</pre>
+<h4>collided</h4>
+<pre>public&nbsp;arc.struct.IntSeq collided</pre>
 </li>
 </ul>
-<a name="id">
+<a name="data">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>id</h4>
-<pre>public transient&nbsp;int id</pre>
+<h4>data</h4>
+<pre>public&nbsp;java.lang.Object data</pre>
 </li>
 </ul>
-<a name="timer">
+<a name="type">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>timer</h4>
-<pre>public transient&nbsp;arc.util.Interval timer</pre>
+<h4>type</h4>
+<pre>public&nbsp;<a href="../../mindustry/entities/bullet/BulletType.html" title="class in mindustry.entities.bullet">BulletType</a> type</pre>
+</li>
+</ul>
+<a name="damage">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>damage</h4>
+<pre>public&nbsp;float damage</pre>
+</li>
+</ul>
+<a name="team">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>team</h4>
+<pre>public&nbsp;<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a> team</pre>
+</li>
+</ul>
+<a name="owner">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>owner</h4>
+<pre>public&nbsp;<a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a> owner</pre>
 </li>
 </ul>
 <a name="time">
@@ -765,67 +801,31 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 <pre>public transient&nbsp;float drag</pre>
 </li>
 </ul>
-<a name="collided">
+<a name="added">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>collided</h4>
-<pre>public&nbsp;arc.struct.IntSeq collided</pre>
+<h4>added</h4>
+<pre>public transient&nbsp;boolean added</pre>
 </li>
 </ul>
-<a name="data">
+<a name="id">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>data</h4>
-<pre>public&nbsp;java.lang.Object data</pre>
+<h4>id</h4>
+<pre>public transient&nbsp;int id</pre>
 </li>
 </ul>
-<a name="type">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>type</h4>
-<pre>public&nbsp;<a href="../../mindustry/entities/bullet/BulletType.html" title="class in mindustry.entities.bullet">BulletType</a> type</pre>
-</li>
-</ul>
-<a name="damage">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>damage</h4>
-<pre>public&nbsp;float damage</pre>
-</li>
-</ul>
-<a name="x">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>x</h4>
-<pre>public&nbsp;float x</pre>
-</li>
-</ul>
-<a name="y">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>y</h4>
-<pre>public&nbsp;float y</pre>
-</li>
-</ul>
-<a name="team">
+<a name="timer">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>team</h4>
-<pre>public&nbsp;<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a> team</pre>
+<h4>timer</h4>
+<pre>public transient&nbsp;arc.util.Interval timer</pre>
 </li>
 </ul>
 </li>
@@ -876,35 +876,6 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code>toString</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
-</dl>
-</li>
-</ul>
-<a name="trns-float-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>trns</h4>
-<pre>public&nbsp;void&nbsp;trns(float&nbsp;x,
-                 float&nbsp;y)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Posc.html#trns-float-float-">trns</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="rotation-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>rotation</h4>
-<pre>public&nbsp;void&nbsp;rotation(float&nbsp;angle)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Bulletc.html#rotation-float-">Bulletc</a></code></span></div>
-<div class="block">Sets the bullet's rotation in degrees.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Bulletc.html#rotation-float-">rotation</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -968,6 +939,19 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 </dl>
 </li>
 </ul>
+<a name="isAdded--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isAdded</h4>
+<pre>public&nbsp;boolean&nbsp;isAdded()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Entityc.html#isAdded--">isAdded</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="isLocal--">
 <!--   -->
 </a>
@@ -994,18 +978,24 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 </dl>
 </li>
 </ul>
-<a name="collides-mindustry.gen.Hitboxc-">
+<a name="update--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>collides</h4>
-<pre>public&nbsp;boolean&nbsp;collides(<a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a>&nbsp;other)</pre>
+<h4>update</h4>
+<pre>public&nbsp;void&nbsp;update()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Bulletc.html#collides-mindustry.gen.Hitboxc-">collides</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Bulletc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#collides-mindustry.gen.Hitboxc-">collides</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Entityc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Timedc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Velc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1019,34 +1009,6 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Entityc.html#isNull--">isNull</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="fin--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>fin</h4>
-<pre>public&nbsp;float&nbsp;fin()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code>fin</code>&nbsp;in interface&nbsp;<code>arc.math.Scaled</code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Timedc.html#fin--">fin</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="blockOn--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>blockOn</h4>
-<pre>public&nbsp;<a href="../../mindustry/world/Block.html" title="class in mindustry.world">Block</a>&nbsp;blockOn()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Posc.html#blockOn--">blockOn</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1065,16 +1027,42 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 </dl>
 </li>
 </ul>
-<a name="set-arc.math.geom.Position-">
+<a name="blockOn--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>set</h4>
-<pre>public&nbsp;void&nbsp;set(arc.math.geom.Position&nbsp;pos)</pre>
+<h4>blockOn</h4>
+<pre>public&nbsp;<a href="../../mindustry/world/Block.html" title="class in mindustry.world">Block</a>&nbsp;blockOn()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Posc.html#set-arc.math.geom.Position-">set</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Posc.html#blockOn--">blockOn</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="drawBullets--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>drawBullets</h4>
+<pre>public&nbsp;void&nbsp;drawBullets()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Bulletc.html#drawBullets--">drawBullets</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="moving--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>moving</h4>
+<pre>public&nbsp;boolean&nbsp;moving()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Velc.html#moving--">moving</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1091,31 +1079,29 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 </dl>
 </li>
 </ul>
-<a name="isRemote--">
+<a name="damageMultiplier--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isRemote</h4>
-<pre>public&nbsp;boolean&nbsp;isRemote()</pre>
+<h4>damageMultiplier</h4>
+<pre>public&nbsp;float&nbsp;damageMultiplier()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Entityc.html#isRemote--">isRemote</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Bulletc.html#damageMultiplier--">damageMultiplier</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="hitbox-arc.math.geom.Rect-">
+<a name="set-arc.math.geom.Position-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>hitbox</h4>
-<pre>public&nbsp;void&nbsp;hitbox(arc.math.geom.Rect&nbsp;rect)</pre>
+<h4>set</h4>
+<pre>public&nbsp;void&nbsp;set(arc.math.geom.Position&nbsp;pos)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code>hitbox</code>&nbsp;in interface&nbsp;<code>arc.math.geom.QuadTree.QuadTreeObject</code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#hitbox-arc.math.geom.Rect-">hitbox</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Posc.html#set-arc.math.geom.Position-">set</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1131,6 +1117,20 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 <dd><code><a href="../../mindustry/gen/Entityc.html#afterRead--">afterRead</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Hitboxc.html#afterRead--">afterRead</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="move-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>move</h4>
+<pre>public&nbsp;void&nbsp;move(float&nbsp;cx,
+                 float&nbsp;cy)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Velc.html#move-float-float-">move</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1189,6 +1189,19 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 </dl>
 </li>
 </ul>
+<a name="isRemote--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isRemote</h4>
+<pre>public&nbsp;boolean&nbsp;isRemote()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Entityc.html#isRemote--">isRemote</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="core--">
 <!--   -->
 </a>
@@ -1199,6 +1212,49 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Teamc.html#core--">core</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="trns-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>trns</h4>
+<pre>public&nbsp;void&nbsp;trns(float&nbsp;x,
+                 float&nbsp;y)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Posc.html#trns-float-float-">trns</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="set-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>set</h4>
+<pre>public&nbsp;void&nbsp;set(float&nbsp;x,
+                float&nbsp;y)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Posc.html#set-float-float-">set</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="damage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>damage</h4>
+<pre>public&nbsp;float&nbsp;damage()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Bulletc.html#damage--">damage</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Damagec.html#damage--">damage</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Damagec.html" title="interface in mindustry.gen">Damagec</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1219,33 +1275,6 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 </dl>
 </li>
 </ul>
-<a name="set-float-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>set</h4>
-<pre>public&nbsp;void&nbsp;set(float&nbsp;x,
-                float&nbsp;y)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Posc.html#set-float-float-">set</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="damageMultiplier--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>damageMultiplier</h4>
-<pre>public&nbsp;float&nbsp;damageMultiplier()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Bulletc.html#damageMultiplier--">damageMultiplier</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</li>
-</ul>
 <a name="with-arc.func.Cons-">
 <!--   -->
 </a>
@@ -1256,19 +1285,6 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Entityc.html#with-arc.func.Cons-">with</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="tileY--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>tileY</h4>
-<pre>public&nbsp;int&nbsp;tileY()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Posc.html#tileY--">tileY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1285,29 +1301,31 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 </dl>
 </li>
 </ul>
-<a name="moving--">
+<a name="tileY--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>moving</h4>
-<pre>public&nbsp;boolean&nbsp;moving()</pre>
+<h4>tileY</h4>
+<pre>public&nbsp;int&nbsp;tileY()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Velc.html#moving--">moving</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Posc.html#tileY--">tileY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="cheating--">
+<a name="hitbox-arc.math.geom.Rect-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>cheating</h4>
-<pre>public&nbsp;boolean&nbsp;cheating()</pre>
+<h4>hitbox</h4>
+<pre>public&nbsp;void&nbsp;hitbox(arc.math.geom.Rect&nbsp;rect)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Teamc.html#cheating--">cheating</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+<dd><code>hitbox</code>&nbsp;in interface&nbsp;<code>arc.math.geom.QuadTree.QuadTreeObject</code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#hitbox-arc.math.geom.Rect-">hitbox</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1337,32 +1355,31 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 </dl>
 </li>
 </ul>
-<a name="damage--">
+<a name="cheating--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>damage</h4>
-<pre>public&nbsp;float&nbsp;damage()</pre>
+<h4>cheating</h4>
+<pre>public&nbsp;boolean&nbsp;cheating()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Bulletc.html#damage--">damage</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Damagec.html#damage--">damage</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Damagec.html" title="interface in mindustry.gen">Damagec</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Teamc.html#cheating--">cheating</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="move-float-float-">
+<a name="collides-mindustry.gen.Hitboxc-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>move</h4>
-<pre>public&nbsp;void&nbsp;move(float&nbsp;cx,
-                 float&nbsp;cy)</pre>
+<h4>collides</h4>
+<pre>public&nbsp;boolean&nbsp;collides(<a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a>&nbsp;other)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Velc.html#move-float-float-">move</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Bulletc.html#collides-mindustry.gen.Hitboxc-">collides</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#collides-mindustry.gen.Hitboxc-">collides</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1411,19 +1428,6 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 </dl>
 </li>
 </ul>
-<a name="drawBullets--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>drawBullets</h4>
-<pre>public&nbsp;void&nbsp;drawBullets()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Bulletc.html#drawBullets--">drawBullets</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</li>
-</ul>
 <a name="draw--">
 <!--   -->
 </a>
@@ -1439,29 +1443,18 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 </dl>
 </li>
 </ul>
-<a name="isAdded--">
+<a name="rotation-float-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isAdded</h4>
-<pre>public&nbsp;boolean&nbsp;isAdded()</pre>
+<h4>rotation</h4>
+<pre>public&nbsp;void&nbsp;rotation(float&nbsp;angle)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Bulletc.html#rotation-float-">Bulletc</a></code></span></div>
+<div class="block">Sets the bullet's rotation in degrees.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Entityc.html#isAdded--">isAdded</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="base--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>base</h4>
-<pre>public&nbsp;&lt;T extends <a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>&gt;&nbsp;T&nbsp;base()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Entityc.html#base--">base</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Bulletc.html#rotation-float-">rotation</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1475,6 +1468,19 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Entityc.html#write-arc.util.io.Writes-">write</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="base--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>base</h4>
+<pre>public&nbsp;&lt;T extends <a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>&gt;&nbsp;T&nbsp;base()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Entityc.html#base--">base</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1504,24 +1510,18 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 </dl>
 </li>
 </ul>
-<a name="update--">
+<a name="fin--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>update</h4>
-<pre>public&nbsp;void&nbsp;update()</pre>
+<h4>fin</h4>
+<pre>public&nbsp;float&nbsp;fin()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Bulletc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+<dd><code>fin</code>&nbsp;in interface&nbsp;<code>arc.math.Scaled</code></dd>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Entityc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Timedc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Velc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Timedc.html#fin--">fin</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1588,29 +1588,55 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 </dl>
 </li>
 </ul>
-<a name="owner--">
+<a name="x--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>owner</h4>
-<pre>public&nbsp;<a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>&nbsp;owner()</pre>
+<h4>x</h4>
+<pre>public&nbsp;float&nbsp;x()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Ownerc.html#owner--">owner</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Ownerc.html" title="interface in mindustry.gen">Ownerc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Posc.html#x--">x</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="owner-mindustry.gen.Entityc-">
+<a name="x-float-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>owner</h4>
-<pre>public&nbsp;void&nbsp;owner(<a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>&nbsp;owner)</pre>
+<h4>x</h4>
+<pre>public&nbsp;void&nbsp;x(float&nbsp;x)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Ownerc.html#owner-mindustry.gen.Entityc-">owner</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Ownerc.html" title="interface in mindustry.gen">Ownerc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Posc.html#x-float-">x</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="y--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>y</h4>
+<pre>public&nbsp;float&nbsp;y()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Posc.html#y--">y</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="y-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>y</h4>
+<pre>public&nbsp;void&nbsp;y(float&nbsp;y)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Posc.html#y-float-">y</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1744,55 +1770,146 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 </dl>
 </li>
 </ul>
-<a name="id--">
+<a name="collided--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>id</h4>
-<pre>public&nbsp;int&nbsp;id()</pre>
+<h4>collided</h4>
+<pre>public&nbsp;arc.struct.IntSeq&nbsp;collided()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Entityc.html#id--">id</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Bulletc.html#collided--">collided</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="id-int-">
+<a name="collided-arc.struct.IntSeq-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>id</h4>
-<pre>public&nbsp;void&nbsp;id(int&nbsp;id)</pre>
+<h4>collided</h4>
+<pre>public&nbsp;void&nbsp;collided(arc.struct.IntSeq&nbsp;collided)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Entityc.html#id-int-">id</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Bulletc.html#collided-arc.struct.IntSeq-">collided</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="timer--">
+<a name="data--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>timer</h4>
-<pre>public&nbsp;arc.util.Interval&nbsp;timer()</pre>
+<h4>data</h4>
+<pre>public&nbsp;java.lang.Object&nbsp;data()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Timerc.html#timer--">timer</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Bulletc.html#data--">data</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="timer-arc.util.Interval-">
+<a name="data-java.lang.Object-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>timer</h4>
-<pre>public&nbsp;void&nbsp;timer(arc.util.Interval&nbsp;timer)</pre>
+<h4>data</h4>
+<pre>public&nbsp;void&nbsp;data(java.lang.Object&nbsp;data)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Timerc.html#timer-arc.util.Interval-">timer</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Bulletc.html#data-java.lang.Object-">data</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="type--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>type</h4>
+<pre>public&nbsp;<a href="../../mindustry/entities/bullet/BulletType.html" title="class in mindustry.entities.bullet">BulletType</a>&nbsp;type()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Bulletc.html#type--">type</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="type-mindustry.entities.bullet.BulletType-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>type</h4>
+<pre>public&nbsp;void&nbsp;type(<a href="../../mindustry/entities/bullet/BulletType.html" title="class in mindustry.entities.bullet">BulletType</a>&nbsp;type)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Bulletc.html#type-mindustry.entities.bullet.BulletType-">type</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="damage-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>damage</h4>
+<pre>public&nbsp;void&nbsp;damage(float&nbsp;damage)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Bulletc.html#damage-float-">damage</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="team--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>team</h4>
+<pre>public&nbsp;<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Teamc.html#team--">team</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="team-mindustry.game.Team-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>team</h4>
+<pre>public&nbsp;void&nbsp;team(<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Teamc.html#team-mindustry.game.Team-">team</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="owner--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>owner</h4>
+<pre>public&nbsp;<a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>&nbsp;owner()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Ownerc.html#owner--">owner</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Ownerc.html" title="interface in mindustry.gen">Ownerc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="owner-mindustry.gen.Entityc-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>owner</h4>
+<pre>public&nbsp;void&nbsp;owner(<a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>&nbsp;owner)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Ownerc.html#owner-mindustry.gen.Entityc-">owner</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Ownerc.html" title="interface in mindustry.gen">Ownerc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1887,172 +2004,55 @@ implements arc.util.pooling.Pool.Poolable, <a href="../../mindustry/gen/Ownerc.h
 </dl>
 </li>
 </ul>
-<a name="collided--">
+<a name="id--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>collided</h4>
-<pre>public&nbsp;arc.struct.IntSeq&nbsp;collided()</pre>
+<h4>id</h4>
+<pre>public&nbsp;int&nbsp;id()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Bulletc.html#collided--">collided</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Entityc.html#id--">id</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="collided-arc.struct.IntSeq-">
+<a name="id-int-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>collided</h4>
-<pre>public&nbsp;void&nbsp;collided(arc.struct.IntSeq&nbsp;collided)</pre>
+<h4>id</h4>
+<pre>public&nbsp;void&nbsp;id(int&nbsp;id)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Bulletc.html#collided-arc.struct.IntSeq-">collided</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Entityc.html#id-int-">id</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="data--">
+<a name="timer--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>data</h4>
-<pre>public&nbsp;java.lang.Object&nbsp;data()</pre>
+<h4>timer</h4>
+<pre>public&nbsp;arc.util.Interval&nbsp;timer()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Bulletc.html#data--">data</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Timerc.html#timer--">timer</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="data-java.lang.Object-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>data</h4>
-<pre>public&nbsp;void&nbsp;data(java.lang.Object&nbsp;data)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Bulletc.html#data-java.lang.Object-">data</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="type--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>type</h4>
-<pre>public&nbsp;<a href="../../mindustry/entities/bullet/BulletType.html" title="class in mindustry.entities.bullet">BulletType</a>&nbsp;type()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Bulletc.html#type--">type</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="type-mindustry.entities.bullet.BulletType-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>type</h4>
-<pre>public&nbsp;void&nbsp;type(<a href="../../mindustry/entities/bullet/BulletType.html" title="class in mindustry.entities.bullet">BulletType</a>&nbsp;type)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Bulletc.html#type-mindustry.entities.bullet.BulletType-">type</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="damage-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>damage</h4>
-<pre>public&nbsp;void&nbsp;damage(float&nbsp;damage)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Bulletc.html#damage-float-">damage</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="x--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>x</h4>
-<pre>public&nbsp;float&nbsp;x()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Posc.html#x--">x</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="x-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>x</h4>
-<pre>public&nbsp;void&nbsp;x(float&nbsp;x)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Posc.html#x-float-">x</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="y--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>y</h4>
-<pre>public&nbsp;float&nbsp;y()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Posc.html#y--">y</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="y-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>y</h4>
-<pre>public&nbsp;void&nbsp;y(float&nbsp;y)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Posc.html#y-float-">y</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="team--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>team</h4>
-<pre>public&nbsp;<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Teamc.html#team--">team</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="team-mindustry.game.Team-">
+<a name="timer-arc.util.Interval-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>team</h4>
-<pre>public&nbsp;void&nbsp;team(<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</pre>
+<h4>timer</h4>
+<pre>public&nbsp;void&nbsp;timer(arc.util.Interval&nbsp;timer)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Teamc.html#team-mindustry.game.Team-">team</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Timerc.html#timer-arc.util.Interval-">timer</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
 </dl>
 </li>
 </ul>
