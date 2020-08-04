@@ -139,7 +139,7 @@ extends <a href="../../../mindustry/entities/units/AIController.html" title="cla
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;mindustry.entities.units.<a href="../../../mindustry/entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></h3>
-<code><a href="../../../mindustry/entities/units/AIController.html#target">target</a>, <a href="../../../mindustry/entities/units/AIController.html#timer">timer</a>, <a href="../../../mindustry/entities/units/AIController.html#timerTarget">timerTarget</a>, <a href="../../../mindustry/entities/units/AIController.html#unit">unit</a>, <a href="../../../mindustry/entities/units/AIController.html#vec">vec</a></code></li>
+<code><a href="../../../mindustry/entities/units/AIController.html#target">target</a>, <a href="../../../mindustry/entities/units/AIController.html#targets">targets</a>, <a href="../../../mindustry/entities/units/AIController.html#timer">timer</a>, <a href="../../../mindustry/entities/units/AIController.html#timerTarget">timerTarget</a>, <a href="../../../mindustry/entities/units/AIController.html#unit">unit</a>, <a href="../../../mindustry/entities/units/AIController.html#vec">vec</a></code></li>
 </ul>
 </li>
 </ul>
@@ -182,7 +182,7 @@ extends <a href="../../../mindustry/entities/units/AIController.html" title="cla
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../mindustry/ai/types/GroundAI.html#updateUnit--">updateUnit</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../mindustry/ai/types/GroundAI.html#updateMovement--">updateMovement</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -190,7 +190,7 @@ extends <a href="../../../mindustry/entities/units/AIController.html" title="cla
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;mindustry.entities.units.<a href="../../../mindustry/entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></h3>
-<code><a href="../../../mindustry/entities/units/AIController.html#init--">init</a>, <a href="../../../mindustry/entities/units/AIController.html#retarget--">retarget</a>, <a href="../../../mindustry/entities/units/AIController.html#targetClosest--">targetClosest</a>, <a href="../../../mindustry/entities/units/AIController.html#targetClosestAllyFlag-mindustry.world.meta.BlockFlag-">targetClosestAllyFlag</a>, <a href="../../../mindustry/entities/units/AIController.html#targetClosestEnemyFlag-mindustry.world.meta.BlockFlag-">targetClosestEnemyFlag</a>, <a href="../../../mindustry/entities/units/AIController.html#unit--">unit</a>, <a href="../../../mindustry/entities/units/AIController.html#unit-mindustry.gen.Unit-">unit</a></code></li>
+<code><a href="../../../mindustry/entities/units/AIController.html#findTarget-float-float-float-boolean-boolean-">findTarget</a>, <a href="../../../mindustry/entities/units/AIController.html#init--">init</a>, <a href="../../../mindustry/entities/units/AIController.html#retarget--">retarget</a>, <a href="../../../mindustry/entities/units/AIController.html#target-float-float-float-boolean-boolean-">target</a>, <a href="../../../mindustry/entities/units/AIController.html#targetFlag-float-float-mindustry.world.meta.BlockFlag-boolean-">targetFlag</a>, <a href="../../../mindustry/entities/units/AIController.html#unit--">unit</a>, <a href="../../../mindustry/entities/units/AIController.html#unit-mindustry.gen.Unit-">unit</a>, <a href="../../../mindustry/entities/units/AIController.html#updateTargeting--">updateTargeting</a>, <a href="../../../mindustry/entities/units/AIController.html#updateUnit--">updateUnit</a>, <a href="../../../mindustry/entities/units/AIController.html#updateWeapons--">updateWeapons</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -237,13 +237,17 @@ extends <a href="../../../mindustry/entities/units/AIController.html" title="cla
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="updateUnit--">
+<a name="updateMovement--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>updateUnit</h4>
-<pre>public&nbsp;void&nbsp;updateUnit()</pre>
+<h4>updateMovement</h4>
+<pre>public&nbsp;void&nbsp;updateMovement()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../mindustry/entities/units/AIController.html#updateMovement--">updateMovement</a></code>&nbsp;in class&nbsp;<code><a href="../../../mindustry/entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></code></dd>
+</dl>
 </li>
 </ul>
 <a name="moveToCore-mindustry.ai.Pathfinder.FlagTarget-">

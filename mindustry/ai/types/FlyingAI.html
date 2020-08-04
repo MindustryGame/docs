@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -135,7 +135,7 @@ extends <a href="../../../mindustry/entities/units/AIController.html" title="cla
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;mindustry.entities.units.<a href="../../../mindustry/entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></h3>
-<code><a href="../../../mindustry/entities/units/AIController.html#target">target</a>, <a href="../../../mindustry/entities/units/AIController.html#timer">timer</a>, <a href="../../../mindustry/entities/units/AIController.html#timerTarget">timerTarget</a>, <a href="../../../mindustry/entities/units/AIController.html#unit">unit</a>, <a href="../../../mindustry/entities/units/AIController.html#vec">vec</a></code></li>
+<code><a href="../../../mindustry/entities/units/AIController.html#target">target</a>, <a href="../../../mindustry/entities/units/AIController.html#targets">targets</a>, <a href="../../../mindustry/entities/units/AIController.html#timer">timer</a>, <a href="../../../mindustry/entities/units/AIController.html#timerTarget">timerTarget</a>, <a href="../../../mindustry/entities/units/AIController.html#unit">unit</a>, <a href="../../../mindustry/entities/units/AIController.html#vec">vec</a></code></li>
 </ul>
 </li>
 </ul>
@@ -182,12 +182,20 @@ extends <a href="../../../mindustry/entities/units/AIController.html" title="cla
       float&nbsp;speed)</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../mindustry/ai/types/FlyingAI.html#findTarget-float-float-float-boolean-boolean-">findTarget</a></span>(float&nbsp;x,
+          float&nbsp;y,
+          float&nbsp;range,
+          boolean&nbsp;air,
+          boolean&nbsp;ground)</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../mindustry/ai/types/FlyingAI.html#moveTo-float-">moveTo</a></span>(float&nbsp;circleLength)</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../mindustry/ai/types/FlyingAI.html#updateUnit--">updateUnit</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../mindustry/ai/types/FlyingAI.html#updateMovement--">updateMovement</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -195,7 +203,7 @@ extends <a href="../../../mindustry/entities/units/AIController.html" title="cla
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;mindustry.entities.units.<a href="../../../mindustry/entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></h3>
-<code><a href="../../../mindustry/entities/units/AIController.html#init--">init</a>, <a href="../../../mindustry/entities/units/AIController.html#retarget--">retarget</a>, <a href="../../../mindustry/entities/units/AIController.html#targetClosest--">targetClosest</a>, <a href="../../../mindustry/entities/units/AIController.html#targetClosestAllyFlag-mindustry.world.meta.BlockFlag-">targetClosestAllyFlag</a>, <a href="../../../mindustry/entities/units/AIController.html#targetClosestEnemyFlag-mindustry.world.meta.BlockFlag-">targetClosestEnemyFlag</a>, <a href="../../../mindustry/entities/units/AIController.html#unit--">unit</a>, <a href="../../../mindustry/entities/units/AIController.html#unit-mindustry.gen.Unit-">unit</a></code></li>
+<code><a href="../../../mindustry/entities/units/AIController.html#init--">init</a>, <a href="../../../mindustry/entities/units/AIController.html#retarget--">retarget</a>, <a href="../../../mindustry/entities/units/AIController.html#target-float-float-float-boolean-boolean-">target</a>, <a href="../../../mindustry/entities/units/AIController.html#targetFlag-float-float-mindustry.world.meta.BlockFlag-boolean-">targetFlag</a>, <a href="../../../mindustry/entities/units/AIController.html#unit--">unit</a>, <a href="../../../mindustry/entities/units/AIController.html#unit-mindustry.gen.Unit-">unit</a>, <a href="../../../mindustry/entities/units/AIController.html#updateTargeting--">updateTargeting</a>, <a href="../../../mindustry/entities/units/AIController.html#updateUnit--">updateUnit</a>, <a href="../../../mindustry/entities/units/AIController.html#updateWeapons--">updateWeapons</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -242,13 +250,34 @@ extends <a href="../../../mindustry/entities/units/AIController.html" title="cla
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="updateUnit--">
+<a name="updateMovement--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>updateUnit</h4>
-<pre>public&nbsp;void&nbsp;updateUnit()</pre>
+<h4>updateMovement</h4>
+<pre>public&nbsp;void&nbsp;updateMovement()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../mindustry/entities/units/AIController.html#updateMovement--">updateMovement</a></code>&nbsp;in class&nbsp;<code><a href="../../../mindustry/entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="findTarget-float-float-float-boolean-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findTarget</h4>
+<pre>protected&nbsp;<a href="../../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a>&nbsp;findTarget(float&nbsp;x,
+                           float&nbsp;y,
+                           float&nbsp;range,
+                           boolean&nbsp;air,
+                           boolean&nbsp;ground)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../mindustry/entities/units/AIController.html#findTarget-float-float-float-boolean-boolean-">findTarget</a></code>&nbsp;in class&nbsp;<code><a href="../../../mindustry/entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></code></dd>
+</dl>
 </li>
 </ul>
 <a name="circle-float-">
