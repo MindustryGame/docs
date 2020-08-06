@@ -17,6 +17,12 @@
     catch(err) {
     }
 //-->
+var methods = {"i0":10,"i1":10,"i2":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
 </script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -42,7 +48,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../mindustry/logic/LogicNode.html" title="class in mindustry.logic"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../mindustry/logic/LogicNode.NodeInput.html" title="class in mindustry.logic"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../mindustry/logic/LogicNode.ConditionNode.html" title="class in mindustry.logic"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?mindustry/logic/LogicNode.BinaryOpNode.html" target="_top">Frames</a></li>
@@ -66,16 +72,16 @@
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested.classes.inherited.from.class.mindustry.logic.LogicNode">Nested</a>&nbsp;|&nbsp;</li>
 <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.top">
@@ -92,7 +98,12 @@
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
+<li><a href="../../mindustry/logic/LogicNode.html" title="class in mindustry.logic">mindustry.logic.LogicNode</a></li>
+<li>
+<ul class="inheritance">
 <li>mindustry.logic.LogicNode.BinaryOpNode</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -106,13 +117,28 @@
 <hr>
 <br>
 <pre>public static class <span class="typeNameLabel">LogicNode.BinaryOpNode</span>
-extends java.lang.Object</pre>
+extends <a href="../../mindustry/logic/LogicNode.html" title="class in mindustry.logic">LogicNode</a></pre>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested.classes.inherited.from.class.mindustry.logic.LogicNode">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;mindustry.logic.<a href="../../mindustry/logic/LogicNode.html" title="class in mindustry.logic">LogicNode</a></h3>
+<code><a href="../../mindustry/logic/LogicNode.BinaryOpNode.html" title="class in mindustry.logic">LogicNode.BinaryOpNode</a>, <a href="../../mindustry/logic/LogicNode.ConditionNode.html" title="class in mindustry.logic">LogicNode.ConditionNode</a>, <a href="../../mindustry/logic/LogicNode.DataType.html" title="enum in mindustry.logic">LogicNode.DataType</a>, <a href="../../mindustry/logic/LogicNode.NodeCategory.html" title="enum in mindustry.logic">LogicNode.NodeCategory</a>, <a href="../../mindustry/logic/LogicNode.NodeSlot.html" title="class in mindustry.logic">LogicNode.NodeSlot</a>, <a href="../../mindustry/logic/LogicNode.NumberNode.html" title="class in mindustry.logic">LogicNode.NumberNode</a>, <a href="../../mindustry/logic/LogicNode.NumOutput.html" title="interface in mindustry.logic">LogicNode.NumOutput</a>&lt;<a href="../../mindustry/logic/LogicNode.NumOutput.html" title="type parameter in LogicNode.NumOutput">N</a>&gt;, <a href="../../mindustry/logic/LogicNode.ObjOutput.html" title="interface in mindustry.logic">LogicNode.ObjOutput</a>&lt;<a href="../../mindustry/logic/LogicNode.ObjOutput.html" title="type parameter in LogicNode.ObjOutput">N</a>,<a href="../../mindustry/logic/LogicNode.ObjOutput.html" title="type parameter in LogicNode.ObjOutput">T</a>&gt;, <a href="../../mindustry/logic/LogicNode.SetNum.html" title="interface in mindustry.logic">LogicNode.SetNum</a>, <a href="../../mindustry/logic/LogicNode.SetObj.html" title="interface in mindustry.logic">LogicNode.SetObj</a>&lt;<a href="../../mindustry/logic/LogicNode.SetObj.html" title="type parameter in LogicNode.SetObj">T</a>&gt;, <a href="../../mindustry/logic/LogicNode.SignalNode.html" title="class in mindustry.logic">LogicNode.SignalNode</a></code></li>
+</ul>
+</li>
+</ul>
 <!-- =========== FIELD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="field.summary">
@@ -136,6 +162,10 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../mindustry/logic/BinaryOp.html" title="enum in mindustry.logic">BinaryOp</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.BinaryOpNode.html#op">op</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../mindustry/logic/LogicNode.SetNum.html" title="interface in mindustry.logic">LogicNode.SetNum</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.BinaryOpNode.html#result">result</a></span></code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -163,6 +193,34 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.BinaryOpNode.html#build-arc.scene.ui.layout.Table-">build</a></span>(arc.scene.ui.layout.Table&nbsp;table)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../mindustry/logic/LogicNode.NodeCategory.html" title="enum in mindustry.logic">LogicNode.NodeCategory</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.BinaryOpNode.html#category--">category</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.BinaryOpNode.html#run--">run</a></span>()</code>
+<div class="block">Runs the calculation(s) and sets the output value.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.mindustry.logic.LogicNode">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;mindustry.logic.<a href="../../mindustry/logic/LogicNode.html" title="class in mindustry.logic">LogicNode</a></h3>
+<code><a href="../../mindustry/logic/LogicNode.html#name--">name</a>, <a href="../../mindustry/logic/LogicNode.html#slots--">slots</a></code></li>
+</ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
@@ -205,10 +263,19 @@ extends java.lang.Object</pre>
 <a name="b">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>b</h4>
 <pre>public&nbsp;double b</pre>
+</li>
+</ul>
+<a name="result">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>result</h4>
+<pre>public&nbsp;<a href="../../mindustry/logic/LogicNode.SetNum.html" title="interface in mindustry.logic">LogicNode.SetNum</a> result</pre>
 </li>
 </ul>
 </li>
@@ -226,6 +293,55 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>BinaryOpNode</h4>
 <pre>public&nbsp;BinaryOpNode()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="build-arc.scene.ui.layout.Table-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>build</h4>
+<pre>public&nbsp;void&nbsp;build(arc.scene.ui.layout.Table&nbsp;table)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../mindustry/logic/LogicNode.html#build-arc.scene.ui.layout.Table-">build</a></code>&nbsp;in class&nbsp;<code><a href="../../mindustry/logic/LogicNode.html" title="class in mindustry.logic">LogicNode</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="run--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>run</h4>
+<pre>public&nbsp;void&nbsp;run()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../mindustry/logic/LogicNode.html#run--">LogicNode</a></code></span></div>
+<div class="block">Runs the calculation(s) and sets the output value.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../mindustry/logic/LogicNode.html#run--">run</a></code>&nbsp;in class&nbsp;<code><a href="../../mindustry/logic/LogicNode.html" title="class in mindustry.logic">LogicNode</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="category--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>category</h4>
+<pre>public&nbsp;<a href="../../mindustry/logic/LogicNode.NodeCategory.html" title="enum in mindustry.logic">LogicNode.NodeCategory</a>&nbsp;category()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/logic/LogicNode.html#category--">category</a></code>&nbsp;in class&nbsp;<code><a href="../../mindustry/logic/LogicNode.html" title="class in mindustry.logic">LogicNode</a></code></dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -256,7 +372,7 @@ extends java.lang.Object</pre>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../mindustry/logic/LogicNode.html" title="class in mindustry.logic"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../mindustry/logic/LogicNode.NodeInput.html" title="class in mindustry.logic"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../mindustry/logic/LogicNode.ConditionNode.html" title="class in mindustry.logic"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?mindustry/logic/LogicNode.BinaryOpNode.html" target="_top">Frames</a></li>
@@ -280,16 +396,16 @@ extends java.lang.Object</pre>
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested.classes.inherited.from.class.mindustry.logic.LogicNode">Nested</a>&nbsp;|&nbsp;</li>
 <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.bottom">

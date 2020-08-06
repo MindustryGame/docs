@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":10,"i1":6,"i2":10,"i3":10,"i4":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -105,10 +105,15 @@ var activeTableTab = "activeTableTab";
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../mindustry/logic/LogicNode.BinaryOpNode.html" title="class in mindustry.logic">LogicNode.BinaryOpNode</a>, <a href="../../mindustry/logic/LogicNode.ConditionNode.html" title="class in mindustry.logic">LogicNode.ConditionNode</a>, <a href="../../mindustry/logic/LogicNode.NumberNode.html" title="class in mindustry.logic">LogicNode.NumberNode</a>, <a href="../../mindustry/logic/LogicNode.SignalNode.html" title="class in mindustry.logic">LogicNode.SignalNode</a></dd>
+</dl>
 <hr>
 <br>
 <pre>public abstract class <span class="typeNameLabel">LogicNode</span>
 extends java.lang.Object</pre>
+<div class="block">Base class for a type of logic node.</div>
 </li>
 </ul>
 </div>
@@ -133,11 +138,47 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.NodeInput.html" title="class in mindustry.logic">LogicNode.NodeInput</a>&lt;<a href="../../mindustry/logic/LogicNode.NodeInput.html" title="type parameter in LogicNode.NodeInput">T</a>&gt;</span></code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.ConditionNode.html" title="class in mindustry.logic">LogicNode.ConditionNode</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.DataType.html" title="enum in mindustry.logic">LogicNode.DataType</a></span></code>
+<div class="block">The types of data a node field can be.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.NodeCategory.html" title="enum in mindustry.logic">LogicNode.NodeCategory</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.NodeSlot.html" title="class in mindustry.logic">LogicNode.NodeSlot</a></span></code>
+<div class="block">A field for a node, either an input or output.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.NumberNode.html" title="class in mindustry.logic">LogicNode.NumberNode</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static interface&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.NumOutput.html" title="interface in mindustry.logic">LogicNode.NumOutput</a>&lt;<a href="../../mindustry/logic/LogicNode.NumOutput.html" title="type parameter in LogicNode.NumOutput">N</a>&gt;</span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static interface&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.ObjOutput.html" title="interface in mindustry.logic">LogicNode.ObjOutput</a>&lt;<a href="../../mindustry/logic/LogicNode.ObjOutput.html" title="type parameter in LogicNode.ObjOutput">N</a>,<a href="../../mindustry/logic/LogicNode.ObjOutput.html" title="type parameter in LogicNode.ObjOutput">T</a>&gt;</span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static interface&nbsp;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.SetNum.html" title="interface in mindustry.logic">LogicNode.SetNum</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static interface&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.SetObj.html" title="interface in mindustry.logic">LogicNode.SetObj</a>&lt;<a href="../../mindustry/logic/LogicNode.SetObj.html" title="type parameter in LogicNode.SetObj">T</a>&gt;</span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.SignalNode.html" title="class in mindustry.logic">LogicNode.SignalNode</a></span></code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -166,18 +207,32 @@ extends java.lang.Object</pre>
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../../mindustry/logic/LogicNode.NodeInput.html" title="class in mindustry.logic">LogicNode.NodeInput</a>[]</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.html#inputs--">inputs</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.html#build-arc.scene.ui.layout.Table-">build</a></span>(arc.scene.ui.layout.Table&nbsp;table)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>abstract <a href="../../mindustry/logic/LogicNode.NodeCategory.html" title="enum in mindustry.logic">LogicNode.NodeCategory</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.html#category--">category</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.html#name--">name</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.html#run--">run</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.html#run--">run</a></span>()</code>
+<div class="block">Runs the calculation(s) and sets the output value.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../mindustry/logic/LogicNode.NodeSlot.html" title="class in mindustry.logic">LogicNode.NodeSlot</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LogicNode.html#slots--">slots</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -225,15 +280,43 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>run</h4>
 <pre>public&nbsp;void&nbsp;run()</pre>
+<div class="block">Runs the calculation(s) and sets the output value.</div>
 </li>
 </ul>
-<a name="inputs--">
+<a name="slots--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>slots</h4>
+<pre>public&nbsp;<a href="../../mindustry/logic/LogicNode.NodeSlot.html" title="class in mindustry.logic">LogicNode.NodeSlot</a>[]&nbsp;slots()</pre>
+</li>
+</ul>
+<a name="category--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>category</h4>
+<pre>public abstract&nbsp;<a href="../../mindustry/logic/LogicNode.NodeCategory.html" title="enum in mindustry.logic">LogicNode.NodeCategory</a>&nbsp;category()</pre>
+</li>
+</ul>
+<a name="build-arc.scene.ui.layout.Table-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>build</h4>
+<pre>public&nbsp;void&nbsp;build(arc.scene.ui.layout.Table&nbsp;table)</pre>
+</li>
+</ul>
+<a name="name--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>inputs</h4>
-<pre>public&nbsp;<a href="../../mindustry/logic/LogicNode.NodeInput.html" title="class in mindustry.logic">LogicNode.NodeInput</a>[]&nbsp;inputs()</pre>
+<h4>name</h4>
+<pre>public&nbsp;java.lang.String&nbsp;name()</pre>
 </li>
 </ul>
 </li>
