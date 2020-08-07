@@ -118,7 +118,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public final class <span class="typeNameLabel">LegsUnit</span>
 extends <a href="../../mindustry/gen/Unit.html" title="class in mindustry.gen">Unit</a>
-implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a>, <a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a>, <a href="../../mindustry/gen/Rotc.html" title="interface in mindustry.gen">Rotc</a>, <a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>, <a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a>, <a href="../../mindustry/gen/Drawc.html" title="interface in mindustry.gen">Drawc</a>, <a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a>, <a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a>, <a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a>, <a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a>, <a href="../../mindustry/gen/Physicsc.html" title="interface in mindustry.gen">Physicsc</a>, <a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a>, <a href="../../mindustry/gen/Boundedc.html" title="interface in mindustry.gen">Boundedc</a>, <a href="../../mindustry/gen/Unitc.html" title="interface in mindustry.gen">Unitc</a>, <a href="../../mindustry/gen/Statusc.html" title="interface in mindustry.gen">Statusc</a>, <a href="../../mindustry/gen/Flyingc.html" title="interface in mindustry.gen">Flyingc</a>, <a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a></pre>
+implements <a href="../../mindustry/gen/Rotc.html" title="interface in mindustry.gen">Rotc</a>, <a href="../../mindustry/gen/Unitc.html" title="interface in mindustry.gen">Unitc</a>, <a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a>, <a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a>, <a href="../../mindustry/gen/Drawc.html" title="interface in mindustry.gen">Drawc</a>, <a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a>, <a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="../../mindustry/gen/Flyingc.html" title="interface in mindustry.gen">Flyingc</a>, <a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a>, <a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a>, <a href="../../mindustry/gen/Boundedc.html" title="interface in mindustry.gen">Boundedc</a>, <a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a>, <a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a>, <a href="../../mindustry/gen/Statusc.html" title="interface in mindustry.gen">Statusc</a>, <a href="../../mindustry/gen/Physicsc.html" title="interface in mindustry.gen">Physicsc</a>, <a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a>, <a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a>, <a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a></pre>
 </li>
 </ul>
 </div>
@@ -1166,6 +1166,13 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
 <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li>
 </ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.arc.math.geom.Position">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;arc.math.geom.Position</h3>
+<code>angleTo, angleTo, dst, dst, dst2, dst2, within, within</code></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -1180,6 +1187,37 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 <!--   -->
 </a>
 <h3>Field Detail</h3>
+<a name="tmp1">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>tmp1</h4>
+<pre>public static final&nbsp;arc.math.geom.Vec2 tmp1</pre>
+</li>
+</ul>
+<a name="tmp2">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>tmp2</h4>
+<pre>public static final&nbsp;arc.math.geom.Vec2 tmp2</pre>
+</li>
+</ul>
+<a name="hitDuration">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hitDuration</h4>
+<pre>public static final&nbsp;float hitDuration</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../constant-values.html#mindustry.gen.LegsUnit.hitDuration">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
 <a name="minAimDst">
 <!--   -->
 </a>
@@ -1215,80 +1253,31 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="tmp1">
+<a name="controller">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>tmp1</h4>
-<pre>public static final&nbsp;arc.math.geom.Vec2 tmp1</pre>
+<h4>controller</h4>
+<pre>public&nbsp;<a href="../../mindustry/entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a> controller</pre>
 </li>
 </ul>
-<a name="tmp2">
+<a name="type">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>tmp2</h4>
-<pre>public static final&nbsp;arc.math.geom.Vec2 tmp2</pre>
+<h4>type</h4>
+<pre>public&nbsp;<a href="../../mindustry/type/UnitType.html" title="class in mindustry.type">UnitType</a> type</pre>
 </li>
 </ul>
-<a name="hitDuration">
+<a name="wasFlying">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>hitDuration</h4>
-<pre>public static final&nbsp;float hitDuration</pre>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../constant-values.html#mindustry.gen.LegsUnit.hitDuration">Constant Field Values</a></dd>
-</dl>
-</li>
-</ul>
-<a name="added">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>added</h4>
-<pre>public transient&nbsp;boolean added</pre>
-</li>
-</ul>
-<a name="legs">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>legs</h4>
-<pre>public transient&nbsp;<a href="../../mindustry/entities/Leg.html" title="class in mindustry.entities">Leg</a>[] legs</pre>
-</li>
-</ul>
-<a name="totalLength">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>totalLength</h4>
-<pre>public transient&nbsp;float totalLength</pre>
-</li>
-</ul>
-<a name="moveSpace">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>moveSpace</h4>
-<pre>public transient&nbsp;float moveSpace</pre>
-</li>
-</ul>
-<a name="baseRotation">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>baseRotation</h4>
-<pre>public transient&nbsp;float baseRotation</pre>
+<h4>wasFlying</h4>
+<pre>public transient&nbsp;boolean wasFlying</pre>
 </li>
 </ul>
 <a name="aimX">
@@ -1316,24 +1305,6 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 <li class="blockList">
 <h4>isRotate</h4>
 <pre>protected transient&nbsp;boolean isRotate</pre>
-</li>
-</ul>
-<a name="controller">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>controller</h4>
-<pre>public&nbsp;<a href="../../mindustry/entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a> controller</pre>
-</li>
-</ul>
-<a name="type">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>type</h4>
-<pre>public&nbsp;<a href="../../mindustry/type/UnitType.html" title="class in mindustry.type">UnitType</a> type</pre>
 </li>
 </ul>
 <a name="statuses">
@@ -1390,13 +1361,49 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 <pre>protected transient&nbsp;float reloadMultiplier</pre>
 </li>
 </ul>
-<a name="wasFlying">
+<a name="added">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>added</h4>
+<pre>public transient&nbsp;boolean added</pre>
+</li>
+</ul>
+<a name="legs">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>legs</h4>
+<pre>public transient&nbsp;<a href="../../mindustry/entities/Leg.html" title="class in mindustry.entities">Leg</a>[] legs</pre>
+</li>
+</ul>
+<a name="totalLength">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>totalLength</h4>
+<pre>public transient&nbsp;float totalLength</pre>
+</li>
+</ul>
+<a name="moveSpace">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>moveSpace</h4>
+<pre>public transient&nbsp;float moveSpace</pre>
+</li>
+</ul>
+<a name="baseRotation">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>wasFlying</h4>
-<pre>public transient&nbsp;boolean wasFlying</pre>
+<h4>baseRotation</h4>
+<pre>public transient&nbsp;float baseRotation</pre>
 </li>
 </ul>
 </li>
@@ -1589,16 +1596,17 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="writeSync-arc.util.io.Writes-">
+<a name="moveAt-arc.math.geom.Vec2-float-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>writeSync</h4>
-<pre>public&nbsp;void&nbsp;writeSync(arc.util.io.Writes&nbsp;write)</pre>
+<h4>moveAt</h4>
+<pre>public&nbsp;void&nbsp;moveAt(arc.math.geom.Vec2&nbsp;vector,
+                   float&nbsp;acceleration)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Syncc.html#writeSync-arc.util.io.Writes-">writeSync</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Flyingc.html#moveAt-arc.math.geom.Vec2-float-">moveAt</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Flyingc.html" title="interface in mindustry.gen">Flyingc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1739,6 +1747,21 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
+<a name="itemCapacity--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>itemCapacity</h4>
+<pre>public&nbsp;int&nbsp;itemCapacity()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Itemsc.html#itemCapacity--">itemCapacity</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Unitc.html#itemCapacity--">itemCapacity</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Unitc.html" title="interface in mindustry.gen">Unitc</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="damage-float-">
 <!--   -->
 </a>
@@ -1765,19 +1788,6 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Healthc.html#damage-float-boolean-">damage</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="damaged--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>damaged</h4>
-<pre>public&nbsp;boolean&nbsp;damaged()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Healthc.html#damaged--">damaged</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1809,16 +1819,16 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="damageContinuousPierce-float-">
+<a name="closestEnemyCore--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>damageContinuousPierce</h4>
-<pre>public&nbsp;void&nbsp;damageContinuousPierce(float&nbsp;amount)</pre>
+<h4>closestEnemyCore</h4>
+<pre>public&nbsp;<a href="../../mindustry/gen/Building.html" title="class in mindustry.gen">Building</a>&nbsp;closestEnemyCore()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Healthc.html#damageContinuousPierce-float-">damageContinuousPierce</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Teamc.html#closestEnemyCore--">closestEnemyCore</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -1977,16 +1987,16 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="updateLastPosition--">
+<a name="canDrown--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>updateLastPosition</h4>
-<pre>public&nbsp;void&nbsp;updateLastPosition()</pre>
+<h4>canDrown</h4>
+<pre>public&nbsp;boolean&nbsp;canDrown()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#updateLastPosition--">updateLastPosition</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Flyingc.html#canDrown--">canDrown</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Flyingc.html" title="interface in mindustry.gen">Flyingc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -2142,6 +2152,20 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
+<a name="addItem-mindustry.type.Item-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addItem</h4>
+<pre>public&nbsp;void&nbsp;addItem(<a href="../../mindustry/type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item,
+                    int&nbsp;amount)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Itemsc.html#addItem-mindustry.type.Item-int-">addItem</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="type-mindustry.type.UnitType-">
 <!--   -->
 </a>
@@ -2155,30 +2179,19 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="checkTarget-boolean-boolean-">
+<a name="move-float-float-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>checkTarget</h4>
-<pre>public&nbsp;boolean&nbsp;checkTarget(boolean&nbsp;targetAir,
-                           boolean&nbsp;targetGround)</pre>
+<h4>move</h4>
+<pre>public&nbsp;void&nbsp;move(float&nbsp;cx,
+                 float&nbsp;cy)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Flyingc.html#checkTarget-boolean-boolean-">checkTarget</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Flyingc.html" title="interface in mindustry.gen">Flyingc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="closestEnemyCore--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>closestEnemyCore</h4>
-<pre>public&nbsp;<a href="../../mindustry/gen/Building.html" title="class in mindustry.gen">Building</a>&nbsp;closestEnemyCore()</pre>
-<dl>
+<dd><code><a href="../../mindustry/gen/Legsc.html#move-float-float-">move</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Teamc.html#closestEnemyCore--">closestEnemyCore</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Velc.html#move-float-float-">move</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -2221,6 +2234,19 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
+<a name="acceptsItem-mindustry.type.Item-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>acceptsItem</h4>
+<pre>public&nbsp;boolean&nbsp;acceptsItem(<a href="../../mindustry/type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Itemsc.html#acceptsItem-mindustry.type.Item-">acceptsItem</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="bounds--">
 <!--   -->
 </a>
@@ -2234,16 +2260,18 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="isAdded--">
+<a name="healFract-float-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isAdded</h4>
-<pre>public&nbsp;boolean&nbsp;isAdded()</pre>
+<h4>healFract</h4>
+<pre>public&nbsp;void&nbsp;healFract(float&nbsp;amount)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Healthc.html#healFract-float-">Healthc</a></code></span></div>
+<div class="block">Heals by a 0-1 fraction of max health.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Entityc.html#isAdded--">isAdded</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Healthc.html#healFract-float-">healFract</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -2287,6 +2315,19 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
+<a name="mass--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>mass</h4>
+<pre>public&nbsp;float&nbsp;mass()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Physicsc.html#mass--">mass</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Physicsc.html" title="interface in mindustry.gen">Physicsc</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="write-arc.util.io.Writes-">
 <!--   -->
 </a>
@@ -2317,32 +2358,55 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="moveAt-arc.math.geom.Vec2-float-">
+<a name="deltaLen--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>moveAt</h4>
-<pre>public&nbsp;void&nbsp;moveAt(arc.math.geom.Vec2&nbsp;vector,
-                   float&nbsp;acceleration)</pre>
+<h4>deltaLen</h4>
+<pre>public&nbsp;float&nbsp;deltaLen()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Flyingc.html#moveAt-arc.math.geom.Vec2-float-">moveAt</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Flyingc.html" title="interface in mindustry.gen">Flyingc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#deltaLen--">deltaLen</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="landed--">
+<a name="update--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>landed</h4>
-<pre>public&nbsp;void&nbsp;landed()</pre>
+<h4>update</h4>
+<pre>public&nbsp;void&nbsp;update()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html#update--">Weaponsc</a></code></span></div>
+<div class="block">Update shooting and rotation for this unit.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Flyingc.html#landed--">landed</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Flyingc.html" title="interface in mindustry.gen">Flyingc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Boundedc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Boundedc.html" title="interface in mindustry.gen">Boundedc</a></code></dd>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Unitc.html#landed--">landed</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Unitc.html" title="interface in mindustry.gen">Unitc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Entityc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Flyingc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Flyingc.html" title="interface in mindustry.gen">Flyingc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Healthc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Itemsc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Legsc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Shieldc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Statusc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Statusc.html" title="interface in mindustry.gen">Statusc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Syncc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Unitc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Unitc.html" title="interface in mindustry.gen">Unitc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Velc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Weaponsc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -2415,33 +2479,30 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="move-float-float-">
+<a name="checkTarget-boolean-boolean-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>move</h4>
-<pre>public&nbsp;void&nbsp;move(float&nbsp;cx,
-                 float&nbsp;cy)</pre>
+<h4>checkTarget</h4>
+<pre>public&nbsp;boolean&nbsp;checkTarget(boolean&nbsp;targetAir,
+                           boolean&nbsp;targetGround)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Legsc.html#move-float-float-">move</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Velc.html#move-float-float-">move</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Flyingc.html#checkTarget-boolean-boolean-">checkTarget</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Flyingc.html" title="interface in mindustry.gen">Flyingc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="addItem-mindustry.type.Item-int-">
+<a name="damaged--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>addItem</h4>
-<pre>public&nbsp;void&nbsp;addItem(<a href="../../mindustry/type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item,
-                    int&nbsp;amount)</pre>
+<h4>damaged</h4>
+<pre>public&nbsp;boolean&nbsp;damaged()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Itemsc.html#addItem-mindustry.type.Item-int-">addItem</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Healthc.html#damaged--">damaged</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -2455,6 +2516,19 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Teamc.html#closestCore--">closestCore</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="isAdded--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isAdded</h4>
+<pre>public&nbsp;boolean&nbsp;isAdded()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Entityc.html#isAdded--">isAdded</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -2514,45 +2588,6 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="update--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>update</h4>
-<pre>public&nbsp;void&nbsp;update()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html#update--">Weaponsc</a></code></span></div>
-<div class="block">Update shooting and rotation for this unit.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Boundedc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Boundedc.html" title="interface in mindustry.gen">Boundedc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Entityc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Flyingc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Flyingc.html" title="interface in mindustry.gen">Flyingc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Healthc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Itemsc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Legsc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Shieldc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Statusc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Statusc.html" title="interface in mindustry.gen">Statusc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Syncc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Unitc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Unitc.html" title="interface in mindustry.gen">Unitc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Velc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Weaponsc.html#update--">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
-</dl>
-</li>
-</ul>
 <a name="with-arc.func.Cons-">
 <!--   -->
 </a>
@@ -2607,18 +2642,18 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="itemCapacity--">
+<a name="landed--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>itemCapacity</h4>
-<pre>public&nbsp;int&nbsp;itemCapacity()</pre>
+<h4>landed</h4>
+<pre>public&nbsp;void&nbsp;landed()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Itemsc.html#itemCapacity--">itemCapacity</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Flyingc.html#landed--">landed</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Flyingc.html" title="interface in mindustry.gen">Flyingc</a></code></dd>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Unitc.html#itemCapacity--">itemCapacity</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Unitc.html" title="interface in mindustry.gen">Unitc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Unitc.html#landed--">landed</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Unitc.html" title="interface in mindustry.gen">Unitc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -2675,21 +2710,6 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Weaponsc.html#controlWeapons-boolean-boolean-">controlWeapons</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="healFract-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>healFract</h4>
-<pre>public&nbsp;void&nbsp;healFract(float&nbsp;amount)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Healthc.html#healFract-float-">Healthc</a></code></span></div>
-<div class="block">Heals by a 0-1 fraction of max health.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Healthc.html#healFract-float-">healFract</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -2759,19 +2779,6 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="canDrown--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>canDrown</h4>
-<pre>public&nbsp;boolean&nbsp;canDrown()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Flyingc.html#canDrown--">canDrown</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Flyingc.html" title="interface in mindustry.gen">Flyingc</a></code></dd>
-</dl>
-</li>
-</ul>
 <a name="inRange-arc.math.geom.Position-">
 <!--   -->
 </a>
@@ -2782,6 +2789,19 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Unitc.html#inRange-arc.math.geom.Position-">inRange</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Unitc.html" title="interface in mindustry.gen">Unitc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="writeSync-arc.util.io.Writes-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>writeSync</h4>
+<pre>public&nbsp;void&nbsp;writeSync(arc.util.io.Writes&nbsp;write)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Syncc.html#writeSync-arc.util.io.Writes-">writeSync</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -2838,6 +2858,19 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
+<a name="updateLastPosition--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateLastPosition</h4>
+<pre>public&nbsp;void&nbsp;updateLastPosition()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#updateLastPosition--">updateLastPosition</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="damageContinuous-float-">
 <!--   -->
 </a>
@@ -2879,16 +2912,18 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="aim-arc.math.geom.Position-">
+<a name="kill--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>aim</h4>
-<pre>public&nbsp;void&nbsp;aim(arc.math.geom.Position&nbsp;pos)</pre>
+<h4>kill</h4>
+<pre>public&nbsp;void&nbsp;kill()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Weaponsc.html#aim-arc.math.geom.Position-">aim</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Healthc.html#kill--">kill</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Unitc.html#kill--">kill</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Unitc.html" title="interface in mindustry.gen">Unitc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -2915,21 +2950,6 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Unitc.html#lookAt-arc.math.geom.Position-">lookAt</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Unitc.html" title="interface in mindustry.gen">Unitc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="damagePierce-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>damagePierce</h4>
-<pre>public&nbsp;void&nbsp;damagePierce(float&nbsp;amount)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Healthc.html#damagePierce-float-">Healthc</a></code></span></div>
-<div class="block">Damage and pierce armor.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Healthc.html#damagePierce-float-">damagePierce</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -3013,16 +3033,16 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="acceptsItem-mindustry.type.Item-">
+<a name="damageContinuousPierce-float-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>acceptsItem</h4>
-<pre>public&nbsp;boolean&nbsp;acceptsItem(<a href="../../mindustry/type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</pre>
+<h4>damageContinuousPierce</h4>
+<pre>public&nbsp;void&nbsp;damageContinuousPierce(float&nbsp;amount)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Itemsc.html#acceptsItem-mindustry.type.Item-">acceptsItem</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Healthc.html#damageContinuousPierce-float-">damageContinuousPierce</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -3068,16 +3088,16 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="mass--">
+<a name="aim-arc.math.geom.Position-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>mass</h4>
-<pre>public&nbsp;float&nbsp;mass()</pre>
+<h4>aim</h4>
+<pre>public&nbsp;void&nbsp;aim(arc.math.geom.Position&nbsp;pos)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Physicsc.html#mass--">mass</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Physicsc.html" title="interface in mindustry.gen">Physicsc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Weaponsc.html#aim-arc.math.geom.Position-">aim</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -3094,31 +3114,18 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="kill--">
+<a name="damagePierce-float-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>kill</h4>
-<pre>public&nbsp;void&nbsp;kill()</pre>
+<h4>damagePierce</h4>
+<pre>public&nbsp;void&nbsp;damagePierce(float&nbsp;amount)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Healthc.html#damagePierce-float-">Healthc</a></code></span></div>
+<div class="block">Damage and pierce armor.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Healthc.html#kill--">kill</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Unitc.html#kill--">kill</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Unitc.html" title="interface in mindustry.gen">Unitc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="deltaLen--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>deltaLen</h4>
-<pre>public&nbsp;float&nbsp;deltaLen()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#deltaLen--">deltaLen</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Healthc.html#damagePierce-float-">damagePierce</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -3141,135 +3148,6 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Entityc.html#classId--">classId</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="vel--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>vel</h4>
-<pre>public&nbsp;arc.math.geom.Vec2&nbsp;vel()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Velc.html#vel--">vel</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="drag--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>drag</h4>
-<pre>public&nbsp;float&nbsp;drag()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Velc.html#drag--">drag</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="drag-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>drag</h4>
-<pre>public&nbsp;void&nbsp;drag(float&nbsp;drag)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Velc.html#drag-float-">drag</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="shield--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>shield</h4>
-<pre>public&nbsp;float&nbsp;shield()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Shieldc.html#shield--">Shieldc</a></code></span></div>
-<div class="block">Absorbs health damage.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Shieldc.html#shield--">shield</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="shield-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>shield</h4>
-<pre>public&nbsp;void&nbsp;shield(float&nbsp;shield)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Shieldc.html#shield-float-">Shieldc</a></code></span></div>
-<div class="block">Absorbs health damage.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Shieldc.html#shield-float-">shield</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="armor--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>armor</h4>
-<pre>public&nbsp;float&nbsp;armor()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Shieldc.html#armor--">Shieldc</a></code></span></div>
-<div class="block">Absorbs percentage of damage.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Shieldc.html#armor--">armor</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="armor-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>armor</h4>
-<pre>public&nbsp;void&nbsp;armor(float&nbsp;armor)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Shieldc.html#armor-float-">Shieldc</a></code></span></div>
-<div class="block">Absorbs percentage of damage.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Shieldc.html#armor-float-">armor</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="shieldAlpha--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>shieldAlpha</h4>
-<pre>public&nbsp;float&nbsp;shieldAlpha()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Shieldc.html#shieldAlpha--">Shieldc</a></code></span></div>
-<div class="block">Shield opacity.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Shieldc.html#shieldAlpha--">shieldAlpha</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="shieldAlpha-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>shieldAlpha</h4>
-<pre>public&nbsp;void&nbsp;shieldAlpha(float&nbsp;shieldAlpha)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Shieldc.html#shieldAlpha-float-">Shieldc</a></code></span></div>
-<div class="block">Shield opacity.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Shieldc.html#shieldAlpha-float-">shieldAlpha</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -3296,595 +3174,6 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Rotc.html#rotation-float-">rotation</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Rotc.html" title="interface in mindustry.gen">Rotc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="id--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>id</h4>
-<pre>public&nbsp;int&nbsp;id()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Entityc.html#id--">id</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="id-int-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>id</h4>
-<pre>public&nbsp;void&nbsp;id(int&nbsp;id)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Entityc.html#id-int-">id</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="stack--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>stack</h4>
-<pre>public&nbsp;<a href="../../mindustry/type/ItemStack.html" title="class in mindustry.type">ItemStack</a>&nbsp;stack()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Itemsc.html#stack--">stack</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="stack-mindustry.type.ItemStack-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>stack</h4>
-<pre>public&nbsp;void&nbsp;stack(<a href="../../mindustry/type/ItemStack.html" title="class in mindustry.type">ItemStack</a>&nbsp;stack)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Itemsc.html#stack-mindustry.type.ItemStack-">stack</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="itemTime--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>itemTime</h4>
-<pre>public&nbsp;float&nbsp;itemTime()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Itemsc.html#itemTime--">itemTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="itemTime-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>itemTime</h4>
-<pre>public&nbsp;void&nbsp;itemTime(float&nbsp;itemTime)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Itemsc.html#itemTime-float-">itemTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="x--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>x</h4>
-<pre>public&nbsp;float&nbsp;x()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Posc.html#x--">x</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="x-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>x</h4>
-<pre>public&nbsp;void&nbsp;x(float&nbsp;x)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Posc.html#x-float-">x</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="y--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>y</h4>
-<pre>public&nbsp;float&nbsp;y()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Posc.html#y--">y</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="y-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>y</h4>
-<pre>public&nbsp;void&nbsp;y(float&nbsp;y)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Posc.html#y-float-">y</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="team--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>team</h4>
-<pre>public&nbsp;<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Teamc.html#team--">team</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="team-mindustry.game.Team-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>team</h4>
-<pre>public&nbsp;void&nbsp;team(<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Teamc.html#team-mindustry.game.Team-">team</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="legs--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>legs</h4>
-<pre>public&nbsp;<a href="../../mindustry/entities/Leg.html" title="class in mindustry.entities">Leg</a>[]&nbsp;legs()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Legsc.html#legs--">legs</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="legs-mindustry.entities.Leg:A-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>legs</h4>
-<pre>public&nbsp;void&nbsp;legs(<a href="../../mindustry/entities/Leg.html" title="class in mindustry.entities">Leg</a>[]&nbsp;legs)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Legsc.html#legs-mindustry.entities.Leg:A-">legs</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="totalLength--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>totalLength</h4>
-<pre>public&nbsp;float&nbsp;totalLength()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Legsc.html#totalLength--">totalLength</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="totalLength-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>totalLength</h4>
-<pre>public&nbsp;void&nbsp;totalLength(float&nbsp;totalLength)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Legsc.html#totalLength-float-">totalLength</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="moveSpace--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>moveSpace</h4>
-<pre>public&nbsp;float&nbsp;moveSpace()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Legsc.html#moveSpace--">moveSpace</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="moveSpace-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>moveSpace</h4>
-<pre>public&nbsp;void&nbsp;moveSpace(float&nbsp;moveSpace)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Legsc.html#moveSpace-float-">moveSpace</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="baseRotation--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>baseRotation</h4>
-<pre>public&nbsp;float&nbsp;baseRotation()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Legsc.html#baseRotation--">baseRotation</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="baseRotation-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>baseRotation</h4>
-<pre>public&nbsp;void&nbsp;baseRotation(float&nbsp;baseRotation)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Legsc.html#baseRotation-float-">baseRotation</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="lastUpdated--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>lastUpdated</h4>
-<pre>public&nbsp;long&nbsp;lastUpdated()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Syncc.html#lastUpdated--">lastUpdated</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="lastUpdated-long-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>lastUpdated</h4>
-<pre>public&nbsp;void&nbsp;lastUpdated(long&nbsp;lastUpdated)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Syncc.html#lastUpdated-long-">lastUpdated</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="updateSpacing--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>updateSpacing</h4>
-<pre>public&nbsp;long&nbsp;updateSpacing()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Syncc.html#updateSpacing--">updateSpacing</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="updateSpacing-long-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>updateSpacing</h4>
-<pre>public&nbsp;void&nbsp;updateSpacing(long&nbsp;updateSpacing)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Syncc.html#updateSpacing-long-">updateSpacing</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="lastX--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>lastX</h4>
-<pre>public&nbsp;float&nbsp;lastX()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#lastX--">lastX</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="lastX-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>lastX</h4>
-<pre>public&nbsp;void&nbsp;lastX(float&nbsp;lastX)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#lastX-float-">lastX</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="lastY--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>lastY</h4>
-<pre>public&nbsp;float&nbsp;lastY()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#lastY--">lastY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="lastY-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>lastY</h4>
-<pre>public&nbsp;void&nbsp;lastY(float&nbsp;lastY)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#lastY-float-">lastY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="deltaX--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>deltaX</h4>
-<pre>public&nbsp;float&nbsp;deltaX()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#deltaX--">deltaX</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="deltaX-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>deltaX</h4>
-<pre>public&nbsp;void&nbsp;deltaX(float&nbsp;deltaX)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#deltaX-float-">deltaX</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="deltaY--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>deltaY</h4>
-<pre>public&nbsp;float&nbsp;deltaY()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#deltaY--">deltaY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="deltaY-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>deltaY</h4>
-<pre>public&nbsp;void&nbsp;deltaY(float&nbsp;deltaY)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#deltaY-float-">deltaY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="hitSize--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>hitSize</h4>
-<pre>public&nbsp;float&nbsp;hitSize()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#hitSize--">hitSize</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="hitSize-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>hitSize</h4>
-<pre>public&nbsp;void&nbsp;hitSize(float&nbsp;hitSize)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Hitboxc.html#hitSize-float-">hitSize</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="physref--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>physref</h4>
-<pre>public&nbsp;<a href="../../mindustry/async/PhysicsProcess.PhysicRef.html" title="class in mindustry.async">PhysicsProcess.PhysicRef</a>&nbsp;physref()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Physicsc.html#physref--">physref</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Physicsc.html" title="interface in mindustry.gen">Physicsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="physref-mindustry.async.PhysicsProcess.PhysicRef-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>physref</h4>
-<pre>public&nbsp;void&nbsp;physref(<a href="../../mindustry/async/PhysicsProcess.PhysicRef.html" title="class in mindustry.async">PhysicsProcess.PhysicRef</a>&nbsp;physref)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Physicsc.html#physref-mindustry.async.PhysicsProcess.PhysicRef-">physref</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Physicsc.html" title="interface in mindustry.gen">Physicsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="mounts--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>mounts</h4>
-<pre>public&nbsp;<a href="../../mindustry/entities/units/WeaponMount.html" title="class in mindustry.entities.units">WeaponMount</a>[]&nbsp;mounts()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html#mounts--">Weaponsc</a></code></span></div>
-<div class="block">weapon mount array, never null</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Weaponsc.html#mounts--">mounts</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="mounts-mindustry.entities.units.WeaponMount:A-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>mounts</h4>
-<pre>public&nbsp;void&nbsp;mounts(<a href="../../mindustry/entities/units/WeaponMount.html" title="class in mindustry.entities.units">WeaponMount</a>[]&nbsp;mounts)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html#mounts-mindustry.entities.units.WeaponMount:A-">Weaponsc</a></code></span></div>
-<div class="block">weapon mount array, never null</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Weaponsc.html#mounts-mindustry.entities.units.WeaponMount:A-">mounts</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="aimX--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>aimX</h4>
-<pre>public&nbsp;float&nbsp;aimX()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Weaponsc.html#aimX--">aimX</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="aimY--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>aimY</h4>
-<pre>public&nbsp;float&nbsp;aimY()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Weaponsc.html#aimY--">aimY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="isRotate--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>isRotate</h4>
-<pre>public&nbsp;boolean&nbsp;isRotate()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Weaponsc.html#isRotate--">isRotate</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="isShooting--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>isShooting</h4>
-<pre>public&nbsp;boolean&nbsp;isShooting()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Weaponsc.html#isShooting--">isShooting</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="isShooting-boolean-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>isShooting</h4>
-<pre>public&nbsp;void&nbsp;isShooting(boolean&nbsp;isShooting)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Weaponsc.html#isShooting-boolean-">isShooting</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="ammo--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ammo</h4>
-<pre>public&nbsp;float&nbsp;ammo()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Weaponsc.html#ammo--">ammo</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="ammo-float-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ammo</h4>
-<pre>public&nbsp;void&nbsp;ammo(float&nbsp;ammo)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Weaponsc.html#ammo-float-">ammo</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -3992,55 +3281,198 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 </dl>
 </li>
 </ul>
-<a name="speedMultiplier--">
+<a name="vel--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>speedMultiplier</h4>
-<pre>public&nbsp;float&nbsp;speedMultiplier()</pre>
+<h4>vel</h4>
+<pre>public&nbsp;arc.math.geom.Vec2&nbsp;vel()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Statusc.html#speedMultiplier--">speedMultiplier</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Statusc.html" title="interface in mindustry.gen">Statusc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Velc.html#vel--">vel</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="damageMultiplier--">
+<a name="drag--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>damageMultiplier</h4>
-<pre>public&nbsp;float&nbsp;damageMultiplier()</pre>
+<h4>drag</h4>
+<pre>public&nbsp;float&nbsp;drag()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Statusc.html#damageMultiplier--">damageMultiplier</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Statusc.html" title="interface in mindustry.gen">Statusc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Velc.html#drag--">drag</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="armorMultiplier--">
+<a name="drag-float-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>armorMultiplier</h4>
-<pre>public&nbsp;float&nbsp;armorMultiplier()</pre>
+<h4>drag</h4>
+<pre>public&nbsp;void&nbsp;drag(float&nbsp;drag)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Statusc.html#armorMultiplier--">armorMultiplier</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Statusc.html" title="interface in mindustry.gen">Statusc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Velc.html#drag-float-">drag</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="reloadMultiplier--">
+<a name="lastUpdated--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>reloadMultiplier</h4>
-<pre>public&nbsp;float&nbsp;reloadMultiplier()</pre>
+<h4>lastUpdated</h4>
+<pre>public&nbsp;long&nbsp;lastUpdated()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/gen/Statusc.html#reloadMultiplier--">reloadMultiplier</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Statusc.html" title="interface in mindustry.gen">Statusc</a></code></dd>
+<dd><code><a href="../../mindustry/gen/Syncc.html#lastUpdated--">lastUpdated</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="lastUpdated-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lastUpdated</h4>
+<pre>public&nbsp;void&nbsp;lastUpdated(long&nbsp;lastUpdated)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Syncc.html#lastUpdated-long-">lastUpdated</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="updateSpacing--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateSpacing</h4>
+<pre>public&nbsp;long&nbsp;updateSpacing()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Syncc.html#updateSpacing--">updateSpacing</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="updateSpacing-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateSpacing</h4>
+<pre>public&nbsp;void&nbsp;updateSpacing(long&nbsp;updateSpacing)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Syncc.html#updateSpacing-long-">updateSpacing</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Syncc.html" title="interface in mindustry.gen">Syncc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="stack--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stack</h4>
+<pre>public&nbsp;<a href="../../mindustry/type/ItemStack.html" title="class in mindustry.type">ItemStack</a>&nbsp;stack()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Itemsc.html#stack--">stack</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="stack-mindustry.type.ItemStack-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stack</h4>
+<pre>public&nbsp;void&nbsp;stack(<a href="../../mindustry/type/ItemStack.html" title="class in mindustry.type">ItemStack</a>&nbsp;stack)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Itemsc.html#stack-mindustry.type.ItemStack-">stack</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="itemTime--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>itemTime</h4>
+<pre>public&nbsp;float&nbsp;itemTime()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Itemsc.html#itemTime--">itemTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="itemTime-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>itemTime</h4>
+<pre>public&nbsp;void&nbsp;itemTime(float&nbsp;itemTime)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Itemsc.html#itemTime-float-">itemTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Itemsc.html" title="interface in mindustry.gen">Itemsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="x--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>x</h4>
+<pre>public&nbsp;float&nbsp;x()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Posc.html#x--">x</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="x-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>x</h4>
+<pre>public&nbsp;void&nbsp;x(float&nbsp;x)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Posc.html#x-float-">x</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="y--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>y</h4>
+<pre>public&nbsp;float&nbsp;y()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Posc.html#y--">y</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="y-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>y</h4>
+<pre>public&nbsp;void&nbsp;y(float&nbsp;y)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Posc.html#y-float-">y</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -4242,13 +3674,588 @@ implements <a href="../../mindustry/gen/Velc.html" title="interface in mindustry
 <a name="dead-boolean-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>dead</h4>
 <pre>public&nbsp;void&nbsp;dead(boolean&nbsp;dead)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mindustry/gen/Healthc.html#dead-boolean-">dead</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="mounts--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>mounts</h4>
+<pre>public&nbsp;<a href="../../mindustry/entities/units/WeaponMount.html" title="class in mindustry.entities.units">WeaponMount</a>[]&nbsp;mounts()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html#mounts--">Weaponsc</a></code></span></div>
+<div class="block">weapon mount array, never null</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Weaponsc.html#mounts--">mounts</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="mounts-mindustry.entities.units.WeaponMount:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>mounts</h4>
+<pre>public&nbsp;void&nbsp;mounts(<a href="../../mindustry/entities/units/WeaponMount.html" title="class in mindustry.entities.units">WeaponMount</a>[]&nbsp;mounts)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html#mounts-mindustry.entities.units.WeaponMount:A-">Weaponsc</a></code></span></div>
+<div class="block">weapon mount array, never null</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Weaponsc.html#mounts-mindustry.entities.units.WeaponMount:A-">mounts</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="aimX--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>aimX</h4>
+<pre>public&nbsp;float&nbsp;aimX()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Weaponsc.html#aimX--">aimX</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="aimY--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>aimY</h4>
+<pre>public&nbsp;float&nbsp;aimY()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Weaponsc.html#aimY--">aimY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="isRotate--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isRotate</h4>
+<pre>public&nbsp;boolean&nbsp;isRotate()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Weaponsc.html#isRotate--">isRotate</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="isShooting--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isShooting</h4>
+<pre>public&nbsp;boolean&nbsp;isShooting()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Weaponsc.html#isShooting--">isShooting</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="isShooting-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isShooting</h4>
+<pre>public&nbsp;void&nbsp;isShooting(boolean&nbsp;isShooting)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Weaponsc.html#isShooting-boolean-">isShooting</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="ammo--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ammo</h4>
+<pre>public&nbsp;float&nbsp;ammo()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Weaponsc.html#ammo--">ammo</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="ammo-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ammo</h4>
+<pre>public&nbsp;void&nbsp;ammo(float&nbsp;ammo)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Weaponsc.html#ammo-float-">ammo</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="team--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>team</h4>
+<pre>public&nbsp;<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Teamc.html#team--">team</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="team-mindustry.game.Team-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>team</h4>
+<pre>public&nbsp;void&nbsp;team(<a href="../../mindustry/game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Teamc.html#team-mindustry.game.Team-">team</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="lastX--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lastX</h4>
+<pre>public&nbsp;float&nbsp;lastX()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#lastX--">lastX</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="lastX-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lastX</h4>
+<pre>public&nbsp;void&nbsp;lastX(float&nbsp;lastX)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#lastX-float-">lastX</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="lastY--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lastY</h4>
+<pre>public&nbsp;float&nbsp;lastY()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#lastY--">lastY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="lastY-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lastY</h4>
+<pre>public&nbsp;void&nbsp;lastY(float&nbsp;lastY)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#lastY-float-">lastY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="deltaX--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deltaX</h4>
+<pre>public&nbsp;float&nbsp;deltaX()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#deltaX--">deltaX</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="deltaX-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deltaX</h4>
+<pre>public&nbsp;void&nbsp;deltaX(float&nbsp;deltaX)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#deltaX-float-">deltaX</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="deltaY--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deltaY</h4>
+<pre>public&nbsp;float&nbsp;deltaY()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#deltaY--">deltaY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="deltaY-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deltaY</h4>
+<pre>public&nbsp;void&nbsp;deltaY(float&nbsp;deltaY)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#deltaY-float-">deltaY</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="hitSize--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hitSize</h4>
+<pre>public&nbsp;float&nbsp;hitSize()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#hitSize--">hitSize</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="hitSize-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hitSize</h4>
+<pre>public&nbsp;void&nbsp;hitSize(float&nbsp;hitSize)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Hitboxc.html#hitSize-float-">hitSize</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="speedMultiplier--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>speedMultiplier</h4>
+<pre>public&nbsp;float&nbsp;speedMultiplier()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Statusc.html#speedMultiplier--">speedMultiplier</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Statusc.html" title="interface in mindustry.gen">Statusc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="damageMultiplier--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>damageMultiplier</h4>
+<pre>public&nbsp;float&nbsp;damageMultiplier()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Statusc.html#damageMultiplier--">damageMultiplier</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Statusc.html" title="interface in mindustry.gen">Statusc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="armorMultiplier--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>armorMultiplier</h4>
+<pre>public&nbsp;float&nbsp;armorMultiplier()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Statusc.html#armorMultiplier--">armorMultiplier</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Statusc.html" title="interface in mindustry.gen">Statusc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="reloadMultiplier--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reloadMultiplier</h4>
+<pre>public&nbsp;float&nbsp;reloadMultiplier()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Statusc.html#reloadMultiplier--">reloadMultiplier</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Statusc.html" title="interface in mindustry.gen">Statusc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="physref--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>physref</h4>
+<pre>public&nbsp;<a href="../../mindustry/async/PhysicsProcess.PhysicRef.html" title="class in mindustry.async">PhysicsProcess.PhysicRef</a>&nbsp;physref()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Physicsc.html#physref--">physref</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Physicsc.html" title="interface in mindustry.gen">Physicsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="physref-mindustry.async.PhysicsProcess.PhysicRef-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>physref</h4>
+<pre>public&nbsp;void&nbsp;physref(<a href="../../mindustry/async/PhysicsProcess.PhysicRef.html" title="class in mindustry.async">PhysicsProcess.PhysicRef</a>&nbsp;physref)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Physicsc.html#physref-mindustry.async.PhysicsProcess.PhysicRef-">physref</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Physicsc.html" title="interface in mindustry.gen">Physicsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="id--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>id</h4>
+<pre>public&nbsp;int&nbsp;id()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Entityc.html#id--">id</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="id-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>id</h4>
+<pre>public&nbsp;void&nbsp;id(int&nbsp;id)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Entityc.html#id-int-">id</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="legs--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>legs</h4>
+<pre>public&nbsp;<a href="../../mindustry/entities/Leg.html" title="class in mindustry.entities">Leg</a>[]&nbsp;legs()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Legsc.html#legs--">legs</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="legs-mindustry.entities.Leg:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>legs</h4>
+<pre>public&nbsp;void&nbsp;legs(<a href="../../mindustry/entities/Leg.html" title="class in mindustry.entities">Leg</a>[]&nbsp;legs)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Legsc.html#legs-mindustry.entities.Leg:A-">legs</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="totalLength--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>totalLength</h4>
+<pre>public&nbsp;float&nbsp;totalLength()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Legsc.html#totalLength--">totalLength</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="totalLength-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>totalLength</h4>
+<pre>public&nbsp;void&nbsp;totalLength(float&nbsp;totalLength)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Legsc.html#totalLength-float-">totalLength</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="moveSpace--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>moveSpace</h4>
+<pre>public&nbsp;float&nbsp;moveSpace()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Legsc.html#moveSpace--">moveSpace</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="moveSpace-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>moveSpace</h4>
+<pre>public&nbsp;void&nbsp;moveSpace(float&nbsp;moveSpace)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Legsc.html#moveSpace-float-">moveSpace</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="baseRotation--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>baseRotation</h4>
+<pre>public&nbsp;float&nbsp;baseRotation()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Legsc.html#baseRotation--">baseRotation</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="baseRotation-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>baseRotation</h4>
+<pre>public&nbsp;void&nbsp;baseRotation(float&nbsp;baseRotation)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Legsc.html#baseRotation-float-">baseRotation</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Legsc.html" title="interface in mindustry.gen">Legsc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="shield--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>shield</h4>
+<pre>public&nbsp;float&nbsp;shield()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Shieldc.html#shield--">Shieldc</a></code></span></div>
+<div class="block">Absorbs health damage.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Shieldc.html#shield--">shield</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="shield-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>shield</h4>
+<pre>public&nbsp;void&nbsp;shield(float&nbsp;shield)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Shieldc.html#shield-float-">Shieldc</a></code></span></div>
+<div class="block">Absorbs health damage.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Shieldc.html#shield-float-">shield</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="armor--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>armor</h4>
+<pre>public&nbsp;float&nbsp;armor()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Shieldc.html#armor--">Shieldc</a></code></span></div>
+<div class="block">Absorbs percentage of damage.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Shieldc.html#armor--">armor</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="armor-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>armor</h4>
+<pre>public&nbsp;void&nbsp;armor(float&nbsp;armor)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Shieldc.html#armor-float-">Shieldc</a></code></span></div>
+<div class="block">Absorbs percentage of damage.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Shieldc.html#armor-float-">armor</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="shieldAlpha--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>shieldAlpha</h4>
+<pre>public&nbsp;float&nbsp;shieldAlpha()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Shieldc.html#shieldAlpha--">Shieldc</a></code></span></div>
+<div class="block">Shield opacity.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Shieldc.html#shieldAlpha--">shieldAlpha</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="shieldAlpha-float-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>shieldAlpha</h4>
+<pre>public&nbsp;void&nbsp;shieldAlpha(float&nbsp;shieldAlpha)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mindustry/gen/Shieldc.html#shieldAlpha-float-">Shieldc</a></code></span></div>
+<div class="block">Shield opacity.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../mindustry/gen/Shieldc.html#shieldAlpha-float-">shieldAlpha</a></code>&nbsp;in interface&nbsp;<code><a href="../../mindustry/gen/Shieldc.html" title="interface in mindustry.gen">Shieldc</a></code></dd>
 </dl>
 </li>
 </ul>
