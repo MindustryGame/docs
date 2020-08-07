@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -144,6 +144,10 @@ extends <a href="../../mindustry/logic/LStatement.html" title="class in mindustr
 <td class="colFirst"><code><a href="../../mindustry/logic/LCanvas.StatementElem.html" title="class in mindustry.logic">LCanvas.StatementElem</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LStatements.JumpStatement.html#dest">dest</a></span></code>&nbsp;</td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LStatements.JumpStatement.html#destIndex">destIndex</a></span></code>&nbsp;</td>
+</tr>
 </table>
 </li>
 </ul>
@@ -177,14 +181,22 @@ extends <a href="../../mindustry/logic/LStatement.html" title="class in mindustr
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../../mindustry/logic/LExecutor.LInstruction.html" title="interface in mindustry.logic">LExecutor.LInstruction</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LStatements.JumpStatement.html#build-mindustry.logic.LBuilder-">build</a></span>(<a href="../../mindustry/logic/LBuilder.html" title="class in mindustry.logic">LBuilder</a>&nbsp;builder)</code>&nbsp;</td>
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LStatements.JumpStatement.html#afterLoad-mindustry.logic.LAssembler-">afterLoad</a></span>(<a href="../../mindustry/logic/LAssembler.html" title="class in mindustry.logic">LAssembler</a>&nbsp;assembler)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LStatements.JumpStatement.html#build-arc.scene.ui.layout.Table-">build</a></span>(arc.scene.ui.layout.Table&nbsp;table)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LStatements.JumpStatement.html#beforeSave-mindustry.logic.LAssembler-">beforeSave</a></span>(<a href="../../mindustry/logic/LAssembler.html" title="class in mindustry.logic">LAssembler</a>&nbsp;assembler)</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../mindustry/logic/LExecutor.LInstruction.html" title="interface in mindustry.logic">LExecutor.LInstruction</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LStatements.JumpStatement.html#build-mindustry.logic.LAssembler-">build</a></span>(<a href="../../mindustry/logic/LAssembler.html" title="class in mindustry.logic">LAssembler</a>&nbsp;builder)</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LStatements.JumpStatement.html#build-arc.scene.ui.layout.Table-">build</a></span>(arc.scene.ui.layout.Table&nbsp;table)</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../mindustry/logic/LCategory.html" title="enum in mindustry.logic">LCategory</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LStatements.JumpStatement.html#category--">category</a></span>()</code>&nbsp;</td>
 </tr>
@@ -223,7 +235,16 @@ extends <a href="../../mindustry/logic/LStatement.html" title="class in mindustr
 <ul class="blockList">
 <li class="blockList">
 <h4>dest</h4>
-<pre>public&nbsp;<a href="../../mindustry/logic/LCanvas.StatementElem.html" title="class in mindustry.logic">LCanvas.StatementElem</a> dest</pre>
+<pre>public transient&nbsp;<a href="../../mindustry/logic/LCanvas.StatementElem.html" title="class in mindustry.logic">LCanvas.StatementElem</a> dest</pre>
+</li>
+</ul>
+<a name="destIndex">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>destIndex</h4>
+<pre>public&nbsp;int destIndex</pre>
 </li>
 </ul>
 <a name="condition">
@@ -273,16 +294,42 @@ extends <a href="../../mindustry/logic/LStatement.html" title="class in mindustr
 </dl>
 </li>
 </ul>
-<a name="build-mindustry.logic.LBuilder-">
+<a name="afterLoad-mindustry.logic.LAssembler-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>afterLoad</h4>
+<pre>public&nbsp;void&nbsp;afterLoad(<a href="../../mindustry/logic/LAssembler.html" title="class in mindustry.logic">LAssembler</a>&nbsp;assembler)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../mindustry/logic/LStatement.html#afterLoad-mindustry.logic.LAssembler-">afterLoad</a></code>&nbsp;in class&nbsp;<code><a href="../../mindustry/logic/LStatement.html" title="class in mindustry.logic">LStatement</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="beforeSave-mindustry.logic.LAssembler-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>beforeSave</h4>
+<pre>public&nbsp;void&nbsp;beforeSave(<a href="../../mindustry/logic/LAssembler.html" title="class in mindustry.logic">LAssembler</a>&nbsp;assembler)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../mindustry/logic/LStatement.html#beforeSave-mindustry.logic.LAssembler-">beforeSave</a></code>&nbsp;in class&nbsp;<code><a href="../../mindustry/logic/LStatement.html" title="class in mindustry.logic">LStatement</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="build-mindustry.logic.LAssembler-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>build</h4>
-<pre>public&nbsp;<a href="../../mindustry/logic/LExecutor.LInstruction.html" title="interface in mindustry.logic">LExecutor.LInstruction</a>&nbsp;build(<a href="../../mindustry/logic/LBuilder.html" title="class in mindustry.logic">LBuilder</a>&nbsp;builder)</pre>
+<pre>public&nbsp;<a href="../../mindustry/logic/LExecutor.LInstruction.html" title="interface in mindustry.logic">LExecutor.LInstruction</a>&nbsp;build(<a href="../../mindustry/logic/LAssembler.html" title="class in mindustry.logic">LAssembler</a>&nbsp;builder)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../mindustry/logic/LStatement.html#build-mindustry.logic.LBuilder-">build</a></code>&nbsp;in class&nbsp;<code><a href="../../mindustry/logic/LStatement.html" title="class in mindustry.logic">LStatement</a></code></dd>
+<dd><code><a href="../../mindustry/logic/LStatement.html#build-mindustry.logic.LAssembler-">build</a></code>&nbsp;in class&nbsp;<code><a href="../../mindustry/logic/LStatement.html" title="class in mindustry.logic">LStatement</a></code></dd>
 </dl>
 </li>
 </ul>
