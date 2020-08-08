@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":10,"i3":9};
+var methods = {"i0":9,"i1":10,"i2":10,"i3":10,"i4":9,"i5":10,"i6":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -131,7 +131,7 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LAssembler.BVar.html" title="class in mindustry.logic">LAssembler.BVar</a></span></code>
-<div class="block">A saved variable.</div>
+<div class="block">A variable "builder".</div>
 </td>
 </tr>
 </table>
@@ -190,14 +190,31 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LAssembler.html#assemble-java.lang.String-">assemble</a></span>(java.lang.String&nbsp;data)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../mindustry/logic/LAssembler.BVar.html" title="class in mindustry.logic">LAssembler.BVar</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LAssembler.html#getVar-java.lang.String-">getVar</a></span>(java.lang.String&nbsp;name)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../mindustry/logic/LAssembler.BVar.html" title="class in mindustry.logic">LAssembler.BVar</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LAssembler.html#putConst-java.lang.String-java.lang.Object-">putConst</a></span>(java.lang.String&nbsp;name,
+        java.lang.Object&nbsp;value)</code>
+<div class="block">Adds a constant value by name.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../mindustry/logic/LAssembler.BVar.html" title="class in mindustry.logic">LAssembler.BVar</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LAssembler.html#putVar-java.lang.String-">putVar</a></span>(java.lang.String&nbsp;name)</code>
+<div class="block">Registers a variable name mapping.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>static arc.struct.Seq&lt;<a href="../../mindustry/logic/LStatement.html" title="class in mindustry.logic">LStatement</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LAssembler.html#read-java.lang.String-">read</a></span>(java.lang.String&nbsp;data)</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LAssembler.html#var-java.lang.String-">var</a></span>(java.lang.String&nbsp;symbol)</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mindustry/logic/LAssembler.html#write-arc.struct.Seq-">write</a></span>(arc.struct.Seq&lt;<a href="../../mindustry/logic/LStatement.html" title="class in mindustry.logic">LStatement</a>&gt;&nbsp;statements)</code>&nbsp;</td>
 </tr>
@@ -287,7 +304,7 @@ extends java.lang.Object</pre>
 <a name="var-java.lang.String-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>var</h4>
 <pre>public&nbsp;int&nbsp;var(java.lang.String&nbsp;symbol)</pre>
@@ -296,6 +313,36 @@ extends java.lang.Object</pre>
 <dd>a variable ID by name.
  This may be a constant variable referring to a number or object.</dd>
 </dl>
+</li>
+</ul>
+<a name="putConst-java.lang.String-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>putConst</h4>
+<pre>public&nbsp;<a href="../../mindustry/logic/LAssembler.BVar.html" title="class in mindustry.logic">LAssembler.BVar</a>&nbsp;putConst(java.lang.String&nbsp;name,
+                                java.lang.Object&nbsp;value)</pre>
+<div class="block">Adds a constant value by name.</div>
+</li>
+</ul>
+<a name="putVar-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>putVar</h4>
+<pre>public&nbsp;<a href="../../mindustry/logic/LAssembler.BVar.html" title="class in mindustry.logic">LAssembler.BVar</a>&nbsp;putVar(java.lang.String&nbsp;name)</pre>
+<div class="block">Registers a variable name mapping.</div>
+</li>
+</ul>
+<a name="getVar-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getVar</h4>
+<pre>public&nbsp;<a href="../../mindustry/logic/LAssembler.BVar.html" title="class in mindustry.logic">LAssembler.BVar</a>&nbsp;getVar(java.lang.String&nbsp;name)</pre>
 </li>
 </ul>
 </li>
