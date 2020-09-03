@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9};
+<script type="text/javascript">var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -93,11 +93,16 @@ loadScripts(document, 'script');</script>
 <hr>
 <pre>public final class <span class="typeNameLabel">PathTile</span>
 extends java.lang.Object</pre>
-<div class="block">Bits used: 26 / 32
- <br>  cost [0..16]
- <br>  team [16..24]
- <br>  passable [24..25]
- <br>  passableWater [25..26]</div>
+<div class="block">Bits used: 23 / 32
+ <br>  health [0..8]
+ <br>  team [8..16]
+ <br>  solid [16..17]
+ <br>  liquid [17..18]
+ <br>  legSolid [18..19]
+ <br>  nearLiquid [19..20]
+ <br>  nearGround [20..21]
+ <br>  nearSolid [21..22]
+ <br>  deep [22..23]</div>
 </section>
 <section class="summary">
 <ul class="blockList">
@@ -145,55 +150,115 @@ extends java.lang.Object</pre>
 </thead>
 <tbody>
 <tr class="altColor" id="i0">
-<td class="colFirst"><code>static short</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#cost(int)">cost</a></span>&#8203;(int&nbsp;pathtile)</code></th>
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deep(int)">deep</a></span>&#8203;(int&nbsp;pathtile)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i1">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#cost(int,short)">cost</a></span>&#8203;(int&nbsp;pathtile,
-short&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deep(int,boolean)">deep</a></span>&#8203;(int&nbsp;pathtile,
+boolean&nbsp;value)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor" id="i2">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get(short,byte,boolean,boolean)">get</a></span>&#8203;(short&nbsp;cost,
-byte&nbsp;team,
-boolean&nbsp;passable,
-boolean&nbsp;passableWater)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get(int,int,boolean,boolean,boolean,boolean,boolean,boolean,boolean)">get</a></span>&#8203;(int&nbsp;health,
+int&nbsp;team,
+boolean&nbsp;solid,
+boolean&nbsp;liquid,
+boolean&nbsp;legSolid,
+boolean&nbsp;nearLiquid,
+boolean&nbsp;nearGround,
+boolean&nbsp;nearSolid,
+boolean&nbsp;deep)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i3">
-<td class="colFirst"><code>static boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#passable(int)">passable</a></span>&#8203;(int&nbsp;pathtile)</code></th>
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#health(int)">health</a></span>&#8203;(int&nbsp;pathtile)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor" id="i4">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#passable(int,boolean)">passable</a></span>&#8203;(int&nbsp;pathtile,
-boolean&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#health(int,int)">health</a></span>&#8203;(int&nbsp;pathtile,
+int&nbsp;value)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i5">
 <td class="colFirst"><code>static boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#passableWater(int)">passableWater</a></span>&#8203;(int&nbsp;pathtile)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#legSolid(int)">legSolid</a></span>&#8203;(int&nbsp;pathtile)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor" id="i6">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#passableWater(int,boolean)">passableWater</a></span>&#8203;(int&nbsp;pathtile,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#legSolid(int,boolean)">legSolid</a></span>&#8203;(int&nbsp;pathtile,
 boolean&nbsp;value)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i7">
-<td class="colFirst"><code>static byte</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#team(int)">team</a></span>&#8203;(int&nbsp;pathtile)</code></th>
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#liquid(int)">liquid</a></span>&#8203;(int&nbsp;pathtile)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor" id="i8">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#team(int,byte)">team</a></span>&#8203;(int&nbsp;pathtile,
-byte&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#liquid(int,boolean)">liquid</a></span>&#8203;(int&nbsp;pathtile,
+boolean&nbsp;value)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i9">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#nearGround(int)">nearGround</a></span>&#8203;(int&nbsp;pathtile)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i10">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#nearGround(int,boolean)">nearGround</a></span>&#8203;(int&nbsp;pathtile,
+boolean&nbsp;value)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i11">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#nearLiquid(int)">nearLiquid</a></span>&#8203;(int&nbsp;pathtile)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i12">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#nearLiquid(int,boolean)">nearLiquid</a></span>&#8203;(int&nbsp;pathtile,
+boolean&nbsp;value)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i13">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#nearSolid(int)">nearSolid</a></span>&#8203;(int&nbsp;pathtile)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i14">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#nearSolid(int,boolean)">nearSolid</a></span>&#8203;(int&nbsp;pathtile,
+boolean&nbsp;value)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i15">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#solid(int)">solid</a></span>&#8203;(int&nbsp;pathtile)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i16">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#solid(int,boolean)">solid</a></span>&#8203;(int&nbsp;pathtile,
+boolean&nbsp;value)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i17">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#team(int)">team</a></span>&#8203;(int&nbsp;pathtile)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i18">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#team(int,int)">team</a></span>&#8203;(int&nbsp;pathtile,
+int&nbsp;value)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
@@ -236,63 +301,133 @@ byte&nbsp;value)</code></th>
 <ul class="blockList">
 <li class="blockList">
 <section class="detail">
-<h3><a id="cost(int)">cost</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">short</span>&nbsp;<span class="memberName">cost</span>&#8203;(<span class="arguments">int&nbsp;pathtile)</span></div>
+<h3><a id="health(int)">health</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">health</span>&#8203;(<span class="arguments">int&nbsp;pathtile)</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="cost(int,short)">cost</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">cost</span>&#8203;(<span class="arguments">int&nbsp;pathtile,
-short&nbsp;value)</span></div>
+<h3><a id="health(int,int)">health</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">health</span>&#8203;(<span class="arguments">int&nbsp;pathtile,
+int&nbsp;value)</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
 <h3><a id="team(int)">team</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">byte</span>&nbsp;<span class="memberName">team</span>&#8203;(<span class="arguments">int&nbsp;pathtile)</span></div>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">team</span>&#8203;(<span class="arguments">int&nbsp;pathtile)</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="team(int,byte)">team</a></h3>
+<h3><a id="team(int,int)">team</a></h3>
 <div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">team</span>&#8203;(<span class="arguments">int&nbsp;pathtile,
-byte&nbsp;value)</span></div>
+int&nbsp;value)</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="passable(int)">passable</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">passable</span>&#8203;(<span class="arguments">int&nbsp;pathtile)</span></div>
+<h3><a id="solid(int)">solid</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">solid</span>&#8203;(<span class="arguments">int&nbsp;pathtile)</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="passable(int,boolean)">passable</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">passable</span>&#8203;(<span class="arguments">int&nbsp;pathtile,
+<h3><a id="solid(int,boolean)">solid</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">solid</span>&#8203;(<span class="arguments">int&nbsp;pathtile,
 boolean&nbsp;value)</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="passableWater(int)">passableWater</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">passableWater</span>&#8203;(<span class="arguments">int&nbsp;pathtile)</span></div>
+<h3><a id="liquid(int)">liquid</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">liquid</span>&#8203;(<span class="arguments">int&nbsp;pathtile)</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="passableWater(int,boolean)">passableWater</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">passableWater</span>&#8203;(<span class="arguments">int&nbsp;pathtile,
+<h3><a id="liquid(int,boolean)">liquid</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">liquid</span>&#8203;(<span class="arguments">int&nbsp;pathtile,
 boolean&nbsp;value)</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="get(short,byte,boolean,boolean)">get</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">get</span>&#8203;(<span class="arguments">short&nbsp;cost,
-byte&nbsp;team,
-boolean&nbsp;passable,
-boolean&nbsp;passableWater)</span></div>
+<h3><a id="legSolid(int)">legSolid</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">legSolid</span>&#8203;(<span class="arguments">int&nbsp;pathtile)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="legSolid(int,boolean)">legSolid</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">legSolid</span>&#8203;(<span class="arguments">int&nbsp;pathtile,
+boolean&nbsp;value)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="nearLiquid(int)">nearLiquid</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">nearLiquid</span>&#8203;(<span class="arguments">int&nbsp;pathtile)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="nearLiquid(int,boolean)">nearLiquid</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">nearLiquid</span>&#8203;(<span class="arguments">int&nbsp;pathtile,
+boolean&nbsp;value)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="nearGround(int)">nearGround</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">nearGround</span>&#8203;(<span class="arguments">int&nbsp;pathtile)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="nearGround(int,boolean)">nearGround</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">nearGround</span>&#8203;(<span class="arguments">int&nbsp;pathtile,
+boolean&nbsp;value)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="nearSolid(int)">nearSolid</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">nearSolid</span>&#8203;(<span class="arguments">int&nbsp;pathtile)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="nearSolid(int,boolean)">nearSolid</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">nearSolid</span>&#8203;(<span class="arguments">int&nbsp;pathtile,
+boolean&nbsp;value)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="deep(int)">deep</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">deep</span>&#8203;(<span class="arguments">int&nbsp;pathtile)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="deep(int,boolean)">deep</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">deep</span>&#8203;(<span class="arguments">int&nbsp;pathtile,
+boolean&nbsp;value)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="get(int,int,boolean,boolean,boolean,boolean,boolean,boolean,boolean)">get</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">get</span>&#8203;(<span class="arguments">int&nbsp;health,
+int&nbsp;team,
+boolean&nbsp;solid,
+boolean&nbsp;liquid,
+boolean&nbsp;legSolid,
+boolean&nbsp;nearLiquid,
+boolean&nbsp;nearGround,
+boolean&nbsp;nearSolid,
+boolean&nbsp;deep)</span></div>
 </section>
 </li>
 </ul>
