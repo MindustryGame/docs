@@ -95,7 +95,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <pre>public abstract class <span class="typeNameLabel">Unit</span>
 extends java.lang.Object
-implements <a href="Itemsc.html" title="interface in mindustry.gen">Itemsc</a>, <a href="Syncc.html" title="interface in mindustry.gen">Syncc</a>, <a href="Drawc.html" title="interface in mindustry.gen">Drawc</a>, <a href="Boundedc.html" title="interface in mindustry.gen">Boundedc</a>, <a href="Shieldc.html" title="interface in mindustry.gen">Shieldc</a>, <a href="Rotc.html" title="interface in mindustry.gen">Rotc</a>, <a href="Entityc.html" title="interface in mindustry.gen">Entityc</a>, <a href="Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a>, <a href="Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a>, <a href="Physicsc.html" title="interface in mindustry.gen">Physicsc</a>, <a href="Healthc.html" title="interface in mindustry.gen">Healthc</a>, <a href="Teamc.html" title="interface in mindustry.gen">Teamc</a>, <a href="Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="Statusc.html" title="interface in mindustry.gen">Statusc</a>, <a href="Velc.html" title="interface in mindustry.gen">Velc</a>, <a href="Flyingc.html" title="interface in mindustry.gen">Flyingc</a>, <a href="Unitc.html" title="interface in mindustry.gen">Unitc</a></pre>
+implements <a href="Itemsc.html" title="interface in mindustry.gen">Itemsc</a>, <a href="Physicsc.html" title="interface in mindustry.gen">Physicsc</a>, <a href="Syncc.html" title="interface in mindustry.gen">Syncc</a>, <a href="Weaponsc.html" title="interface in mindustry.gen">Weaponsc</a>, <a href="Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a>, <a href="Teamc.html" title="interface in mindustry.gen">Teamc</a>, <a href="Drawc.html" title="interface in mindustry.gen">Drawc</a>, <a href="Shieldc.html" title="interface in mindustry.gen">Shieldc</a>, <a href="Velc.html" title="interface in mindustry.gen">Velc</a>, <a href="Statusc.html" title="interface in mindustry.gen">Statusc</a>, <a href="Rotc.html" title="interface in mindustry.gen">Rotc</a>, <a href="Flyingc.html" title="interface in mindustry.gen">Flyingc</a>, <a href="Entityc.html" title="interface in mindustry.gen">Entityc</a>, <a href="Boundedc.html" title="interface in mindustry.gen">Boundedc</a>, <a href="Healthc.html" title="interface in mindustry.gen">Healthc</a>, <a href="Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="Unitc.html" title="interface in mindustry.gen">Unitc</a></pre>
 </section>
 <section class="summary">
 <ul class="blockList">
@@ -351,7 +351,7 @@ implements <a href="Itemsc.html" title="interface in mindustry.gen">Itemsc</a>, 
 <h3>Methods inherited from interface&nbsp;mindustry.gen.<a href="Flyingc.html" title="interface in mindustry.gen">Flyingc</a></h3>
 <a id="methods.inherited.from.class.mindustry.gen.Flyingc">
 <!--   -->
-</a><code><a href="Flyingc.html#checkTarget(boolean,boolean)">checkTarget</a>, <a href="Flyingc.html#drownTime()">drownTime</a>, <a href="Flyingc.html#drownTime(float)">drownTime</a>, <a href="Flyingc.html#elevation()">elevation</a>, <a href="Flyingc.html#elevation(float)">elevation</a>, <a href="Flyingc.html#floorSpeedMultiplier()">floorSpeedMultiplier</a>, <a href="Flyingc.html#hovering()">hovering</a>, <a href="Flyingc.html#hovering(boolean)">hovering</a>, <a href="Flyingc.html#isFlying()">isFlying</a>, <a href="Flyingc.html#isGrounded()">isGrounded</a>, <a href="Flyingc.html#moveAt(arc.math.geom.Vec2,float)">moveAt</a>, <a href="Flyingc.html#splashTimer()">splashTimer</a>, <a href="Flyingc.html#splashTimer(float)">splashTimer</a>, <a href="Flyingc.html#wobble()">wobble</a></code></div>
+</a><code><a href="Flyingc.html#checkTarget(boolean,boolean)">checkTarget</a>, <a href="Flyingc.html#drownTime()">drownTime</a>, <a href="Flyingc.html#drownTime(float)">drownTime</a>, <a href="Flyingc.html#elevation()">elevation</a>, <a href="Flyingc.html#elevation(float)">elevation</a>, <a href="Flyingc.html#floorSpeedMultiplier()">floorSpeedMultiplier</a>, <a href="Flyingc.html#hovering()">hovering</a>, <a href="Flyingc.html#hovering(boolean)">hovering</a>, <a href="Flyingc.html#isFlying()">isFlying</a>, <a href="Flyingc.html#isGrounded()">isGrounded</a>, <a href="Flyingc.html#moveAt(arc.math.geom.Vec2,float)">moveAt</a>, <a href="Flyingc.html#splashTimer()">splashTimer</a>, <a href="Flyingc.html#splashTimer(float)">splashTimer</a>, <a href="Flyingc.html#update()">update</a>, <a href="Flyingc.html#wobble()">wobble</a></code></div>
 <div class="inheritedList">
 <h3>Methods inherited from interface&nbsp;mindustry.gen.<a href="Healthc.html" title="interface in mindustry.gen">Healthc</a></h3>
 <a id="methods.inherited.from.class.mindustry.gen.Healthc">
@@ -449,6 +449,12 @@ implements <a href="Itemsc.html" title="interface in mindustry.gen">Itemsc</a>, 
 </li>
 <li class="blockList">
 <section class="detail">
+<h3><a id="physref">physref</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType"><a href="../async/PhysicsProcess.PhysicRef.html" title="class in mindustry.async">PhysicsProcess.PhysicRef</a></span>&nbsp;<span class="memberName">physref</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
 <h3><a id="lastUpdated">lastUpdated</a></h3>
 <div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">long</span>&nbsp;<span class="memberName">lastUpdated</span></div>
 </section>
@@ -461,32 +467,20 @@ implements <a href="Itemsc.html" title="interface in mindustry.gen">Itemsc</a>, 
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="shield">shield</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">shield</span></div>
+<h3><a id="mounts">mounts</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../entities/units/WeaponMount.html" title="class in mindustry.entities.units">WeaponMount</a>[]</span>&nbsp;<span class="memberName">mounts</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="armor">armor</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">armor</span></div>
+<h3><a id="isShooting">isShooting</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">isShooting</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="shieldAlpha">shieldAlpha</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">shieldAlpha</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="rotation">rotation</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">rotation</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="id">id</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">id</span></div>
+<h3><a id="ammo">ammo</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">ammo</span></div>
 </section>
 </li>
 <li class="blockList">
@@ -521,26 +515,74 @@ implements <a href="Itemsc.html" title="interface in mindustry.gen">Itemsc</a>, 
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="mounts">mounts</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../entities/units/WeaponMount.html" title="class in mindustry.entities.units">WeaponMount</a>[]</span>&nbsp;<span class="memberName">mounts</span></div>
+<h3><a id="team">team</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../game/Team.html" title="class in mindustry.game">Team</a></span>&nbsp;<span class="memberName">team</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="isShooting">isShooting</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">isShooting</span></div>
+<h3><a id="shield">shield</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">shield</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="ammo">ammo</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">ammo</span></div>
+<h3><a id="armor">armor</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">armor</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="physref">physref</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType"><a href="../async/PhysicsProcess.PhysicRef.html" title="class in mindustry.async">PhysicsProcess.PhysicRef</a></span>&nbsp;<span class="memberName">physref</span></div>
+<h3><a id="shieldAlpha">shieldAlpha</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">shieldAlpha</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="vel">vel</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">arc.math.geom.Vec2</span>&nbsp;<span class="memberName">vel</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="drag">drag</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">drag</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="rotation">rotation</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">rotation</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="elevation">elevation</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">elevation</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="hovering">hovering</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">hovering</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="drownTime">drownTime</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">drownTime</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="splashTimer">splashTimer</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">splashTimer</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="id">id</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">id</span></div>
 </section>
 </li>
 <li class="blockList">
@@ -569,12 +611,6 @@ implements <a href="Itemsc.html" title="interface in mindustry.gen">Itemsc</a>, 
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="team">team</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../game/Team.html" title="class in mindustry.game">Team</a></span>&nbsp;<span class="memberName">team</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
 <h3><a id="x">x</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">x</span></div>
 </section>
@@ -583,42 +619,6 @@ implements <a href="Itemsc.html" title="interface in mindustry.gen">Itemsc</a>, 
 <section class="detail">
 <h3><a id="y">y</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">y</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="vel">vel</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">arc.math.geom.Vec2</span>&nbsp;<span class="memberName">vel</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="drag">drag</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">drag</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="elevation">elevation</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">elevation</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="hovering">hovering</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">hovering</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="drownTime">drownTime</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">drownTime</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="splashTimer">splashTimer</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">splashTimer</span></div>
 </section>
 </li>
 <li class="blockList">
