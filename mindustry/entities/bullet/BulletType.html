@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":9,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":9,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -98,7 +98,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="BasicBulletType.html" title="class in mindustry.entities.bullet">BasicBulletType</a></code>, <code><a href="ContinuousLaserBulletType.html" title="class in mindustry.entities.bullet">ContinuousLaserBulletType</a></code>, <code><a href="HealBulletType.html" title="class in mindustry.entities.bullet">HealBulletType</a></code>, <code><a href="LaserBulletType.html" title="class in mindustry.entities.bullet">LaserBulletType</a></code>, <code><a href="LightningBulletType.html" title="class in mindustry.entities.bullet">LightningBulletType</a></code>, <code><a href="LiquidBulletType.html" title="class in mindustry.entities.bullet">LiquidBulletType</a></code>, <code><a href="MassDriverBolt.html" title="class in mindustry.entities.bullet">MassDriverBolt</a></code>, <code><a href="SapBulletType.html" title="class in mindustry.entities.bullet">SapBulletType</a></code>, <code><a href="ShrapnelBulletType.html" title="class in mindustry.entities.bullet">ShrapnelBulletType</a></code></dd>
+<dd><code><a href="BasicBulletType.html" title="class in mindustry.entities.bullet">BasicBulletType</a></code>, <code><a href="ContinuousLaserBulletType.html" title="class in mindustry.entities.bullet">ContinuousLaserBulletType</a></code>, <code><a href="HealBulletType.html" title="class in mindustry.entities.bullet">HealBulletType</a></code>, <code><a href="LaserBulletType.html" title="class in mindustry.entities.bullet">LaserBulletType</a></code>, <code><a href="LightningBulletType.html" title="class in mindustry.entities.bullet">LightningBulletType</a></code>, <code><a href="LiquidBulletType.html" title="class in mindustry.entities.bullet">LiquidBulletType</a></code>, <code><a href="MassDriverBolt.html" title="class in mindustry.entities.bullet">MassDriverBolt</a></code>, <code><a href="RailBulletType.html" title="class in mindustry.entities.bullet">RailBulletType</a></code>, <code><a href="SapBulletType.html" title="class in mindustry.entities.bullet">SapBulletType</a></code>, <code><a href="ShrapnelBulletType.html" title="class in mindustry.entities.bullet">ShrapnelBulletType</a></code></dd>
 </dl>
 <hr>
 <pre>public abstract class <span class="typeNameLabel">BulletType</span>
@@ -375,30 +375,42 @@ extends <a href="../../ctype/Content.html" title="class in mindustry.ctype">Cont
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#pierceBuilding">pierceBuilding</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#puddleAmount">puddleAmount</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../type/Liquid.html" title="class in mindustry.type">Liquid</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#puddleLiquid">puddleLiquid</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#puddleRange">puddleRange</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#puddles">puddles</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#recoil">recoil</a></span></code></th>
 <td class="colLast">
 <div class="block">Recoil from shooter entities.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reflectable">reflectable</a></span></code></th>
+<td class="colLast">
+<div class="block">Whether this bullet can be reflected.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -700,23 +712,31 @@ float&nbsp;y)</code></th>
 </tr>
 <tr class="rowColor" id="i17">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hitTile(mindustry.gen.Bullet,mindustry.gen.Building)">hitTile</a></span>&#8203;(<a href="../../gen/Bullet.html" title="class in mindustry.gen">Bullet</a>&nbsp;b,
-<a href="../../gen/Building.html" title="class in mindustry.gen">Building</a>&nbsp;tile)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hitEntity(mindustry.gen.Bullet,mindustry.gen.Hitboxc,float)">hitEntity</a></span>&#8203;(<a href="../../gen/Bullet.html" title="class in mindustry.gen">Bullet</a>&nbsp;b,
+<a href="../../gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a>&nbsp;other,
+float&nbsp;initialHealth)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor" id="i18">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#init(mindustry.gen.Bullet)">init</a></span>&#8203;(<a href="../../gen/Bullet.html" title="class in mindustry.gen">Bullet</a>&nbsp;b)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hitTile(mindustry.gen.Bullet,mindustry.gen.Building,float)">hitTile</a></span>&#8203;(<a href="../../gen/Bullet.html" title="class in mindustry.gen">Bullet</a>&nbsp;b,
+<a href="../../gen/Building.html" title="class in mindustry.gen">Building</a>&nbsp;tile,
+float&nbsp;initialHealth)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i19">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#init(mindustry.gen.Bullet)">init</a></span>&#8203;(<a href="../../gen/Bullet.html" title="class in mindustry.gen">Bullet</a>&nbsp;b)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i20">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#range()">range</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns maximum distance the bullet this bullet type has can travel.</div>
 </td>
 </tr>
-<tr class="altColor" id="i20">
+<tr class="rowColor" id="i21">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(mindustry.gen.Bullet)">update</a></span>&#8203;(<a href="../../gen/Bullet.html" title="class in mindustry.gen">Bullet</a>&nbsp;b)</code></th>
 <td class="colLast">&nbsp;</td>
@@ -793,6 +813,12 @@ float&nbsp;y)</code></th>
 <section class="detail">
 <h3><a id="pierce">pierce</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">pierce</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="pierceBuilding">pierceBuilding</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">pierceBuilding</span></div>
 </section>
 </li>
 <li class="blockList">
@@ -959,6 +985,13 @@ float&nbsp;y)</code></th>
 <h3><a id="hittable">hittable</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">hittable</span></div>
 <div class="block">Whether this bullet can be hit by point defense.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="reflectable">reflectable</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">reflectable</span></div>
+<div class="block">Whether this bullet can be reflected.</div>
 </section>
 </li>
 <li class="blockList">
@@ -1204,9 +1237,18 @@ float&nbsp;damage)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="hitTile(mindustry.gen.Bullet,mindustry.gen.Building)">hitTile</a></h3>
+<h3><a id="hitTile(mindustry.gen.Bullet,mindustry.gen.Building,float)">hitTile</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">hitTile</span>&#8203;(<span class="arguments"><a href="../../gen/Bullet.html" title="class in mindustry.gen">Bullet</a>&nbsp;b,
-<a href="../../gen/Building.html" title="class in mindustry.gen">Building</a>&nbsp;tile)</span></div>
+<a href="../../gen/Building.html" title="class in mindustry.gen">Building</a>&nbsp;tile,
+float&nbsp;initialHealth)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="hitEntity(mindustry.gen.Bullet,mindustry.gen.Hitboxc,float)">hitEntity</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">hitEntity</span>&#8203;(<span class="arguments"><a href="../../gen/Bullet.html" title="class in mindustry.gen">Bullet</a>&nbsp;b,
+<a href="../../gen/Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a>&nbsp;other,
+float&nbsp;initialHealth)</span></div>
 </section>
 </li>
 <li class="blockList">
