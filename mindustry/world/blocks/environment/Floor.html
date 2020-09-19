@@ -150,7 +150,7 @@ extends <a href="../../Block.html" title="class in mindustry.world">Block</a></p
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected arc.struct.IntSet</code></td>
+<td class="colFirst"><code>protected arc.struct.Bits</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#blended">blended</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -400,8 +400,7 @@ extends <a href="../../Block.html" title="class in mindustry.world">Block</a></p
 </tr>
 <tr class="rowColor" id="i1">
 <td class="colFirst"><code>protected boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doEdge(mindustry.world.blocks.environment.Floor,boolean)">doEdge</a></span>&#8203;(<a href="Floor.html" title="class in mindustry.world.blocks.environment">Floor</a>&nbsp;other,
-boolean&nbsp;sameLayer)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doEdge(mindustry.world.blocks.environment.Floor)">doEdge</a></span>&#8203;(<a href="Floor.html" title="class in mindustry.world.blocks.environment">Floor</a>&nbsp;other)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor" id="i2">
@@ -411,13 +410,12 @@ boolean&nbsp;sameLayer)</code></th>
 </tr>
 <tr class="rowColor" id="i3">
 <td class="colFirst"><code>protected void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawEdges(mindustry.world.Tile)">drawEdges</a></span>&#8203;(<a href="../../Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawBlended(mindustry.world.Tile)">drawBlended</a></span>&#8203;(<a href="../../Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor" id="i4">
 <td class="colFirst"><code>protected void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawEdges(mindustry.world.Tile,boolean)">drawEdges</a></span>&#8203;(<a href="../../Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile,
-boolean&nbsp;sameLayer)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawEdges(mindustry.world.Tile)">drawEdges</a></span>&#8203;(<a href="../../Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i5">
@@ -428,7 +426,8 @@ boolean&nbsp;sameLayer)</code></th>
 </tr>
 <tr class="altColor" id="i6">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawNonLayer(mindustry.world.Tile)">drawNonLayer</a></span>&#8203;(<a href="../../Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawNonLayer(mindustry.world.Tile,mindustry.graphics.CacheLayer)">drawNonLayer</a></span>&#8203;(<a href="../../Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile,
+<a href="../../../graphics/CacheLayer.html" title="enum in mindustry.graphics">CacheLayer</a>&nbsp;layer)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i7">
@@ -683,7 +682,7 @@ boolean&nbsp;sameLayer)</code></th>
 <li class="blockList">
 <section class="detail">
 <h3><a id="blended">blended</a></h3>
-<div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="returnType">arc.struct.IntSet</span>&nbsp;<span class="memberName">blended</span></div>
+<div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="returnType">arc.struct.Bits</span>&nbsp;<span class="memberName">blended</span></div>
 </section>
 </li>
 <li class="blockList">
@@ -783,8 +782,9 @@ boolean&nbsp;sameLayer)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="drawNonLayer(mindustry.world.Tile)">drawNonLayer</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">drawNonLayer</span>&#8203;(<span class="arguments"><a href="../../Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile)</span></div>
+<h3><a id="drawNonLayer(mindustry.world.Tile,mindustry.graphics.CacheLayer)">drawNonLayer</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">drawNonLayer</span>&#8203;(<span class="arguments"><a href="../../Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile,
+<a href="../../../graphics/CacheLayer.html" title="enum in mindustry.graphics">CacheLayer</a>&nbsp;layer)</span></div>
 </section>
 </li>
 <li class="blockList">
@@ -795,9 +795,8 @@ boolean&nbsp;sameLayer)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="drawEdges(mindustry.world.Tile,boolean)">drawEdges</a></h3>
-<div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">drawEdges</span>&#8203;(<span class="arguments"><a href="../../Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile,
-boolean&nbsp;sameLayer)</span></div>
+<h3><a id="drawBlended(mindustry.world.Tile)">drawBlended</a></h3>
+<div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">drawBlended</span>&#8203;(<span class="arguments"><a href="../../Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile)</span></div>
 </section>
 </li>
 <li class="blockList">
@@ -815,9 +814,8 @@ boolean&nbsp;sameLayer)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="doEdge(mindustry.world.blocks.environment.Floor,boolean)">doEdge</a></h3>
-<div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">doEdge</span>&#8203;(<span class="arguments"><a href="Floor.html" title="class in mindustry.world.blocks.environment">Floor</a>&nbsp;other,
-boolean&nbsp;sameLayer)</span></div>
+<h3><a id="doEdge(mindustry.world.blocks.environment.Floor)">doEdge</a></h3>
+<div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">doEdge</span>&#8203;(<span class="arguments"><a href="Floor.html" title="class in mindustry.world.blocks.environment">Floor</a>&nbsp;other)</span></div>
 </section>
 </li>
 </ul>
