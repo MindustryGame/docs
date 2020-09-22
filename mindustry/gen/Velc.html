@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6};
+<script type="text/javascript">var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -101,7 +101,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">Velc</span>
-extends <a href="Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></pre>
+extends <a href="Entityc.html" title="interface in mindustry.gen">Entityc</a>, <a href="Posc.html" title="interface in mindustry.gen">Posc</a></pre>
 <div class="block">Interface for <code>VelComp</code></div>
 </section>
 <section class="summary">
@@ -125,32 +125,48 @@ extends <a href="Posc.html" title="interface in mindustry.gen">Posc</a>, <a href
 </thead>
 <tbody>
 <tr class="altColor" id="i0">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#canPass(int,int)">canPass</a></span>&#8203;(int&nbsp;tileX,
+int&nbsp;tileY)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i1">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#canPassOn()">canPassOn</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i2">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drag()">drag</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor" id="i1">
+<tr class="rowColor" id="i3">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drag(float)">drag</a></span>&#8203;(float&nbsp;drag)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i2">
+<tr class="altColor" id="i4">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#move(float,float)">move</a></span>&#8203;(float&nbsp;cx,
 float&nbsp;cy)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor" id="i3">
+<tr class="rowColor" id="i5">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#moving()">moving</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i4">
+<tr class="altColor" id="i6">
+<td class="colFirst"><code><a href="../entities/EntityCollisions.SolidPred.html" title="interface in mindustry.entities">EntityCollisions.SolidPred</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#solidity()">solidity</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i7">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update()">update</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor" id="i5">
+<tr class="altColor" id="i8">
 <td class="colFirst"><code>arc.math.geom.Vec2</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#vel()">vel</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
@@ -194,6 +210,37 @@ float&nbsp;cy)</code></th>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Entityc.html#update()">update</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="solidity()">solidity</a></h3>
+<div class="memberSignature"><span class="returnType"><a href="../entities/EntityCollisions.SolidPred.html" title="interface in mindustry.entities">EntityCollisions.SolidPred</a></span>&nbsp;<span class="memberName">solidity</span>()</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>function to use for check solid state. if null, no checking is done.</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="canPass(int,int)">canPass</a></h3>
+<div class="memberSignature"><span class="returnType">boolean</span>&nbsp;<span class="memberName">canPass</span>&#8203;(<span class="arguments">int&nbsp;tileX,
+int&nbsp;tileY)</span></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether this entity can move through a location</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="canPassOn()">canPassOn</a></h3>
+<div class="memberSignature"><span class="returnType">boolean</span>&nbsp;<span class="memberName">canPassOn</span>()</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether this entity can exist on its current location</dd>
 </dl>
 </section>
 </li>
