@@ -97,7 +97,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <pre>public class <span class="typeNameLabel">LaunchPayload</span>
 extends java.lang.Object
-implements <a href="Teamc.html" title="interface in mindustry.gen">Teamc</a>, <a href="Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="Timedc.html" title="interface in mindustry.gen">Timedc</a>, <a href="Drawc.html" title="interface in mindustry.gen">Drawc</a>, <a href="LaunchPayloadc.html" title="interface in mindustry.gen">LaunchPayloadc</a>, <a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></pre>
+implements <a href="LaunchPayloadc.html" title="interface in mindustry.gen">LaunchPayloadc</a>, <a href="Timedc.html" title="interface in mindustry.gen">Timedc</a>, <a href="Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="Teamc.html" title="interface in mindustry.gen">Teamc</a>, <a href="Drawc.html" title="interface in mindustry.gen">Drawc</a>, <a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></pre>
 </section>
 <section class="summary">
 <ul class="blockList">
@@ -521,20 +521,14 @@ float&nbsp;y)</code></th>
 <ul class="blockList">
 <li class="blockList">
 <section class="detail">
-<h3><a id="team">team</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../game/Team.html" title="class in mindustry.game">Team</a></span>&nbsp;<span class="memberName">team</span></div>
+<h3><a id="stacks">stacks</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.struct.Seq&lt;<a href="../type/ItemStack.html" title="class in mindustry.type">ItemStack</a>&gt;</span>&nbsp;<span class="memberName">stacks</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="x">x</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">x</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="y">y</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">y</span></div>
+<h3><a id="in">in</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">arc.util.Interval</span>&nbsp;<span class="memberName">in</span></div>
 </section>
 </li>
 <li class="blockList">
@@ -551,14 +545,20 @@ float&nbsp;y)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="stacks">stacks</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.struct.Seq&lt;<a href="../type/ItemStack.html" title="class in mindustry.type">ItemStack</a>&gt;</span>&nbsp;<span class="memberName">stacks</span></div>
+<h3><a id="x">x</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">x</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="in">in</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">arc.util.Interval</span>&nbsp;<span class="memberName">in</span></div>
+<h3><a id="y">y</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">y</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="team">team</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../game/Team.html" title="class in mindustry.game">Team</a></span>&nbsp;<span class="memberName">team</span></div>
 </section>
 </li>
 <li class="blockList">
@@ -713,21 +713,23 @@ float&nbsp;y)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="onSolid()">onSolid</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">onSolid</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#onSolid()">onSolid</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
 <h3><a id="blockOn()">blockOn</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../world/Block.html" title="class in mindustry.world">Block</a></span>&nbsp;<span class="memberName">blockOn</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Posc.html#blockOn()">blockOn</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="floorOn()">floorOn</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../world/blocks/environment/Floor.html" title="class in mindustry.world.blocks.environment">Floor</a></span>&nbsp;<span class="memberName">floorOn</span>()</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Posc.html#floorOn()">Posc</a></code></span></div>
+<div class="block">Returns air if this unit is on a non-air top block.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Posc.html#floorOn()">floorOn</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -775,13 +777,11 @@ float&nbsp;y)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="floorOn()">floorOn</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../world/blocks/environment/Floor.html" title="class in mindustry.world.blocks.environment">Floor</a></span>&nbsp;<span class="memberName">floorOn</span>()</div>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Posc.html#floorOn()">Posc</a></code></span></div>
-<div class="block">Returns air if this unit is on a non-air top block.</div>
+<h3><a id="write(arc.util.io.Writes)">write</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">write</span>&#8203;(<span class="arguments">arc.util.io.Writes&nbsp;write)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#floorOn()">floorOn</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+<dd><code><a href="Entityc.html#write(arc.util.io.Writes)">write</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -959,11 +959,11 @@ float&nbsp;y)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="write(arc.util.io.Writes)">write</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">write</span>&#8203;(<span class="arguments">arc.util.io.Writes&nbsp;write)</span></div>
+<h3><a id="onSolid()">onSolid</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">onSolid</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Entityc.html#write(arc.util.io.Writes)">write</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dd><code><a href="Posc.html#onSolid()">onSolid</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -995,61 +995,41 @@ float&nbsp;y)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="team()">team</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../game/Team.html" title="class in mindustry.game">Team</a></span>&nbsp;<span class="memberName">team</span>()</div>
+<h3><a id="stacks()">stacks</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.struct.Seq&lt;<a href="../type/ItemStack.html" title="class in mindustry.type">ItemStack</a>&gt;</span>&nbsp;<span class="memberName">stacks</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Teamc.html#team()">team</a></code>&nbsp;in interface&nbsp;<code><a href="Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+<dd><code><a href="LaunchPayloadc.html#stacks()">stacks</a></code>&nbsp;in interface&nbsp;<code><a href="LaunchPayloadc.html" title="interface in mindustry.gen">LaunchPayloadc</a></code></dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="team(mindustry.game.Team)">team</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">team</span>&#8203;(<span class="arguments"><a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</span></div>
+<h3><a id="stacks(arc.struct.Seq)">stacks</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">stacks</span>&#8203;(<span class="arguments">arc.struct.Seq&lt;<a href="../type/ItemStack.html" title="class in mindustry.type">ItemStack</a>&gt;&nbsp;stacks)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Teamc.html#team(mindustry.game.Team)">team</a></code>&nbsp;in interface&nbsp;<code><a href="Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+<dd><code><a href="LaunchPayloadc.html#stacks(arc.struct.Seq)">stacks</a></code>&nbsp;in interface&nbsp;<code><a href="LaunchPayloadc.html" title="interface in mindustry.gen">LaunchPayloadc</a></code></dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="x()">x</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">x</span>()</div>
+<h3><a id="in()">in</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.util.Interval</span>&nbsp;<span class="memberName">in</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#x()">x</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+<dd><code><a href="LaunchPayloadc.html#in()">in</a></code>&nbsp;in interface&nbsp;<code><a href="LaunchPayloadc.html" title="interface in mindustry.gen">LaunchPayloadc</a></code></dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="x(float)">x</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">x</span>&#8203;(<span class="arguments">float&nbsp;x)</span></div>
+<h3><a id="in(arc.util.Interval)">in</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">in</span>&#8203;(<span class="arguments">arc.util.Interval&nbsp;in)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#x(float)">x</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="y()">y</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">y</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#y()">y</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="y(float)">y</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">y</span>&#8203;(<span class="arguments">float&nbsp;y)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#y(float)">y</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+<dd><code><a href="LaunchPayloadc.html#in(arc.util.Interval)">in</a></code>&nbsp;in interface&nbsp;<code><a href="LaunchPayloadc.html" title="interface in mindustry.gen">LaunchPayloadc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -1095,41 +1075,61 @@ float&nbsp;y)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="stacks()">stacks</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.struct.Seq&lt;<a href="../type/ItemStack.html" title="class in mindustry.type">ItemStack</a>&gt;</span>&nbsp;<span class="memberName">stacks</span>()</div>
+<h3><a id="x()">x</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">x</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="LaunchPayloadc.html#stacks()">stacks</a></code>&nbsp;in interface&nbsp;<code><a href="LaunchPayloadc.html" title="interface in mindustry.gen">LaunchPayloadc</a></code></dd>
+<dd><code><a href="Posc.html#x()">x</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="stacks(arc.struct.Seq)">stacks</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">stacks</span>&#8203;(<span class="arguments">arc.struct.Seq&lt;<a href="../type/ItemStack.html" title="class in mindustry.type">ItemStack</a>&gt;&nbsp;stacks)</span></div>
+<h3><a id="x(float)">x</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">x</span>&#8203;(<span class="arguments">float&nbsp;x)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="LaunchPayloadc.html#stacks(arc.struct.Seq)">stacks</a></code>&nbsp;in interface&nbsp;<code><a href="LaunchPayloadc.html" title="interface in mindustry.gen">LaunchPayloadc</a></code></dd>
+<dd><code><a href="Posc.html#x(float)">x</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="in()">in</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.util.Interval</span>&nbsp;<span class="memberName">in</span>()</div>
+<h3><a id="y()">y</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">y</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="LaunchPayloadc.html#in()">in</a></code>&nbsp;in interface&nbsp;<code><a href="LaunchPayloadc.html" title="interface in mindustry.gen">LaunchPayloadc</a></code></dd>
+<dd><code><a href="Posc.html#y()">y</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="in(arc.util.Interval)">in</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">in</span>&#8203;(<span class="arguments">arc.util.Interval&nbsp;in)</span></div>
+<h3><a id="y(float)">y</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">y</span>&#8203;(<span class="arguments">float&nbsp;y)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="LaunchPayloadc.html#in(arc.util.Interval)">in</a></code>&nbsp;in interface&nbsp;<code><a href="LaunchPayloadc.html" title="interface in mindustry.gen">LaunchPayloadc</a></code></dd>
+<dd><code><a href="Posc.html#y(float)">y</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="team()">team</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../game/Team.html" title="class in mindustry.game">Team</a></span>&nbsp;<span class="memberName">team</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Teamc.html#team()">team</a></code>&nbsp;in interface&nbsp;<code><a href="Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="team(mindustry.game.Team)">team</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">team</span>&#8203;(<span class="arguments"><a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Teamc.html#team(mindustry.game.Team)">team</a></code>&nbsp;in interface&nbsp;<code><a href="Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
 </dl>
 </section>
 </li>
