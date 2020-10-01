@@ -97,7 +97,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <pre>public class <span class="typeNameLabel">Bullet</span>
 extends java.lang.Object
-implements arc.util.pooling.Pool.Poolable, <a href="Damagec.html" title="interface in mindustry.gen">Damagec</a>, <a href="Drawc.html" title="interface in mindustry.gen">Drawc</a>, <a href="Velc.html" title="interface in mindustry.gen">Velc</a>, <a href="Timedc.html" title="interface in mindustry.gen">Timedc</a>, <a href="Shielderc.html" title="interface in mindustry.gen">Shielderc</a>, <a href="Ownerc.html" title="interface in mindustry.gen">Ownerc</a>, <a href="Teamc.html" title="interface in mindustry.gen">Teamc</a>, <a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a>, <a href="Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="Timerc.html" title="interface in mindustry.gen">Timerc</a>, <a href="Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a>, <a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></pre>
+implements arc.util.pooling.Pool.Poolable, <a href="Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a>, <a href="Velc.html" title="interface in mindustry.gen">Velc</a>, <a href="Ownerc.html" title="interface in mindustry.gen">Ownerc</a>, <a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a>, <a href="Timerc.html" title="interface in mindustry.gen">Timerc</a>, <a href="Teamc.html" title="interface in mindustry.gen">Teamc</a>, <a href="Damagec.html" title="interface in mindustry.gen">Damagec</a>, <a href="Shielderc.html" title="interface in mindustry.gen">Shielderc</a>, <a href="Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="Timedc.html" title="interface in mindustry.gen">Timedc</a>, <a href="Drawc.html" title="interface in mindustry.gen">Drawc</a>, <a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></pre>
 </section>
 <section class="summary">
 <ul class="blockList">
@@ -793,6 +793,36 @@ float&nbsp;y)</code></th>
 <ul class="blockList">
 <li class="blockList">
 <section class="detail">
+<h3><a id="lastX">lastX</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">lastX</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="lastY">lastY</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">lastY</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="deltaX">deltaX</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">deltaX</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="deltaY">deltaY</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">deltaY</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="hitSize">hitSize</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">hitSize</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
 <h3><a id="vel">vel</a></h3>
 <div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">arc.math.geom.Vec2</span>&nbsp;<span class="memberName">vel</span></div>
 </section>
@@ -805,26 +835,8 @@ float&nbsp;y)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="time">time</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">time</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="lifetime">lifetime</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">lifetime</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
 <h3><a id="owner">owner</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></span>&nbsp;<span class="memberName">owner</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="team">team</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../game/Team.html" title="class in mindustry.game">Team</a></span>&nbsp;<span class="memberName">team</span></div>
 </section>
 </li>
 <li class="blockList">
@@ -859,6 +871,18 @@ float&nbsp;y)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
+<h3><a id="timer">timer</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">arc.util.Interval</span>&nbsp;<span class="memberName">timer</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="team">team</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../game/Team.html" title="class in mindustry.game">Team</a></span>&nbsp;<span class="memberName">team</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
 <h3><a id="x">x</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">x</span></div>
 </section>
@@ -871,38 +895,14 @@ float&nbsp;y)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="timer">timer</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">arc.util.Interval</span>&nbsp;<span class="memberName">timer</span></div>
+<h3><a id="time">time</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">time</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="lastX">lastX</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">lastX</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="lastY">lastY</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">lastY</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="deltaX">deltaX</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">deltaX</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="deltaY">deltaY</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">deltaY</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="hitSize">hitSize</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">hitSize</span></div>
+<h3><a id="lifetime">lifetime</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">lifetime</span></div>
 </section>
 </li>
 <li class="blockList">
@@ -1001,6 +1001,16 @@ float&nbsp;y)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
+<h3><a id="trns(arc.math.geom.Position)">trns</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">trns</span>&#8203;(<span class="arguments">arc.math.geom.Position&nbsp;pos)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Posc.html#trns(arc.math.geom.Position)">trns</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
 <h3><a id="update()">update</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">update</span>()</div>
 <dl>
@@ -1039,11 +1049,11 @@ float&nbsp;y)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="damageMultiplier()">damageMultiplier</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">damageMultiplier</span>()</div>
+<h3><a id="isRemote()">isRemote</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">isRemote</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Bulletc.html#damageMultiplier()">damageMultiplier</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+<dd><code><a href="Entityc.html#isRemote()">isRemote</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -1126,11 +1136,13 @@ float&nbsp;y)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="isRemote()">isRemote</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">isRemote</span>()</div>
+<h3><a id="absorb()">absorb</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">absorb</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Entityc.html#isRemote()">isRemote</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dd><code><a href="Bulletc.html#absorb()">absorb</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Shielderc.html#absorb()">absorb</a></code>&nbsp;in interface&nbsp;<code><a href="Shielderc.html" title="interface in mindustry.gen">Shielderc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -1201,16 +1213,6 @@ float&nbsp;y)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="deltaAngle()">deltaAngle</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">deltaAngle</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Hitboxc.html#deltaAngle()">deltaAngle</a></code>&nbsp;in interface&nbsp;<code><a href="Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
 <h3><a id="damage()">damage</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">damage</span>()</div>
 <dl>
@@ -1235,25 +1237,23 @@ float&nbsp;y)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="trns(arc.math.geom.Position)">trns</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">trns</span>&#8203;(<span class="arguments">arc.math.geom.Position&nbsp;pos)</span></div>
+<h3><a id="rotation(float)">rotation</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">rotation</span>&#8203;(<span class="arguments">float&nbsp;angle)</span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Bulletc.html#rotation(float)">Bulletc</a></code></span></div>
+<div class="block">Sets the bullet's rotation in degrees.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#trns(arc.math.geom.Position)">trns</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+<dd><code><a href="Bulletc.html#rotation(float)">rotation</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="add()">add</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">add</span>()</div>
+<h3><a id="deltaAngle()">deltaAngle</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">deltaAngle</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Bulletc.html#add()">add</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Entityc.html#add()">add</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Hitboxc.html#add()">add</a></code>&nbsp;in interface&nbsp;<code><a href="Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+<dd><code><a href="Hitboxc.html#deltaAngle()">deltaAngle</a></code>&nbsp;in interface&nbsp;<code><a href="Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -1271,18 +1271,6 @@ float&nbsp;y)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="rotation(float)">rotation</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">rotation</span>&#8203;(<span class="arguments">float&nbsp;angle)</span></div>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Bulletc.html#rotation(float)">Bulletc</a></code></span></div>
-<div class="block">Sets the bullet's rotation in degrees.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Bulletc.html#rotation(float)">rotation</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
 <h3><a id="getX()">getX</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">getX</span>()</div>
 <dl>
@@ -1295,16 +1283,6 @@ float&nbsp;y)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="tileOn()">tileOn</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../world/Tile.html" title="class in mindustry.world">Tile</a></span>&nbsp;<span class="memberName">tileOn</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#tileOn()">tileOn</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
 <h3><a id="draw()">draw</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">draw</span>()</div>
 <dl>
@@ -1312,6 +1290,20 @@ float&nbsp;y)</span></div>
 <dd><code><a href="Bulletc.html#draw()">draw</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Drawc.html#draw()">draw</a></code>&nbsp;in interface&nbsp;<code><a href="Drawc.html" title="interface in mindustry.gen">Drawc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="add()">add</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">add</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Bulletc.html#add()">add</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Entityc.html#add()">add</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Hitboxc.html#add()">add</a></code>&nbsp;in interface&nbsp;<code><a href="Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -1412,6 +1404,16 @@ float&nbsp;y)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
+<h3><a id="damageMultiplier()">damageMultiplier</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">damageMultiplier</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Bulletc.html#damageMultiplier()">damageMultiplier</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
 <h3><a id="solidity()">solidity</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../entities/EntityCollisions.SolidPred.html" title="interface in mindustry.entities">EntityCollisions.SolidPred</a></span>&nbsp;<span class="memberName">solidity</span>()</div>
 <dl>
@@ -1455,13 +1457,11 @@ float&nbsp;time)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="absorb()">absorb</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">absorb</span>()</div>
+<h3><a id="tileOn()">tileOn</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../world/Tile.html" title="class in mindustry.world">Tile</a></span>&nbsp;<span class="memberName">tileOn</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Bulletc.html#absorb()">absorb</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Shielderc.html#absorb()">absorb</a></code>&nbsp;in interface&nbsp;<code><a href="Shielderc.html" title="interface in mindustry.gen">Shielderc</a></code></dd>
+<dd><code><a href="Posc.html#tileOn()">tileOn</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -1568,266 +1568,6 @@ int&nbsp;tileY)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="vel()">vel</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.math.geom.Vec2</span>&nbsp;<span class="memberName">vel</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Velc.html#vel()">vel</a></code>&nbsp;in interface&nbsp;<code><a href="Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="drag()">drag</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">drag</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Velc.html#drag()">drag</a></code>&nbsp;in interface&nbsp;<code><a href="Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="drag(float)">drag</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">drag</span>&#8203;(<span class="arguments">float&nbsp;drag)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Velc.html#drag(float)">drag</a></code>&nbsp;in interface&nbsp;<code><a href="Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="time()">time</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">time</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Timedc.html#time()">time</a></code>&nbsp;in interface&nbsp;<code><a href="Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="time(float)">time</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">time</span>&#8203;(<span class="arguments">float&nbsp;time)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Timedc.html#time(float)">time</a></code>&nbsp;in interface&nbsp;<code><a href="Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="lifetime()">lifetime</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">lifetime</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Timedc.html#lifetime()">lifetime</a></code>&nbsp;in interface&nbsp;<code><a href="Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="lifetime(float)">lifetime</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">lifetime</span>&#8203;(<span class="arguments">float&nbsp;lifetime)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Timedc.html#lifetime(float)">lifetime</a></code>&nbsp;in interface&nbsp;<code><a href="Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="owner()">owner</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></span>&nbsp;<span class="memberName">owner</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Ownerc.html#owner()">owner</a></code>&nbsp;in interface&nbsp;<code><a href="Ownerc.html" title="interface in mindustry.gen">Ownerc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="owner(mindustry.gen.Entityc)">owner</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">owner</span>&#8203;(<span class="arguments"><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a>&nbsp;owner)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Ownerc.html#owner(mindustry.gen.Entityc)">owner</a></code>&nbsp;in interface&nbsp;<code><a href="Ownerc.html" title="interface in mindustry.gen">Ownerc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="team()">team</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../game/Team.html" title="class in mindustry.game">Team</a></span>&nbsp;<span class="memberName">team</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Teamc.html#team()">team</a></code>&nbsp;in interface&nbsp;<code><a href="Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="team(mindustry.game.Team)">team</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">team</span>&#8203;(<span class="arguments"><a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Teamc.html#team(mindustry.game.Team)">team</a></code>&nbsp;in interface&nbsp;<code><a href="Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="collided()">collided</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.struct.IntSeq</span>&nbsp;<span class="memberName">collided</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Bulletc.html#collided()">collided</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="collided(arc.struct.IntSeq)">collided</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">collided</span>&#8203;(<span class="arguments">arc.struct.IntSeq&nbsp;collided)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Bulletc.html#collided(arc.struct.IntSeq)">collided</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="data()">data</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">java.lang.Object</span>&nbsp;<span class="memberName">data</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Bulletc.html#data()">data</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="data(java.lang.Object)">data</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">data</span>&#8203;(<span class="arguments">java.lang.Object&nbsp;data)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Bulletc.html#data(java.lang.Object)">data</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="type()">type</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../entities/bullet/BulletType.html" title="class in mindustry.entities.bullet">BulletType</a></span>&nbsp;<span class="memberName">type</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Bulletc.html#type()">type</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="type(mindustry.entities.bullet.BulletType)">type</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">type</span>&#8203;(<span class="arguments"><a href="../entities/bullet/BulletType.html" title="class in mindustry.entities.bullet">BulletType</a>&nbsp;type)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Bulletc.html#type(mindustry.entities.bullet.BulletType)">type</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="damage(float)">damage</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">damage</span>&#8203;(<span class="arguments">float&nbsp;damage)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Bulletc.html#damage(float)">damage</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="fdata()">fdata</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">fdata</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Bulletc.html#fdata()">fdata</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="fdata(float)">fdata</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">fdata</span>&#8203;(<span class="arguments">float&nbsp;fdata)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Bulletc.html#fdata(float)">fdata</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="x()">x</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">x</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#x()">x</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="x(float)">x</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">x</span>&#8203;(<span class="arguments">float&nbsp;x)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#x(float)">x</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="y()">y</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">y</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#y()">y</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="y(float)">y</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">y</span>&#8203;(<span class="arguments">float&nbsp;y)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#y(float)">y</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="timer()">timer</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.util.Interval</span>&nbsp;<span class="memberName">timer</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Timerc.html#timer()">timer</a></code>&nbsp;in interface&nbsp;<code><a href="Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="timer(arc.util.Interval)">timer</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">timer</span>&#8203;(<span class="arguments">arc.util.Interval&nbsp;timer)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Timerc.html#timer(arc.util.Interval)">timer</a></code>&nbsp;in interface&nbsp;<code><a href="Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
 <h3><a id="lastX()">lastX</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">lastX</span>()</div>
 <dl>
@@ -1923,6 +1663,266 @@ int&nbsp;tileY)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Hitboxc.html#hitSize(float)">hitSize</a></code>&nbsp;in interface&nbsp;<code><a href="Hitboxc.html" title="interface in mindustry.gen">Hitboxc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="vel()">vel</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.math.geom.Vec2</span>&nbsp;<span class="memberName">vel</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Velc.html#vel()">vel</a></code>&nbsp;in interface&nbsp;<code><a href="Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="drag()">drag</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">drag</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Velc.html#drag()">drag</a></code>&nbsp;in interface&nbsp;<code><a href="Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="drag(float)">drag</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">drag</span>&#8203;(<span class="arguments">float&nbsp;drag)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Velc.html#drag(float)">drag</a></code>&nbsp;in interface&nbsp;<code><a href="Velc.html" title="interface in mindustry.gen">Velc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="owner()">owner</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></span>&nbsp;<span class="memberName">owner</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Ownerc.html#owner()">owner</a></code>&nbsp;in interface&nbsp;<code><a href="Ownerc.html" title="interface in mindustry.gen">Ownerc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="owner(mindustry.gen.Entityc)">owner</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">owner</span>&#8203;(<span class="arguments"><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a>&nbsp;owner)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Ownerc.html#owner(mindustry.gen.Entityc)">owner</a></code>&nbsp;in interface&nbsp;<code><a href="Ownerc.html" title="interface in mindustry.gen">Ownerc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="collided()">collided</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.struct.IntSeq</span>&nbsp;<span class="memberName">collided</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Bulletc.html#collided()">collided</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="collided(arc.struct.IntSeq)">collided</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">collided</span>&#8203;(<span class="arguments">arc.struct.IntSeq&nbsp;collided)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Bulletc.html#collided(arc.struct.IntSeq)">collided</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="data()">data</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">java.lang.Object</span>&nbsp;<span class="memberName">data</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Bulletc.html#data()">data</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="data(java.lang.Object)">data</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">data</span>&#8203;(<span class="arguments">java.lang.Object&nbsp;data)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Bulletc.html#data(java.lang.Object)">data</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="type()">type</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../entities/bullet/BulletType.html" title="class in mindustry.entities.bullet">BulletType</a></span>&nbsp;<span class="memberName">type</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Bulletc.html#type()">type</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="type(mindustry.entities.bullet.BulletType)">type</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">type</span>&#8203;(<span class="arguments"><a href="../entities/bullet/BulletType.html" title="class in mindustry.entities.bullet">BulletType</a>&nbsp;type)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Bulletc.html#type(mindustry.entities.bullet.BulletType)">type</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="damage(float)">damage</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">damage</span>&#8203;(<span class="arguments">float&nbsp;damage)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Bulletc.html#damage(float)">damage</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="fdata()">fdata</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">fdata</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Bulletc.html#fdata()">fdata</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="fdata(float)">fdata</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">fdata</span>&#8203;(<span class="arguments">float&nbsp;fdata)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Bulletc.html#fdata(float)">fdata</a></code>&nbsp;in interface&nbsp;<code><a href="Bulletc.html" title="interface in mindustry.gen">Bulletc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="timer()">timer</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.util.Interval</span>&nbsp;<span class="memberName">timer</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Timerc.html#timer()">timer</a></code>&nbsp;in interface&nbsp;<code><a href="Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="timer(arc.util.Interval)">timer</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">timer</span>&#8203;(<span class="arguments">arc.util.Interval&nbsp;timer)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Timerc.html#timer(arc.util.Interval)">timer</a></code>&nbsp;in interface&nbsp;<code><a href="Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="team()">team</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../game/Team.html" title="class in mindustry.game">Team</a></span>&nbsp;<span class="memberName">team</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Teamc.html#team()">team</a></code>&nbsp;in interface&nbsp;<code><a href="Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="team(mindustry.game.Team)">team</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">team</span>&#8203;(<span class="arguments"><a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Teamc.html#team(mindustry.game.Team)">team</a></code>&nbsp;in interface&nbsp;<code><a href="Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="x()">x</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">x</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Posc.html#x()">x</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="x(float)">x</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">x</span>&#8203;(<span class="arguments">float&nbsp;x)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Posc.html#x(float)">x</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="y()">y</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">y</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Posc.html#y()">y</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="y(float)">y</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">y</span>&#8203;(<span class="arguments">float&nbsp;y)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Posc.html#y(float)">y</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="time()">time</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">time</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Timedc.html#time()">time</a></code>&nbsp;in interface&nbsp;<code><a href="Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="time(float)">time</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">time</span>&#8203;(<span class="arguments">float&nbsp;time)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Timedc.html#time(float)">time</a></code>&nbsp;in interface&nbsp;<code><a href="Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="lifetime()">lifetime</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">lifetime</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Timedc.html#lifetime()">lifetime</a></code>&nbsp;in interface&nbsp;<code><a href="Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="lifetime(float)">lifetime</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">lifetime</span>&#8203;(<span class="arguments">float&nbsp;lifetime)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Timedc.html#lifetime(float)">lifetime</a></code>&nbsp;in interface&nbsp;<code><a href="Timedc.html" title="interface in mindustry.gen">Timedc</a></code></dd>
 </dl>
 </section>
 </li>
