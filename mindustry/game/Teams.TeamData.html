@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -95,7 +95,7 @@ loadScripts(document, 'script');</script>
 <dd><a href="Teams.html" title="class in mindustry.game">Teams</a></dd>
 </dl>
 <hr>
-<pre>public class <span class="typeNameLabel">Teams.TeamData</span>
+<pre>public static class <span class="typeNameLabel">Teams.TeamData</span>
 extends java.lang.Object</pre>
 </section>
 <section class="summary">
@@ -158,6 +158,41 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#team">team</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>arc.math.geom.QuadTree&lt;<a href="../gen/Unit.html" title="class in mindustry.gen">Unit</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#tree">tree</a></span></code></th>
+<td class="colLast">
+<div class="block">Quadtree for units of this type.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int[]</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#typeCounts">typeCounts</a></span></code></th>
+<td class="colLast">
+<div class="block">Counts for each type of unit.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unitCount">unitCount</a></span></code></th>
+<td class="colLast">
+<div class="block">Total unit count.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>arc.struct.Seq&lt;<a href="../gen/Unit.html" title="class in mindustry.gen">Unit</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#units">units</a></span></code></th>
+<td class="colLast">
+<div class="block">Units of this team.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>arc.struct.Seq&lt;<a href="../gen/Unit.html" title="class in mindustry.gen">Unit</a>&gt;[]</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unitsByType">unitsByType</a></span></code></th>
+<td class="colLast">
+<div class="block">Units of this team by type.</div>
+</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -217,23 +252,44 @@ extends java.lang.Object</pre>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor" id="i2">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasAI()">hasAI</a></span>()</code></th>
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#countType(mindustry.type.UnitType)">countType</a></span>&#8203;(<a href="../type/UnitType.html" title="class in mindustry.type">UnitType</a>&nbsp;type)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i3">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasCore()">hasCore</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasAI()">hasAI</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor" id="i4">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#noCores()">noCores</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasCore()">hasCore</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i5">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#noCores()">noCores</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i6">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i7">
+<td class="colFirst"><code>arc.math.geom.QuadTree&lt;<a href="../gen/Unit.html" title="class in mindustry.gen">Unit</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#tree()">tree</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i8">
+<td class="colFirst"><code>arc.struct.Seq&lt;<a href="../gen/Unit.html" title="class in mindustry.gen">Unit</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unitCache(mindustry.type.UnitType)">unitCache</a></span>&#8203;(<a href="../type/UnitType.html" title="class in mindustry.type">UnitType</a>&nbsp;type)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i9">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateCount(mindustry.type.UnitType,int)">updateCount</a></span>&#8203;(<a href="../type/UnitType.html" title="class in mindustry.type">UnitType</a>&nbsp;type,
+int&nbsp;amount)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
@@ -303,6 +359,41 @@ extends java.lang.Object</pre>
 <div class="block">Target items to mine.</div>
 </section>
 </li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="unitCount">unitCount</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">unitCount</span></div>
+<div class="block">Total unit count.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="typeCounts">typeCounts</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int[]</span>&nbsp;<span class="memberName">typeCounts</span></div>
+<div class="block">Counts for each type of unit. Do not access directly.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="tree">tree</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.math.geom.QuadTree&lt;<a href="../gen/Unit.html" title="class in mindustry.gen">Unit</a>&gt;</span>&nbsp;<span class="memberName">tree</span></div>
+<div class="block">Quadtree for units of this type. Do not access directly.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="units">units</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.struct.Seq&lt;<a href="../gen/Unit.html" title="class in mindustry.gen">Unit</a>&gt;</span>&nbsp;<span class="memberName">units</span></div>
+<div class="block">Units of this team. Updated each frame.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="unitsByType">unitsByType</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.struct.Seq&lt;<a href="../gen/Unit.html" title="class in mindustry.gen">Unit</a>&gt;[]</span>&nbsp;<span class="memberName">unitsByType</span></div>
+<div class="block">Units of this team by type. Updated each frame.</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -329,6 +420,31 @@ extends java.lang.Object</pre>
 </a>
 <h2>Method Details</h2>
 <ul class="blockList">
+<li class="blockList">
+<section class="detail">
+<h3><a id="unitCache(mindustry.type.UnitType)">unitCache</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.struct.Seq&lt;<a href="../gen/Unit.html" title="class in mindustry.gen">Unit</a>&gt;</span>&nbsp;<span class="memberName">unitCache</span>&#8203;(<span class="arguments"><a href="../type/UnitType.html" title="class in mindustry.type">UnitType</a>&nbsp;type)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="updateCount(mindustry.type.UnitType,int)">updateCount</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">updateCount</span>&#8203;(<span class="arguments"><a href="../type/UnitType.html" title="class in mindustry.type">UnitType</a>&nbsp;type,
+int&nbsp;amount)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="tree()">tree</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.math.geom.QuadTree&lt;<a href="../gen/Unit.html" title="class in mindustry.gen">Unit</a>&gt;</span>&nbsp;<span class="memberName">tree</span>()</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="countType(mindustry.type.UnitType)">countType</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">countType</span>&#8203;(<span class="arguments"><a href="../type/UnitType.html" title="class in mindustry.type">UnitType</a>&nbsp;type)</span></div>
+</section>
+</li>
 <li class="blockList">
 <section class="detail">
 <h3><a id="active()">active</a></h3>

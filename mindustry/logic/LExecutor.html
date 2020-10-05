@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -192,6 +192,20 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="LExecutor.UnitBindI.html" title="class in mindustry.logic">LExecutor.UnitBindI</a></span></code></th>
+<td class="colLast">
+<div class="block">Binds the processor to a unit based on some filters.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="LExecutor.UnitControlI.html" title="class in mindustry.logic">LExecutor.UnitControlI</a></span></code></th>
+<td class="colLast">
+<div class="block">Controls the unit based on some parameters.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="LExecutor.Var.html" title="class in mindustry.logic">LExecutor.Var</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -263,23 +277,33 @@ extends java.lang.Object</pre>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code><a href="../game/Team.html" title="class in mindustry.game">Team</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#team">team</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>java.lang.StringBuilder</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#textBuffer">textBuffer</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#varCounter">varCounter</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="LExecutor.Var.html" title="class in mindustry.logic">LExecutor.Var</a>[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#vars">vars</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#varTime">varTime</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#varUnit">varUnit</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
@@ -364,29 +388,40 @@ int&nbsp;maxInstructions)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor" id="i6">
+<td class="colFirst"><code>float</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#numf(int)">numf</a></span>&#8203;(int&nbsp;index)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i7">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#numi(int)">numi</a></span>&#8203;(int&nbsp;index)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor" id="i7">
+<tr class="altColor" id="i8">
 <td class="colFirst"><code>java.lang.Object</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#obj(int)">obj</a></span>&#8203;(int&nbsp;index)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i8">
+<tr class="rowColor" id="i9">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#runOnce()">runOnce</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Runs a single instruction.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i9">
+<tr class="altColor" id="i10">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setconst(int,java.lang.Object)">setconst</a></span>&#8203;(int&nbsp;index,
+java.lang.Object&nbsp;value)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i11">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setnum(int,double)">setnum</a></span>&#8203;(int&nbsp;index,
 double&nbsp;value)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i10">
+<tr class="altColor" id="i12">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setobj(int,java.lang.Object)">setobj</a></span>&#8203;(int&nbsp;index,
 java.lang.Object&nbsp;value)</code></th>
@@ -452,6 +487,16 @@ java.lang.Object&nbsp;value)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
+<h3><a id="varUnit">varUnit</a></h3>
+<div class="memberSignature"><span class="modifiers">public static final</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">varUnit</span></div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../constant-values.html#mindustry.logic.LExecutor.varUnit">Constant Field Values</a></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
 <h3><a id="maxGraphicsBuffer">maxGraphicsBuffer</a></h3>
 <div class="memberSignature"><span class="modifiers">public static final</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">maxGraphicsBuffer</span></div>
 <dl>
@@ -508,6 +553,12 @@ java.lang.Object&nbsp;value)</code></th>
 <section class="detail">
 <h3><a id="links">links</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../gen/Building.html" title="class in mindustry.gen">Building</a>[]</span>&nbsp;<span class="memberName">links</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="team">team</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../game/Team.html" title="class in mindustry.game">Team</a></span>&nbsp;<span class="memberName">team</span></div>
 </section>
 </li>
 </ul>
@@ -589,6 +640,12 @@ int&nbsp;maxInstructions)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
+<h3><a id="numf(int)">numf</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">numf</span>&#8203;(<span class="arguments">int&nbsp;index)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
 <h3><a id="numi(int)">numi</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">numi</span>&#8203;(<span class="arguments">int&nbsp;index)</span></div>
 </section>
@@ -604,6 +661,13 @@ double&nbsp;value)</span></div>
 <section class="detail">
 <h3><a id="setobj(int,java.lang.Object)">setobj</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">setobj</span>&#8203;(<span class="arguments">int&nbsp;index,
+java.lang.Object&nbsp;value)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="setconst(int,java.lang.Object)">setconst</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">setconst</span>&#8203;(<span class="arguments">int&nbsp;index,
 java.lang.Object&nbsp;value)</span></div>
 </section>
 </li>
