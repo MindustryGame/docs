@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -112,7 +112,7 @@ extends <a href="../../entities/units/AIController.html" title="class in mindust
 <h3>Fields inherited from class&nbsp;mindustry.entities.units.<a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></h3>
 <a id="fields.inherited.from.class.mindustry.entities.units.AIController">
 <!--   -->
-</a><code><a href="../../entities/units/AIController.html#target">target</a>, <a href="../../entities/units/AIController.html#targets">targets</a>, <a href="../../entities/units/AIController.html#timer">timer</a>, <a href="../../entities/units/AIController.html#timerTarget">timerTarget</a>, <a href="../../entities/units/AIController.html#timerTarget2">timerTarget2</a>, <a href="../../entities/units/AIController.html#timerTarget3">timerTarget3</a>, <a href="../../entities/units/AIController.html#unit">unit</a>, <a href="../../entities/units/AIController.html#vec">vec</a></code></div>
+</a><code><a href="../../entities/units/AIController.html#fallback">fallback</a>, <a href="../../entities/units/AIController.html#target">target</a>, <a href="../../entities/units/AIController.html#targets">targets</a>, <a href="../../entities/units/AIController.html#timer">timer</a>, <a href="../../entities/units/AIController.html#timerTarget">timerTarget</a>, <a href="../../entities/units/AIController.html#timerTarget2">timerTarget2</a>, <a href="../../entities/units/AIController.html#timerTarget3">timerTarget3</a>, <a href="../../entities/units/AIController.html#unit">unit</a>, <a href="../../entities/units/AIController.html#vec">vec</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -159,8 +159,23 @@ extends <a href="../../entities/units/AIController.html" title="class in mindust
 </thead>
 <tbody>
 <tr class="altColor" id="i0">
+<td class="colFirst"><code><a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#fallback()">fallback</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i1">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shouldShoot()">shouldShoot</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i2">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateUnit()">updateUnit</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateMovement()">updateMovement</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i3">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#useFallback()">useFallback</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
@@ -171,7 +186,7 @@ extends <a href="../../entities/units/AIController.html" title="class in mindust
 <h3>Methods inherited from class&nbsp;mindustry.entities.units.<a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></h3>
 <a id="methods.inherited.from.class.mindustry.entities.units.AIController">
 <!--   -->
-</a><code><a href="../../entities/units/AIController.html#circle(arc.math.geom.Position,float)">circle</a>, <a href="../../entities/units/AIController.html#circle(arc.math.geom.Position,float,float)">circle</a>, <a href="../../entities/units/AIController.html#command()">command</a>, <a href="../../entities/units/AIController.html#findTarget(float,float,float,boolean,boolean)">findTarget</a>, <a href="../../entities/units/AIController.html#getClosestSpawner()">getClosestSpawner</a>, <a href="../../entities/units/AIController.html#init()">init</a>, <a href="../../entities/units/AIController.html#invalid(mindustry.gen.Teamc)">invalid</a>, <a href="../../entities/units/AIController.html#moveTo(arc.math.geom.Position,float)">moveTo</a>, <a href="../../entities/units/AIController.html#moveTo(arc.math.geom.Position,float,float)">moveTo</a>, <a href="../../entities/units/AIController.html#pathfind(int)">pathfind</a>, <a href="../../entities/units/AIController.html#retarget()">retarget</a>, <a href="../../entities/units/AIController.html#shouldShoot()">shouldShoot</a>, <a href="../../entities/units/AIController.html#target(float,float,float,boolean,boolean)">target</a>, <a href="../../entities/units/AIController.html#targetFlag(float,float,mindustry.world.meta.BlockFlag,boolean)">targetFlag</a>, <a href="../../entities/units/AIController.html#unit()">unit</a>, <a href="../../entities/units/AIController.html#unit(mindustry.gen.Unit)">unit</a>, <a href="../../entities/units/AIController.html#updateMovement()">updateMovement</a>, <a href="../../entities/units/AIController.html#updateTargeting()">updateTargeting</a>, <a href="../../entities/units/AIController.html#updateVisuals()">updateVisuals</a>, <a href="../../entities/units/AIController.html#updateWeapons()">updateWeapons</a></code></div>
+</a><code><a href="../../entities/units/AIController.html#circle(arc.math.geom.Position,float)">circle</a>, <a href="../../entities/units/AIController.html#circle(arc.math.geom.Position,float,float)">circle</a>, <a href="../../entities/units/AIController.html#command()">command</a>, <a href="../../entities/units/AIController.html#findTarget(float,float,float,boolean,boolean)">findTarget</a>, <a href="../../entities/units/AIController.html#getClosestSpawner()">getClosestSpawner</a>, <a href="../../entities/units/AIController.html#init()">init</a>, <a href="../../entities/units/AIController.html#invalid(mindustry.gen.Teamc)">invalid</a>, <a href="../../entities/units/AIController.html#moveTo(arc.math.geom.Position,float)">moveTo</a>, <a href="../../entities/units/AIController.html#moveTo(arc.math.geom.Position,float,float)">moveTo</a>, <a href="../../entities/units/AIController.html#pathfind(int)">pathfind</a>, <a href="../../entities/units/AIController.html#retarget()">retarget</a>, <a href="../../entities/units/AIController.html#target(float,float,float,boolean,boolean)">target</a>, <a href="../../entities/units/AIController.html#targetFlag(float,float,mindustry.world.meta.BlockFlag,boolean)">targetFlag</a>, <a href="../../entities/units/AIController.html#unit()">unit</a>, <a href="../../entities/units/AIController.html#unit(mindustry.gen.Unit)">unit</a>, <a href="../../entities/units/AIController.html#updateTargeting()">updateTargeting</a>, <a href="../../entities/units/AIController.html#updateUnit()">updateUnit</a>, <a href="../../entities/units/AIController.html#updateVisuals()">updateVisuals</a>, <a href="../../entities/units/AIController.html#updateWeapons()">updateWeapons</a></code></div>
 <div class="inheritedList">
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
 <a id="methods.inherited.from.class.java.lang.Object">
@@ -213,13 +228,41 @@ extends <a href="../../entities/units/AIController.html" title="class in mindust
 <ul class="blockList">
 <li class="blockList">
 <section class="detail">
-<h3><a id="updateUnit()">updateUnit</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">updateUnit</span>()</div>
+<h3><a id="updateMovement()">updateMovement</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">updateMovement</span>()</div>
 <dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../entities/units/UnitController.html#updateUnit()">updateUnit</a></code>&nbsp;in interface&nbsp;<code><a href="../../entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a></code></dd>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../entities/units/AIController.html#updateUnit()">updateUnit</a></code>&nbsp;in class&nbsp;<code><a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></code></dd>
+<dd><code><a href="../../entities/units/AIController.html#updateMovement()">updateMovement</a></code>&nbsp;in class&nbsp;<code><a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="fallback()">fallback</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></span>&nbsp;<span class="memberName">fallback</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../entities/units/AIController.html#fallback()">fallback</a></code>&nbsp;in class&nbsp;<code><a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="useFallback()">useFallback</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">useFallback</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../entities/units/AIController.html#useFallback()">useFallback</a></code>&nbsp;in class&nbsp;<code><a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="shouldShoot()">shouldShoot</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">shouldShoot</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../entities/units/AIController.html#shouldShoot()">shouldShoot</a></code>&nbsp;in class&nbsp;<code><a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></code></dd>
 </dl>
 </section>
 </li>
