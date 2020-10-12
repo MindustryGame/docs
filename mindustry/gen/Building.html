@@ -101,7 +101,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <pre>public class <span class="typeNameLabel">Building</span>
 extends java.lang.Object
-implements <a href="Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a>, <a href="Timerc.html" title="interface in mindustry.gen">Timerc</a>, <a href="Healthc.html" title="interface in mindustry.gen">Healthc</a>, <a href="Teamc.html" title="interface in mindustry.gen">Teamc</a>, <a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></pre>
+implements <a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a>, <a href="Entityc.html" title="interface in mindustry.gen">Entityc</a>, <a href="Healthc.html" title="interface in mindustry.gen">Healthc</a>, <a href="Teamc.html" title="interface in mindustry.gen">Teamc</a>, <a href="Posc.html" title="interface in mindustry.gen">Posc</a>, <a href="Timerc.html" title="interface in mindustry.gen">Timerc</a></pre>
 </section>
 <section class="summary">
 <ul class="blockList">
@@ -1690,18 +1690,6 @@ float&nbsp;y)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="x">x</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">x</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="y">y</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">y</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
 <h3><a id="tile">tile</a></h3>
 <div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType"><a href="../world/Tile.html" title="class in mindustry.world">Tile</a></span>&nbsp;<span class="memberName">tile</span></div>
 </section>
@@ -1816,8 +1804,14 @@ float&nbsp;y)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="timer">timer</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">arc.util.Interval</span>&nbsp;<span class="memberName">timer</span></div>
+<h3><a id="added">added</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">added</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="id">id</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">id</span></div>
 </section>
 </li>
 <li class="blockList">
@@ -1852,14 +1846,20 @@ float&nbsp;y)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="added">added</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">added</span></div>
+<h3><a id="x">x</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">x</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="id">id</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">id</span></div>
+<h3><a id="y">y</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">y</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="timer">timer</a></h3>
+<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">arc.util.Interval</span>&nbsp;<span class="memberName">timer</span></div>
 </section>
 </li>
 </ul>
@@ -1910,6 +1910,16 @@ float&nbsp;y)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
+<h3><a id="displayBars(arc.scene.ui.layout.Table)">displayBars</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">displayBars</span>&#8203;(<span class="arguments">arc.scene.ui.layout.Table&nbsp;table)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Buildingc.html#displayBars(arc.scene.ui.layout.Table)">displayBars</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
 <h3><a id="onDestroyed()">onDestroyed</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">onDestroyed</span>()</div>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#onDestroyed()">Buildingc</a></code></span></div>
@@ -1922,13 +1932,11 @@ float&nbsp;y)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="getY()">getY</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">getY</span>()</div>
+<h3><a id="productionValid()">productionValid</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">productionValid</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#getY()">getY</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code>getY</code>&nbsp;in interface&nbsp;<code>arc.math.geom.Position</code></dd>
+<dd><code><a href="Buildingc.html#productionValid()">productionValid</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -1947,13 +1955,13 @@ boolean&nbsp;withEffect)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="right()">right</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Building.html" title="class in mindustry.gen">Building</a></span>&nbsp;<span class="memberName">right</span>()</div>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#right()">Buildingc</a></code></span></div>
-<div class="block">Multiblock right.</div>
+<h3><a id="write(arc.util.io.Writes)">write</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">write</span>&#8203;(<span class="arguments">arc.util.io.Writes&nbsp;write)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#right()">right</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Buildingc.html#write(arc.util.io.Writes)">write</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Entityc.html#write(arc.util.io.Writes)">write</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -2042,11 +2050,11 @@ float&nbsp;duration)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="damageContinuous(float)">damageContinuous</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">damageContinuous</span>&#8203;(<span class="arguments">float&nbsp;amount)</span></div>
+<h3><a id="afterRead()">afterRead</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">afterRead</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Healthc.html#damageContinuous(float)">damageContinuous</a></code>&nbsp;in interface&nbsp;<code><a href="Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
+<dd><code><a href="Entityc.html#afterRead()">afterRead</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -2085,53 +2093,47 @@ float&nbsp;duration)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="getCursor()">getCursor</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.Graphics.Cursor</span>&nbsp;<span class="memberName">getCursor</span>()</div>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#getCursor()">Buildingc</a></code></span></div>
-<div class="block">Returns whether or not a hand cursor should be shown over this block.</div>
+<h3><a id="noSleep()">noSleep</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">noSleep</span>()</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#noSleep()">Buildingc</a></code></span></div>
+<div class="block">Call when this entity is updating. This wakes it up.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#getCursor()">getCursor</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Buildingc.html#noSleep()">noSleep</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="sleep()">sleep</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">sleep</span>()</div>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#sleep()">Buildingc</a></code></span></div>
-<div class="block">Call when nothing is happening to the entity. This increments the internal sleep timer.</div>
+<h3><a id="powerGraphRemoved()">powerGraphRemoved</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">powerGraphRemoved</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#sleep()">sleep</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Buildingc.html#powerGraphRemoved()">powerGraphRemoved</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="moveForward(mindustry.type.Item)">moveForward</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">moveForward</span>&#8203;(<span class="arguments"><a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</span></div>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#moveForward(mindustry.type.Item)">Buildingc</a></code></span></div>
-<div class="block">Try offloading an item to a nearby container in its facing direction. Returns true if success.</div>
+<h3><a id="unitRemoved(mindustry.gen.Unit)">unitRemoved</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">unitRemoved</span>&#8203;(<span class="arguments"><a href="Unit.html" title="class in mindustry.gen">Unit</a>&nbsp;unit)</span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#unitRemoved(mindustry.gen.Unit)">Buildingc</a></code></span></div>
+<div class="block">Called when a unit that spawned at this tile is removed.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#moveForward(mindustry.type.Item)">moveForward</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Buildingc.html#unitRemoved(mindustry.gen.Unit)">unitRemoved</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="control(mindustry.logic.LAccess,java.lang.Object,double,double,double)">control</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">control</span>&#8203;(<span class="arguments"><a href="../logic/LAccess.html" title="enum in mindustry.logic">LAccess</a>&nbsp;type,
-java.lang.Object&nbsp;p1,
-double&nbsp;p2,
-double&nbsp;p3,
-double&nbsp;p4)</span></div>
+<h3><a id="right()">right</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Building.html" title="class in mindustry.gen">Building</a></span>&nbsp;<span class="memberName">right</span>()</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#right()">Buildingc</a></code></span></div>
+<div class="block">Multiblock right.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#control(mindustry.logic.LAccess,java.lang.Object,double,double,double)">control</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../logic/Controllable.html#control(mindustry.logic.LAccess,java.lang.Object,double,double,double)">control</a></code>&nbsp;in interface&nbsp;<code><a href="../logic/Controllable.html" title="interface in mindustry.logic">Controllable</a></code></dd>
+<dd><code><a href="Buildingc.html#right()">right</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -2262,6 +2264,18 @@ float&nbsp;amount,
 </li>
 <li class="blockList">
 <section class="detail">
+<h3><a id="getY()">getY</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">getY</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Posc.html#getY()">getY</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code>getY</code>&nbsp;in interface&nbsp;<code>arc.math.geom.Position</code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
 <h3><a id="damaged()">damaged</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">damaged</span>()</div>
 <dl>
@@ -2292,11 +2306,12 @@ float&nbsp;amount,
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="updateTile()">updateTile</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">updateTile</span>()</div>
+<h3><a id="canDumpLiquid(mindustry.gen.Building,mindustry.type.Liquid)">canDumpLiquid</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">canDumpLiquid</span>&#8203;(<span class="arguments"><a href="Building.html" title="class in mindustry.gen">Building</a>&nbsp;to,
+<a href="../type/Liquid.html" title="class in mindustry.type">Liquid</a>&nbsp;liquid)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#updateTile()">updateTile</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Buildingc.html#canDumpLiquid(mindustry.gen.Building,mindustry.type.Liquid)">canDumpLiquid</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -2356,18 +2371,6 @@ arc.math.geom.Vec2&nbsp;trns)</span></div>
 <dd><code>todump</code> - payload to dump.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>whether the payload was moved successfully</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="noSleep()">noSleep</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">noSleep</span>()</div>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#noSleep()">Buildingc</a></code></span></div>
-<div class="block">Call when this entity is updating. This wakes it up.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#noSleep()">noSleep</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -2483,30 +2486,6 @@ int&nbsp;dy)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="handleStack(mindustry.type.Item,int,mindustry.gen.Teamc)">handleStack</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">handleStack</span>&#8203;(<span class="arguments"><a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item,
-int&nbsp;amount,
-<a href="Teamc.html" title="interface in mindustry.gen">Teamc</a>&nbsp;source)</span></div>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#handleStack(mindustry.type.Item,int,mindustry.gen.Teamc)">Buildingc</a></code></span></div>
-<div class="block">Handle a stack input.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#handleStack(mindustry.type.Item,int,mindustry.gen.Teamc)">handleStack</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="canPickup()">canPickup</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">canPickup</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#canPickup()">canPickup</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
 <h3><a id="floorOn()">floorOn</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../world/blocks/environment/Floor.html" title="class in mindustry.world.blocks.environment">Floor</a></span>&nbsp;<span class="memberName">floorOn</span>()</div>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Posc.html#floorOn()">Posc</a></code></span></div>
@@ -2519,11 +2498,13 @@ int&nbsp;amount,
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="blockOn()">blockOn</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../world/Block.html" title="class in mindustry.world">Block</a></span>&nbsp;<span class="memberName">blockOn</span>()</div>
+<h3><a id="getCursor()">getCursor</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.Graphics.Cursor</span>&nbsp;<span class="memberName">getCursor</span>()</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#getCursor()">Buildingc</a></code></span></div>
+<div class="block">Returns whether or not a hand cursor should be shown over this block.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#blockOn()">blockOn</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+<dd><code><a href="Buildingc.html#getCursor()">getCursor</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -2553,11 +2534,11 @@ int&nbsp;amount,
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="isAdded()">isAdded</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">isAdded</span>()</div>
+<h3><a id="relativeTo(mindustry.gen.Building)">relativeTo</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">byte</span>&nbsp;<span class="memberName">relativeTo</span>&#8203;(<span class="arguments"><a href="Building.html" title="class in mindustry.gen">Building</a>&nbsp;tile)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Entityc.html#isAdded()">isAdded</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dd><code><a href="Buildingc.html#relativeTo(mindustry.gen.Building)">relativeTo</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -2584,11 +2565,17 @@ int&nbsp;cy)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="getPayload()">getPayload</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../world/blocks/payloads/Payload.html" title="interface in mindustry.world.blocks.payloads">Payload</a></span>&nbsp;<span class="memberName">getPayload</span>()</div>
+<h3><a id="control(mindustry.logic.LAccess,java.lang.Object,double,double,double)">control</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">control</span>&#8203;(<span class="arguments"><a href="../logic/LAccess.html" title="enum in mindustry.logic">LAccess</a>&nbsp;type,
+java.lang.Object&nbsp;p1,
+double&nbsp;p2,
+double&nbsp;p3,
+double&nbsp;p4)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#getPayload()">getPayload</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Buildingc.html#control(mindustry.logic.LAccess,java.lang.Object,double,double,double)">control</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../logic/Controllable.html#control(mindustry.logic.LAccess,java.lang.Object,double,double,double)">control</a></code>&nbsp;in interface&nbsp;<code><a href="../logic/Controllable.html" title="interface in mindustry.logic">Controllable</a></code></dd>
 </dl>
 </section>
 </li>
@@ -2648,11 +2635,13 @@ int&nbsp;cy)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="getPowerProduction()">getPowerProduction</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">getPowerProduction</span>()</div>
+<h3><a id="itemTaken(mindustry.type.Item)">itemTaken</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">itemTaken</span>&#8203;(<span class="arguments"><a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#itemTaken(mindustry.type.Item)">Buildingc</a></code></span></div>
+<div class="block">Called when an unloader takes an item.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#getPowerProduction()">getPowerProduction</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Buildingc.html#itemTaken(mindustry.type.Item)">itemTaken</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -2758,13 +2747,11 @@ int&nbsp;cy)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="shouldActiveSound()">shouldActiveSound</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">shouldActiveSound</span>()</div>
+<h3><a id="getPowerProduction()">getPowerProduction</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">getPowerProduction</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#shouldActiveSound()">shouldActiveSound</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>whether this block should play its active sound.</dd>
+<dd><code><a href="Buildingc.html#getPowerProduction()">getPowerProduction</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -2843,33 +2830,34 @@ int&nbsp;rotation)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="relativeTo(mindustry.gen.Building)">relativeTo</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">byte</span>&nbsp;<span class="memberName">relativeTo</span>&#8203;(<span class="arguments"><a href="Building.html" title="class in mindustry.gen">Building</a>&nbsp;tile)</span></div>
+<h3><a id="drawStatus()">drawStatus</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">drawStatus</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#relativeTo(mindustry.gen.Building)">relativeTo</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Buildingc.html#drawStatus()">drawStatus</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="powerGraphRemoved()">powerGraphRemoved</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">powerGraphRemoved</span>()</div>
+<h3><a id="moveForward(mindustry.type.Item)">moveForward</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">moveForward</span>&#8203;(<span class="arguments"><a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#moveForward(mindustry.type.Item)">Buildingc</a></code></span></div>
+<div class="block">Try offloading an item to a nearby container in its facing direction. Returns true if success.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#powerGraphRemoved()">powerGraphRemoved</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Buildingc.html#moveForward(mindustry.type.Item)">moveForward</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="write(arc.util.io.Writes)">write</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">write</span>&#8203;(<span class="arguments">arc.util.io.Writes&nbsp;write)</span></div>
+<h3><a id="set(float,float)">set</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">set</span>&#8203;(<span class="arguments">float&nbsp;x,
+float&nbsp;y)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#write(arc.util.io.Writes)">write</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Entityc.html#write(arc.util.io.Writes)">write</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dd><code><a href="Posc.html#set(float,float)">set</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -2989,16 +2977,6 @@ int&nbsp;amount)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="afterRead()">afterRead</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">afterRead</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Entityc.html#afterRead()">afterRead</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
 <h3><a id="handlePayload(mindustry.gen.Building,mindustry.world.blocks.payloads.Payload)">handlePayload</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">handlePayload</span>&#8203;(<span class="arguments"><a href="Building.html" title="class in mindustry.gen">Building</a>&nbsp;source,
 <a href="../world/blocks/payloads/Payload.html" title="interface in mindustry.world.blocks.payloads">Payload</a>&nbsp;payload)</span></div>
@@ -3020,11 +2998,11 @@ int&nbsp;amount)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="displayBars(arc.scene.ui.layout.Table)">displayBars</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">displayBars</span>&#8203;(<span class="arguments">arc.scene.ui.layout.Table&nbsp;table)</span></div>
+<h3><a id="heal()">heal</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">heal</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#displayBars(arc.scene.ui.layout.Table)">displayBars</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Healthc.html#heal()">heal</a></code>&nbsp;in interface&nbsp;<code><a href="Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -3072,13 +3050,14 @@ int&nbsp;amount)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="itemTaken(mindustry.type.Item)">itemTaken</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">itemTaken</span>&#8203;(<span class="arguments"><a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</span></div>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#itemTaken(mindustry.type.Item)">Buildingc</a></code></span></div>
-<div class="block">Called when an unloader takes an item.</div>
+<h3><a id="offload(mindustry.type.Item)">offload</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">offload</span>&#8203;(<span class="arguments"><a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#offload(mindustry.type.Item)">Buildingc</a></code></span></div>
+<div class="block">Tries to put this item into a nearby container, if there are no available
+  containers, it gets added to the block's inventory.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#itemTaken(mindustry.type.Item)">itemTaken</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Buildingc.html#offload(mindustry.type.Item)">offload</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -3104,13 +3083,11 @@ int&nbsp;amount)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="unitRemoved(mindustry.gen.Unit)">unitRemoved</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">unitRemoved</span>&#8203;(<span class="arguments"><a href="Unit.html" title="class in mindustry.gen">Unit</a>&nbsp;unit)</span></div>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#unitRemoved(mindustry.gen.Unit)">Buildingc</a></code></span></div>
-<div class="block">Called when a unit that spawned at this tile is removed.</div>
+<h3><a id="isAdded()">isAdded</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">isAdded</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#unitRemoved(mindustry.gen.Unit)">unitRemoved</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Entityc.html#isAdded()">isAdded</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -3160,12 +3137,11 @@ float&nbsp;amount)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="set(float,float)">set</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">set</span>&#8203;(<span class="arguments">float&nbsp;x,
-float&nbsp;y)</span></div>
+<h3><a id="updateTile()">updateTile</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">updateTile</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#set(float,float)">set</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+<dd><code><a href="Buildingc.html#updateTile()">updateTile</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -3216,23 +3192,11 @@ byte&nbsp;revision)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="productionValid()">productionValid</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">productionValid</span>()</div>
+<h3><a id="canPickup()">canPickup</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">canPickup</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#productionValid()">productionValid</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="dropped()">dropped</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">dropped</span>()</div>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#dropped()">Buildingc</a></code></span></div>
-<div class="block">Called when this block is dropped as a payload.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#dropped()">dropped</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Buildingc.html#canPickup()">canPickup</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -3351,6 +3315,31 @@ byte&nbsp;revision)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
+<h3><a id="canDump(mindustry.gen.Building,mindustry.type.Item)">canDump</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">canDump</span>&#8203;(<span class="arguments"><a href="Building.html" title="class in mindustry.gen">Building</a>&nbsp;to,
+<a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#canDump(mindustry.gen.Building,mindustry.type.Item)">Buildingc</a></code></span></div>
+<div class="block">Used for dumping items.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Buildingc.html#canDump(mindustry.gen.Building,mindustry.type.Item)">canDump</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="handleString(java.lang.Object)">handleString</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">handleString</span>&#8203;(<span class="arguments">java.lang.Object&nbsp;value)</span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#handleString(java.lang.Object)">Buildingc</a></code></span></div>
+<div class="block">This is for logic blocks.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Buildingc.html#handleString(java.lang.Object)">handleString</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
 <h3><a id="left()">left</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Building.html" title="class in mindustry.gen">Building</a></span>&nbsp;<span class="memberName">left</span>()</div>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#left()">Buildingc</a></code></span></div>
@@ -3358,6 +3347,28 @@ byte&nbsp;revision)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Buildingc.html#left()">left</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="blockOn()">blockOn</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../world/Block.html" title="class in mindustry.world">Block</a></span>&nbsp;<span class="memberName">blockOn</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Posc.html#blockOn()">blockOn</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="dropped()">dropped</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">dropped</span>()</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#dropped()">Buildingc</a></code></span></div>
+<div class="block">Called when this block is dropped as a payload.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Buildingc.html#dropped()">dropped</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -3417,6 +3428,18 @@ java.lang.Object&nbsp;value)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Buildingc.html#getFlammability()">getFlammability</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="sleep()">sleep</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">sleep</span>()</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#sleep()">Buildingc</a></code></span></div>
+<div class="block">Call when nothing is happening to the entity. This increments the internal sleep timer.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Buildingc.html#sleep()">sleep</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -3506,11 +3529,11 @@ int&nbsp;amount,
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="drawStatus()">drawStatus</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">drawStatus</span>()</div>
+<h3><a id="damageContinuous(float)">damageContinuous</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">damageContinuous</span>&#8203;(<span class="arguments">float&nbsp;amount)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#drawStatus()">drawStatus</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Healthc.html#damageContinuous(float)">damageContinuous</a></code>&nbsp;in interface&nbsp;<code><a href="Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -3542,14 +3565,11 @@ int&nbsp;amount,
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="canDump(mindustry.gen.Building,mindustry.type.Item)">canDump</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">canDump</span>&#8203;(<span class="arguments"><a href="Building.html" title="class in mindustry.gen">Building</a>&nbsp;to,
-<a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</span></div>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#canDump(mindustry.gen.Building,mindustry.type.Item)">Buildingc</a></code></span></div>
-<div class="block">Used for dumping items.</div>
+<h3><a id="getPayload()">getPayload</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../world/blocks/payloads/Payload.html" title="interface in mindustry.world.blocks.payloads">Payload</a></span>&nbsp;<span class="memberName">getPayload</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#canDump(mindustry.gen.Building,mindustry.type.Item)">canDump</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Buildingc.html#getPayload()">getPayload</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -3565,14 +3585,13 @@ int&nbsp;amount,
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="offload(mindustry.type.Item)">offload</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">offload</span>&#8203;(<span class="arguments"><a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</span></div>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#offload(mindustry.type.Item)">Buildingc</a></code></span></div>
-<div class="block">Tries to put this item into a nearby container, if there are no available
-  containers, it gets added to the block's inventory.</div>
+<h3><a id="shouldActiveSound()">shouldActiveSound</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">shouldActiveSound</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#offload(mindustry.type.Item)">offload</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Buildingc.html#shouldActiveSound()">shouldActiveSound</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether this block should play its active sound.</dd>
 </dl>
 </section>
 </li>
@@ -3583,16 +3602,6 @@ int&nbsp;amount,
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Teamc.html#core()">core</a></code>&nbsp;in interface&nbsp;<code><a href="Teamc.html" title="interface in mindustry.gen">Teamc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="onProximityRemoved()">onProximityRemoved</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">onProximityRemoved</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#onProximityRemoved()">onProximityRemoved</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -3655,13 +3664,11 @@ float&nbsp;y)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="handleString(java.lang.Object)">handleString</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">handleString</span>&#8203;(<span class="arguments">java.lang.Object&nbsp;value)</span></div>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#handleString(java.lang.Object)">Buildingc</a></code></span></div>
-<div class="block">This is for logic blocks.</div>
+<h3><a id="onProximityRemoved()">onProximityRemoved</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">onProximityRemoved</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#handleString(java.lang.Object)">handleString</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Buildingc.html#onProximityRemoved()">onProximityRemoved</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -3749,12 +3756,15 @@ float&nbsp;y)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="canDumpLiquid(mindustry.gen.Building,mindustry.type.Liquid)">canDumpLiquid</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">canDumpLiquid</span>&#8203;(<span class="arguments"><a href="Building.html" title="class in mindustry.gen">Building</a>&nbsp;to,
-<a href="../type/Liquid.html" title="class in mindustry.type">Liquid</a>&nbsp;liquid)</span></div>
+<h3><a id="handleStack(mindustry.type.Item,int,mindustry.gen.Teamc)">handleStack</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">handleStack</span>&#8203;(<span class="arguments"><a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item,
+int&nbsp;amount,
+<a href="Teamc.html" title="interface in mindustry.gen">Teamc</a>&nbsp;source)</span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="Buildingc.html#handleStack(mindustry.type.Item,int,mindustry.gen.Teamc)">Buildingc</a></code></span></div>
+<div class="block">Handle a stack input.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Buildingc.html#canDumpLiquid(mindustry.gen.Building,mindustry.type.Liquid)">canDumpLiquid</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
+<dd><code><a href="Buildingc.html#handleStack(mindustry.type.Item,int,mindustry.gen.Teamc)">handleStack</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -3765,16 +3775,6 @@ float&nbsp;y)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Buildingc.html#draw()">draw</a></code>&nbsp;in interface&nbsp;<code><a href="Buildingc.html" title="interface in mindustry.gen">Buildingc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="heal()">heal</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">heal</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Healthc.html#heal()">heal</a></code>&nbsp;in interface&nbsp;<code><a href="Healthc.html" title="interface in mindustry.gen">Healthc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -3847,46 +3847,6 @@ float&nbsp;amount)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Entityc.html#classId()">classId</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="x()">x</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">x</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#x()">x</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="x(float)">x</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">x</span>&#8203;(<span class="arguments">float&nbsp;x)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#x(float)">x</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="y()">y</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">y</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#y()">y</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="y(float)">y</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">y</span>&#8203;(<span class="arguments">float&nbsp;y)</span></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Posc.html#y(float)">y</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -4152,21 +4112,21 @@ float&nbsp;amount)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="timer()">timer</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.util.Interval</span>&nbsp;<span class="memberName">timer</span>()</div>
+<h3><a id="id()">id</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">id</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Timerc.html#timer()">timer</a></code>&nbsp;in interface&nbsp;<code><a href="Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
+<dd><code><a href="Entityc.html#id()">id</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="timer(arc.util.Interval)">timer</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">timer</span>&#8203;(<span class="arguments">arc.util.Interval&nbsp;timer)</span></div>
+<h3><a id="id(int)">id</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">id</span>&#8203;(<span class="arguments">int&nbsp;id)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Timerc.html#timer(arc.util.Interval)">timer</a></code>&nbsp;in interface&nbsp;<code><a href="Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
+<dd><code><a href="Entityc.html#id(int)">id</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
 </dl>
 </section>
 </li>
@@ -4272,21 +4232,61 @@ float&nbsp;amount)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="id()">id</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">id</span>()</div>
+<h3><a id="x()">x</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">x</span>()</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Entityc.html#id()">id</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dd><code><a href="Posc.html#x()">x</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="id(int)">id</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">id</span>&#8203;(<span class="arguments">int&nbsp;id)</span></div>
+<h3><a id="x(float)">x</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">x</span>&#8203;(<span class="arguments">float&nbsp;x)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Entityc.html#id(int)">id</a></code>&nbsp;in interface&nbsp;<code><a href="Entityc.html" title="interface in mindustry.gen">Entityc</a></code></dd>
+<dd><code><a href="Posc.html#x(float)">x</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="y()">y</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">y</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Posc.html#y()">y</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="y(float)">y</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">y</span>&#8203;(<span class="arguments">float&nbsp;y)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Posc.html#y(float)">y</a></code>&nbsp;in interface&nbsp;<code><a href="Posc.html" title="interface in mindustry.gen">Posc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="timer()">timer</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.util.Interval</span>&nbsp;<span class="memberName">timer</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Timerc.html#timer()">timer</a></code>&nbsp;in interface&nbsp;<code><a href="Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="timer(arc.util.Interval)">timer</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">timer</span>&#8203;(<span class="arguments">arc.util.Interval&nbsp;timer)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Timerc.html#timer(arc.util.Interval)">timer</a></code>&nbsp;in interface&nbsp;<code><a href="Timerc.html" title="interface in mindustry.gen">Timerc</a></code></dd>
 </dl>
 </section>
 </li>
