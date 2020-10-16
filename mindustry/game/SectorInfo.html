@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -148,10 +148,10 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../type/ItemSeq.html" title="class in mindustry.type">ItemSeq</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#coreItems">coreItems</a></span></code></th>
+<td class="colFirst"><code>float</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#damage">damage</a></span></code></th>
 <td class="colLast">
-<div class="block">Items stored in all cores.</div>
+<div class="block">Damage dealt to sector.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -176,59 +176,87 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>float</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#internalTimeSpent">internalTimeSpent</a></span></code></th>
+<td class="colFirst"><code><a href="../type/ItemSeq.html" title="class in mindustry.type">ItemSeq</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#items">items</a></span></code></th>
 <td class="colLast">
-<div class="block">Time spent at this sector.</div>
+<div class="block">Items stored in all cores.</div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#name">name</a></span></code></th>
+<td class="colLast">
+<div class="block">Display name.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../type/Sector.html" title="class in mindustry.type">Sector</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#origin">origin</a></span></code></th>
 <td class="colLast">
 <div class="block">Sector that was launched from.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>arc.struct.ObjectMap&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,&#8203;<a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#production">production</a></span></code></th>
 <td class="colLast">
 <div class="block">Core input statistics.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>arc.struct.Seq&lt;<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resources">resources</a></span></code></th>
 <td class="colLast">
 <div class="block">Resources known to occur at this sector.</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code>float</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#secondsPassed">secondsPassed</a></span></code></th>
+<td class="colLast">
+<div class="block">How long the player has been playing elsewhere.</div>
+</td>
+</tr>
 <tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#spawnPosition">spawnPosition</a></span></code></th>
+<td class="colLast">
+<div class="block">Packed core spawn position.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#storageCapacity">storageCapacity</a></span></code></th>
 <td class="colLast">
 <div class="block">Max storage capacity.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sumDps">sumDps</a></span></code></th>
 <td class="colLast">
 <div class="block">Special variables for simulation.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sumHealth">sumHealth</a></span></code></th>
 <td class="colLast">
 <div class="block">Special variables for simulation.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sumRps">sumRps</a></span></code></th>
 <td class="colLast">
 <div class="block">Special variables for simulation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#wave">wave</a></span></code></th>
+<td class="colLast">
+<div class="block">Wave # from state</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -257,6 +285,34 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#waveHealthSlope">waveHealthSlope</a></span></code></th>
 <td class="colLast">
 <div class="block">Special variables for simulation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#waves">waves</a></span></code></th>
+<td class="colLast">
+<div class="block">Whether waves are enabled here.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>float</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#waveSpacing">waveSpacing</a></span></code></th>
+<td class="colLast">
+<div class="block">Time between waves.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#wavesPassed">wavesPassed</a></span></code></th>
+<td class="colLast">
+<div class="block">How many waves have passed while the player was away.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#winWave">winWave</a></span></code></th>
+<td class="colLast">
+<div class="block">Wave # from state</div>
 </td>
 </tr>
 </tbody>
@@ -367,6 +423,13 @@ int&nbsp;amount)</code></th>
 <div class="block">Update averages of various stats, updates some special sector logic.</div>
 </td>
 </tr>
+<tr class="rowColor" id="i9">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#write()">write</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Write contents of meta into main storage.</div>
+</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -405,8 +468,8 @@ int&nbsp;amount)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="coreItems">coreItems</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../type/ItemSeq.html" title="class in mindustry.type">ItemSeq</a></span>&nbsp;<span class="memberName">coreItems</span></div>
+<h3><a id="items">items</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../type/ItemSeq.html" title="class in mindustry.type">ItemSeq</a></span>&nbsp;<span class="memberName">items</span></div>
 <div class="block">Items stored in all cores.</div>
 </section>
 </li>
@@ -450,6 +513,69 @@ int&nbsp;amount)</code></th>
 <h3><a id="resources">resources</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.struct.Seq&lt;<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a>&gt;</span>&nbsp;<span class="memberName">resources</span></div>
 <div class="block">Resources known to occur at this sector.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="waves">waves</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">waves</span></div>
+<div class="block">Whether waves are enabled here.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="wave">wave</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">wave</span></div>
+<div class="block">Wave # from state</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="winWave">winWave</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">winWave</span></div>
+<div class="block">Wave # from state</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="waveSpacing">waveSpacing</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">waveSpacing</span></div>
+<div class="block">Time between waves.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="damage">damage</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">damage</span></div>
+<div class="block">Damage dealt to sector.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="wavesPassed">wavesPassed</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">wavesPassed</span></div>
+<div class="block">How many waves have passed while the player was away.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="spawnPosition">spawnPosition</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">spawnPosition</span></div>
+<div class="block">Packed core spawn position.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="secondsPassed">secondsPassed</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">secondsPassed</span></div>
+<div class="block">How long the player has been playing elsewhere.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="name">name</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">java.lang.String</span>&nbsp;<span class="memberName">name</span></div>
+<div class="block">Display name.</div>
 </section>
 </li>
 <li class="blockList">
@@ -499,13 +625,6 @@ int&nbsp;amount)</code></th>
 <h3><a id="waveDpsSlope">waveDpsSlope</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">waveDpsSlope</span></div>
 <div class="block">Special variables for simulation.</div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="internalTimeSpent">internalTimeSpent</a></h3>
-<div class="memberSignature"><span class="modifiers">public transient</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">internalTimeSpent</span></div>
-<div class="block">Time spent at this sector. Do not use unless you know what you're doing.</div>
 </section>
 </li>
 </ul>
@@ -579,6 +698,13 @@ int&nbsp;amount)</span></div>
 <section class="detail">
 <h3><a id="getExport(mindustry.type.Item)">getExport</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">getExport</span>&#8203;(<span class="arguments"><a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="write()">write</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">write</span>()</div>
+<div class="block">Write contents of meta into main storage.</div>
 </section>
 </li>
 <li class="blockList">
