@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":18,"i1":6};
+<script type="text/javascript">var data = {"i0":18,"i1":18,"i2":18,"i3":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -89,7 +89,7 @@ loadScripts(document, 'script');</script>
 <section class="description">
 <dl>
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="defense/turrets/ChargeTurret.ChargeTurretBuild.html" title="class in mindustry.world.blocks.defense.turrets">ChargeTurret.ChargeTurretBuild</a></code>, <code><a href="storage/CoreBlock.CoreBuild.html" title="class in mindustry.world.blocks.storage">CoreBlock.CoreBuild</a></code>, <code><a href="defense/turrets/ItemTurret.ItemTurretBuild.html" title="class in mindustry.world.blocks.defense.turrets">ItemTurret.ItemTurretBuild</a></code>, <code><a href="defense/turrets/LaserTurret.LaserTurretBuild.html" title="class in mindustry.world.blocks.defense.turrets">LaserTurret.LaserTurretBuild</a></code>, <code><a href="defense/turrets/LiquidTurret.LiquidTurretBuild.html" title="class in mindustry.world.blocks.defense.turrets">LiquidTurret.LiquidTurretBuild</a></code>, <code><a href="defense/turrets/PowerTurret.PowerTurretBuild.html" title="class in mindustry.world.blocks.defense.turrets">PowerTurret.PowerTurretBuild</a></code>, <code><a href="defense/turrets/Turret.TurretBuild.html" title="class in mindustry.world.blocks.defense.turrets">Turret.TurretBuild</a></code></dd>
+<dd><code><a href="defense/turrets/ChargeTurret.ChargeTurretBuild.html" title="class in mindustry.world.blocks.defense.turrets">ChargeTurret.ChargeTurretBuild</a></code>, <code><a href="storage/CoreBlock.CoreBuild.html" title="class in mindustry.world.blocks.storage">CoreBlock.CoreBuild</a></code>, <code><a href="defense/turrets/ItemTurret.ItemTurretBuild.html" title="class in mindustry.world.blocks.defense.turrets">ItemTurret.ItemTurretBuild</a></code>, <code><a href="defense/turrets/LaserTurret.LaserTurretBuild.html" title="class in mindustry.world.blocks.defense.turrets">LaserTurret.LaserTurretBuild</a></code>, <code><a href="defense/turrets/LiquidTurret.LiquidTurretBuild.html" title="class in mindustry.world.blocks.defense.turrets">LiquidTurret.LiquidTurretBuild</a></code>, <code><a href="defense/turrets/PowerTurret.PowerTurretBuild.html" title="class in mindustry.world.blocks.defense.turrets">PowerTurret.PowerTurretBuild</a></code>, <code><a href="distribution/Router.RouterBuild.html" title="class in mindustry.world.blocks.distribution">Router.RouterBuild</a></code>, <code><a href="defense/turrets/Turret.TurretBuild.html" title="class in mindustry.world.blocks.defense.turrets">Turret.TurretBuild</a></code></dd>
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">ControlBlock</span></pre>
@@ -117,10 +117,20 @@ loadScripts(document, 'script');</script>
 <tbody>
 <tr class="altColor" id="i0">
 <td class="colFirst"><code>default boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isControlled()">isControlled</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#canControl()">canControl</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i1">
+<td class="colFirst"><code>default boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isControlled()">isControlled</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i2">
+<td class="colFirst"><code>default boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shouldAutoTarget()">shouldAutoTarget</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i3">
 <td class="colFirst"><code><a href="../../gen/Unit.html" title="class in mindustry.gen">Unit</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unit()">unit</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
@@ -155,6 +165,26 @@ loadScripts(document, 'script');</script>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>whether this block is being controlled by a player.</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="canControl()">canControl</a></h3>
+<div class="memberSignature"><span class="modifiers">default</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">canControl</span>()</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether this block can be controlled at all.</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="shouldAutoTarget()">shouldAutoTarget</a></h3>
+<div class="memberSignature"><span class="modifiers">default</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">shouldAutoTarget</span>()</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether targets should automatically be selected (on mobile)</dd>
 </dl>
 </section>
 </li>
