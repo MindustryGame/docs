@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":9,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":9,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -99,6 +99,10 @@ loadScripts(document, 'script');</script>
 <dl>
 <dt>All Implemented Interfaces:</dt>
 <dd><code>arc.util.Disposable</code>, <code>java.lang.Comparable&lt;<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a>&gt;</code></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><code><a href="weather/ParticleWeather.html" title="class in mindustry.type.weather">ParticleWeather</a></code>, <code><a href="weather/RainWeather.html" title="class in mindustry.type.weather">RainWeather</a></code></dd>
 </dl>
 <hr>
 <pre>public abstract class <span class="typeNameLabel">Weather</span>
@@ -297,44 +301,99 @@ float&nbsp;windY)</code></th>
 </tr>
 <tr class="altColor" id="i4">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawOver(mindustry.gen.WeatherState)">drawOver</a></span>&#8203;(<a href="../gen/WeatherState.html" title="class in mindustry.gen">WeatherState</a>&nbsp;state)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawNoise(arc.graphics.Texture,arc.graphics.Color,float,float,float,float,arc.math.geom.Vec2)">drawNoise</a></span>&#8203;(arc.graphics.Texture&nbsp;noise,
+arc.graphics.Color&nbsp;color,
+float&nbsp;noisescl,
+float&nbsp;opacity,
+float&nbsp;baseSpeed,
+float&nbsp;intensity,
+arc.math.geom.Vec2&nbsp;windVector)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i5">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawUnder(mindustry.gen.WeatherState)">drawUnder</a></span>&#8203;(<a href="../gen/WeatherState.html" title="class in mindustry.gen">WeatherState</a>&nbsp;state)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawOver(mindustry.gen.WeatherState)">drawOver</a></span>&#8203;(<a href="../gen/WeatherState.html" title="class in mindustry.gen">WeatherState</a>&nbsp;state)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor" id="i6">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawParticles(arc.graphics.g2d.TextureRegion,arc.graphics.Color,float,float,float,float,float,float,float,float,float,float,float,float,float)">drawParticles</a></span>&#8203;(arc.graphics.g2d.TextureRegion&nbsp;region,
+arc.graphics.Color&nbsp;color,
+float&nbsp;sizeMin,
+float&nbsp;sizeMax,
+float&nbsp;density,
+float&nbsp;intensity,
+float&nbsp;opacity,
+float&nbsp;windx,
+float&nbsp;windy,
+float&nbsp;minAlpha,
+float&nbsp;maxAlpha,
+float&nbsp;sinSclMin,
+float&nbsp;sinSclMax,
+float&nbsp;sinMagMin,
+float&nbsp;sinMagMax)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i7">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawRain(float,float,float,float,float,float,float,arc.graphics.Color)">drawRain</a></span>&#8203;(float&nbsp;sizeMin,
+float&nbsp;sizeMax,
+float&nbsp;xspeed,
+float&nbsp;yspeed,
+float&nbsp;density,
+float&nbsp;intensity,
+float&nbsp;stroke,
+arc.graphics.Color&nbsp;color)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i8">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawSplashes(arc.graphics.g2d.TextureRegion%5B%5D,float,float,float,float,float,float,arc.graphics.Color,mindustry.type.Liquid)">drawSplashes</a></span>&#8203;(arc.graphics.g2d.TextureRegion[]&nbsp;splashes,
+float&nbsp;padding,
+float&nbsp;density,
+float&nbsp;intensity,
+float&nbsp;opacity,
+float&nbsp;timeScale,
+float&nbsp;stroke,
+arc.graphics.Color&nbsp;color,
+<a href="Liquid.html" title="class in mindustry.type">Liquid</a>&nbsp;splasher)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i9">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawUnder(mindustry.gen.WeatherState)">drawUnder</a></span>&#8203;(<a href="../gen/WeatherState.html" title="class in mindustry.gen">WeatherState</a>&nbsp;state)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i10">
 <td class="colFirst"><code><a href="../ctype/ContentType.html" title="enum in mindustry.ctype">ContentType</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getContentType()">getContentType</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the type name of this piece of content.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i7">
+<tr class="rowColor" id="i11">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isActive()">isActive</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i8">
+<tr class="altColor" id="i12">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isHidden()">isHidden</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Whether this content is always hidden in the content database dialog.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i9">
+<tr class="rowColor" id="i13">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#remove()">remove</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i10">
+<tr class="altColor" id="i14">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(mindustry.gen.WeatherState)">update</a></span>&#8203;(<a href="../gen/WeatherState.html" title="class in mindustry.gen">WeatherState</a>&nbsp;state)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor" id="i11">
+<tr class="rowColor" id="i15">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateEffect(mindustry.gen.WeatherState)">updateEffect</a></span>&#8203;(<a href="../gen/WeatherState.html" title="class in mindustry.gen">WeatherState</a>&nbsp;state)</code></th>
 <td class="colLast">&nbsp;</td>
@@ -522,6 +581,65 @@ float&nbsp;duration)</span></div>
 <section class="detail">
 <h3><a id="drawUnder(mindustry.gen.WeatherState)">drawUnder</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">drawUnder</span>&#8203;(<span class="arguments"><a href="../gen/WeatherState.html" title="class in mindustry.gen">WeatherState</a>&nbsp;state)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="drawParticles(arc.graphics.g2d.TextureRegion,arc.graphics.Color,float,float,float,float,float,float,float,float,float,float,float,float,float)">drawParticles</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">drawParticles</span>&#8203;(<span class="arguments">arc.graphics.g2d.TextureRegion&nbsp;region,
+arc.graphics.Color&nbsp;color,
+float&nbsp;sizeMin,
+float&nbsp;sizeMax,
+float&nbsp;density,
+float&nbsp;intensity,
+float&nbsp;opacity,
+float&nbsp;windx,
+float&nbsp;windy,
+float&nbsp;minAlpha,
+float&nbsp;maxAlpha,
+float&nbsp;sinSclMin,
+float&nbsp;sinSclMax,
+float&nbsp;sinMagMin,
+float&nbsp;sinMagMax)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="drawRain(float,float,float,float,float,float,float,arc.graphics.Color)">drawRain</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">drawRain</span>&#8203;(<span class="arguments">float&nbsp;sizeMin,
+float&nbsp;sizeMax,
+float&nbsp;xspeed,
+float&nbsp;yspeed,
+float&nbsp;density,
+float&nbsp;intensity,
+float&nbsp;stroke,
+arc.graphics.Color&nbsp;color)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="drawSplashes(arc.graphics.g2d.TextureRegion[],float,float,float,float,float,float,arc.graphics.Color,mindustry.type.Liquid)">drawSplashes</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">drawSplashes</span>&#8203;(<span class="arguments">arc.graphics.g2d.TextureRegion[]&nbsp;splashes,
+float&nbsp;padding,
+float&nbsp;density,
+float&nbsp;intensity,
+float&nbsp;opacity,
+float&nbsp;timeScale,
+float&nbsp;stroke,
+arc.graphics.Color&nbsp;color,
+<a href="Liquid.html" title="class in mindustry.type">Liquid</a>&nbsp;splasher)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="drawNoise(arc.graphics.Texture,arc.graphics.Color,float,float,float,float,arc.math.geom.Vec2)">drawNoise</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">drawNoise</span>&#8203;(<span class="arguments">arc.graphics.Texture&nbsp;noise,
+arc.graphics.Color&nbsp;color,
+float&nbsp;noisescl,
+float&nbsp;opacity,
+float&nbsp;baseSpeed,
+float&nbsp;intensity,
+arc.math.geom.Vec2&nbsp;windVector)</span></div>
 </section>
 </li>
 <li class="blockList">
