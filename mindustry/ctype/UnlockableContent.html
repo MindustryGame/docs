@@ -19,8 +19,8 @@
 <script type="text/javascript" src="../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":6,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -168,6 +168,13 @@ extends <a href="MappableContent.html" title="class in mindustry.ctype">Mappable
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code><a href="../world/meta/Stats.html" title="class in mindustry.world.meta">Stats</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stats">stats</a></span></code></th>
+<td class="colLast">
+<div class="block">Stat storage for this content.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unlocked">unlocked</a></span></code></th>
 <td class="colLast">
@@ -221,7 +228,7 @@ extends <a href="MappableContent.html" title="class in mindustry.ctype">Mappable
 </a>
 <h2>Method Summary</h2>
 <div class="memberSummary">
-<div role="tablist" aria-orientation="horizontal"><button role="tab" aria-selected="true" aria-controls="memberSummary_tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="activeTableTab">All Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t2" class="tableTab" onclick="show(2);">Instance Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t3" class="tableTab" onclick="show(4);">Abstract Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t4" class="tableTab" onclick="show(8);">Concrete Methods</button></div>
+<div role="tablist" aria-orientation="horizontal"><button role="tab" aria-selected="true" aria-controls="memberSummary_tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="activeTableTab">All Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t2" class="tableTab" onclick="show(2);">Instance Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t4" class="tableTab" onclick="show(8);">Concrete Methods</button></div>
 <div id="memberSummary_tabpanel" role="tabpanel">
 <table aria-labelledby="t0">
 <thead>
@@ -234,79 +241,93 @@ extends <a href="MappableContent.html" title="class in mindustry.ctype">Mappable
 <tbody>
 <tr class="altColor" id="i0">
 <td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#checkStats()">checkStats</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Checks stat initialization state.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i1">
+<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createIcons(mindustry.graphics.MultiPacker)">createIcons</a></span>&#8203;(<a href="../graphics/MultiPacker.html" title="class in mindustry.graphics">MultiPacker</a>&nbsp;packer)</code></th>
 <td class="colLast">
 <div class="block">Generate any special icons for this content.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i1">
-<td class="colFirst"><code>java.lang.String</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#displayDescription()">displayDescription</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
 <tr class="altColor" id="i2">
-<td class="colFirst"><code>abstract void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#displayInfo(arc.scene.ui.layout.Table)">displayInfo</a></span>&#8203;(arc.scene.ui.layout.Table&nbsp;table)</code></th>
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#display(arc.scene.ui.layout.Table)">display</a></span>&#8203;(arc.scene.ui.layout.Table&nbsp;table)</code></th>
 <td class="colLast">
 <div class="block">This should show all necessary info about this content in the specified table.</div>
 </td>
 </tr>
 <tr class="rowColor" id="i3">
 <td class="colFirst"><code>java.lang.String</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#emoji()">emoji</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#displayDescription()">displayDescription</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor" id="i4">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#emoji()">emoji</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i5">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDependencies(arc.func.Cons)">getDependencies</a></span>&#8203;(arc.func.Cons&lt;<a href="UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a>&gt;&nbsp;cons)</code></th>
 <td class="colLast">
 <div class="block">Iterates through any implicit dependencies of this content.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i5">
+<tr class="altColor" id="i6">
 <td class="colFirst"><code>arc.graphics.g2d.TextureRegion</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#icon(mindustry.ui.Cicon)">icon</a></span>&#8203;(<a href="../ui/Cicon.html" title="enum in mindustry.ui">Cicon</a>&nbsp;icon)</code></th>
 <td class="colLast">
 <div class="block">Returns a specific content icon, or the region {contentType}-{name} if not found.</div>
 </td>
 </tr>
-<tr class="altColor" id="i6">
+<tr class="rowColor" id="i7">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isHidden()">isHidden</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Whether this content is always hidden in the content database dialog.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i7">
+<tr class="altColor" id="i8">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#locked()">locked</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i8">
+<tr class="rowColor" id="i9">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onUnlock()">onUnlock</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Called when this content is unlocked.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i9">
+<tr class="altColor" id="i10">
 <td class="colFirst"><code><a href="../type/ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#researchRequirements()">researchRequirements</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i10">
+<tr class="rowColor" id="i11">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setStats()">setStats</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Intializes stats on demand.</div>
+</td>
+</tr>
+<tr class="altColor" id="i12">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unlock()">unlock</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Makes this piece of content unlocked; if it already unlocked, nothing happens.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i11">
+<tr class="rowColor" id="i13">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unlocked()">unlocked</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i12">
+<tr class="altColor" id="i14">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unlockedNow()">unlockedNow</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
@@ -348,6 +369,13 @@ extends <a href="MappableContent.html" title="class in mindustry.ctype">Mappable
 </a>
 <h2>Field Details</h2>
 <ul class="blockList">
+<li class="blockList">
+<section class="detail">
+<h3><a id="stats">stats</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../world/meta/Stats.html" title="class in mindustry.world.meta">Stats</a></span>&nbsp;<span class="memberName">stats</span></div>
+<div class="block">Stat storage for this content. Initialized on demand.</div>
+</section>
+</li>
 <li class="blockList">
 <section class="detail">
 <h3><a id="localizedName">localizedName</a></h3>
@@ -417,6 +445,20 @@ extends <a href="MappableContent.html" title="class in mindustry.ctype">Mappable
 </li>
 <li class="blockList">
 <section class="detail">
+<h3><a id="checkStats()">checkStats</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">checkStats</span>()</div>
+<div class="block">Checks stat initialization state. Call before displaying stats.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="setStats()">setStats</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">setStats</span>()</div>
+<div class="block">Intializes stats on demand. Should only be called once. Only called before something is displayed.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
 <h3><a id="createIcons(mindustry.graphics.MultiPacker)">createIcons</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">createIcons</span>&#8203;(<span class="arguments"><a href="../graphics/MultiPacker.html" title="class in mindustry.graphics">MultiPacker</a>&nbsp;packer)</span></div>
 <div class="block">Generate any special icons for this content. Called asynchronously.</div>
@@ -455,8 +497,8 @@ extends <a href="MappableContent.html" title="class in mindustry.ctype">Mappable
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="displayInfo(arc.scene.ui.layout.Table)">displayInfo</a></h3>
-<div class="memberSignature"><span class="modifiers">public abstract</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">displayInfo</span>&#8203;(<span class="arguments">arc.scene.ui.layout.Table&nbsp;table)</span></div>
+<h3><a id="display(arc.scene.ui.layout.Table)">display</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">display</span>&#8203;(<span class="arguments">arc.scene.ui.layout.Table&nbsp;table)</span></div>
 <div class="block">This should show all necessary info about this content in the specified table.</div>
 </section>
 </li>
