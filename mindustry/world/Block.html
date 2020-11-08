@@ -153,20 +153,6 @@ extends <a href="../ctype/UnlockableContent.html" title="class in mindustry.ctyp
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>arc.audio.Sound</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#activeSound">activeSound</a></span></code></th>
-<td class="colLast">
-<div class="block">The sound that this block makes while active.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>float</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#activeSoundVolume">activeSoundVolume</a></span></code></th>
-<td class="colLast">
-<div class="block">Active sound base volume.</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#albedo">albedo</a></span></code></th>
 <td class="colLast">
@@ -178,6 +164,20 @@ extends <a href="../ctype/UnlockableContent.html" title="class in mindustry.ctyp
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#alwaysReplace">alwaysReplace</a></span></code></th>
 <td class="colLast">
 <div class="block">whether this block can be replaced in all cases</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>arc.audio.Sound</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#ambientSound">ambientSound</a></span></code></th>
+<td class="colLast">
+<div class="block">The sound that this block makes while idle.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#ambientSoundVolume">ambientSoundVolume</a></span></code></th>
+<td class="colLast">
+<div class="block">Idle sound base volume.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -432,20 +432,6 @@ extends <a href="../ctype/UnlockableContent.html" title="class in mindustry.ctyp
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>arc.audio.Sound</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#idleSound">idleSound</a></span></code></th>
-<td class="colLast">
-<div class="block">The sound that this block makes while idle.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>float</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#idleSoundVolume">idleSoundVolume</a></span></code></th>
-<td class="colLast">
-<div class="block">Idle sound base volume.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#inEditor">inEditor</a></span></code></th>
 <td class="colLast">
@@ -507,6 +493,20 @@ extends <a href="../ctype/UnlockableContent.html" title="class in mindustry.ctyp
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logicConfigurable">logicConfigurable</a></span></code></th>
 <td class="colLast">
 <div class="block">If true, this block can be configured by logic.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>arc.audio.Sound</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#loopSound">loopSound</a></span></code></th>
+<td class="colLast">
+<div class="block">The sound that this block makes while active.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>float</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#loopSoundVolume">loopSoundVolume</a></span></code></th>
+<td class="colLast">
+<div class="block">Active sound base volume.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -1718,29 +1718,29 @@ int&nbsp;y)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="activeSound">activeSound</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.audio.Sound</span>&nbsp;<span class="memberName">activeSound</span></div>
+<h3><a id="loopSound">loopSound</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.audio.Sound</span>&nbsp;<span class="memberName">loopSound</span></div>
 <div class="block">The sound that this block makes while active. One sound loop. Do not overuse.</div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="activeSoundVolume">activeSoundVolume</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">activeSoundVolume</span></div>
+<h3><a id="loopSoundVolume">loopSoundVolume</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">loopSoundVolume</span></div>
 <div class="block">Active sound base volume.</div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="idleSound">idleSound</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.audio.Sound</span>&nbsp;<span class="memberName">idleSound</span></div>
+<h3><a id="ambientSound">ambientSound</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.audio.Sound</span>&nbsp;<span class="memberName">ambientSound</span></div>
 <div class="block">The sound that this block makes while idle. Uses one sound loop for all blocks.</div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="idleSoundVolume">idleSoundVolume</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">idleSoundVolume</span></div>
+<h3><a id="ambientSoundVolume">ambientSoundVolume</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">ambientSoundVolume</span></div>
 <div class="block">Idle sound base volume.</div>
 </section>
 </li>
