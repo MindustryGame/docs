@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -213,18 +213,38 @@ implements <a href="../../graphics/g3d/PlanetRenderer.PlanetInterfaceRenderer.ht
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>arc.struct.Seq&lt;<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#newPresets">newPresets</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../graphics/g3d/PlanetRenderer.html" title="class in mindustry.graphics.g3d">PlanetRenderer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#planets">planets</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#presetShow">presetShow</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 <tr class="altColor">
+<td class="colFirst"><code>static float</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sectorShowDuration">sectorShowDuration</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#selectAlpha">selectAlpha</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../type/Sector.html" title="class in mindustry.type">Sector</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#selected">selected</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#showed">showed</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -317,22 +337,33 @@ implements <a href="../../graphics/g3d/PlanetRenderer.PlanetInterfaceRenderer.ht
 </tr>
 <tr class="altColor" id="i2">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderProjections(mindustry.type.Planet)">renderProjections</a></span>&#8203;(<a href="../../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#lookAt(mindustry.type.Sector,float)">lookAt</a></span>&#8203;(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector,
+float&nbsp;alpha)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i3">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderSectors(mindustry.type.Planet)">renderSectors</a></span>&#8203;(<a href="../../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderProjections(mindustry.type.Planet)">renderProjections</a></span>&#8203;(<a href="../../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor" id="i4">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderSectors(mindustry.type.Planet)">renderSectors</a></span>&#8203;(<a href="../../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i5">
 <td class="colFirst"><code>arc.scene.ui.Dialog</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#show()">show</a></span>()</code></th>
 <td class="colLast">
 <div class="block">show with no limitations, just as a map.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i5">
+<tr class="altColor" id="i6">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#showOverview()">showOverview</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i7">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#showSelect(mindustry.type.Sector,arc.func.Cons)">showSelect</a></span>&#8203;(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector,
 arc.func.Cons&lt;<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&gt;&nbsp;listener)</code></th>
@@ -394,6 +425,12 @@ arc.func.Cons&lt;<a href="../../type/Sector.html" title="class in mindustry.type
 <section class="detail">
 <h3><a id="debugSelect">debugSelect</a></h3>
 <div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">debugSelect</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="sectorShowDuration">sectorShowDuration</a></h3>
+<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">sectorShowDuration</span></div>
 </section>
 </li>
 <li class="blockList">
@@ -474,6 +511,24 @@ arc.func.Cons&lt;<a href="../../type/Sector.html" title="class in mindustry.type
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.func.Cons&lt;<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&gt;</span>&nbsp;<span class="memberName">listener</span></div>
 </section>
 </li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="newPresets">newPresets</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">arc.struct.Seq&lt;<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&gt;</span>&nbsp;<span class="memberName">newPresets</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="presetShow">presetShow</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">presetShow</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="showed">showed</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">showed</span></div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -513,6 +568,12 @@ arc.func.Cons&lt;<a href="../../type/Sector.html" title="class in mindustry.type
 </li>
 <li class="blockList">
 <section class="detail">
+<h3><a id="showOverview()">showOverview</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">showOverview</span>()</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
 <h3><a id="showSelect(mindustry.type.Sector,arc.func.Cons)">showSelect</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">showSelect</span>&#8203;(<span class="arguments"><a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector,
 arc.func.Cons&lt;<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&gt;&nbsp;listener)</span></div>
@@ -546,6 +607,13 @@ arc.func.Cons&lt;<a href="../../type/Sector.html" title="class in mindustry.type
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code>draw</code>&nbsp;in class&nbsp;<code>arc.scene.ui.Dialog</code></dd>
 </dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="lookAt(mindustry.type.Sector,float)">lookAt</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">lookAt</span>&#8203;(<span class="arguments"><a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector,
+float&nbsp;alpha)</span></div>
 </section>
 </li>
 <li class="blockList">
