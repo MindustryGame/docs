@@ -143,16 +143,16 @@ implements <a href="../util/Disposable.html" title="interface in arc.util">Dispo
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Pixmap.Filter.html" title="enum in arc.graphics">Pixmap.Filter</a></span></code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Pixmap.Format.html" title="enum in arc.graphics">Pixmap.Format</a></span></code></th>
 <td class="colLast">
-<div class="block">Filters to be used with <a href="#drawPixmap(arc.graphics.Pixmap,int,int,int,int,int,int,int,int)"><code>drawPixmap(Pixmap, int, int, int, int, int, int, int, int)</code></a>.</div>
+<div class="block">Different pixel formats.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Pixmap.Format.html" title="enum in arc.graphics">Pixmap.Format</a></span></code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Pixmap.PixmapFilter.html" title="enum in arc.graphics">Pixmap.PixmapFilter</a></span></code></th>
 <td class="colLast">
-<div class="block">Different pixel formats.</div>
+<div class="block">Filters to be used with <a href="#drawPixmap(arc.graphics.Pixmap,int,int,int,int,int,int,int,int)"><code>drawPixmap(Pixmap, int, int, int, int, int, int, int, int)</code></a>.</div>
 </td>
 </tr>
 </tbody>
@@ -445,7 +445,7 @@ int&nbsp;y3)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i23">
-<td class="colFirst"><code><a href="Pixmap.Filter.html" title="enum in arc.graphics">Pixmap.Filter</a></code></td>
+<td class="colFirst"><code><a href="Pixmap.PixmapFilter.html" title="enum in arc.graphics">Pixmap.PixmapFilter</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFilter()">getFilter</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -538,9 +538,9 @@ float&nbsp;a)</code></th>
 </tr>
 <tr class="rowColor" id="i37">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFilter(arc.graphics.Pixmap.Filter)">setFilter</a></span>&#8203;(<a href="Pixmap.Filter.html" title="enum in arc.graphics">Pixmap.Filter</a>&nbsp;filter)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFilter(arc.graphics.Pixmap.PixmapFilter)">setFilter</a></span>&#8203;(<a href="Pixmap.PixmapFilter.html" title="enum in arc.graphics">Pixmap.PixmapFilter</a>&nbsp;filter)</code></th>
 <td class="colLast">
-<div class="block">Sets the type of interpolation <a href="Pixmap.Filter.html" title="enum in arc.graphics"><code>Pixmap.Filter</code></a> to be used in conjunction with
+<div class="block">Sets the type of interpolation <a href="Pixmap.PixmapFilter.html" title="enum in arc.graphics"><code>Pixmap.PixmapFilter</code></a> to be used in conjunction with
  <a href="#drawPixmap(arc.graphics.Pixmap,int,int,int,int,int,int,int,int)"><code>drawPixmap(Pixmap, int, int, int, int, int, int, int, int)</code></a>.</div>
 </td>
 </tr>
@@ -853,7 +853,7 @@ int&nbsp;dsty,
 int&nbsp;dstWidth,
 int&nbsp;dstHeight)</span></div>
 <div class="block">Draws an area from another Pixmap to this Pixmap. This will automatically scale and stretch the source image to the
- specified target rectangle. Use <a href="#setFilter(arc.graphics.Pixmap.Filter)"><code>setFilter(Filter)</code></a> to specify the type of filtering to be used (nearest
+ specified target rectangle. Use <a href="#setFilter(arc.graphics.Pixmap.PixmapFilter)"><code>setFilter(PixmapFilter)</code></a> to specify the type of filtering to be used (nearest
  neighbour or bilinear).</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1114,18 +1114,18 @@ int&nbsp;color)</span></div>
 <li class="blockList">
 <section class="detail">
 <h3><a id="getFilter()">getFilter</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Pixmap.Filter.html" title="enum in arc.graphics">Pixmap.Filter</a></span>&nbsp;<span class="memberName">getFilter</span>()</div>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Pixmap.PixmapFilter.html" title="enum in arc.graphics">Pixmap.PixmapFilter</a></span>&nbsp;<span class="memberName">getFilter</span>()</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the currently set <a href="Pixmap.Filter.html" title="enum in arc.graphics"><code>Pixmap.Filter</code></a></dd>
+<dd>the currently set <a href="Pixmap.PixmapFilter.html" title="enum in arc.graphics"><code>Pixmap.PixmapFilter</code></a></dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="setFilter(arc.graphics.Pixmap.Filter)">setFilter</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">setFilter</span>&#8203;(<span class="arguments"><a href="Pixmap.Filter.html" title="enum in arc.graphics">Pixmap.Filter</a>&nbsp;filter)</span></div>
-<div class="block">Sets the type of interpolation <a href="Pixmap.Filter.html" title="enum in arc.graphics"><code>Pixmap.Filter</code></a> to be used in conjunction with
+<h3><a id="setFilter(arc.graphics.Pixmap.PixmapFilter)">setFilter</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">setFilter</span>&#8203;(<span class="arguments"><a href="Pixmap.PixmapFilter.html" title="enum in arc.graphics">Pixmap.PixmapFilter</a>&nbsp;filter)</span></div>
+<div class="block">Sets the type of interpolation <a href="Pixmap.PixmapFilter.html" title="enum in arc.graphics"><code>Pixmap.PixmapFilter</code></a> to be used in conjunction with
  <a href="#drawPixmap(arc.graphics.Pixmap,int,int,int,int,int,int,int,int)"><code>drawPixmap(Pixmap, int, int, int, int, int, int, int, int)</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
