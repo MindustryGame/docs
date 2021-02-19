@@ -152,48 +152,55 @@ implements <a href="../type/Publishable.html" title="interface in mindustry.type
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>java.lang.ClassLoader</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#loader">loader</a></span></code></th>
+<td class="colLast">
+<div class="block">Class loader for JAR mods.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="Mod.html" title="class in mindustry.mod">Mod</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#main">main</a></span></code></th>
 <td class="colLast">
 <div class="block">The mod's main class; may be null.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="Mods.ModMeta.html" title="class in mindustry.mod">Mods.ModMeta</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#meta">meta</a></span></code></th>
 <td class="colLast">
 <div class="block">This mod's metadata.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;java.lang.String&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#missingDependencies">missingDependencies</a></span></code></th>
 <td class="colLast">
 <div class="block">All missing dependencies of this mod as strings.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#name">name</a></span></code></th>
 <td class="colLast">
 <div class="block">Internal mod name.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../arc/files/Fi.html" title="class in arc.files">Fi</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#root">root</a></span></code></th>
 <td class="colLast">
 <div class="block">The root zip file; points to the contents of this mod.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../../arc/files/Fi.html" title="class in arc.files">Fi</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scripts">scripts</a></span></code></th>
 <td class="colLast">
 <div class="block">Script files to run.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="Mods.ModState.html" title="enum in mindustry.mod">Mods.ModState</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#state">state</a></span></code></th>
 <td class="colLast">
@@ -222,9 +229,10 @@ implements <a href="../type/Publishable.html" title="interface in mindustry.type
 </thead>
 <tbody>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(arc.files.Fi,arc.files.Fi,mindustry.mod.Mod,mindustry.mod.Mods.ModMeta)">LoadedMod</a></span>&#8203;(<a href="../../arc/files/Fi.html" title="class in arc.files">Fi</a>&nbsp;file,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(arc.files.Fi,arc.files.Fi,mindustry.mod.Mod,java.lang.ClassLoader,mindustry.mod.Mods.ModMeta)">LoadedMod</a></span>&#8203;(<a href="../../arc/files/Fi.html" title="class in arc.files">Fi</a>&nbsp;file,
 <a href="../../arc/files/Fi.html" title="class in arc.files">Fi</a>&nbsp;root,
 <a href="Mod.html" title="class in mindustry.mod">Mod</a>&nbsp;main,
+java.lang.ClassLoader&nbsp;loader,
 <a href="Mods.ModMeta.html" title="class in mindustry.mod">Mods.ModMeta</a>&nbsp;meta)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -473,6 +481,13 @@ implements <a href="../type/Publishable.html" title="interface in mindustry.type
 <div class="block">Icon texture. Should be disposed.</div>
 </section>
 </li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="loader">loader</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">java.lang.ClassLoader</span>&nbsp;<span class="memberName">loader</span></div>
+<div class="block">Class loader for JAR mods. Null if the mod isn't loaded or this isn't a jar mod.</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -485,10 +500,11 @@ implements <a href="../type/Publishable.html" title="interface in mindustry.type
 <ul class="blockList">
 <li class="blockList">
 <section class="detail">
-<h3><a id="&lt;init&gt;(arc.files.Fi,arc.files.Fi,mindustry.mod.Mod,mindustry.mod.Mods.ModMeta)">LoadedMod</a></h3>
+<h3><a id="&lt;init&gt;(arc.files.Fi,arc.files.Fi,mindustry.mod.Mod,java.lang.ClassLoader,mindustry.mod.Mods.ModMeta)">LoadedMod</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="memberName">LoadedMod</span>&#8203;(<span class="arguments"><a href="../../arc/files/Fi.html" title="class in arc.files">Fi</a>&nbsp;file,
 <a href="../../arc/files/Fi.html" title="class in arc.files">Fi</a>&nbsp;root,
 <a href="Mod.html" title="class in mindustry.mod">Mod</a>&nbsp;main,
+java.lang.ClassLoader&nbsp;loader,
 <a href="Mods.ModMeta.html" title="class in mindustry.mod">Mods.ModMeta</a>&nbsp;meta)</span></div>
 </section>
 </li>
