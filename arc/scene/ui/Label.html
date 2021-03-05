@@ -148,23 +148,33 @@ extends <a href="../Element.html" title="class in arc.scene">Element</a></pre>
 </thead>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../graphics/g2d/FontCache.html" title="class in arc.graphics.g2d">FontCache</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#cache">cache</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#ellipsis">ellipsis</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#fontScaleChanged">fontScaleChanged</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#fontScaleX">fontScaleX</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#fontScaleY">fontScaleY</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#labelAlign">labelAlign</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -173,11 +183,46 @@ extends <a href="../Element.html" title="class in arc.scene">Element</a></pre>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../graphics/g2d/GlyphLayout.html" title="class in arc.graphics.g2d">GlyphLayout</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#layout">layout</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#lineAlign">lineAlign</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prefSize">prefSize</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prefSizeInvalid">prefSizeInvalid</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="../../graphics/g2d/GlyphLayout.html" title="class in arc.graphics.g2d">GlyphLayout</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prefSizeLayout">prefSizeLayout</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected <a href="Label.LabelStyle.html" title="class in arc.scene.ui">Label.LabelStyle</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#style">style</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="../../graphics/Color.html" title="class in arc.graphics">Color</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#tempColor">tempColor</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected java.lang.StringBuilder</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#text">text</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#wrap">wrap</a></span></code></th>
 <td class="colLast">&nbsp;</td>
@@ -252,7 +297,7 @@ extends <a href="../Element.html" title="class in arc.scene">Element</a></pre>
 </td>
 </tr>
 <tr class="rowColor" id="i1">
-<td class="colFirst"><code>protected <a href="../../graphics/g2d/FontCache.html" title="class in arc.graphics.g2d">FontCache</a></code></td>
+<td class="colFirst"><code><a href="../../graphics/g2d/FontCache.html" title="class in arc.graphics.g2d">FontCache</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFontCache()">getFontCache</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Allows subclasses to access the cache.</div>
@@ -415,6 +460,60 @@ float&nbsp;fontScaleY)</code></th>
 </a>
 <h2>Field Details</h2>
 <ul class="blockList">
+<li class="blockList">
+<section class="detail">
+<h3><a id="tempColor">tempColor</a></h3>
+<div class="memberSignature"><span class="modifiers">protected static final</span>&nbsp;<span class="returnType"><a href="../../graphics/Color.html" title="class in arc.graphics">Color</a></span>&nbsp;<span class="memberName">tempColor</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="prefSizeLayout">prefSizeLayout</a></h3>
+<div class="memberSignature"><span class="modifiers">protected static final</span>&nbsp;<span class="returnType"><a href="../../graphics/g2d/GlyphLayout.html" title="class in arc.graphics.g2d">GlyphLayout</a></span>&nbsp;<span class="memberName">prefSizeLayout</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="layout">layout</a></h3>
+<div class="memberSignature"><span class="modifiers">protected final</span>&nbsp;<span class="returnType"><a href="../../graphics/g2d/GlyphLayout.html" title="class in arc.graphics.g2d">GlyphLayout</a></span>&nbsp;<span class="memberName">layout</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="prefSize">prefSize</a></h3>
+<div class="memberSignature"><span class="modifiers">protected final</span>&nbsp;<span class="returnType"><a href="../../math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></span>&nbsp;<span class="memberName">prefSize</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="text">text</a></h3>
+<div class="memberSignature"><span class="modifiers">protected final</span>&nbsp;<span class="returnType">java.lang.StringBuilder</span>&nbsp;<span class="memberName">text</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="style">style</a></h3>
+<div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="returnType"><a href="Label.LabelStyle.html" title="class in arc.scene.ui">Label.LabelStyle</a></span>&nbsp;<span class="memberName">style</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="cache">cache</a></h3>
+<div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="returnType"><a href="../../graphics/g2d/FontCache.html" title="class in arc.graphics.g2d">FontCache</a></span>&nbsp;<span class="memberName">cache</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="labelAlign">labelAlign</a></h3>
+<div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">labelAlign</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="lineAlign">lineAlign</a></h3>
+<div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">lineAlign</span></div>
+</section>
+</li>
 <li class="blockList">
 <section class="detail">
 <h3><a id="wrap">wrap</a></h3>
@@ -699,7 +798,7 @@ float&nbsp;fontScaleY)</span></div>
 <li class="blockList">
 <section class="detail">
 <h3><a id="getFontCache()">getFontCache</a></h3>
-<div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="returnType"><a href="../../graphics/g2d/FontCache.html" title="class in arc.graphics.g2d">FontCache</a></span>&nbsp;<span class="memberName">getFontCache</span>()</div>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../../graphics/g2d/FontCache.html" title="class in arc.graphics.g2d">FontCache</a></span>&nbsp;<span class="memberName">getFontCache</span>()</div>
 <div class="block">Allows subclasses to access the cache.</div>
 </section>
 </li>
