@@ -19,13 +19,7 @@
 <script type="text/javascript" src="../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":9,"i11":9,"i12":9,"i13":9};
-var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
-var altColor = "altColor";
-var rowColor = "rowColor";
-var tableTab = "tableTab";
-var activeTableTab = "activeTableTab";
-var pathtoroot = "../../";
+<script type="text/javascript">var pathtoroot = "../../";
 loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -64,7 +58,7 @@ loadScripts(document, 'script');</script>
 <li>Detail:&nbsp;</li>
 <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method.detail">Method</a></li>
+<li>Method</li>
 </ul>
 </div>
 <div class="navListSearch"><label for="search">SEARCH:</label>
@@ -93,10 +87,9 @@ loadScripts(document, 'script');</script>
 <hr>
 <pre>public final class <span class="typeNameLabel">VertexAttribute</span>
 extends java.lang.Object</pre>
-<div class="block">A single vertex attribute defined by its <a href="VertexAttributes.Usage.html" title="class in arc.graphics"><code>VertexAttributes.Usage</code></a>, its number of components and its shader alias. The Usage is used
- for uniquely identifying the vertex attribute from among its <a href="VertexAttributes.html" title="class in arc.graphics">VertexAttributes</a> siblings. The number of components
+<div class="block">A single vertex attribute defined by its number of components and its shader alias. The number of components
  defines how many components the attribute has. The alias defines to which shader attribute this attribute should bind. The alias
- is used by a <a href="Mesh.html" title="class in arc.graphics"><code>Mesh</code></a> when drawing with a <a href="gl/Shader.html" title="class in arc.graphics.gl"><code>Shader</code></a>. The alias can be changed at any time.</div>
+ is used by a <a href="Mesh.html" title="class in arc.graphics"><code>Mesh</code></a> when drawing with a <a href="gl/Shader.html" title="class in arc.graphics.gl"><code>Shader</code></a>.</div>
 </section>
 <section class="summary">
 <ul class="blockList">
@@ -125,6 +118,28 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>static <a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#color">color</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#components">components</a></span></code></th>
+<td class="colLast">
+<div class="block">the number of components this attribute has</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#mixColor">mixColor</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#normal">normal</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#normalized">normalized</a></span></code></th>
 <td class="colLast">
@@ -132,38 +147,32 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>static <a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#position">position</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#position3">position3</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#numComponents">numComponents</a></span></code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#size">size</a></span></code></th>
 <td class="colLast">
-<div class="block">the number of components this attribute has</div>
+<div class="block">the size (in bytes) of this attribute</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#offset">offset</a></span></code></th>
-<td class="colLast">
-<div class="block">the offset of this attribute in bytes, don't change this!</div>
-</td>
+<td class="colFirst"><code>static <a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#texCoords">texCoords</a></span></code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#type">type</a></span></code></th>
 <td class="colLast">
 <div class="block">the OpenGL type of each component, e.g.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unit">unit</a></span></code></th>
-<td class="colLast">
-<div class="block">optional unit/index specifier, used for texture coordinates and bone weights</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#usage">usage</a></span></code></th>
-<td class="colLast">
-<div class="block">The attribute <a href="VertexAttributes.Usage.html" title="class in arc.graphics"><code>VertexAttributes.Usage</code></a>, used for identification.</div>
 </td>
 </tr>
 </tbody>
@@ -188,8 +197,7 @@ extends java.lang.Object</pre>
 </thead>
 <tbody>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,int,int,boolean,java.lang.String)">VertexAttribute</a></span>&#8203;(int&nbsp;usage,
-int&nbsp;numComponents,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,int,boolean,java.lang.String)">VertexAttribute</a></span>&#8203;(int&nbsp;components,
 int&nbsp;type,
 boolean&nbsp;normalized,
 java.lang.String&nbsp;alias)</code></th>
@@ -198,29 +206,8 @@ java.lang.String&nbsp;alias)</code></th>
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,int,int,boolean,java.lang.String,int)">VertexAttribute</a></span>&#8203;(int&nbsp;usage,
-int&nbsp;numComponents,
-int&nbsp;type,
-boolean&nbsp;normalized,
-java.lang.String&nbsp;alias,
-int&nbsp;unit)</code></th>
-<td class="colLast">
-<div class="block">Constructs a new VertexAttribute.</div>
-</td>
-</tr>
-<tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,int,java.lang.String)">VertexAttribute</a></span>&#8203;(int&nbsp;usage,
-int&nbsp;numComponents,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,java.lang.String)">VertexAttribute</a></span>&#8203;(int&nbsp;components,
 java.lang.String&nbsp;alias)</code></th>
-<td class="colLast">
-<div class="block">Constructs a new VertexAttribute.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,int,java.lang.String,int)">VertexAttribute</a></span>&#8203;(int&nbsp;usage,
-int&nbsp;numComponents,
-java.lang.String&nbsp;alias,
-int&nbsp;unit)</code></th>
 <td class="colLast">
 <div class="block">Constructs a new VertexAttribute.</div>
 </td>
@@ -236,99 +223,11 @@ int&nbsp;unit)</code></th>
 <!--   -->
 </a>
 <h2>Method Summary</h2>
-<div class="memberSummary">
-<div role="tablist" aria-orientation="horizontal"><button role="tab" aria-selected="true" aria-controls="memberSummary_tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="activeTableTab">All Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t1" class="tableTab" onclick="show(1);">Static Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t2" class="tableTab" onclick="show(2);">Instance Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t4" class="tableTab" onclick="show(8);">Concrete Methods</button></div>
-<div id="memberSummary_tabpanel" role="tabpanel">
-<table aria-labelledby="t0">
-<thead>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colSecond" scope="col">Method</th>
-<th class="colLast" scope="col">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="altColor" id="i0">
-<td class="colFirst"><code>static <a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#binormal()">binormal</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor" id="i1">
-<td class="colFirst"><code>static <a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#boneWeight(int)">boneWeight</a></span>&#8203;(int&nbsp;unit)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor" id="i2">
-<td class="colFirst"><code>static <a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#colorPacked()">colorPacked</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor" id="i3">
-<td class="colFirst"><code>static <a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#colorUnpacked()">colorUnpacked</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor" id="i4">
-<td class="colFirst"><code><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#copy()">copy</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor" id="i5">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(arc.graphics.VertexAttribute)">equals</a></span>&#8203;(<a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a>&nbsp;other)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor" id="i6">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(java.lang.Object&nbsp;obj)</code></th>
-<td class="colLast">
-<div class="block">Tests to determine if the passed object was created with the same parameters</div>
-</td>
-</tr>
-<tr class="rowColor" id="i7">
-<td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getKey()">getKey</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor" id="i8">
-<td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSizeInBytes()">getSizeInBytes</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor" id="i9">
-<td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hashCode()">hashCode</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor" id="i10">
-<td class="colFirst"><code>static <a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#normal()">normal</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor" id="i11">
-<td class="colFirst"><code>static <a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#position()">position</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor" id="i12">
-<td class="colFirst"><code>static <a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#tangent()">tangent</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor" id="i13">
-<td class="colFirst"><code>static <a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#texCoords(int)">texCoords</a></span>&#8203;(int&nbsp;unit)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 <div class="inheritedList">
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
 <a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
-</a><code>clone, finalize, getClass, notify, notifyAll, toString, wait, wait, wait</code></div>
+</a><code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></div>
 </section>
 </li>
 </ul>
@@ -344,15 +243,44 @@ int&nbsp;unit)</code></th>
 <ul class="blockList">
 <li class="blockList">
 <section class="detail">
-<h3><a id="usage">usage</a></h3>
-<div class="memberSignature"><span class="modifiers">public final</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">usage</span></div>
-<div class="block">The attribute <a href="VertexAttributes.Usage.html" title="class in arc.graphics"><code>VertexAttributes.Usage</code></a>, used for identification.</div>
+<h3><a id="position">position</a></h3>
+<div class="memberSignature"><span class="modifiers">public static final</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">position</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="numComponents">numComponents</a></h3>
-<div class="memberSignature"><span class="modifiers">public final</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">numComponents</span></div>
+<h3><a id="position3">position3</a></h3>
+<div class="memberSignature"><span class="modifiers">public static final</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">position3</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="texCoords">texCoords</a></h3>
+<div class="memberSignature"><span class="modifiers">public static final</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">texCoords</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="normal">normal</a></h3>
+<div class="memberSignature"><span class="modifiers">public static final</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">normal</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="color">color</a></h3>
+<div class="memberSignature"><span class="modifiers">public static final</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">color</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="mixColor">mixColor</a></h3>
+<div class="memberSignature"><span class="modifiers">public static final</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">mixColor</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="components">components</a></h3>
+<div class="memberSignature"><span class="modifiers">public final</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">components</span></div>
 <div class="block">the number of components this attribute has</div>
 </section>
 </li>
@@ -372,23 +300,16 @@ int&nbsp;unit)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="offset">offset</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">offset</span></div>
-<div class="block">the offset of this attribute in bytes, don't change this!</div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
 <h3><a id="alias">alias</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">java.lang.String</span>&nbsp;<span class="memberName">alias</span></div>
+<div class="memberSignature"><span class="modifiers">public final</span>&nbsp;<span class="returnType">java.lang.String</span>&nbsp;<span class="memberName">alias</span></div>
 <div class="block">the alias for the attribute used in a <a href="gl/Shader.html" title="class in arc.graphics.gl"><code>Shader</code></a></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="unit">unit</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">unit</span></div>
-<div class="block">optional unit/index specifier, used for texture coordinates and bone weights</div>
+<h3><a id="size">size</a></h3>
+<div class="memberSignature"><span class="modifiers">public final</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">size</span></div>
+<div class="block">the size (in bytes) of this attribute</div>
 </section>
 </li>
 </ul>
@@ -403,193 +324,33 @@ int&nbsp;unit)</code></th>
 <ul class="blockList">
 <li class="blockList">
 <section class="detail">
-<h3><a id="&lt;init&gt;(int,int,java.lang.String)">VertexAttribute</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="memberName">VertexAttribute</span>&#8203;(<span class="arguments">int&nbsp;usage,
-int&nbsp;numComponents,
+<h3><a id="&lt;init&gt;(int,java.lang.String)">VertexAttribute</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="memberName">VertexAttribute</span>&#8203;(<span class="arguments">int&nbsp;components,
 java.lang.String&nbsp;alias)</span></div>
 <div class="block">Constructs a new VertexAttribute. The GL data type is automatically selected based on the usage.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>usage</code> - The attribute <a href="VertexAttributes.Usage.html" title="class in arc.graphics"><code>VertexAttributes.Usage</code></a>, used to select the <a href="#type"><code>type</code></a> and for identification.</dd>
-<dd><code>numComponents</code> - the number of components of this attribute, must be between 1 and 4.</dd>
+<dd><code>components</code> - the number of components of this attribute, must be between 1 and 4.</dd>
 <dd><code>alias</code> - the alias used in a shader for this attribute. Can be changed after construction.</dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="&lt;init&gt;(int,int,java.lang.String,int)">VertexAttribute</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="memberName">VertexAttribute</span>&#8203;(<span class="arguments">int&nbsp;usage,
-int&nbsp;numComponents,
-java.lang.String&nbsp;alias,
-int&nbsp;unit)</span></div>
-<div class="block">Constructs a new VertexAttribute. The GL data type is automatically selected based on the usage.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>usage</code> - The attribute <a href="VertexAttributes.Usage.html" title="class in arc.graphics"><code>VertexAttributes.Usage</code></a>, used to select the <a href="#type"><code>type</code></a> and for identification.</dd>
-<dd><code>numComponents</code> - the number of components of this attribute, must be between 1 and 4.</dd>
-<dd><code>alias</code> - the alias used in a shader for this attribute. Can be changed after construction.</dd>
-<dd><code>unit</code> - Optional unit/index specifier, used for texture coordinates and bone weights</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="&lt;init&gt;(int,int,int,boolean,java.lang.String)">VertexAttribute</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="memberName">VertexAttribute</span>&#8203;(<span class="arguments">int&nbsp;usage,
-int&nbsp;numComponents,
+<h3><a id="&lt;init&gt;(int,int,boolean,java.lang.String)">VertexAttribute</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="memberName">VertexAttribute</span>&#8203;(<span class="arguments">int&nbsp;components,
 int&nbsp;type,
 boolean&nbsp;normalized,
 java.lang.String&nbsp;alias)</span></div>
 <div class="block">Constructs a new VertexAttribute.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>usage</code> - The attribute <a href="VertexAttributes.Usage.html" title="class in arc.graphics"><code>VertexAttributes.Usage</code></a>, used for identification.</dd>
-<dd><code>numComponents</code> - the number of components of this attribute, must be between 1 and 4.</dd>
-<dd><code>type</code> - the OpenGL type of each component, e.g. <a href="GL20.html#GL_FLOAT"><code>GL20.GL_FLOAT</code></a> or <a href="GL20.html#GL_UNSIGNED_BYTE"><code>GL20.GL_UNSIGNED_BYTE</code></a>. Since <a href="Mesh.html" title="class in arc.graphics"><code>Mesh</code></a>
- stores vertex data in 32bit floats, the total size of this attribute (type size times number of components) must be a
- multiple of four.</dd>
-<dd><code>normalized</code> - For fixed types, whether the values are normalized to either -1f and +1f (signed) or 0f and +1f (unsigned)</dd>
-<dd><code>alias</code> - The alias used in a shader for this attribute. Can be changed after construction.</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="&lt;init&gt;(int,int,int,boolean,java.lang.String,int)">VertexAttribute</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="memberName">VertexAttribute</span>&#8203;(<span class="arguments">int&nbsp;usage,
-int&nbsp;numComponents,
-int&nbsp;type,
-boolean&nbsp;normalized,
-java.lang.String&nbsp;alias,
-int&nbsp;unit)</span></div>
-<div class="block">Constructs a new VertexAttribute.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>usage</code> - The attribute <a href="VertexAttributes.Usage.html" title="class in arc.graphics"><code>VertexAttributes.Usage</code></a>, used for identification.</dd>
-<dd><code>numComponents</code> - the number of components of this attribute, must be between 1 and 4.</dd>
+<dd><code>components</code> - the number of components of this attribute, must be between 1 and 4.</dd>
 <dd><code>type</code> - the OpenGL type of each component, e.g. <a href="GL20.html#GL_FLOAT"><code>GL20.GL_FLOAT</code></a> or <a href="GL20.html#GL_UNSIGNED_BYTE"><code>GL20.GL_UNSIGNED_BYTE</code></a>. Since <a href="Mesh.html" title="class in arc.graphics"><code>Mesh</code></a>
  stores vertex data in 32bit floats, the total size of this attribute (type size times number of components) must be a
  multiple of four bytes.</dd>
 <dd><code>normalized</code> - For fixed types, whether the values are normalized to either -1f and +1f (signed) or 0f and +1f (unsigned)</dd>
 <dd><code>alias</code> - The alias used in a shader for this attribute. Can be changed after construction.</dd>
-<dd><code>unit</code> - Optional unit/index specifier, used for texture coordinates and bone weights</dd>
-</dl>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<!-- ============ METHOD DETAIL ========== -->
-<li class="blockList">
-<section class="methodDetails"><a id="method.detail">
-<!--   -->
-</a>
-<h2>Method Details</h2>
-<ul class="blockList">
-<li class="blockList">
-<section class="detail">
-<h3><a id="position()">position</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">position</span>()</div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="texCoords(int)">texCoords</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">texCoords</span>&#8203;(<span class="arguments">int&nbsp;unit)</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="normal()">normal</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">normal</span>()</div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="colorPacked()">colorPacked</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">colorPacked</span>()</div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="colorUnpacked()">colorUnpacked</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">colorUnpacked</span>()</div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="tangent()">tangent</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">tangent</span>()</div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="binormal()">binormal</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">binormal</span>()</div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="boneWeight(int)">boneWeight</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">boneWeight</span>&#8203;(<span class="arguments">int&nbsp;unit)</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="copy()">copy</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">copy</span>()</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>A copy of this VertexAttribute with the same parameters. The <a href="#offset"><code>offset</code></a> is not copied and must
- be recalculated, as is typically done by the <a href="VertexAttributes.html" title="class in arc.graphics">VertexAttributes</a> that owns the VertexAttribute.</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="equals(java.lang.Object)">equals</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">equals</span>&#8203;(<span class="arguments">java.lang.Object&nbsp;obj)</span></div>
-<div class="block">Tests to determine if the passed object was created with the same parameters</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>equals</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="equals(arc.graphics.VertexAttribute)">equals</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">equals</span>&#8203;(<span class="arguments"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a>&nbsp;other)</span></div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="getKey()">getKey</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">getKey</span>()</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>A unique number specifying the usage index (3 MSB) and unit (1 LSB).</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="getSizeInBytes()">getSizeInBytes</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">getSizeInBytes</span>()</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>How many bytes this attribute uses.</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="hashCode()">hashCode</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">hashCode</span>()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>hashCode</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
 </dl>
 </section>
 </li>
@@ -634,7 +395,7 @@ int&nbsp;unit)</span></div>
 <li>Detail:&nbsp;</li>
 <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method.detail">Method</a></li>
+<li>Method</li>
 </ul>
 </div>
 </div>

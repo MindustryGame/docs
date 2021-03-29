@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6};
+<script type="text/javascript">var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -128,40 +128,28 @@ extends <a href="../../util/Disposable.html" title="interface in arc.util">Dispo
 </td>
 </tr>
 <tr class="rowColor" id="i1">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dispose()">dispose</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Disposes this IndexDatat and all its associated OpenGL resources.</div>
-</td>
-</tr>
-<tr class="altColor" id="i2">
 <td class="colFirst"><code>java.nio.ShortBuffer</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBuffer()">getBuffer</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#buffer()">buffer</a></span>()</code></th>
 <td class="colLast">
 <div class="block">
  Returns the underlying ShortBuffer.</div>
 </td>
 </tr>
+<tr class="altColor" id="i2">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dispose()">dispose</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Disposes this IndexData and all its associated OpenGL resources.</div>
+</td>
+</tr>
 <tr class="rowColor" id="i3">
 <td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNumIndices()">getNumIndices</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#max()">max</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor" id="i4">
-<td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNumMaxIndices()">getNumMaxIndices</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor" id="i5">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#invalidate()">invalidate</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Invalidates the IndexBufferObject so a new OpenGL buffer handle is created.</div>
-</td>
-</tr>
-<tr class="altColor" id="i6">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setIndices(short%5B%5D,int,int)">setIndices</a></span>&#8203;(short[]&nbsp;indices,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#set(short%5B%5D,int,int)">set</a></span>&#8203;(short[]&nbsp;indices,
 int&nbsp;offset,
 int&nbsp;count)</code></th>
 <td class="colLast">
@@ -169,23 +157,28 @@ int&nbsp;count)</code></th>
  Sets the indices of this IndexBufferObject, discarding the old indices.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i7">
+<tr class="rowColor" id="i5">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setIndices(java.nio.ShortBuffer)">setIndices</a></span>&#8203;(java.nio.ShortBuffer&nbsp;indices)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#set(java.nio.ShortBuffer)">set</a></span>&#8203;(java.nio.ShortBuffer&nbsp;indices)</code></th>
 <td class="colLast">
 <div class="block">Copies the specified indices to the indices of this IndexBufferObject, discarding the old indices.</div>
 </td>
 </tr>
-<tr class="altColor" id="i8">
+<tr class="altColor" id="i6">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#size()">size</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i7">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unbind()">unbind</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Unbinds this IndexBufferObject.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i9">
+<tr class="altColor" id="i8">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateIndices(int,short%5B%5D,int,int)">updateIndices</a></span>&#8203;(int&nbsp;targetOffset,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(int,short%5B%5D,int,int)">update</a></span>&#8203;(int&nbsp;targetOffset,
 short[]&nbsp;indices,
 int&nbsp;offset,
 int&nbsp;count)</code></th>
@@ -217,8 +210,8 @@ int&nbsp;count)</code></th>
 <ul class="blockList">
 <li class="blockList">
 <section class="detail">
-<h3><a id="getNumIndices()">getNumIndices</a></h3>
-<div class="memberSignature"><span class="returnType">int</span>&nbsp;<span class="memberName">getNumIndices</span>()</div>
+<h3><a id="size()">size</a></h3>
+<div class="memberSignature"><span class="returnType">int</span>&nbsp;<span class="memberName">size</span>()</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the number of indices currently stored in this buffer</dd>
@@ -227,8 +220,8 @@ int&nbsp;count)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="getNumMaxIndices()">getNumMaxIndices</a></h3>
-<div class="memberSignature"><span class="returnType">int</span>&nbsp;<span class="memberName">getNumMaxIndices</span>()</div>
+<h3><a id="max()">max</a></h3>
+<div class="memberSignature"><span class="returnType">int</span>&nbsp;<span class="memberName">max</span>()</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the maximum number of indices this IndexBufferObject can store.</dd>
@@ -237,8 +230,8 @@ int&nbsp;count)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="setIndices(short[],int,int)">setIndices</a></h3>
-<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">setIndices</span>&#8203;(<span class="arguments">short[]&nbsp;indices,
+<h3><a id="set(short[],int,int)">set</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">set</span>&#8203;(<span class="arguments">short[]&nbsp;indices,
 int&nbsp;offset,
 int&nbsp;count)</span></div>
 <div class="block"><p>
@@ -259,8 +252,8 @@ int&nbsp;count)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="setIndices(java.nio.ShortBuffer)">setIndices</a></h3>
-<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">setIndices</span>&#8203;(<span class="arguments">java.nio.ShortBuffer&nbsp;indices)</span></div>
+<h3><a id="set(java.nio.ShortBuffer)">set</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">set</span>&#8203;(<span class="arguments">java.nio.ShortBuffer&nbsp;indices)</span></div>
 <div class="block">Copies the specified indices to the indices of this IndexBufferObject, discarding the old indices. Copying start at the
  current <code>Buffer.position()</code> of the specified buffer and copied the <code>Buffer.remaining()</code> amount of
  indices. This can be called in between calls to <a href="#bind()"><code>bind()</code></a> and <a href="#unbind()"><code>unbind()</code></a>. The index data will be updated
@@ -273,8 +266,8 @@ int&nbsp;count)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="updateIndices(int,short[],int,int)">updateIndices</a></h3>
-<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">updateIndices</span>&#8203;(<span class="arguments">int&nbsp;targetOffset,
+<h3><a id="update(int,short[],int,int)">update</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">update</span>&#8203;(<span class="arguments">int&nbsp;targetOffset,
 short[]&nbsp;indices,
 int&nbsp;offset,
 int&nbsp;count)</span></div>
@@ -290,11 +283,11 @@ int&nbsp;count)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="getBuffer()">getBuffer</a></h3>
-<div class="memberSignature"><span class="returnType">java.nio.ShortBuffer</span>&nbsp;<span class="memberName">getBuffer</span>()</div>
+<h3><a id="buffer()">buffer</a></h3>
+<div class="memberSignature"><span class="returnType">java.nio.ShortBuffer</span>&nbsp;<span class="memberName">buffer</span>()</div>
 <div class="block"><p>
  Returns the underlying ShortBuffer. If you modify the buffer contents they wil be uploaded on the call to <a href="#bind()"><code>bind()</code></a>.
- If you need immediate uploading use <a href="#setIndices(short%5B%5D,int,int)"><code>setIndices(short[], int, int)</code></a>.
+ If you need immediate uploading use <a href="#set(short%5B%5D,int,int)"><code>set(short[], int, int)</code></a>.
  </p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -318,16 +311,9 @@ int&nbsp;count)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="invalidate()">invalidate</a></h3>
-<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">invalidate</span>()</div>
-<div class="block">Invalidates the IndexBufferObject so a new OpenGL buffer handle is created. Use this in case of a context loss.</div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
 <h3><a id="dispose()">dispose</a></h3>
 <div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">dispose</span>()</div>
-<div class="block">Disposes this IndexDatat and all its associated OpenGL resources.</div>
+<div class="block">Disposes this IndexData and all its associated OpenGL resources.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../util/Disposable.html#dispose()">dispose</a></code>&nbsp;in interface&nbsp;<code><a href="../../util/Disposable.html" title="interface in arc.util">Disposable</a></code></dd>

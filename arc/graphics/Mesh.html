@@ -19,8 +19,8 @@
 <script type="text/javascript" src="../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":9,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":9,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10};
-var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -55,14 +55,14 @@ loadScripts(document, 'script');</script>
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -99,7 +99,7 @@ loadScripts(document, 'script');</script>
 extends java.lang.Object
 implements <a href="../util/Disposable.html" title="interface in arc.util">Disposable</a></pre>
 <div class="block"><p>
- A Mesh holds vertices composed of attributes specified by a <a href="VertexAttributes.html" title="class in arc.graphics"><code>VertexAttributes</code></a> instance. The vertices are held either in
+ A Mesh holds vertices composed of attributes specified by an array of <a href="VertexAttribute.html" title="class in arc.graphics"><code>VertexAttribute</code></a> instances. The vertices are held either in
  VRAM in form of vertex buffer objects or in RAM in form of vertex arrays. The former variant is more performant and is
  preferred over vertex arrays if hardware supports it.
  </p>
@@ -120,26 +120,45 @@ implements <a href="../util/Disposable.html" title="interface in arc.util">Dispo
 </section>
 <section class="summary">
 <ul class="blockList">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
+<!-- =========== FIELD SUMMARY =========== -->
 <li class="blockList">
-<section class="nestedClassSummary"><a id="nested.class.summary">
+<section class="fieldSummary"><a id="field.summary">
 <!--   -->
 </a>
-<h2>Nested Class Summary</h2>
+<h2>Field Summary</h2>
 <div class="memberSummary">
 <table>
-<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
 <thead>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colSecond" scope="col">Class</th>
+<th class="colSecond" scope="col">Field</th>
 <th class="colLast" scope="col">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>static class&nbsp;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Mesh.VertexDataType.html" title="enum in arc.graphics">Mesh.VertexDataType</a></span></code></th>
+<td class="colFirst"><code><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a>[]</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#attributes">attributes</a></span></code></th>
+<td class="colLast">
+<div class="block">Do not modify.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="gl/IndexData.html" title="interface in arc.graphics.gl">IndexData</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#indices">indices</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#vertexSize">vertexSize</a></span></code></th>
+<td class="colLast">
+<div class="block">The size of one vertex, in bytes.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="gl/VertexData.html" title="interface in arc.graphics.gl">VertexData</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#vertices">vertices</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
@@ -158,68 +177,26 @@ implements <a href="../util/Disposable.html" title="interface in arc.util">Dispo
 <caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
 <thead>
 <tr>
-<th class="colFirst" scope="col">Modifier</th>
-<th class="colSecond" scope="col">Constructor</th>
+<th class="colFirst" scope="col">Constructor</th>
 <th class="colLast" scope="col">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>&nbsp;</code></td>
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(boolean,boolean,int,int,arc.graphics.VertexAttributes)">Mesh</a></span>&#8203;(boolean&nbsp;staticVertices,
-boolean&nbsp;staticIndices,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(boolean,boolean,int,int,arc.graphics.VertexAttribute...)">Mesh</a></span>&#8203;(boolean&nbsp;useVertexArray,
+boolean&nbsp;isStatic,
 int&nbsp;maxVertices,
 int&nbsp;maxIndices,
-<a href="VertexAttributes.html" title="class in arc.graphics">VertexAttributes</a>&nbsp;attributes)</code></th>
+<a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a>...&nbsp;attributes)</code></th>
 <td class="colLast">
 <div class="block">Creates a new Mesh with the given attributes.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>&nbsp;</code></td>
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(boolean,int,int,arc.graphics.VertexAttribute...)">Mesh</a></span>&#8203;(boolean&nbsp;isStatic,
 int&nbsp;maxVertices,
 int&nbsp;maxIndices,
 <a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a>...&nbsp;attributes)</code></th>
-<td class="colLast">
-<div class="block">Creates a new Mesh with the given attributes.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&nbsp;</code></td>
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(boolean,int,int,arc.graphics.VertexAttributes)">Mesh</a></span>&#8203;(boolean&nbsp;isStatic,
-int&nbsp;maxVertices,
-int&nbsp;maxIndices,
-<a href="VertexAttributes.html" title="class in arc.graphics">VertexAttributes</a>&nbsp;attributes)</code></th>
-<td class="colLast">
-<div class="block">Creates a new Mesh with the given attributes.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected </code></td>
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(arc.graphics.gl.VertexData,arc.graphics.gl.IndexData,boolean)">Mesh</a></span>&#8203;(<a href="gl/VertexData.html" title="interface in arc.graphics.gl">VertexData</a>&nbsp;vertices,
-<a href="gl/IndexData.html" title="interface in arc.graphics.gl">IndexData</a>&nbsp;indices,
-boolean&nbsp;isVertexArray)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&nbsp;</code></td>
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(arc.graphics.Mesh.VertexDataType,boolean,int,int,arc.graphics.VertexAttribute...)">Mesh</a></span>&#8203;(<a href="Mesh.VertexDataType.html" title="enum in arc.graphics">Mesh.VertexDataType</a>&nbsp;type,
-boolean&nbsp;isStatic,
-int&nbsp;maxVertices,
-int&nbsp;maxIndices,
-<a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a>...&nbsp;attributes)</code></th>
-<td class="colLast">
-<div class="block">Creates a new Mesh with the given attributes.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&nbsp;</code></td>
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(arc.graphics.Mesh.VertexDataType,boolean,int,int,arc.graphics.VertexAttributes)">Mesh</a></span>&#8203;(<a href="Mesh.VertexDataType.html" title="enum in arc.graphics">Mesh.VertexDataType</a>&nbsp;type,
-boolean&nbsp;isStatic,
-int&nbsp;maxVertices,
-int&nbsp;maxIndices,
-<a href="VertexAttributes.html" title="class in arc.graphics">VertexAttributes</a>&nbsp;attributes)</code></th>
 <td class="colLast">
 <div class="block">Creates a new Mesh with the given attributes.</div>
 </td>
@@ -236,7 +213,7 @@ int&nbsp;maxIndices,
 </a>
 <h2>Method Summary</h2>
 <div class="memberSummary">
-<div role="tablist" aria-orientation="horizontal"><button role="tab" aria-selected="true" aria-controls="memberSummary_tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="activeTableTab">All Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t1" class="tableTab" onclick="show(1);">Static Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t2" class="tableTab" onclick="show(2);">Instance Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t4" class="tableTab" onclick="show(8);">Concrete Methods</button></div>
+<div role="tablist" aria-orientation="horizontal"><button role="tab" aria-selected="true" aria-controls="memberSummary_tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="activeTableTab">All Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t2" class="tableTab" onclick="show(2);">Instance Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t4" class="tableTab" onclick="show(8);">Concrete Methods</button></div>
 <div id="memberSummary_tabpanel" role="tabpanel">
 <table aria-labelledby="t0">
 <thead>
@@ -256,27 +233,12 @@ int&nbsp;maxIndices,
 </tr>
 <tr class="rowColor" id="i1">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#bind(arc.graphics.gl.Shader,int%5B%5D)">bind</a></span>&#8203;(<a href="gl/Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader,
-int[]&nbsp;locations)</code></th>
-<td class="colLast">
-<div class="block">Binds the underlying <a href="gl/VertexBufferObject.html" title="class in arc.graphics.gl"><code>VertexBufferObject</code></a> and <a href="gl/IndexBufferObject.html" title="class in arc.graphics.gl"><code>IndexBufferObject</code></a> if indices where given.</div>
-</td>
-</tr>
-<tr class="altColor" id="i2">
-<td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#clearAllMeshes(arc.Application)">clearAllMeshes</a></span>&#8203;(<a href="../Application.html" title="interface in arc">Application</a>&nbsp;app)</code></th>
-<td class="colLast">
-<div class="block">Will clear the managed mesh cache.</div>
-</td>
-</tr>
-<tr class="rowColor" id="i3">
-<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dispose()">dispose</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Frees all resources associated with this Mesh</div>
 </td>
 </tr>
-<tr class="altColor" id="i4">
+<tr class="altColor" id="i2">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getIndices(int,int,short%5B%5D,int)">getIndices</a></span>&#8203;(int&nbsp;srcOffset,
 int&nbsp;count,
@@ -286,7 +248,7 @@ int&nbsp;destOffset)</code></th>
 <div class="block">Copies the indices from the Mesh to the short array.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i5">
+<tr class="rowColor" id="i3">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getIndices(int,short%5B%5D,int)">getIndices</a></span>&#8203;(int&nbsp;srcOffset,
 short[]&nbsp;indices,
@@ -295,14 +257,14 @@ int&nbsp;destOffset)</code></th>
 <div class="block">Copies the remaining indices from the Mesh to the short array.</div>
 </td>
 </tr>
-<tr class="altColor" id="i6">
+<tr class="altColor" id="i4">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getIndices(short%5B%5D)">getIndices</a></span>&#8203;(short[]&nbsp;indices)</code></th>
 <td class="colLast">
 <div class="block">Copies the indices from the Mesh to the short array.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i7">
+<tr class="rowColor" id="i5">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getIndices(short%5B%5D,int)">getIndices</a></span>&#8203;(short[]&nbsp;indices,
 int&nbsp;destOffset)</code></th>
@@ -310,120 +272,56 @@ int&nbsp;destOffset)</code></th>
 <div class="block">Copies the indices from the Mesh to the short array.</div>
 </td>
 </tr>
-<tr class="altColor" id="i8">
+<tr class="altColor" id="i6">
 <td class="colFirst"><code>java.nio.ShortBuffer</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getIndicesBuffer()">getIndicesBuffer</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor" id="i9">
-<td class="colFirst"><code>static java.lang.String</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getManagedStatus()">getManagedStatus</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor" id="i10">
+<tr class="rowColor" id="i7">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMaxIndices()">getMaxIndices</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor" id="i11">
+<tr class="altColor" id="i8">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMaxVertices()">getMaxVertices</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i12">
+<tr class="rowColor" id="i9">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNumIndices()">getNumIndices</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor" id="i13">
+<tr class="altColor" id="i10">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNumVertices()">getNumVertices</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i14">
-<td class="colFirst"><code><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVertexAttribute(int)">getVertexAttribute</a></span>&#8203;(int&nbsp;usage)</code></th>
-<td class="colLast">
-<div class="block">Returns the first <a href="VertexAttribute.html" title="class in arc.graphics"><code>VertexAttribute</code></a> having the given <a href="VertexAttributes.Usage.html" title="class in arc.graphics"><code>VertexAttributes.Usage</code></a>.</div>
-</td>
-</tr>
-<tr class="rowColor" id="i15">
-<td class="colFirst"><code><a href="VertexAttributes.html" title="class in arc.graphics">VertexAttributes</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVertexAttributes()">getVertexAttributes</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor" id="i16">
+<tr class="rowColor" id="i11">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVertexSize()">getVertexSize</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor" id="i17">
-<td class="colFirst"><code>float[]</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVertices(float%5B%5D)">getVertices</a></span>&#8203;(float[]&nbsp;vertices)</code></th>
-<td class="colLast">
-<div class="block">Copies the vertices from the Mesh to the float array.</div>
-</td>
-</tr>
-<tr class="altColor" id="i18">
-<td class="colFirst"><code>float[]</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVertices(int,float%5B%5D)">getVertices</a></span>&#8203;(int&nbsp;srcOffset,
-float[]&nbsp;vertices)</code></th>
-<td class="colLast">
-<div class="block">Copies the the remaining vertices from the Mesh to the float array.</div>
-</td>
-</tr>
-<tr class="rowColor" id="i19">
-<td class="colFirst"><code>float[]</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVertices(int,int,float%5B%5D)">getVertices</a></span>&#8203;(int&nbsp;srcOffset,
-int&nbsp;count,
-float[]&nbsp;vertices)</code></th>
-<td class="colLast">
-<div class="block">Copies the specified vertices from the Mesh to the float array.</div>
-</td>
-</tr>
-<tr class="altColor" id="i20">
-<td class="colFirst"><code>float[]</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVertices(int,int,float%5B%5D,int)">getVertices</a></span>&#8203;(int&nbsp;srcOffset,
-int&nbsp;count,
-float[]&nbsp;vertices,
-int&nbsp;destOffset)</code></th>
-<td class="colLast">
-<div class="block">Copies the specified vertices from the Mesh to the float array.</div>
-</td>
-</tr>
-<tr class="rowColor" id="i21">
+<tr class="altColor" id="i12">
 <td class="colFirst"><code>java.nio.FloatBuffer</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVerticesBuffer()">getVerticesBuffer</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i22">
-<td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#invalidateAllMeshes(arc.Application)">invalidateAllMeshes</a></span>&#8203;(<a href="../Application.html" title="interface in arc">Application</a>&nbsp;app)</code></th>
-<td class="colLast">
-<div class="block">Invalidates all meshes so the next time they are rendered new VBO handles are generated.</div>
-</td>
-</tr>
-<tr class="rowColor" id="i23">
+<tr class="rowColor" id="i13">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#render(arc.graphics.gl.Shader,int)">render</a></span>&#8203;(<a href="gl/Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader,
 int&nbsp;primitiveType)</code></th>
-<td class="colLast">
-<div class="block">
- Renders the mesh using the given primitive type.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i24">
+<tr class="altColor" id="i14">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#render(arc.graphics.gl.Shader,int,int,int)">render</a></span>&#8203;(<a href="gl/Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader,
 int&nbsp;primitiveType,
 int&nbsp;offset,
 int&nbsp;count)</code></th>
-<td class="colLast">
-<div class="block">
- Renders the mesh using the given primitive type.</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor" id="i25">
+<tr class="rowColor" id="i15">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#render(arc.graphics.gl.Shader,int,int,int,boolean)">render</a></span>&#8203;(<a href="gl/Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader,
 int&nbsp;primitiveType,
@@ -435,7 +333,7 @@ boolean&nbsp;autoBind)</code></th>
  Renders the mesh using the given primitive type.</div>
 </td>
 </tr>
-<tr class="altColor" id="i26">
+<tr class="altColor" id="i16">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAutoBind(boolean)">setAutoBind</a></span>&#8203;(boolean&nbsp;autoBind)</code></th>
 <td class="colLast">
@@ -443,14 +341,14 @@ boolean&nbsp;autoBind)</code></th>
  render methods.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i27">
+<tr class="rowColor" id="i17">
 <td class="colFirst"><code><a href="Mesh.html" title="class in arc.graphics">Mesh</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setIndices(short%5B%5D)">setIndices</a></span>&#8203;(short[]&nbsp;indices)</code></th>
 <td class="colLast">
 <div class="block">Sets the indices of this Mesh</div>
 </td>
 </tr>
-<tr class="altColor" id="i28">
+<tr class="altColor" id="i18">
 <td class="colFirst"><code><a href="Mesh.html" title="class in arc.graphics">Mesh</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setIndices(short%5B%5D,int,int)">setIndices</a></span>&#8203;(short[]&nbsp;indices,
 int&nbsp;offset,
@@ -459,14 +357,14 @@ int&nbsp;count)</code></th>
 <div class="block">Sets the indices of this Mesh.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i29">
+<tr class="rowColor" id="i19">
 <td class="colFirst"><code><a href="Mesh.html" title="class in arc.graphics">Mesh</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setVertices(float%5B%5D)">setVertices</a></span>&#8203;(float[]&nbsp;vertices)</code></th>
 <td class="colLast">
 <div class="block">Sets the vertices of this Mesh.</div>
 </td>
 </tr>
-<tr class="altColor" id="i30">
+<tr class="altColor" id="i20">
 <td class="colFirst"><code><a href="Mesh.html" title="class in arc.graphics">Mesh</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setVertices(float%5B%5D,int,int)">setVertices</a></span>&#8203;(float[]&nbsp;vertices,
 int&nbsp;offset,
@@ -475,22 +373,14 @@ int&nbsp;count)</code></th>
 <div class="block">Sets the vertices of this Mesh.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i31">
+<tr class="rowColor" id="i21">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unbind(arc.graphics.gl.Shader)">unbind</a></span>&#8203;(<a href="gl/Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader)</code></th>
 <td class="colLast">
 <div class="block">Unbinds the underlying <a href="gl/VertexBufferObject.html" title="class in arc.graphics.gl"><code>VertexBufferObject</code></a> and <a href="gl/IndexBufferObject.html" title="class in arc.graphics.gl"><code>IndexBufferObject</code></a> is indices were given.</div>
 </td>
 </tr>
-<tr class="altColor" id="i32">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unbind(arc.graphics.gl.Shader,int%5B%5D)">unbind</a></span>&#8203;(<a href="gl/Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader,
-int[]&nbsp;locations)</code></th>
-<td class="colLast">
-<div class="block">Unbinds the underlying <a href="gl/VertexBufferObject.html" title="class in arc.graphics.gl"><code>VertexBufferObject</code></a> and <a href="gl/IndexBufferObject.html" title="class in arc.graphics.gl"><code>IndexBufferObject</code></a> is indices were given.</div>
-</td>
-</tr>
-<tr class="rowColor" id="i33">
+<tr class="altColor" id="i22">
 <td class="colFirst"><code><a href="Mesh.html" title="class in arc.graphics">Mesh</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateVertices(int,float%5B%5D)">updateVertices</a></span>&#8203;(int&nbsp;targetOffset,
 float[]&nbsp;source)</code></th>
@@ -498,7 +388,7 @@ float[]&nbsp;source)</code></th>
 <div class="block">Update (a portion of) the vertices.</div>
 </td>
 </tr>
-<tr class="altColor" id="i34">
+<tr class="rowColor" id="i23">
 <td class="colFirst"><code><a href="Mesh.html" title="class in arc.graphics">Mesh</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateVertices(int,float%5B%5D,int,int)">updateVertices</a></span>&#8203;(int&nbsp;targetOffset,
 float[]&nbsp;source,
@@ -528,6 +418,42 @@ int&nbsp;count)</code></th>
 </section>
 <section class="details">
 <ul class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<li class="blockList">
+<section class="fieldDetails"><a id="field.detail">
+<!--   -->
+</a>
+<h2>Field Details</h2>
+<ul class="blockList">
+<li class="blockList">
+<section class="detail">
+<h3><a id="vertexSize">vertexSize</a></h3>
+<div class="memberSignature"><span class="modifiers">public final</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">vertexSize</span></div>
+<div class="block">The size of one vertex, in bytes.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="attributes">attributes</a></h3>
+<div class="memberSignature"><span class="modifiers">public final</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a>[]</span>&nbsp;<span class="memberName">attributes</span></div>
+<div class="block">Do not modify.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="vertices">vertices</a></h3>
+<div class="memberSignature"><span class="modifiers">public final</span>&nbsp;<span class="returnType"><a href="gl/VertexData.html" title="interface in arc.graphics.gl">VertexData</a></span>&nbsp;<span class="memberName">vertices</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="indices">indices</a></h3>
+<div class="memberSignature"><span class="modifiers">public final</span>&nbsp;<span class="returnType"><a href="gl/IndexData.html" title="interface in arc.graphics.gl">IndexData</a></span>&nbsp;<span class="memberName">indices</span></div>
+</section>
+</li>
+</ul>
+</section>
+</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li class="blockList">
 <section class="constructorDetails"><a id="constructor.detail">
@@ -535,14 +461,6 @@ int&nbsp;count)</code></th>
 </a>
 <h2>Constructor Details</h2>
 <ul class="blockList">
-<li class="blockList">
-<section class="detail">
-<h3><a id="&lt;init&gt;(arc.graphics.gl.VertexData,arc.graphics.gl.IndexData,boolean)">Mesh</a></h3>
-<div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="memberName">Mesh</span>&#8203;(<span class="arguments"><a href="gl/VertexData.html" title="interface in arc.graphics.gl">VertexData</a>&nbsp;vertices,
-<a href="gl/IndexData.html" title="interface in arc.graphics.gl">IndexData</a>&nbsp;indices,
-boolean&nbsp;isVertexArray)</span></div>
-</section>
-</li>
 <li class="blockList">
 <section class="detail">
 <h3><a id="&lt;init&gt;(boolean,int,int,arc.graphics.VertexAttribute...)">Mesh</a></h3>
@@ -563,46 +481,8 @@ int&nbsp;maxIndices,
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="&lt;init&gt;(boolean,int,int,arc.graphics.VertexAttributes)">Mesh</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="memberName">Mesh</span>&#8203;(<span class="arguments">boolean&nbsp;isStatic,
-int&nbsp;maxVertices,
-int&nbsp;maxIndices,
-<a href="VertexAttributes.html" title="class in arc.graphics">VertexAttributes</a>&nbsp;attributes)</span></div>
-<div class="block">Creates a new Mesh with the given attributes.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>isStatic</code> - whether this mesh is static or not. Allows for internal optimizations.</dd>
-<dd><code>maxVertices</code> - the maximum number of vertices this mesh can hold</dd>
-<dd><code>maxIndices</code> - the maximum number of indices this mesh can hold</dd>
-<dd><code>attributes</code> - the <a href="VertexAttributes.html" title="class in arc.graphics"><code>VertexAttributes</code></a>. Each vertex attribute defines one property of a vertex such as position,
- normal or texture coordinate</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="&lt;init&gt;(boolean,boolean,int,int,arc.graphics.VertexAttributes)">Mesh</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="memberName">Mesh</span>&#8203;(<span class="arguments">boolean&nbsp;staticVertices,
-boolean&nbsp;staticIndices,
-int&nbsp;maxVertices,
-int&nbsp;maxIndices,
-<a href="VertexAttributes.html" title="class in arc.graphics">VertexAttributes</a>&nbsp;attributes)</span></div>
-<div class="block">Creates a new Mesh with the given attributes. Adds extra optimizations for dynamic (frequently modified) meshes.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>staticVertices</code> - whether vertices of this mesh are static or not. Allows for internal optimizations.</dd>
-<dd><code>staticIndices</code> - whether indices of this mesh are static or not. Allows for internal optimizations.</dd>
-<dd><code>maxVertices</code> - the maximum number of vertices this mesh can hold</dd>
-<dd><code>maxIndices</code> - the maximum number of indices this mesh can hold</dd>
-<dd><code>attributes</code> - the <a href="VertexAttributes.html" title="class in arc.graphics"><code>VertexAttributes</code></a>. Each vertex attribute defines one property of a vertex such as position,
- normal or texture coordinate</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="&lt;init&gt;(arc.graphics.Mesh.VertexDataType,boolean,int,int,arc.graphics.VertexAttribute...)">Mesh</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="memberName">Mesh</span>&#8203;(<span class="arguments"><a href="Mesh.VertexDataType.html" title="enum in arc.graphics">Mesh.VertexDataType</a>&nbsp;type,
+<h3><a id="&lt;init&gt;(boolean,boolean,int,int,arc.graphics.VertexAttribute...)">Mesh</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="memberName">Mesh</span>&#8203;(<span class="arguments">boolean&nbsp;useVertexArray,
 boolean&nbsp;isStatic,
 int&nbsp;maxVertices,
 int&nbsp;maxIndices,
@@ -610,31 +490,10 @@ int&nbsp;maxIndices,
 <div class="block">Creates a new Mesh with the given attributes. This is an expert method with no error checking. Use at your own risk.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>type</code> - the <a href="Mesh.VertexDataType.html" title="enum in arc.graphics"><code>Mesh.VertexDataType</code></a> to be used, VBO or VA.</dd>
+<dd><code>useVertexArray</code> - whether to use VBOs or VAOs. Note that the latter is not supported with OpenGL 3.0.</dd>
 <dd><code>isStatic</code> - whether this mesh is static or not. Allows for internal optimizations.</dd>
 <dd><code>maxVertices</code> - the maximum number of vertices this mesh can hold</dd>
 <dd><code>maxIndices</code> - the maximum number of indices this mesh can hold</dd>
-<dd><code>attributes</code> - the <a href="VertexAttribute.html" title="class in arc.graphics"><code>VertexAttribute</code></a>s. Each vertex attribute defines one property of a vertex such as position,
- normal or texture coordinate</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="&lt;init&gt;(arc.graphics.Mesh.VertexDataType,boolean,int,int,arc.graphics.VertexAttributes)">Mesh</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="memberName">Mesh</span>&#8203;(<span class="arguments"><a href="Mesh.VertexDataType.html" title="enum in arc.graphics">Mesh.VertexDataType</a>&nbsp;type,
-boolean&nbsp;isStatic,
-int&nbsp;maxVertices,
-int&nbsp;maxIndices,
-<a href="VertexAttributes.html" title="class in arc.graphics">VertexAttributes</a>&nbsp;attributes)</span></div>
-<div class="block">Creates a new Mesh with the given attributes. This is an expert method with no error checking. Use at your own risk.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>type</code> - the <a href="Mesh.VertexDataType.html" title="enum in arc.graphics"><code>Mesh.VertexDataType</code></a> to be used, VBO or VA.</dd>
-<dd><code>isStatic</code> - whether this mesh is static or not. Allows for internal optimizations.</dd>
-<dd><code>maxVertices</code> - the maximum number of vertices this mesh can hold</dd>
-<dd><code>maxIndices</code> - the maximum number of indices this mesh can hold</dd>
-<dd><code>attributes</code> - the <a href="VertexAttributes.html" title="class in arc.graphics"><code>VertexAttributes</code></a>.</dd>
 </dl>
 </section>
 </li>
@@ -648,26 +507,6 @@ int&nbsp;maxIndices,
 </a>
 <h2>Method Details</h2>
 <ul class="blockList">
-<li class="blockList">
-<section class="detail">
-<h3><a id="invalidateAllMeshes(arc.Application)">invalidateAllMeshes</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">invalidateAllMeshes</span>&#8203;(<span class="arguments"><a href="../Application.html" title="interface in arc">Application</a>&nbsp;app)</span></div>
-<div class="block">Invalidates all meshes so the next time they are rendered new VBO handles are generated.</div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="clearAllMeshes(arc.Application)">clearAllMeshes</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">clearAllMeshes</span>&#8203;(<span class="arguments"><a href="../Application.html" title="interface in arc">Application</a>&nbsp;app)</span></div>
-<div class="block">Will clear the managed mesh cache. I wouldn't use this if i was you :)</div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="getManagedStatus()">getManagedStatus</a></h3>
-<div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType">java.lang.String</span>&nbsp;<span class="memberName">getManagedStatus</span>()</div>
-</section>
-</li>
 <li class="blockList">
 <section class="detail">
 <h3><a id="setVertices(float[])">setVertices</a></h3>
@@ -725,64 +564,6 @@ int&nbsp;count)</span></div>
 <dd><code>source</code> - the vertex data to update the mesh part with</dd>
 <dd><code>sourceOffset</code> - the offset in number of floats within the source array</dd>
 <dd><code>count</code> - the number of floats to update</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="getVertices(float[])">getVertices</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float[]</span>&nbsp;<span class="memberName">getVertices</span>&#8203;(<span class="arguments">float[]&nbsp;vertices)</span></div>
-<div class="block">Copies the vertices from the Mesh to the float array. The float array must be large enough to hold all the Mesh's vertices.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>vertices</code> - the array to copy the vertices to</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="getVertices(int,float[])">getVertices</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float[]</span>&nbsp;<span class="memberName">getVertices</span>&#8203;(<span class="arguments">int&nbsp;srcOffset,
-float[]&nbsp;vertices)</span></div>
-<div class="block">Copies the the remaining vertices from the Mesh to the float array. The float array must be large enough to hold the
- remaining vertices.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>srcOffset</code> - the offset (in number of floats) of the vertices in the mesh to copy</dd>
-<dd><code>vertices</code> - the array to copy the vertices to</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="getVertices(int,int,float[])">getVertices</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float[]</span>&nbsp;<span class="memberName">getVertices</span>&#8203;(<span class="arguments">int&nbsp;srcOffset,
-int&nbsp;count,
-float[]&nbsp;vertices)</span></div>
-<div class="block">Copies the specified vertices from the Mesh to the float array. The float array must be large enough to hold count vertices.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>srcOffset</code> - the offset (in number of floats) of the vertices in the mesh to copy</dd>
-<dd><code>count</code> - the amount of floats to copy</dd>
-<dd><code>vertices</code> - the array to copy the vertices to</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="getVertices(int,int,float[],int)">getVertices</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float[]</span>&nbsp;<span class="memberName">getVertices</span>&#8203;(<span class="arguments">int&nbsp;srcOffset,
-int&nbsp;count,
-float[]&nbsp;vertices,
-int&nbsp;destOffset)</span></div>
-<div class="block">Copies the specified vertices from the Mesh to the float array. The float array must be large enough to hold
- destOffset+count vertices.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>srcOffset</code> - the offset (in number of floats) of the vertices in the mesh to copy</dd>
-<dd><code>count</code> - the amount of floats to copy</dd>
-<dd><code>vertices</code> - the array to copy the vertices to</dd>
-<dd><code>destOffset</code> - the offset (in floats) in the vertices array to start copying</dd>
 </dl>
 </section>
 </li>
@@ -953,20 +734,6 @@ int&nbsp;destOffset)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="bind(arc.graphics.gl.Shader,int[])">bind</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">bind</span>&#8203;(<span class="arguments"><a href="gl/Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader,
-int[]&nbsp;locations)</span></div>
-<div class="block">Binds the underlying <a href="gl/VertexBufferObject.html" title="class in arc.graphics.gl"><code>VertexBufferObject</code></a> and <a href="gl/IndexBufferObject.html" title="class in arc.graphics.gl"><code>IndexBufferObject</code></a> if indices where given. Use this with OpenGL
- ES 2.0 and when auto-bind is disabled.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>shader</code> - the shader (does not bind the shader)</dd>
-<dd><code>locations</code> - array containing the attribute locations.</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
 <h3><a id="unbind(arc.graphics.gl.Shader)">unbind</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">unbind</span>&#8203;(<span class="arguments"><a href="gl/Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader)</span></div>
 <div class="block">Unbinds the underlying <a href="gl/VertexBufferObject.html" title="class in arc.graphics.gl"><code>VertexBufferObject</code></a> and <a href="gl/IndexBufferObject.html" title="class in arc.graphics.gl"><code>IndexBufferObject</code></a> is indices were given. Use this with OpenGL
@@ -979,43 +746,12 @@ int[]&nbsp;locations)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="unbind(arc.graphics.gl.Shader,int[])">unbind</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">unbind</span>&#8203;(<span class="arguments"><a href="gl/Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader,
-int[]&nbsp;locations)</span></div>
-<div class="block">Unbinds the underlying <a href="gl/VertexBufferObject.html" title="class in arc.graphics.gl"><code>VertexBufferObject</code></a> and <a href="gl/IndexBufferObject.html" title="class in arc.graphics.gl"><code>IndexBufferObject</code></a> is indices were given. Use this with OpenGL
- ES 1.x and when auto-bind is disabled.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>shader</code> - the shader (does not unbind the shader)</dd>
-<dd><code>locations</code> - array containing the attribute locations.</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
 <h3><a id="render(arc.graphics.gl.Shader,int)">render</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">render</span>&#8203;(<span class="arguments"><a href="gl/Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader,
 int&nbsp;primitiveType)</span></div>
-<div class="block"><p>
- Renders the mesh using the given primitive type. If indices are set for this mesh then getNumIndices() / #vertices per
- primitive primitives are rendered. If no indices are set then getNumVertices() / #vertices per primitive are rendered.
- </p>
-
- <p>
- This method will automatically bind each vertex attribute as specified at construction time via <a href="VertexAttributes.html" title="class in arc.graphics"><code>VertexAttributes</code></a> to
- the respective shader attributes. The binding is based on the alias defined for each VertexAttribute.
- </p>
-
- <p>
- This method must only be called after the <a href="gl/Shader.html#bind()"><code>Shader.bind()</code></a> method has been called!
- </p>
-
- <p>
- This method is intended for use with OpenGL ES 2.0 and will throw an IllegalStateException when OpenGL ES 1.x is used.
- </p></div>
 <dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>primitiveType</code> - the primitive type</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="#render(arc.graphics.gl.Shader,int,int,int,boolean)"><code>render(Shader, int, int, int, boolean)</code></a></dd>
 </dl>
 </section>
 </li>
@@ -1026,30 +762,9 @@ int&nbsp;primitiveType)</span></div>
 int&nbsp;primitiveType,
 int&nbsp;offset,
 int&nbsp;count)</span></div>
-<div class="block"><p>
- Renders the mesh using the given primitive type. offset specifies the offset into either the vertex buffer or the index
- buffer depending on whether indices are defined. count specifies the number of vertices or indices to use thus count /
- #vertices per primitive primitives are rendered.
- </p>
-
- <p>
- This method will automatically bind each vertex attribute as specified at construction time via <a href="VertexAttributes.html" title="class in arc.graphics"><code>VertexAttributes</code></a> to
- the respective shader attributes. The binding is based on the alias defined for each VertexAttribute.
- </p>
-
- <p>
- This method must only be called after the <a href="gl/Shader.html#bind()"><code>Shader.bind()</code></a> method has been called!
- </p>
-
- <p>
- This method is intended for use with OpenGL ES 2.0 and will throw an IllegalStateException when OpenGL ES 1.x is used.
- </p></div>
 <dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>shader</code> - the shader to be used</dd>
-<dd><code>primitiveType</code> - the primitive type</dd>
-<dd><code>offset</code> - the offset into the vertex or index buffer</dd>
-<dd><code>count</code> - number of vertices or indices to use</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="#render(arc.graphics.gl.Shader,int,int,int,boolean)"><code>render(Shader, int, int, int, boolean)</code></a></dd>
 </dl>
 </section>
 </li>
@@ -1068,7 +783,7 @@ boolean&nbsp;autoBind)</span></div>
  </p>
 
  <p>
- This method will automatically bind each vertex attribute as specified at construction time via <a href="VertexAttributes.html" title="class in arc.graphics"><code>VertexAttributes</code></a> to
+ This method will automatically bind each vertex attribute as specified at construction time to
  the respective shader attributes. The binding is based on the alias defined for each VertexAttribute.
  </p>
 
@@ -1097,29 +812,6 @@ boolean&nbsp;autoBind)</span></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../util/Disposable.html#dispose()">dispose</a></code>&nbsp;in interface&nbsp;<code><a href="../util/Disposable.html" title="interface in arc.util">Disposable</a></code></dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="getVertexAttribute(int)">getVertexAttribute</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="VertexAttribute.html" title="class in arc.graphics">VertexAttribute</a></span>&nbsp;<span class="memberName">getVertexAttribute</span>&#8203;(<span class="arguments">int&nbsp;usage)</span></div>
-<div class="block">Returns the first <a href="VertexAttribute.html" title="class in arc.graphics"><code>VertexAttribute</code></a> having the given <a href="VertexAttributes.Usage.html" title="class in arc.graphics"><code>VertexAttributes.Usage</code></a>.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>usage</code> - the Usage.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>the VertexAttribute or null if no attribute with that usage was found.</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="getVertexAttributes()">getVertexAttributes</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="VertexAttributes.html" title="class in arc.graphics">VertexAttributes</a></span>&nbsp;<span class="memberName">getVertexAttributes</span>()</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>the vertex attributes of this Mesh</dd>
 </dl>
 </section>
 </li>
@@ -1175,14 +867,14 @@ boolean&nbsp;autoBind)</span></div>
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -89,7 +89,9 @@ loadScripts(document, 'script');</script>
 <div class="inheritance" title="Inheritance Tree">java.lang.Object
 <div class="inheritance"><a href="../ctype/Content.html" title="class in mindustry.ctype">mindustry.ctype.Content</a>
 <div class="inheritance"><a href="../ctype/MappableContent.html" title="class in mindustry.ctype">mindustry.ctype.MappableContent</a>
+<div class="inheritance"><a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">mindustry.ctype.UnlockableContent</a>
 <div class="inheritance">mindustry.type.StatusEffect</div>
+</div>
 </div>
 </div>
 </div>
@@ -100,7 +102,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">StatusEffect</span>
-extends <a href="../ctype/MappableContent.html" title="class in mindustry.ctype">MappableContent</a></pre>
+extends <a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></pre>
 </section>
 <section class="summary">
 <ul class="blockList">
@@ -154,38 +156,50 @@ extends <a href="../ctype/MappableContent.html" title="class in mindustry.ctype"
 </thead>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><code><a href="../../arc/struct/ObjectSet.html" title="class in arc.struct">ObjectSet</a>&lt;<a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#affinities">affinities</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#buildSpeedMultiplier">buildSpeedMultiplier</a></span></code></th>
 <td class="colLast">
 <div class="block">Unit build speed multiplier.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#color">color</a></span></code></th>
 <td class="colLast">
 <div class="block">Tint color of effect.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#damage">damage</a></span></code></th>
 <td class="colLast">
 <div class="block">Damage per frame.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#damageMultiplier">damageMultiplier</a></span></code></th>
 <td class="colLast">
 <div class="block">Damage dealt by the unit with the effect.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#disarm">disarm</a></span></code></th>
 <td class="colLast">
 <div class="block">Unit weapon(s) disabled.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>float</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dragMultiplier">dragMultiplier</a></span></code></th>
+<td class="colLast">
+<div class="block">Unit drag multiplier.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -217,31 +231,43 @@ extends <a href="../ctype/MappableContent.html" title="class in mindustry.ctype"
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="../../arc/struct/ObjectSet.html" title="class in arc.struct">ObjectSet</a>&lt;<a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#opposites">opposites</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#permanent">permanent</a></span></code></th>
 <td class="colLast">
 <div class="block">If true, the effect never disappears.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reactive">reactive</a></span></code></th>
 <td class="colLast">
 <div class="block">If true, this effect will only react with other effects and cannot be applied.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reloadMultiplier">reloadMultiplier</a></span></code></th>
 <td class="colLast">
 <div class="block">Unit reload multiplier.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#speedMultiplier">speedMultiplier</a></span></code></th>
 <td class="colLast">
 <div class="block">Unit speed multiplier.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>float</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#transitionDamage">transitionDamage</a></span></code></th>
+<td class="colLast">
+<div class="block">Damage dealt upon transition to an affinity.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -254,6 +280,11 @@ extends <a href="../ctype/MappableContent.html" title="class in mindustry.ctype"
 </tbody>
 </table>
 </div>
+<div class="inheritedList">
+<h3>Fields inherited from class&nbsp;mindustry.ctype.<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></h3>
+<a id="fields.inherited.from.class.mindustry.ctype.UnlockableContent">
+<!--   -->
+</a><code><a href="../ctype/UnlockableContent.html#alwaysUnlocked">alwaysUnlocked</a>, <a href="../ctype/UnlockableContent.html#cicons">cicons</a>, <a href="../ctype/UnlockableContent.html#description">description</a>, <a href="../ctype/UnlockableContent.html#details">details</a>, <a href="../ctype/UnlockableContent.html#iconId">iconId</a>, <a href="../ctype/UnlockableContent.html#inlineDescription">inlineDescription</a>, <a href="../ctype/UnlockableContent.html#localizedName">localizedName</a>, <a href="../ctype/UnlockableContent.html#stats">stats</a>, <a href="../ctype/UnlockableContent.html#unlocked">unlocked</a></code></div>
 <div class="inheritedList">
 <h3>Fields inherited from class&nbsp;mindustry.ctype.<a href="../ctype/MappableContent.html" title="class in mindustry.ctype">MappableContent</a></h3>
 <a id="fields.inherited.from.class.mindustry.ctype.MappableContent">
@@ -310,18 +341,24 @@ extends <a href="../ctype/MappableContent.html" title="class in mindustry.ctype"
 </thead>
 <tbody>
 <tr class="altColor" id="i0">
+<td class="colFirst"><code>protected void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#affinity(mindustry.type.StatusEffect,mindustry.type.StatusEffect.TransitionHandler)">affinity</a></span>&#8203;(<a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>&nbsp;effect,
+<a href="StatusEffect.TransitionHandler.html" title="interface in mindustry.type">StatusEffect.TransitionHandler</a>&nbsp;handler)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i1">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#draw(mindustry.gen.Unit)">draw</a></span>&#8203;(<a href="../gen/Unit.html" title="class in mindustry.gen">Unit</a>&nbsp;unit)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor" id="i1">
+<tr class="altColor" id="i2">
 <td class="colFirst"><code><a href="../ctype/ContentType.html" title="enum in mindustry.ctype">ContentType</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getContentType()">getContentType</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the type name of this piece of content.</div>
 </td>
 </tr>
-<tr class="altColor" id="i2">
+<tr class="rowColor" id="i3">
 <td class="colFirst"><code><a href="../entities/units/StatusEntry.html" title="class in mindustry.entities.units">StatusEntry</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTransition(mindustry.gen.Unit,mindustry.type.StatusEffect,float,float,mindustry.entities.units.StatusEntry)">getTransition</a></span>&#8203;(<a href="../gen/Unit.html" title="class in mindustry.gen">Unit</a>&nbsp;unit,
 <a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>&nbsp;to,
@@ -332,35 +369,64 @@ float&nbsp;newTime,
 <div class="block">Called when transitioning between two status effects.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i3">
+<tr class="altColor" id="i4">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#init()">init</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Called after all content and modules are created.</div>
 </td>
 </tr>
-<tr class="altColor" id="i4">
+<tr class="rowColor" id="i5">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#init(java.lang.Runnable)">init</a></span>&#8203;(java.lang.Runnable&nbsp;run)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor" id="i5">
+<tr class="altColor" id="i6">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isHidden()">isHidden</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Whether this content is always hidden in the content database dialog.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i7">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#opposite(mindustry.type.StatusEffect...)">opposite</a></span>&#8203;(<a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>...&nbsp;effect)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i6">
+<tr class="altColor" id="i8">
+<td class="colFirst"><code><a href="../ui/Cicon.html" title="enum in mindustry.ui">Cicon</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prefDatabaseIcon()">prefDatabaseIcon</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i9">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reactsWith(mindustry.type.StatusEffect)">reactsWith</a></span>&#8203;(<a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>&nbsp;effect)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor" id="i7">
+<tr class="altColor" id="i10">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setStats()">setStats</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Initializes stats on demand.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i11">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#showUnlock()">showUnlock</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i12">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i13">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#trans(mindustry.type.StatusEffect,mindustry.type.StatusEffect.TransitionHandler)">trans</a></span>&#8203;(<a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>&nbsp;effect,
 <a href="StatusEffect.TransitionHandler.html" title="interface in mindustry.type">StatusEffect.TransitionHandler</a>&nbsp;handler)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i8">
+<tr class="altColor" id="i14">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(mindustry.gen.Unit,float)">update</a></span>&#8203;(<a href="../gen/Unit.html" title="class in mindustry.gen">Unit</a>&nbsp;unit,
 float&nbsp;time)</code></th>
@@ -373,10 +439,10 @@ float&nbsp;time)</code></th>
 </div>
 </div>
 <div class="inheritedList">
-<h3>Methods inherited from class&nbsp;mindustry.ctype.<a href="../ctype/MappableContent.html" title="class in mindustry.ctype">MappableContent</a></h3>
-<a id="methods.inherited.from.class.mindustry.ctype.MappableContent">
+<h3>Methods inherited from class&nbsp;mindustry.ctype.<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></h3>
+<a id="methods.inherited.from.class.mindustry.ctype.UnlockableContent">
 <!--   -->
-</a><code><a href="../ctype/MappableContent.html#toString()">toString</a></code></div>
+</a><code><a href="../ctype/UnlockableContent.html#checkStats()">checkStats</a>, <a href="../ctype/UnlockableContent.html#clearUnlock()">clearUnlock</a>, <a href="../ctype/UnlockableContent.html#createIcons(mindustry.graphics.MultiPacker)">createIcons</a>, <a href="../ctype/UnlockableContent.html#display(arc.scene.ui.layout.Table)">display</a>, <a href="../ctype/UnlockableContent.html#displayDescription()">displayDescription</a>, <a href="../ctype/UnlockableContent.html#emoji()">emoji</a>, <a href="../ctype/UnlockableContent.html#getDependencies(arc.func.Cons)">getDependencies</a>, <a href="../ctype/UnlockableContent.html#icon(mindustry.ui.Cicon)">icon</a>, <a href="../ctype/UnlockableContent.html#locked()">locked</a>, <a href="../ctype/UnlockableContent.html#node()">node</a>, <a href="../ctype/UnlockableContent.html#onUnlock()">onUnlock</a>, <a href="../ctype/UnlockableContent.html#quietUnlock()">quietUnlock</a>, <a href="../ctype/UnlockableContent.html#researchRequirements()">researchRequirements</a>, <a href="../ctype/UnlockableContent.html#unlock()">unlock</a>, <a href="../ctype/UnlockableContent.html#unlocked()">unlocked</a>, <a href="../ctype/UnlockableContent.html#unlockedNow()">unlockedNow</a></code></div>
 <div class="inheritedList">
 <h3>Methods inherited from class&nbsp;mindustry.ctype.<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a></h3>
 <a id="methods.inherited.from.class.mindustry.ctype.Content">
@@ -442,6 +508,20 @@ float&nbsp;time)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
+<h3><a id="dragMultiplier">dragMultiplier</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">dragMultiplier</span></div>
+<div class="block">Unit drag multiplier.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="transitionDamage">transitionDamage</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">float</span>&nbsp;<span class="memberName">transitionDamage</span></div>
+<div class="block">Damage dealt upon transition to an affinity.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
 <h3><a id="disarm">disarm</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">disarm</span></div>
 <div class="block">Unit weapon(s) disabled.</div>
@@ -503,6 +583,18 @@ float&nbsp;time)</code></th>
 <div class="block">Called on init.</div>
 </section>
 </li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="affinities">affinities</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../../arc/struct/ObjectSet.html" title="class in arc.struct">ObjectSet</a>&lt;<a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>&gt;</span>&nbsp;<span class="memberName">affinities</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="opposites">opposites</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../../arc/struct/ObjectSet.html" title="class in arc.struct">ObjectSet</a>&lt;<a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>&gt;</span>&nbsp;<span class="memberName">opposites</span></div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -549,6 +641,52 @@ float&nbsp;time)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
+<h3><a id="isHidden()">isHidden</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">isHidden</span>()</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../ctype/UnlockableContent.html#isHidden()">UnlockableContent</a></code></span></div>
+<div class="block">Whether this content is always hidden in the content database dialog.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../ctype/UnlockableContent.html#isHidden()">isHidden</a></code>&nbsp;in class&nbsp;<code><a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="setStats()">setStats</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">setStats</span>()</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../ctype/UnlockableContent.html#setStats()">UnlockableContent</a></code></span></div>
+<div class="block">Initializes stats on demand. Should only be called once. Only called before something is displayed.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../ctype/UnlockableContent.html#setStats()">setStats</a></code>&nbsp;in class&nbsp;<code><a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="prefDatabaseIcon()">prefDatabaseIcon</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../ui/Cicon.html" title="enum in mindustry.ui">Cicon</a></span>&nbsp;<span class="memberName">prefDatabaseIcon</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../ctype/UnlockableContent.html#prefDatabaseIcon()">prefDatabaseIcon</a></code>&nbsp;in class&nbsp;<code><a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></code></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="showUnlock()">showUnlock</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">showUnlock</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../ctype/UnlockableContent.html#showUnlock()">showUnlock</a></code>&nbsp;in class&nbsp;<code><a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether to show a notification toast when this is unlocked</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
 <h3><a id="update(mindustry.gen.Unit,float)">update</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">update</span>&#8203;(<span class="arguments"><a href="../gen/Unit.html" title="class in mindustry.gen">Unit</a>&nbsp;unit,
 float&nbsp;time)</span></div>
@@ -559,6 +697,13 @@ float&nbsp;time)</span></div>
 <section class="detail">
 <h3><a id="trans(mindustry.type.StatusEffect,mindustry.type.StatusEffect.TransitionHandler)">trans</a></h3>
 <div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">trans</span>&#8203;(<span class="arguments"><a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>&nbsp;effect,
+<a href="StatusEffect.TransitionHandler.html" title="interface in mindustry.type">StatusEffect.TransitionHandler</a>&nbsp;handler)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="affinity(mindustry.type.StatusEffect,mindustry.type.StatusEffect.TransitionHandler)">affinity</a></h3>
+<div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">affinity</span>&#8203;(<span class="arguments"><a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>&nbsp;effect,
 <a href="StatusEffect.TransitionHandler.html" title="interface in mindustry.type">StatusEffect.TransitionHandler</a>&nbsp;handler)</span></div>
 </section>
 </li>
@@ -594,6 +739,16 @@ float&nbsp;newTime,
 <dd><code>to</code> - The state to transition to</dd>
 <dd><code>time</code> - The current status effect time</dd>
 <dd><code>newTime</code> - The time that the new status effect will last</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="toString()">toString</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">java.lang.String</span>&nbsp;<span class="memberName">toString</span>()</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../ctype/MappableContent.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../ctype/MappableContent.html" title="class in mindustry.ctype">MappableContent</a></code></dd>
 </dl>
 </section>
 </li>

@@ -19,8 +19,8 @@
 <script type="text/javascript" src="../../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+<script type="text/javascript">var data = {"i0":6,"i1":6,"i2":6,"i3":18,"i4":6,"i5":6,"i6":6,"i7":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -93,7 +93,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="VertexArray.html" title="class in arc.graphics.gl">VertexArray</a></code>, <code><a href="VertexBufferObject.html" title="class in arc.graphics.gl">VertexBufferObject</a></code>, <code><a href="VertexBufferObjectSubData.html" title="class in arc.graphics.gl">VertexBufferObjectSubData</a></code>, <code><a href="VertexBufferObjectWithVAO.html" title="class in arc.graphics.gl">VertexBufferObjectWithVAO</a></code></dd>
+<dd><code><a href="VertexArray.html" title="class in arc.graphics.gl">VertexArray</a></code>, <code><a href="VertexBufferObject.html" title="class in arc.graphics.gl">VertexBufferObject</a></code>, <code><a href="VertexBufferObjectWithVAO.html" title="class in arc.graphics.gl">VertexBufferObjectWithVAO</a></code></dd>
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">VertexData</span>
@@ -110,7 +110,7 @@ extends <a href="../../util/Disposable.html" title="interface in arc.util">Dispo
 </a>
 <h2>Method Summary</h2>
 <div class="memberSummary">
-<div role="tablist" aria-orientation="horizontal"><button role="tab" aria-selected="true" aria-controls="memberSummary_tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="activeTableTab">All Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t2" class="tableTab" onclick="show(2);">Instance Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t3" class="tableTab" onclick="show(4);">Abstract Methods</button></div>
+<div role="tablist" aria-orientation="horizontal"><button role="tab" aria-selected="true" aria-controls="memberSummary_tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="activeTableTab">All Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t2" class="tableTab" onclick="show(2);">Instance Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t3" class="tableTab" onclick="show(4);">Abstract Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t5" class="tableTab" onclick="show(16);">Default Methods</button></div>
 <div id="memberSummary_tabpanel" role="tabpanel">
 <table aria-labelledby="t0">
 <thead>
@@ -129,77 +129,50 @@ extends <a href="../../util/Disposable.html" title="interface in arc.util">Dispo
 </td>
 </tr>
 <tr class="rowColor" id="i1">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#bind(arc.graphics.gl.Shader,int%5B%5D)">bind</a></span>&#8203;(<a href="Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader,
-int[]&nbsp;locations)</code></th>
-<td class="colLast">
-<div class="block">Binds this VertexData for rendering via glDrawArrays or glDrawElements.</div>
-</td>
-</tr>
-<tr class="altColor" id="i2">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dispose()">dispose</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Disposes this VertexData and all its associated OpenGL resources.</div>
-</td>
-</tr>
-<tr class="rowColor" id="i3">
-<td class="colFirst"><code><a href="../VertexAttributes.html" title="class in arc.graphics">VertexAttributes</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttributes()">getAttributes</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor" id="i4">
 <td class="colFirst"><code>java.nio.FloatBuffer</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBuffer()">getBuffer</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#buffer()">buffer</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the underlying FloatBuffer and marks it as dirty, causing the buffer contents to be uploaded on the next call to
  bind.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i5">
+<tr class="altColor" id="i2">
 <td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNumMaxVertices()">getNumMaxVertices</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#max()">max</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i6">
-<td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNumVertices()">getNumVertices</a></span>()</code></th>
+<tr class="rowColor" id="i3">
+<td class="colFirst"><code>default void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#render(arc.graphics.gl.IndexData,int,int,int)">render</a></span>&#8203;(<a href="IndexData.html" title="interface in arc.graphics.gl">IndexData</a>&nbsp;indices,
+int&nbsp;primitiveType,
+int&nbsp;offset,
+int&nbsp;count)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor" id="i7">
+<tr class="altColor" id="i4">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#invalidate()">invalidate</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Invalidates the VertexData if applicable.</div>
-</td>
-</tr>
-<tr class="altColor" id="i8">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setVertices(float%5B%5D,int,int)">setVertices</a></span>&#8203;(float[]&nbsp;vertices,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#set(float%5B%5D,int,int)">set</a></span>&#8203;(float[]&nbsp;vertices,
 int&nbsp;offset,
 int&nbsp;count)</code></th>
 <td class="colLast">
 <div class="block">Sets the vertices of this VertexData, discarding the old vertex data.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i9">
+<tr class="rowColor" id="i5">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#size()">size</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i6">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unbind(arc.graphics.gl.Shader)">unbind</a></span>&#8203;(<a href="Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader)</code></th>
 <td class="colLast">
 <div class="block">Unbinds this VertexData.</div>
 </td>
 </tr>
-<tr class="altColor" id="i10">
+<tr class="rowColor" id="i7">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unbind(arc.graphics.gl.Shader,int%5B%5D)">unbind</a></span>&#8203;(<a href="Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader,
-int[]&nbsp;locations)</code></th>
-<td class="colLast">
-<div class="block">Unbinds this VertexData.</div>
-</td>
-</tr>
-<tr class="rowColor" id="i11">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateVertices(int,float%5B%5D,int,int)">updateVertices</a></span>&#8203;(int&nbsp;targetOffset,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(int,float%5B%5D,int,int)">update</a></span>&#8203;(int&nbsp;targetOffset,
 float[]&nbsp;vertices,
 int&nbsp;sourceOffset,
 int&nbsp;count)</code></th>
@@ -215,7 +188,7 @@ int&nbsp;count)</code></th>
 <h3>Methods inherited from interface&nbsp;arc.util.<a href="../../util/Disposable.html" title="interface in arc.util">Disposable</a></h3>
 <a id="methods.inherited.from.class.arc.util.Disposable">
 <!--   -->
-</a><code><a href="../../util/Disposable.html#isDisposed()">isDisposed</a></code></div>
+</a><code><a href="../../util/Disposable.html#dispose()">dispose</a>, <a href="../../util/Disposable.html#isDisposed()">isDisposed</a></code></div>
 </section>
 </li>
 </ul>
@@ -231,8 +204,17 @@ int&nbsp;count)</code></th>
 <ul class="blockList">
 <li class="blockList">
 <section class="detail">
-<h3><a id="getNumVertices()">getNumVertices</a></h3>
-<div class="memberSignature"><span class="returnType">int</span>&nbsp;<span class="memberName">getNumVertices</span>()</div>
+<h3><a id="render(arc.graphics.gl.IndexData,int,int,int)">render</a></h3>
+<div class="memberSignature"><span class="modifiers">default</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">render</span>&#8203;(<span class="arguments"><a href="IndexData.html" title="interface in arc.graphics.gl">IndexData</a>&nbsp;indices,
+int&nbsp;primitiveType,
+int&nbsp;offset,
+int&nbsp;count)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="size()">size</a></h3>
+<div class="memberSignature"><span class="returnType">int</span>&nbsp;<span class="memberName">size</span>()</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the number of vertices this VertexData stores</dd>
@@ -241,33 +223,22 @@ int&nbsp;count)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="getNumMaxVertices()">getNumMaxVertices</a></h3>
-<div class="memberSignature"><span class="returnType">int</span>&nbsp;<span class="memberName">getNumMaxVertices</span>()</div>
+<h3><a id="max()">max</a></h3>
+<div class="memberSignature"><span class="returnType">int</span>&nbsp;<span class="memberName">max</span>()</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the number of vertices this VertedData can store</dd>
+<dd>the number of vertices this VertexData can store</dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="getAttributes()">getAttributes</a></h3>
-<div class="memberSignature"><span class="returnType"><a href="../VertexAttributes.html" title="class in arc.graphics">VertexAttributes</a></span>&nbsp;<span class="memberName">getAttributes</span>()</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>the <a href="../VertexAttributes.html" title="class in arc.graphics"><code>VertexAttributes</code></a> as specified during construction.</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="setVertices(float[],int,int)">setVertices</a></h3>
-<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">setVertices</span>&#8203;(<span class="arguments">float[]&nbsp;vertices,
+<h3><a id="set(float[],int,int)">set</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">set</span>&#8203;(<span class="arguments">float[]&nbsp;vertices,
 int&nbsp;offset,
 int&nbsp;count)</span></div>
 <div class="block">Sets the vertices of this VertexData, discarding the old vertex data. The count must equal the number of floats per vertex
- times the number of vertices to be copied to this VertexData. The order of the vertex attributes must be the same as
- specified at construction time via <a href="../VertexAttributes.html" title="class in arc.graphics"><code>VertexAttributes</code></a>.
+ times the number of vertices to be copied to this VertexData.
  <p>
  This can be called in between calls to bind and unbind. The vertex data will be updated instantly.</div>
 <dl>
@@ -280,8 +251,8 @@ int&nbsp;count)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="updateVertices(int,float[],int,int)">updateVertices</a></h3>
-<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">updateVertices</span>&#8203;(<span class="arguments">int&nbsp;targetOffset,
+<h3><a id="update(int,float[],int,int)">update</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">update</span>&#8203;(<span class="arguments">int&nbsp;targetOffset,
 float[]&nbsp;vertices,
 int&nbsp;sourceOffset,
 int&nbsp;count)</span></div>
@@ -296,10 +267,10 @@ int&nbsp;count)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="getBuffer()">getBuffer</a></h3>
-<div class="memberSignature"><span class="returnType">java.nio.FloatBuffer</span>&nbsp;<span class="memberName">getBuffer</span>()</div>
+<h3><a id="buffer()">buffer</a></h3>
+<div class="memberSignature"><span class="returnType">java.nio.FloatBuffer</span>&nbsp;<span class="memberName">buffer</span>()</div>
 <div class="block">Returns the underlying FloatBuffer and marks it as dirty, causing the buffer contents to be uploaded on the next call to
- bind. If you need immediate uploading use <a href="#setVertices(float%5B%5D,int,int)"><code>setVertices(float[], int, int)</code></a>; Any modifications made to the Buffer
+ bind. If you need immediate uploading use <a href="#set(float%5B%5D,int,int)"><code>set(float[], int, int)</code></a>; Any modifications made to the Buffer
  *after* the call to bind will not automatically be uploaded.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -316,51 +287,9 @@ int&nbsp;count)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="bind(arc.graphics.gl.Shader,int[])">bind</a></h3>
-<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">bind</span>&#8203;(<span class="arguments"><a href="Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader,
-int[]&nbsp;locations)</span></div>
-<div class="block">Binds this VertexData for rendering via glDrawArrays or glDrawElements.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>locations</code> - array containing the attribute locations.</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
 <h3><a id="unbind(arc.graphics.gl.Shader)">unbind</a></h3>
 <div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">unbind</span>&#8203;(<span class="arguments"><a href="Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader)</span></div>
 <div class="block">Unbinds this VertexData.</div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="unbind(arc.graphics.gl.Shader,int[])">unbind</a></h3>
-<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">unbind</span>&#8203;(<span class="arguments"><a href="Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader,
-int[]&nbsp;locations)</span></div>
-<div class="block">Unbinds this VertexData.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>locations</code> - array containing the attribute locations.</dd>
-</dl>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="invalidate()">invalidate</a></h3>
-<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">invalidate</span>()</div>
-<div class="block">Invalidates the VertexData if applicable. Use this in case of a context loss.</div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="dispose()">dispose</a></h3>
-<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">dispose</span>()</div>
-<div class="block">Disposes this VertexData and all its associated OpenGL resources.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../util/Disposable.html#dispose()">dispose</a></code>&nbsp;in interface&nbsp;<code><a href="../../util/Disposable.html" title="interface in arc.util">Disposable</a></code></dd>
-</dl>
 </section>
 </li>
 </ul>

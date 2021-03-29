@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../../../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -170,8 +170,18 @@ extends java.lang.Object</pre>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#maxObjectsPerNode">maxObjectsPerNode</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="QuadTree.html" title="type parameter in QuadTree">T</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#objects">objects</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="Rect.html" title="class in arc.math.geom">Rect</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#tmp">tmp</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -247,13 +257,18 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="altColor" id="i2">
+<td class="colFirst"><code>protected void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hitbox(T)">hitbox</a></span>&#8203;(<a href="QuadTree.html" title="type parameter in QuadTree">T</a>&nbsp;t)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i3">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#insert(T)">insert</a></span>&#8203;(<a href="QuadTree.html" title="type parameter in QuadTree">T</a>&nbsp;obj)</code></th>
 <td class="colLast">
 <div class="block">Inserts an object into this node or its child nodes.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i3">
+<tr class="altColor" id="i4">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#intersect(float,float,float,float,arc.func.Cons)">intersect</a></span>&#8203;(float&nbsp;x,
 float&nbsp;y,
@@ -264,7 +279,7 @@ float&nbsp;height,
 <div class="block">Processes objects that may intersect the given rectangle.</div>
 </td>
 </tr>
-<tr class="altColor" id="i4">
+<tr class="rowColor" id="i5">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#intersect(arc.math.geom.Rect,arc.func.Cons)">intersect</a></span>&#8203;(<a href="Rect.html" title="class in arc.math.geom">Rect</a>&nbsp;rect,
 <a href="../../func/Cons.html" title="interface in arc.func">Cons</a>&lt;<a href="QuadTree.html" title="type parameter in QuadTree">T</a>&gt;&nbsp;out)</code></th>
@@ -272,7 +287,7 @@ float&nbsp;height,
 <div class="block">Processes objects that may intersect the given rectangle.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i5">
+<tr class="altColor" id="i6">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#intersect(arc.math.geom.Rect,arc.struct.Seq)">intersect</a></span>&#8203;(<a href="Rect.html" title="class in arc.math.geom">Rect</a>&nbsp;toCheck,
 <a href="../../struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="QuadTree.html" title="type parameter in QuadTree">T</a>&gt;&nbsp;out)</code></th>
@@ -280,7 +295,12 @@ float&nbsp;height,
 <div class="block">Fills the out parameter with any objects that may intersect the given rectangle.</div>
 </td>
 </tr>
-<tr class="altColor" id="i6">
+<tr class="rowColor" id="i7">
+<td class="colFirst"><code>protected <a href="QuadTree.html" title="class in arc.math.geom">QuadTree</a>&lt;<a href="QuadTree.html" title="type parameter in QuadTree">T</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#newChild(arc.math.geom.Rect)">newChild</a></span>&#8203;(<a href="Rect.html" title="class in arc.math.geom">Rect</a>&nbsp;rect)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i8">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#remove(T)">remove</a></span>&#8203;(<a href="QuadTree.html" title="type parameter in QuadTree">T</a>&nbsp;obj)</code></th>
 <td class="colLast">
@@ -309,6 +329,22 @@ float&nbsp;height,
 </a>
 <h2>Field Details</h2>
 <ul class="blockList">
+<li class="blockList">
+<section class="detail">
+<h3><a id="tmp">tmp</a></h3>
+<div class="memberSignature"><span class="modifiers">protected final</span>&nbsp;<span class="returnType"><a href="Rect.html" title="class in arc.math.geom">Rect</a></span>&nbsp;<span class="memberName">tmp</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="maxObjectsPerNode">maxObjectsPerNode</a></h3>
+<div class="memberSignature"><span class="modifiers">protected static final</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">maxObjectsPerNode</span></div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#arc.math.geom.QuadTree.maxObjectsPerNode">Constant Field Values</a></dd>
+</dl>
+</section>
+</li>
 <li class="blockList">
 <section class="detail">
 <h3><a id="bounds">bounds</a></h3>
@@ -440,6 +476,20 @@ float&nbsp;height,
 <h3><a id="getTotalObjectCount()">getTotalObjectCount</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">getTotalObjectCount</span>()</div>
 <div class="block">Returns the total number of objects in this node and all child nodes, recursively</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="newChild(arc.math.geom.Rect)">newChild</a></h3>
+<div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="returnType"><a href="QuadTree.html" title="class in arc.math.geom">QuadTree</a>&lt;<a href="QuadTree.html" title="type parameter in QuadTree">T</a>&gt;</span>&nbsp;<span class="memberName">newChild</span>&#8203;(<span class="arguments"><a href="Rect.html" title="class in arc.math.geom">Rect</a>&nbsp;rect)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="hitbox(arc.math.geom.QuadTree.QuadTreeObject)">
+<!--   -->
+</a><a id="hitbox(T)">hitbox</a></h3>
+<div class="memberSignature"><span class="modifiers">protected</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">hitbox</span>&#8203;(<span class="arguments"><a href="QuadTree.html" title="type parameter in QuadTree">T</a>&nbsp;t)</span></div>
 </section>
 </li>
 </ul>
