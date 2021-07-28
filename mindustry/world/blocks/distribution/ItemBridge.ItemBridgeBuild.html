@@ -86,7 +86,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="ExtendingItemBridge.ExtendingItemBridgeBuild.html" title="class in mindustry.world.blocks.distribution">ExtendingItemBridge.ExtendingItemBridgeBuild</a></code>, <code><a href="../liquid/LiquidBridge.LiquidBridgeBuild.html" title="class in mindustry.world.blocks.liquid">LiquidBridge.LiquidBridgeBuild</a></code></dd>
+<dd><code><a href="BufferedItemBridge.BufferedItemBridgeBuild.html" title="class in mindustry.world.blocks.distribution">BufferedItemBridge.BufferedItemBridgeBuild</a></code>, <code><a href="ExtendingItemBridge.ExtendingItemBridgeBuild.html" title="class in mindustry.world.blocks.distribution">ExtendingItemBridge.ExtendingItemBridgeBuild</a></code>, <code><a href="../liquid/LiquidBridge.LiquidBridgeBuild.html" title="class in mindustry.world.blocks.liquid">LiquidBridge.LiquidBridgeBuild</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Enclosing class:</dt>
@@ -107,26 +107,26 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#cycleSpeed">cycleSpeed</a></span></code></div>
+<div class="col-first even-row-color"><code><a href="../../../../arc/struct/IntSeq.html" title="class in arc.struct">IntSeq</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#incoming">incoming</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../../../arc/struct/IntSet.html" title="class in arc.struct">IntSet</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#incoming">incoming</a></span></code></div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#link">link</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#link">link</a></span></code></div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#moved">moved</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
 <div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#time">time</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#time2">time2</a></span></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#transportCounter">transportCounter</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#transportCounter">transportCounter</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#warmup">warmup</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#uptime">uptime</a></span></code></div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#wasMoved">wasMoved</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
@@ -178,47 +178,54 @@ loadScripts(document, 'script');</script>
  <a href="../../../type/Liquid.html" title="class in mindustry.type">Liquid</a>&nbsp;liquid)</code></div>
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#checkDump(mindustry.gen.Building)">checkDump</a></span>&#8203;(mindustry.gen.Building&nbsp;to)</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#checkIncoming()">checkIncoming</a></span>()</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../../../../arc/math/geom/Point2.html" title="class in arc.math.geom">Point2</a></code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#config()">config</a></span>()</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#doDump()">doDump</a></span>()</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#draw()">draw</a></span>()</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#drawConfigure()">drawConfigure</a></span>()</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#drawSelect()">drawSelect</a></span>()</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#checkAccept(mindustry.gen.Building,mindustry.world.Tile)">checkAccept</a></span>&#8203;(mindustry.gen.Building&nbsp;source,
+ <a href="../../Tile.html" title="class in mindustry.world">Tile</a>&nbsp;other)</code></div>
 <div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>protected boolean</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#linked(mindustry.gen.Building)">linked</a></span>&#8203;(mindustry.gen.Building&nbsp;source)</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#onConfigureTileTapped(mindustry.gen.Building)">onConfigureTileTapped</a></span>&#8203;(mindustry.gen.Building&nbsp;other)</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#playerPlaced(java.lang.Object)">playerPlaced</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;config)</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#checkDump(mindustry.gen.Building)">checkDump</a></span>&#8203;(mindustry.gen.Building&nbsp;to)</code></div>
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#read(arc.util.io.Reads,byte)">read</a></span>&#8203;(<a href="../../../../arc/util/io/Reads.html" title="class in arc.util.io">Reads</a>&nbsp;read,
- byte&nbsp;revision)</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#checkIncoming()">checkIncoming</a></span>()</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../../../../arc/math/geom/Point2.html" title="class in arc.math.geom">Point2</a></code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#config()">config</a></span>()</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#doDump()">doDump</a></span>()</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#draw()">draw</a></span>()</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#drawConfigure()">drawConfigure</a></span>()</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#drawSelect()">drawSelect</a></span>()</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>protected boolean</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#linked(mindustry.gen.Building)">linked</a></span>&#8203;(mindustry.gen.Building&nbsp;source)</code></div>
 <div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#shouldConsume()">shouldConsume</a></span>()</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#onConfigureTileTapped(mindustry.gen.Building)">onConfigureTileTapped</a></span>&#8203;(mindustry.gen.Building&nbsp;other)</code></div>
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#updateTile()">updateTile</a></span>()</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#playerPlaced(java.lang.Object)">playerPlaced</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;config)</code></div>
 <div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#updateTransport(mindustry.gen.Building)">updateTransport</a></span>&#8203;(mindustry.gen.Building&nbsp;other)</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#read(arc.util.io.Reads,byte)">read</a></span>&#8203;(<a href="../../../../arc/util/io/Reads.html" title="class in arc.util.io">Reads</a>&nbsp;read,
+ byte&nbsp;revision)</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#shouldConsume()">shouldConsume</a></span>()</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#updateTile()">updateTile</a></span>()</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#updateTransport(mindustry.gen.Building)">updateTransport</a></span>&#8203;(mindustry.gen.Building&nbsp;other)</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>byte</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#version()">version</a></span>()</code></div>
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#write(arc.util.io.Writes)">write</a></span>&#8203;(<a href="../../../../arc/util/io/Writes.html" title="class in arc.util.io">Writes</a>&nbsp;write)</code></div>
@@ -228,7 +235,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.mindustry.gen.Building">Methods inherited from class&nbsp;mindustry.gen.Building</h3>
-<code>acceptPayload, acceptPlayerPayload, acceptStack, add, addPlan, afterDestroyed, afterRead, ambientVolume, applyBoost, as, back, block, block, blockOn, buildConfiguration, canControlSelect, canPickup, canUnload, cdump, cdump, changeTeam, cheating, checkSolid, clampHealth, classId, closestCore, closestEnemyCore, collide, collision, conductsTo, configTapped, configure, configureAny, configured, cons, cons, consume, consValid, control, control, core, create, create, created, damage, damage, damage, damageContinuous, damageContinuousPierce, damaged, damagePierce, damagePierce, dead, dead, delta, deselect, display, displayBars, displayConsumption, drawCracks, drawDisabled, drawLight, drawLiquidLight, drawStatus, drawTeam, drawTeamTop, dropped, dump, dump, dumpAccumulate, dumpAccumulate, dumpLiquid, dumpLiquid, dumpPayload, edelta, efficiency, enabled, enabled, enabledControlTime, enabledControlTime, floor, floorOn, front, getCursor, getDisplayEfficiency, getDisplayIcon, getDisplayName, getLiquidDestination, getMaximumAccepted, getPayload, getPowerConnections, getPowerProduction, getProgressIncrease, getStackOffset, getX, getY, handleDamage, handleItem, handleLiquid, handlePayload, handleStack, handleString, heal, heal, healFract, health, health, healthf, hitbox, hitSize, hitTime, hitTime, id, id, incrementDump, init, interactable, isAdded, isLocal, isNull, isRemote, isValid, items, items, itemTaken, kill, killed, lastAccessed, lastAccessed, left, liquids, liquids, maxHealth, maxHealth, moveForward, moveLiquid, moveLiquidForward, movePayload, nearby, nearby, noSleep, offload, onControlSelect, onDestroyed, onProximityAdded, onProximityRemoved, onProximityUpdate, onRemoved, onSolid, overwrote, pickedUp, placed, pos, power, power, powerGraphRemoved, produced, produced, productionValid, proximity, proximity, put, read, readAll, readBase, relativeTo, relativeTo, relativeTo, relativeToEdge, remove, removeFromProximity, removeStack, right, rotation, rotation, rotdeg, self, sense, sense, senseObject, serialize, set, set, shouldActiveSound, shouldAmbientSound, shouldHideConfigure, shouldShowConfigure, sleep, status, takePayload, tapped, team, team, tile, tile, tileOn, tileX, tileY, timer, timer, timer, timeScale, toString, transferLiquid, trns, trns, unitOn, unitRemoved, update, updateFlow, updateFlow, updatePowerGraph, updateProximity, updateTableAlign, version, writeAll, writeBase, x, x, y, y</code></div>
+<code>acceptPayload, acceptPlayerPayload, acceptStack, add, addPlan, afterDestroyed, afterRead, ambientVolume, applyBoost, as, back, block, block, blockOn, buildConfiguration, canControlSelect, canPickup, canUnload, cdump, cdump, changeTeam, cheating, checkSolid, clampHealth, classId, closestCore, closestEnemyCore, collide, collision, conductsTo, configTapped, configure, configureAny, configured, cons, cons, consume, consValid, control, control, core, create, create, created, damage, damage, damage, damageContinuous, damageContinuousPierce, damaged, damagePierce, damagePierce, dead, dead, delta, deselect, display, displayBars, displayConsumption, drawCracks, drawDisabled, drawLight, drawLiquidLight, drawStatus, drawTeam, drawTeamTop, dropped, dump, dump, dumpAccumulate, dumpAccumulate, dumpLiquid, dumpLiquid, dumpPayload, edelta, efficiency, enabled, enabled, enabledControlTime, enabledControlTime, explosionItemCap, floor, floorOn, front, getCursor, getDisplayEfficiency, getDisplayIcon, getDisplayName, getLiquidDestination, getMaximumAccepted, getPayload, getPowerConnections, getPowerProduction, getProgressIncrease, getStackOffset, getX, getY, handleDamage, handleItem, handleLiquid, handlePayload, handleStack, handleString, heal, heal, healFract, health, health, healthf, hitbox, hitSize, hitTime, hitTime, id, id, incrementDump, init, interactable, isAdded, isLocal, isNull, isRemote, isValid, items, items, itemTaken, kill, killed, lastAccessed, lastAccessed, left, liquids, liquids, maxHealth, maxHealth, moveForward, moveLiquid, moveLiquidForward, movePayload, nearby, nearby, noSleep, offload, onControlSelect, onDestroyed, onProximityAdded, onProximityRemoved, onProximityUpdate, onRemoved, onSolid, overwrote, pickedUp, placed, pos, power, power, powerGraphRemoved, produced, produced, productionValid, proximity, proximity, put, read, readAll, readBase, relativeTo, relativeTo, relativeTo, relativeToEdge, remove, removeFromProximity, removeStack, right, rotation, rotation, rotdeg, self, sense, sense, senseObject, serialize, set, set, shouldActiveSound, shouldAmbientSound, shouldHideConfigure, shouldShowConfigure, sleep, status, takePayload, tapped, team, team, tile, tile, tileOn, tileX, tileY, timer, timer, timer, timeScale, toString, transferLiquid, trns, trns, unitOn, unitRemoved, update, updateFlow, updateFlow, updatePowerGraph, updateProximity, updateTableAlign, writeAll, writeBase, x, x, y, y</code></div>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -255,13 +262,13 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="incoming">
 <h3>incoming</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../arc/struct/IntSet.html" title="class in arc.struct">IntSet</a></span>&nbsp;<span class="element-name">incoming</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../arc/struct/IntSeq.html" title="class in arc.struct">IntSeq</a></span>&nbsp;<span class="element-name">incoming</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="uptime">
-<h3>uptime</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">uptime</span></div>
+<section class="detail" id="warmup">
+<h3>warmup</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">warmup</span></div>
 </section>
 </li>
 <li>
@@ -271,15 +278,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="time2">
-<h3>time2</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">time2</span></div>
+<section class="detail" id="wasMoved">
+<h3>wasMoved</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">wasMoved</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="cycleSpeed">
-<h3>cycleSpeed</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">cycleSpeed</span></div>
+<section class="detail" id="moved">
+<h3>moved</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">moved</span></div>
 </section>
 </li>
 <li>
@@ -440,6 +447,13 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="checkAccept(mindustry.gen.Building,mindustry.world.Tile)">
+<h3>checkAccept</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">checkAccept</span>&#8203;<span class="parameters">(mindustry.gen.Building&nbsp;source,
+ <a href="../../Tile.html" title="class in mindustry.world">Tile</a>&nbsp;other)</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="linked(mindustry.gen.Building)">
 <h3>linked</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">linked</span>&#8203;<span class="parameters">(mindustry.gen.Building&nbsp;source)</span></div>
@@ -485,6 +499,18 @@ loadScripts(document, 'script');</script>
 <dd><code>config</code>&nbsp;in interface&nbsp;<code>mindustry.gen.Buildingc</code></dd>
 <dt>Overrides:</dt>
 <dd><code>config</code>&nbsp;in class&nbsp;<code>mindustry.gen.Building</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="version()">
+<h3>version</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">version</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>version</code>&nbsp;in interface&nbsp;<code>mindustry.gen.Buildingc</code></dd>
+<dt>Overrides:</dt>
+<dd><code>version</code>&nbsp;in class&nbsp;<code>mindustry.gen.Building</code></dd>
 </dl>
 </section>
 </li>

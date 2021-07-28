@@ -175,6 +175,9 @@ implements <a href="../../arc/ApplicationListener.html" title="interface in arc"
 <div class="col-first odd-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>[]</code></div>
 <div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#splashes">splashes</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#weatherAlpha">weatherAlpha</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -229,7 +232,7 @@ implements <a href="../../arc/ApplicationListener.html" title="interface in arc"
 <div class="block">Called when the <a href="../../arc/Application.html" title="interface in arc"><code>Application</code></a> is first created.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#isLanding()">isLanding</a></span>()</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#isCutscene()">isCutscene</a></span>()</code></div>
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>float</code></div>
 <div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#landScale()">landScale</a></span>()</code></div>
@@ -256,6 +259,12 @@ implements <a href="../../arc/ApplicationListener.html" title="interface in arc"
  float&nbsp;duration)</code></div>
 <div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#showLanding()">showLanding</a></span>()</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#showLaunch(mindustry.world.blocks.storage.CoreBlock)">showLaunch</a></span>&#8203;(<a href="../world/blocks/storage/CoreBlock.html" title="class in mindustry.world.blocks.storage">CoreBlock</a>&nbsp;coreType)</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#takeMapScreenshot()">takeMapScreenshot</a></span>()</code></div>
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
@@ -266,12 +275,6 @@ implements <a href="../../arc/ApplicationListener.html" title="interface in arc"
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
 <div class="block">Called when the <a href="../../arc/Application.html" title="interface in arc"><code>Application</code></a> should update itself.</div>
 </div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#weatherAlpha()">weatherAlpha</a></span>()</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#zoomIn(float)">zoomIn</a></span>&#8203;(float&nbsp;duration)</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -374,6 +377,12 @@ implements <a href="../../arc/ApplicationListener.html" title="interface in arc"
 </section>
 </li>
 <li>
+<section class="detail" id="weatherAlpha">
+<h3>weatherAlpha</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">weatherAlpha</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="minZoom">
 <h3>minZoom</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">minZoom</span></div>
@@ -467,15 +476,13 @@ implements <a href="../../arc/ApplicationListener.html" title="interface in arc"
 </section>
 </li>
 <li>
-<section class="detail" id="isLanding()">
-<h3>isLanding</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isLanding</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="weatherAlpha()">
-<h3>weatherAlpha</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">weatherAlpha</span>()</div>
+<section class="detail" id="isCutscene()">
+<h3>isCutscene</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCutscene</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>whether a launch/land cutscene is playing.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -563,9 +570,15 @@ implements <a href="../../arc/ApplicationListener.html" title="interface in arc"
 </section>
 </li>
 <li>
-<section class="detail" id="zoomIn(float)">
-<h3>zoomIn</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">zoomIn</span>&#8203;<span class="parameters">(float&nbsp;duration)</span></div>
+<section class="detail" id="showLanding()">
+<h3>showLanding</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">showLanding</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="showLaunch(mindustry.world.blocks.storage.CoreBlock)">
+<h3>showLaunch</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">showLaunch</span>&#8203;<span class="parameters">(<a href="../world/blocks/storage/CoreBlock.html" title="class in mindustry.world.blocks.storage">CoreBlock</a>&nbsp;coreType)</span></div>
 </section>
 </li>
 <li>
