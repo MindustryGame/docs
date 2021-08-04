@@ -194,7 +194,7 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
 <div class="block">Get all allied blocks with a flag.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../../arc/struct/ObjectSet.html" title="class in arc.struct">ObjectSet</a>&lt;mindustry.gen.Building&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;mindustry.gen.Building&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getDamaged(mindustry.game.Team)">getDamaged</a></span>&#8203;(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</code></div>
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
 <div class="block">Returns all damaged tiles by team.</div>
@@ -212,11 +212,14 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#isBlockPresent(mindustry.world.Block)">isBlockPresent</a></span>&#8203;(<a href="../world/Block.html" title="class in mindustry.world">Block</a>&nbsp;block)</code></div>
 <div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#notifyTileDamaged(mindustry.gen.Building)">notifyTileDamaged</a></span>&#8203;(mindustry.gen.Building&nbsp;entity)</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#notifyBuildDamaged(mindustry.gen.Building)">notifyBuildDamaged</a></span>&#8203;(mindustry.gen.Building&nbsp;build)</code></div>
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#removeIndex(mindustry.world.Tile)">removeIndex</a></span>&#8203;(<a href="../world/Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile)</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#notifyBuildHealed(mindustry.gen.Building)">notifyBuildHealed</a></span>&#8203;(mindustry.gen.Building&nbsp;build)</code></div>
 <div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#removeIndex(mindustry.world.Tile)">removeIndex</a></span>&#8203;(<a href="../world/Tile.html" title="class in mindustry.world">Tile</a>&nbsp;tile)</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -283,7 +286,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getDamaged(mindustry.game.Team)">
 <h3>getDamaged</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/ObjectSet.html" title="class in arc.struct">ObjectSet</a>&lt;mindustry.gen.Building&gt;</span>&nbsp;<span class="element-name">getDamaged</span>&#8203;<span class="parameters">(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;mindustry.gen.Building&gt;</span>&nbsp;<span class="element-name">getDamaged</span>&#8203;<span class="parameters">(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</span></div>
 <div class="block">Returns all damaged tiles by team.</div>
 </section>
 </li>
@@ -335,9 +338,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="notifyTileDamaged(mindustry.gen.Building)">
-<h3>notifyTileDamaged</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">notifyTileDamaged</span>&#8203;<span class="parameters">(mindustry.gen.Building&nbsp;entity)</span></div>
+<section class="detail" id="notifyBuildHealed(mindustry.gen.Building)">
+<h3>notifyBuildHealed</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">notifyBuildHealed</span>&#8203;<span class="parameters">(mindustry.gen.Building&nbsp;build)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="notifyBuildDamaged(mindustry.gen.Building)">
+<h3>notifyBuildDamaged</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">notifyBuildDamaged</span>&#8203;<span class="parameters">(mindustry.gen.Building&nbsp;build)</span></div>
 </section>
 </li>
 <li>
