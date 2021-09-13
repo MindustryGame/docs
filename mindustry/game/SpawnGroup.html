@@ -80,12 +80,12 @@ loadScripts(document, 'script');</script>
 <section class="description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../arc/util/serialization/Json.JsonSerializable.html" title="interface in arc.util.serialization">Json.JsonSerializable</a></code></dd>
+<dd><code><a href="../../arc/util/serialization/Json.JsonSerializable.html" title="interface in arc.util.serialization">Json.JsonSerializable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">SpawnGroup</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="../../arc/util/serialization/Json.JsonSerializable.html" title="interface in arc.util.serialization">Json.JsonSerializable</a></span></div>
+implements <a href="../../arc/util/serialization/Json.JsonSerializable.html" title="interface in arc.util.serialization">Json.JsonSerializable</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a></span></div>
 <div class="block">A spawn group defines spawn information for a specific type of unit, with optional extra information like
  weapon equipped, ammo used, and status effects.
  Each spawn group can have multiple sub-groups spawned in different areas of the map.</div>
@@ -142,26 +142,31 @@ implements <a href="../../arc/util/serialization/Json.JsonSerializable.html" tit
 <div class="col-first even-row-color"><code>float</code></div>
 <div class="col-second even-row-color"><code><span class="member-name-link"><a href="#shieldScaling">shieldScaling</a></span></code></div>
 <div class="col-last even-row-color">
-<div class="block">How much shields get increased per wave.</div>
+<div class="block">How much shields get increased by per wave.</div>
 </div>
 <div class="col-first odd-row-color"><code>int</code></div>
 <div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#spacing">spacing</a></span></code></div>
 <div class="col-last odd-row-color">
 <div class="block">The spacing, in waves, of spawns.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../type/UnitType.html" title="class in mindustry.type">UnitType</a></code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#type">type</a></span></code></div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#spawn">spawn</a></span></code></div>
 <div class="col-last even-row-color">
+<div class="block">If not -1, the unit will only spawn in spawnpoints with these packed coordinates.</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="../type/UnitType.html" title="class in mindustry.type">UnitType</a></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#type">type</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">The unit type spawned</div>
 </div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#unitAmount">unitAmount</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#unitAmount">unitAmount</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Amount of enemies spawned initially, with no scaling</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#unitScaling">unitScaling</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#unitScaling">unitScaling</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">How many waves need to pass before the amount of units spawned increases by 1</div>
 </div>
 </div>
@@ -193,6 +198,12 @@ implements <a href="../../arc/util/serialization/Json.JsonSerializable.html" tit
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#canSpawn(int)">canSpawn</a></span>&#8203;(int&nbsp;position)</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="SpawnGroup.html" title="class in mindustry.game">SpawnGroup</a></code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#copy()">copy</a></span>()</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>mindustry.gen.Unit</code></div>
 <div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#createUnit(mindustry.game.Team,int)">createUnit</a></span>&#8203;(<a href="Team.html" title="class in mindustry.game">Team</a>&nbsp;team,
  int&nbsp;wave)</code></div>
@@ -301,7 +312,7 @@ implements <a href="../../arc/util/serialization/Json.JsonSerializable.html" tit
 <section class="detail" id="shieldScaling">
 <h3>shieldScaling</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">shieldScaling</span></div>
-<div class="block">How much shields get increased per wave.</div>
+<div class="block">How much shields get increased by per wave.</div>
 </section>
 </li>
 <li>
@@ -309,6 +320,13 @@ implements <a href="../../arc/util/serialization/Json.JsonSerializable.html" tit
 <h3>unitAmount</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">unitAmount</span></div>
 <div class="block">Amount of enemies spawned initially, with no scaling</div>
+</section>
+</li>
+<li>
+<section class="detail" id="spawn">
+<h3>spawn</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">spawn</span></div>
+<div class="block">If not -1, the unit will only spawn in spawnpoints with these packed coordinates.</div>
 </section>
 </li>
 <li>
@@ -363,6 +381,12 @@ implements <a href="../../arc/util/serialization/Json.JsonSerializable.html" tit
 <section class="method-details" id="method.detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="canSpawn(int)">
+<h3>canSpawn</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canSpawn</span>&#8203;<span class="parameters">(int&nbsp;position)</span></div>
+</section>
+</li>
 <li>
 <section class="detail" id="getSpawned(int)">
 <h3>getSpawned</h3>
@@ -421,6 +445,12 @@ implements <a href="../../arc/util/serialization/Json.JsonSerializable.html" tit
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="copy()">
+<h3>copy</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SpawnGroup.html" title="class in mindustry.game">SpawnGroup</a></span>&nbsp;<span class="element-name">copy</span>()</div>
 </section>
 </li>
 <li>
