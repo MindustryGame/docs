@@ -86,7 +86,7 @@ loadScripts(document, 'script');</script>
 <section class="description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../arc/util/Disposable.html" title="interface in arc.util">Disposable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a>&gt;</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a>&gt;</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Planet</span>
@@ -137,25 +137,35 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Whether the bloom render effect is enabled.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Planet.html" title="class in mindustry.type">Planet</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#children">children</a></span></code></div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#camRadius">camRadius</a></span></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Camera radius offset.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Planet.html" title="class in mindustry.type">Planet</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#children">children</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">All planets orbiting this one, in ascending order of radius.</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#clipRadius">clipRadius</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#clipRadius">clipRadius</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Frustrum sphere clip radius.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../graphics/g3d/PlanetMesh.html" title="class in mindustry.graphics.g3d">PlanetMesh</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#cloudMesh">cloudMesh</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="../graphics/g3d/GenericMesh.html" title="interface in mindustry.graphics.g3d">GenericMesh</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#cloudMesh">cloudMesh</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Mesh used for rendering planet clouds.</div>
 </div>
-<div class="col-first even-row-color"><code>protected <a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;<a href="../graphics/g3d/PlanetMesh.html" title="class in mindustry.graphics.g3d">PlanetMesh</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#cloudMeshLoader">cloudMeshLoader</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>protected <a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;<a href="../graphics/g3d/GenericMesh.html" title="interface in mindustry.graphics.g3d">GenericMesh</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#cloudMeshLoader">cloudMeshLoader</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Loads the mesh.</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#drawOrbit">drawOrbit</a></span></code></div>
+<div class="col-last even-row-color">
+<div class="block">Whether to draw the orbital circle.</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="../maps/generators/PlanetGenerator.html" title="class in mindustry.maps.generators">PlanetGenerator</a></code></div>
 <div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#generator">generator</a></span></code></div>
@@ -182,15 +192,45 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">For suns, this is the color that shines on other planets.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../graphics/g3d/PlanetMesh.html" title="class in mindustry.graphics.g3d">PlanetMesh</a></code></div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#lightDstFrom">lightDstFrom</a></span></code></div>
+<div class="col-last even-row-color">
+<div class="block">Day/night cycle parameters.</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#lightDstTo">lightDstTo</a></span></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Day/night cycle parameters.</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#lightSrcFrom">lightSrcFrom</a></span></code></div>
+<div class="col-last even-row-color">
+<div class="block">Day/night cycle parameters.</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#lightSrcTo">lightSrcTo</a></span></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Day/night cycle parameters.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="../graphics/g3d/GenericMesh.html" title="interface in mindustry.graphics.g3d">GenericMesh</a></code></div>
 <div class="col-second even-row-color"><code><span class="member-name-link"><a href="#mesh">mesh</a></span></code></div>
 <div class="col-last even-row-color">
 <div class="block">Mesh used for rendering.</div>
 </div>
-<div class="col-first odd-row-color"><code>protected <a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;<a href="../graphics/g3d/PlanetMesh.html" title="class in mindustry.graphics.g3d">PlanetMesh</a>&gt;</code></div>
+<div class="col-first odd-row-color"><code>protected <a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;<a href="../graphics/g3d/GenericMesh.html" title="interface in mindustry.graphics.g3d">GenericMesh</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#meshLoader">meshLoader</a></span></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Loads the mesh.</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#minZoom">minZoom</a></span></code></div>
+<div class="col-last even-row-color">
+<div class="block">Minimum camera zoom value.</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#orbitOffset">orbitOffset</a></span></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Random orbit angle offset to prevent planets from starting out in a line.</div>
 </div>
 <div class="col-first even-row-color"><code>float</code></div>
 <div class="col-second even-row-color"><code><span class="member-name-link"><a href="#orbitRadius">orbitRadius</a></span></code></div>
@@ -198,64 +238,74 @@ loadScripts(document, 'script');</script>
 <div class="block">Orbital radius around the sun.</div>
 </div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#orbitTime">orbitTime</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#orbitSpacing">orbitSpacing</a></span></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Default spacing between planet orbits in world units.</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#orbitTime">orbitTime</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Time for the planet to orbit around the sun once, in seconds.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="Planet.html" title="class in mindustry.type">Planet</a></code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#parent">parent</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code><a href="Planet.html" title="class in mindustry.type">Planet</a></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#parent">parent</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Parent body that this planet orbits around.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/math/geom/Vec3.html" title="class in arc.math.geom">Vec3</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#position">position</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="../../arc/math/geom/Vec3.html" title="class in arc.math.geom">Vec3</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#position">position</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Position in global coordinates.</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#radius">radius</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#radius">radius</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Radius of this planet's sphere.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#rotateTime">rotateTime</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#rotateTime">rotateTime</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Time for the planet to perform a full revolution, in seconds.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Satellite.html" title="class in mindustry.type">Satellite</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#satellites">satellites</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Satellite.html" title="class in mindustry.type">Satellite</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#satellites">satellites</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Satellites orbiting this planet.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#sectorApproxRadius">sectorApproxRadius</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#sectorApproxRadius">sectorApproxRadius</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Approx.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Sector.html" title="class in mindustry.type">Sector</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#sectors">sectors</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Sector.html" title="class in mindustry.type">Sector</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#sectors">sectors</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Array of sectors; directly maps to tiles in the grid.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="Planet.html" title="class in mindustry.type">Planet</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#solarSystem">solarSystem</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="Planet.html" title="class in mindustry.type">Planet</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#solarSystem">solarSystem</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">The root parent of the whole solar system this planet is in.</div>
 </div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#startSector">startSector</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#startSector">startSector</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">The default starting sector displayed to the map dialog.</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#tidalLock">tidalLock</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#tidalLock">tidalLock</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Whether this planet is tidally locked relative to its parent - see https://en.wikipedia.org/wiki/Tidal_locking</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#totalRadius">totalRadius</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#totalRadius">totalRadius</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Total radius of this planet and all its children.</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#updateLighting">updateLighting</a></span></code></div>
+<div class="col-last even-row-color">
+<div class="block">If true, a day/night cycle is simulated.</div>
 </div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
 <div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#visible">visible</a></span></code></div>
@@ -282,11 +332,24 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
+<div class="col-constructor-name even-row-color"><code><span class="member-name-link"><a href="#%3Cinit%3E(java.lang.String,mindustry.type.Planet,float)">Planet</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="Planet.html" title="class in mindustry.type">Planet</a>&nbsp;parent,
+ float&nbsp;radius)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-constructor-name odd-row-color"><code><span class="member-name-link"><a href="#%3Cinit%3E(java.lang.String,mindustry.type.Planet,float,int)">Planet</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="Planet.html" title="class in mindustry.type">Planet</a>&nbsp;parent,
+ float&nbsp;radius,
+ int&nbsp;sectorSize)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-constructor-name even-row-color"><code><span class="member-name-link"><a href="#%3Cinit%3E(java.lang.String,mindustry.type.Planet,int,float)">Planet</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="Planet.html" title="class in mindustry.type">Planet</a>&nbsp;parent,
  int&nbsp;sectorSize,
  float&nbsp;radius)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">confusing parameter orer, use the other constructor instead</div>
+</div>
+</div>
 </div>
 </section>
 </li>
@@ -307,80 +370,80 @@ loadScripts(document, 'script');</script>
 <div class="block">Adds this planet's offset relative to its parent to the vector.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#dispose()">dispose</a></span>()</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
-<div class="block">Releases all resources of this object.</div>
-</div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#draw(arc.math.geom.Mat3D,arc.math.geom.Mat3D)">draw</a></span>&#8203;(<a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;projection,
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#draw(mindustry.graphics.g3d.PlanetParams,arc.math.geom.Mat3D,arc.math.geom.Mat3D)">draw</a></span>&#8203;(<a href="../graphics/g3d/PlanetParams.html" title="class in mindustry.graphics.g3d">PlanetParams</a>&nbsp;params,
+ <a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;projection,
  <a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;transform)</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#drawAtmosphere(arc.graphics.Mesh,arc.graphics.g3d.Camera3D)">drawAtmosphere</a></span>&#8203;(<a href="../../arc/graphics/Mesh.html" title="class in arc.graphics">Mesh</a>&nbsp;atmosphere,
+ <a href="../../arc/graphics/g3d/Camera3D.html" title="class in arc.graphics.g3d">Camera3D</a>&nbsp;cam)</code></div>
 <div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#drawAtmosphere(arc.graphics.Mesh,arc.graphics.g3d.Camera3D)">drawAtmosphere</a></span>&#8203;(<a href="../../arc/graphics/Mesh.html" title="class in arc.graphics">Mesh</a>&nbsp;atmosphere,
- <a href="../../arc/graphics/g3d/Camera3D.html" title="class in arc.graphics.g3d">Camera3D</a>&nbsp;cam)</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#drawClouds(arc.math.geom.Mat3D,arc.math.geom.Mat3D)">drawClouds</a></span>&#8203;(<a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;projection,
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#drawClouds(mindustry.graphics.g3d.PlanetParams,arc.math.geom.Mat3D,arc.math.geom.Mat3D)">drawClouds</a></span>&#8203;(<a href="../graphics/g3d/PlanetParams.html" title="class in mindustry.graphics.g3d">PlanetParams</a>&nbsp;params,
+ <a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;projection,
  <a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;transform)</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../ctype/ContentType.html" title="enum class in mindustry.ctype">ContentType</a></code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getContentType()">getContentType</a></span>()</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../ctype/ContentType.html" title="enum class in mindustry.ctype">ContentType</a></code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getContentType()">getContentType</a></span>()</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
 <div class="block">Returns the type name of this piece of content.</div>
 </div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="Sector.html" title="class in mindustry.type">Sector</a></code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getLastSector()">getLastSector</a></span>()</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../../arc/math/geom/Vec3.html" title="class in arc.math.geom">Vec3</a></code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getLightNormal()">getLightNormal</a></span>()</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getOrbitAngle()">getOrbitAngle</a></span>()</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
-<div class="block">Calculates orbital rotation based on universe time.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getRotation()">getRotation</a></span>()</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
-<div class="block">Calulates rotation on own axis based on universe time.</div>
-</div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="Sector.html" title="class in mindustry.type">Sector</a></code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getSector(arc.math.geom.Ray)">getSector</a></span>&#8203;(<a href="../../arc/math/geom/Ray.html" title="class in arc.math.geom">Ray</a>&nbsp;ray)</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="Sector.html" title="class in mindustry.type">Sector</a></code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getSector(arc.math.geom.Ray,float)">getSector</a></span>&#8203;(<a href="../../arc/math/geom/Ray.html" title="class in arc.math.geom">Ray</a>&nbsp;ray,
- float&nbsp;radius)</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="Sector.html" title="class in mindustry.type">Sector</a></code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getSector(mindustry.graphics.g3d.PlanetGrid.Ptile)">getSector</a></span>&#8203;(<a href="../graphics/g3d/PlanetGrid.Ptile.html" title="class in mindustry.graphics.g3d">PlanetGrid.Ptile</a>&nbsp;tile)</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
-<div class="block">Gets a sector a tile position.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a></code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getTransform(arc.math.geom.Mat3D)">getTransform</a></span>&#8203;(<a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;mat)</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getLastSector()">getLastSector</a></span>()</code></div>
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../../arc/math/geom/Vec3.html" title="class in arc.math.geom">Vec3</a></code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getWorldPosition(arc.math.geom.Vec3)">getWorldPosition</a></span>&#8203;(<a href="../../arc/math/geom/Vec3.html" title="class in arc.math.geom">Vec3</a>&nbsp;in)</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getLightNormal()">getLightNormal</a></span>()</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getOrbitAngle()">getOrbitAngle</a></span>()</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
+<div class="block">Calculates orbital rotation based on universe time.</div>
+</div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getRotation()">getRotation</a></span>()</code></div>
 <div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
+<div class="block">Calulates rotation on own axis based on universe time.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="Sector.html" title="class in mindustry.type">Sector</a></code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getSector(arc.math.geom.Ray)">getSector</a></span>&#8203;(<a href="../../arc/math/geom/Ray.html" title="class in arc.math.geom">Ray</a>&nbsp;ray)</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="Sector.html" title="class in mindustry.type">Sector</a></code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getSector(arc.math.geom.Ray,float)">getSector</a></span>&#8203;(<a href="../../arc/math/geom/Ray.html" title="class in arc.math.geom">Ray</a>&nbsp;ray,
+ float&nbsp;radius)</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="Sector.html" title="class in mindustry.type">Sector</a></code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getSector(mindustry.graphics.g3d.PlanetGrid.Ptile)">getSector</a></span>&#8203;(<a href="../graphics/g3d/PlanetGrid.Ptile.html" title="class in mindustry.graphics.g3d">PlanetGrid.Ptile</a>&nbsp;tile)</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
+<div class="block">Gets a sector a tile position.</div>
+</div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a></code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getTransform(arc.math.geom.Mat3D)">getTransform</a></span>&#8203;(<a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;mat)</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../../arc/math/geom/Vec3.html" title="class in arc.math.geom">Vec3</a></code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getWorldPosition(arc.math.geom.Vec3)">getWorldPosition</a></span>&#8203;(<a href="../../arc/math/geom/Vec3.html" title="class in arc.math.geom">Vec3</a>&nbsp;in)</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
 <div class="block">Gets the absolute world position of this planet, taking into account all parents.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#hasGrid()">hasGrid</a></span>()</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#init()">init</a></span>()</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#hasGrid()">hasGrid</a></span>()</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#init()">init</a></span>()</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
 <div class="block">Called after all content and modules are created.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../../arc/math/geom/Vec3.html" title="class in arc.math.geom">Vec3</a></code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#intersect(arc.math.geom.Ray,float)">intersect</a></span>&#8203;(<a href="../../arc/math/geom/Ray.html" title="class in arc.math.geom">Ray</a>&nbsp;ray,
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../../arc/math/geom/Vec3.html" title="class in arc.math.geom">Vec3</a></code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#intersect(arc.math.geom.Ray,float)">intersect</a></span>&#8203;(<a href="../../arc/math/geom/Ray.html" title="class in arc.math.geom">Ray</a>&nbsp;ray,
  float&nbsp;radius)</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#isHidden()">isHidden</a></span>()</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#isHidden()">isHidden</a></span>()</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
 <div class="block">Planets cannot be viewed in the database dialog.</div>
 </div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#isLandable()">isLandable</a></span>()</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#load()">load</a></span>()</code></div>
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
@@ -424,9 +487,6 @@ loadScripts(document, 'script');</script>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
-<div class="inherited-list">
-<h3 id="methods.inherited.from.class.arc.util.Disposable">Methods inherited from interface&nbsp;arc.util.<a href="../../arc/util/Disposable.html" title="interface in arc.util">Disposable</a></h3>
-<code><a href="../../arc/util/Disposable.html#isDisposed()">isDisposed</a></code></div>
 </section>
 </li>
 </ul>
@@ -442,7 +502,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="mesh">
 <h3>mesh</h3>
 <div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation in arc.util">@Nullable</a>
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../graphics/g3d/PlanetMesh.html" title="class in mindustry.graphics.g3d">PlanetMesh</a></span>&nbsp;<span class="element-name">mesh</span></div>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../graphics/g3d/GenericMesh.html" title="interface in mindustry.graphics.g3d">GenericMesh</a></span>&nbsp;<span class="element-name">mesh</span></div>
 <div class="block">Mesh used for rendering. Created on load() - will be null on the server!</div>
 </section>
 </li>
@@ -450,7 +510,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="cloudMesh">
 <h3>cloudMesh</h3>
 <div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation in arc.util">@Nullable</a>
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../graphics/g3d/PlanetMesh.html" title="class in mindustry.graphics.g3d">PlanetMesh</a></span>&nbsp;<span class="element-name">cloudMesh</span></div>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../graphics/g3d/GenericMesh.html" title="interface in mindustry.graphics.g3d">GenericMesh</a></span>&nbsp;<span class="element-name">cloudMesh</span></div>
 <div class="block">Mesh used for rendering planet clouds. Null if no clouds are present.</div>
 </section>
 </li>
@@ -485,10 +545,38 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="orbitSpacing">
+<h3>orbitSpacing</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">orbitSpacing</span></div>
+<div class="block">Default spacing between planet orbits in world units. This is defined per-parent!</div>
+</section>
+</li>
+<li>
 <section class="detail" id="radius">
 <h3>radius</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">radius</span></div>
 <div class="block">Radius of this planet's sphere. Does not take into account satellites.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="camRadius">
+<h3>camRadius</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">camRadius</span></div>
+<div class="block">Camera radius offset.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="minZoom">
+<h3>minZoom</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">minZoom</span></div>
+<div class="block">Minimum camera zoom value.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="drawOrbit">
+<h3>drawOrbit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">drawOrbit</span></div>
+<div class="block">Whether to draw the orbital circle.</div>
 </section>
 </li>
 <li>
@@ -541,6 +629,13 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="orbitOffset">
+<h3>orbitOffset</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">orbitOffset</span></div>
+<div class="block">Random orbit angle offset to prevent planets from starting out in a line.</div>
+</section>
+</li>
+<li>
 <section class="detail" id="sectorApproxRadius">
 <h3>sectorApproxRadius</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">sectorApproxRadius</span></div>
@@ -559,6 +654,41 @@ loadScripts(document, 'script');</script>
 <h3>accessible</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">accessible</span></div>
 <div class="block">Whether this planet is listed in the planet access UI.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="updateLighting">
+<h3>updateLighting</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">updateLighting</span></div>
+<div class="block">If true, a day/night cycle is simulated.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="lightSrcFrom">
+<h3>lightSrcFrom</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">lightSrcFrom</span></div>
+<div class="block">Day/night cycle parameters.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="lightSrcTo">
+<h3>lightSrcTo</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">lightSrcTo</span></div>
+<div class="block">Day/night cycle parameters.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="lightDstFrom">
+<h3>lightDstFrom</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">lightDstFrom</span></div>
+<div class="block">Day/night cycle parameters.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="lightDstTo">
+<h3>lightDstTo</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">lightDstTo</span></div>
+<div class="block">Day/night cycle parameters.</div>
 </section>
 </li>
 <li>
@@ -642,14 +772,14 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="meshLoader">
 <h3>meshLoader</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;<a href="../graphics/g3d/PlanetMesh.html" title="class in mindustry.graphics.g3d">PlanetMesh</a>&gt;</span>&nbsp;<span class="element-name">meshLoader</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;<a href="../graphics/g3d/GenericMesh.html" title="interface in mindustry.graphics.g3d">GenericMesh</a>&gt;</span>&nbsp;<span class="element-name">meshLoader</span></div>
 <div class="block">Loads the mesh. Clientside only. Defaults to a boring sphere mesh.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="cloudMeshLoader">
 <h3>cloudMeshLoader</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;<a href="../graphics/g3d/PlanetMesh.html" title="class in mindustry.graphics.g3d">PlanetMesh</a>&gt;</span>&nbsp;<span class="element-name">cloudMeshLoader</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;<a href="../graphics/g3d/GenericMesh.html" title="interface in mindustry.graphics.g3d">GenericMesh</a>&gt;</span>&nbsp;<span class="element-name">cloudMeshLoader</span></div>
 <div class="block">Loads the mesh. Clientside only. Defaults to a boring sphere mesh.</div>
 </section>
 </li>
@@ -662,12 +792,33 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(java.lang.String,mindustry.type.Planet,int,float)">
+<section class="detail" id="&lt;init&gt;(java.lang.String,mindustry.type.Planet,float)">
 <h3>Planet</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Planet</span>&#8203;<span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="Planet.html" title="class in mindustry.type">Planet</a>&nbsp;parent,
+ float&nbsp;radius)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="&lt;init&gt;(java.lang.String,mindustry.type.Planet,float,int)">
+<h3>Planet</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Planet</span>&#8203;<span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="Planet.html" title="class in mindustry.type">Planet</a>&nbsp;parent,
+ float&nbsp;radius,
+ int&nbsp;sectorSize)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="&lt;init&gt;(java.lang.String,mindustry.type.Planet,int,float)">
+<h3>Planet</h3>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+</span><span class="modifiers">public</span>&nbsp;<span class="element-name">Planet</span>&#8203;<span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="Planet.html" title="class in mindustry.type">Planet</a>&nbsp;parent,
  int&nbsp;sectorSize,
  float&nbsp;radius)</span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">confusing parameter orer, use the other constructor instead</div>
+</div>
 </section>
 </li>
 </ul>
@@ -705,6 +856,16 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>whether this planet has a sector grid to select.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isLandable()">
+<h3>isLandable</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isLandable</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>whether this planet has any sectors to land on.</dd>
 </dl>
 </section>
 </li>
@@ -798,20 +959,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="dispose()">
-<h3>dispose</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">dispose</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../../arc/util/Disposable.html#dispose()">Disposable</a></code></span></div>
-<div class="block">Releases all resources of this object.</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../arc/util/Disposable.html#dispose()">dispose</a></code>&nbsp;in interface&nbsp;<code><a href="../../arc/util/Disposable.html" title="interface in arc.util">Disposable</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="../ctype/Content.html#dispose()">dispose</a></code>&nbsp;in class&nbsp;<code><a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
 <section class="detail" id="getSector(mindustry.graphics.g3d.PlanetGrid.Ptile)">
 <h3>getSector</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sector.html" title="class in mindustry.type">Sector</a></span>&nbsp;<span class="element-name">getSector</span>&#8203;<span class="parameters">(<a href="../graphics/g3d/PlanetGrid.Ptile.html" title="class in mindustry.graphics.g3d">PlanetGrid.Ptile</a>&nbsp;tile)</span></div>
@@ -884,9 +1031,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="draw(arc.math.geom.Mat3D,arc.math.geom.Mat3D)">
+<section class="detail" id="draw(mindustry.graphics.g3d.PlanetParams,arc.math.geom.Mat3D,arc.math.geom.Mat3D)">
 <h3>draw</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">draw</span>&#8203;<span class="parameters">(<a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;projection,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">draw</span>&#8203;<span class="parameters">(<a href="../graphics/g3d/PlanetParams.html" title="class in mindustry.graphics.g3d">PlanetParams</a>&nbsp;params,
+ <a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;projection,
  <a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;transform)</span></div>
 </section>
 </li>
@@ -898,9 +1046,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="drawClouds(arc.math.geom.Mat3D,arc.math.geom.Mat3D)">
+<section class="detail" id="drawClouds(mindustry.graphics.g3d.PlanetParams,arc.math.geom.Mat3D,arc.math.geom.Mat3D)">
 <h3>drawClouds</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawClouds</span>&#8203;<span class="parameters">(<a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;projection,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawClouds</span>&#8203;<span class="parameters">(<a href="../graphics/g3d/PlanetParams.html" title="class in mindustry.graphics.g3d">PlanetParams</a>&nbsp;params,
+ <a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;projection,
  <a href="../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;transform)</span></div>
 </section>
 </li>

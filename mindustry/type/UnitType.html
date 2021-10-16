@@ -86,7 +86,7 @@ loadScripts(document, 'script');</script>
 <section class="description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../arc/util/Disposable.html" title="interface in arc.util">Disposable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a>&gt;</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a>&gt;</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">UnitType</span>
@@ -123,7 +123,9 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
 <div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#allowLegStep">allowLegStep</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">If true and this is a legged unit, this unit can walk over blocks.</div>
+</div>
 <div class="col-first even-row-color"><code>int</code></div>
 <div class="col-second even-row-color"><code><span class="member-name-link"><a href="#ammoCapacity">ammoCapacity</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -151,69 +153,75 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>float</code></div>
 <div class="col-second even-row-color"><code><span class="member-name-link"><a href="#buildSpeed">buildSpeed</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected <a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#cachedRequirements">cachedRequirements</a></span></code></div>
+<div class="col-first odd-row-color"><code>protected float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#buildTime">buildTime</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#canBoost">canBoost</a></span></code></div>
+<div class="col-first even-row-color"><code>protected <a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#cachedRequirements">cachedRequirements</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#canDrown">canDrown</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#canBoost">canBoost</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#canHeal">canHeal</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#canDrown">canDrown</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#canHeal">canHeal</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Whether the unit can heal blocks.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#cellRegion">cellRegion</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#circleTarget">circleTarget</a></span></code></div>
+<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#cellRegion">cellRegion</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#clipSize">clipSize</a></span></code></div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#circleTarget">circleTarget</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#commandLimit">commandLimit</a></span></code></div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#clipSize">clipSize</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#commandRadius">commandRadius</a></span></code></div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#commandLimit">commandLimit</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;? extends mindustry.gen.Unit&gt;</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#constructor">constructor</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#commandRadius">commandRadius</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;? extends mindustry.gen.Unit&gt;</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#constructor">constructor</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Creates a new instance of this unit class.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#crashDamageMultiplier">crashDamageMultiplier</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../entities/Effect.html" title="class in mindustry.entities">Effect</a></code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#deathExplosionEffect">deathExplosionEffect</a></span></code></div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#crashDamageMultiplier">crashDamageMultiplier</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#deathSound">deathSound</a></span></code></div>
+<div class="col-first odd-row-color"><code><a href="../entities/Effect.html" title="class in mindustry.entities">Effect</a></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#deathExplosionEffect">deathExplosionEffect</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/units/UnitDecal.html" title="class in mindustry.entities.units">UnitDecal</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#decals">decals</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first even-row-color"><code><a href="../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#deathSound">deathSound</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/units/UnitDecal.html" title="class in mindustry.entities.units">UnitDecal</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#decals">decals</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Additional sprites that are drawn with the unit.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;? extends <a href="../entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#defaultController">defaultController</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;? extends <a href="../entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#defaultController">defaultController</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">The default AI controller to assign on creation.</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#destructibleWreck">destructibleWreck</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#dpsEstimate">dpsEstimate</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#destructibleWreck">destructibleWreck</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#dpsEstimate">dpsEstimate</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">This is a VERY ROUGH estimate of unit DPS.</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#drag">drag</a></span></code></div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#drag">drag</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#drawBody">drawBody</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
 <div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#drawCell">drawCell</a></span></code></div>
@@ -225,54 +233,60 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#drawShields">drawShields</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#engineOffset">engineOffset</a></span></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#drownTimeMultiplier">drownTimeMultiplier</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#engineSize">engineSize</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#engineOffset">engineOffset</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#envDisabled">envDisabled</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#engineSize">engineSize</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#envDisabled">envDisabled</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">The environment flags that this unit *cannot* function in.</div>
 </div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#envEnabled">envEnabled</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#envEnabled">envEnabled</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">The environment flags that this unit can function in.</div>
 </div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#envRequired">envRequired</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#envRequired">envRequired</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Environmental flags that are *all* required for this unit to function.</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#faceTarget">faceTarget</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../entities/Effect.html" title="class in mindustry.entities">Effect</a></code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#fallEffect">fallEffect</a></span></code></div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#faceTarget">faceTarget</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#fallSpeed">fallSpeed</a></span></code></div>
+<div class="col-first odd-row-color"><code><a href="../entities/Effect.html" title="class in mindustry.entities">Effect</a></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#fallEffect">fallEffect</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../entities/Effect.html" title="class in mindustry.entities">Effect</a></code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#fallThrusterEffect">fallThrusterEffect</a></span></code></div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#fallSpeed">fallSpeed</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#flipBackLegs">flipBackLegs</a></span></code></div>
+<div class="col-first odd-row-color"><code><a href="../entities/Effect.html" title="class in mindustry.entities">Effect</a></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#fallThrusterEffect">fallThrusterEffect</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#flying">flying</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#flipBackLegs">flipBackLegs</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#flying">flying</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">If true, the unit is always at elevation 1.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#footRegion">footRegion</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#forceMultiTarget">forceMultiTarget</a></span></code></div>
+<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#footRegion">footRegion</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#groundLayer">groundLayer</a></span></code></div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#forceMultiTarget">forceMultiTarget</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#groundLayer">groundLayer</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#healColor">healColor</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
 <div class="col-second even-row-color"><code><span class="member-name-link"><a href="#health">health</a></span></code></div>
@@ -282,7 +296,9 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
 <div class="col-second even-row-color"><code><span class="member-name-link"><a href="#hovering">hovering</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">If true, this unit cannot drown, and will not be affected by the floor under it.</div>
+</div>
 <div class="col-first odd-row-color"><code><a href="../../arc/struct/ObjectSet.html" title="class in arc.struct">ObjectSet</a>&lt;<a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#immunities">immunities</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
@@ -398,59 +414,65 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><span class="member-name-link"><a href="#miningRange">miningRange</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#omniMovement">omniMovement</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#naval">naval</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#onTitleScreen">onTitleScreen</a></span></code></div>
-<div class="col-last even-row-color">
-<div class="block">If `flying` and this is true, the unit can appear on the title screen</div>
-</div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#outlineColor">outlineColor</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#outlineRadius">outlineRadius</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#outlineRegion">outlineRegion</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#outlines">outlines</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#payloadCapacity">payloadCapacity</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../world/meta/BlockFlag.html" title="enum class in mindustry.world.meta">BlockFlag</a>[]</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#playerTargetFlags">playerTargetFlags</a></span></code></div>
-<div class="col-last even-row-color">
-<div class="block">targetFlags, as an override for "non-AI" teams.</div>
-</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#range">range</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#region">region</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#rippleScale">rippleScale</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#riseSpeed">riseSpeed</a></span></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#omniMovement">omniMovement</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#rotateShooting">rotateShooting</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#onTitleScreen">onTitleScreen</a></span></code></div>
+<div class="col-last odd-row-color">
+<div class="block">If `flying` and this is true, the unit can appear on the title screen</div>
+</div>
+<div class="col-first even-row-color"><code><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#outlineColor">outlineColor</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#outlineRadius">outlineRadius</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#outlineRegion">outlineRegion</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#outlines">outlines</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#rotateSpeed">rotateSpeed</a></span></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#payloadCapacity">payloadCapacity</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../world/meta/BlockFlag.html" title="enum class in mindustry.world.meta">BlockFlag</a>[]</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#playerTargetFlags">playerTargetFlags</a></span></code></div>
+<div class="col-last odd-row-color">
+<div class="block">targetFlags, as an override for "non-AI" teams.</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#range">range</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#shadowRegion">shadowRegion</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#region">region</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#shadowTX">shadowTX</a></span></code></div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#rippleScale">rippleScale</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#riseSpeed">riseSpeed</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#rotateShooting">rotateShooting</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#rotateSpeed">rotateSpeed</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#shadowRegion">shadowRegion</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#shadowTY">shadowTY</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#shadowTX">shadowTX</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#shadowTY">shadowTY</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#showHeal">showHeal</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
 <div class="col-second even-row-color"><code><span class="member-name-link"><a href="#singleTarget">singleTarget</a></span></code></div>
@@ -477,27 +499,30 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>boolean</code></div>
 <div class="col-second even-row-color"><code><span class="member-name-link"><a href="#targetGround">targetGround</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#trailLength">trailLength</a></span></code></div>
+<div class="col-first odd-row-color"><code>protected <a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#totalRequirements">totalRequirements</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#trailScl">trailScl</a></span></code></div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#trailLength">trailLength</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#trailX">trailX</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#trailScl">trailScl</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#trailY">trailY</a></span></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#trailX">trailX</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#visualElevation">visualElevation</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#trailY">trailY</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Weapon.html" title="class in mindustry.type">Weapon</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#weapons">weapons</a></span></code></div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#visualElevation">visualElevation</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>[]</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#wreckRegions">wreckRegions</a></span></code></div>
+<div class="col-first odd-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Weapon.html" title="class in mindustry.type">Weapon</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#weapons">weapons</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>[]</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#wreckRegions">wreckRegions</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields.inherited.from.class.mindustry.ctype.UnlockableContent">Fields inherited from class&nbsp;mindustry.ctype.<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></h3>
@@ -601,10 +626,17 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#drawSoftShadow(mindustry.gen.Unit)">drawSoftShadow</a></span>&#8203;(mindustry.gen.Unit&nbsp;unit)</code></div>
 <div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#drawWeaponOutlines(mindustry.gen.Unit)">drawWeaponOutlines</a></span>&#8203;(mindustry.gen.Unit&nbsp;unit)</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#drawSoftShadow(mindustry.gen.Unit,float)">drawSoftShadow</a></span>&#8203;(mindustry.gen.Unit&nbsp;unit,
+ float&nbsp;alpha)</code></div>
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#drawWeapons(mindustry.gen.Unit)">drawWeapons</a></span>&#8203;(mindustry.gen.Unit&nbsp;unit)</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#drawWeaponOutlines(mindustry.gen.Unit)">drawWeaponOutlines</a></span>&#8203;(mindustry.gen.Unit&nbsp;unit)</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#drawWeapons(mindustry.gen.Unit)">drawWeapons</a></span>&#8203;(mindustry.gen.Unit&nbsp;unit)</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getBuildTime()">getBuildTime</a></span>()</code></div>
 <div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../ctype/ContentType.html" title="enum class in mindustry.ctype">ContentType</a></code></div>
 <div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getContentType()">getContentType</a></span>()</code></div>
@@ -616,6 +648,13 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
 <div class="block">Iterates through any implicit dependencies of this content.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getRequirements(mindustry.type.UnitType%5B%5D,float%5B%5D)">getRequirements</a></span>&#8203;(<a href="UnitType.html" title="class in mindustry.type">UnitType</a>[]&nbsp;prevReturn,
+ float[]&nbsp;timeReturn)</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#getTotalRequirements()">getTotalRequirements</a></span>()</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#hasWeapons()">hasWeapons</a></span>()</code></div>
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
@@ -676,13 +715,10 @@ loadScripts(document, 'script');</script>
 <code><a href="../ctype/MappableContent.html#toString()">toString</a></code></div>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.mindustry.ctype.Content">Methods inherited from class&nbsp;mindustry.ctype.<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a></h3>
-<code><a href="../ctype/Content.html#compareTo(mindustry.ctype.Content)">compareTo</a>, <a href="../ctype/Content.html#dispose()">dispose</a>, <a href="../ctype/Content.html#hasErrored()">hasErrored</a></code></div>
+<code><a href="../ctype/Content.html#compareTo(mindustry.ctype.Content)">compareTo</a>, <a href="../ctype/Content.html#hasErrored()">hasErrored</a></code></div>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
-<div class="inherited-list">
-<h3 id="methods.inherited.from.class.arc.util.Disposable">Methods inherited from interface&nbsp;arc.util.<a href="../../arc/util/Disposable.html" title="interface in arc.util">Disposable</a></h3>
-<code><a href="../../arc/util/Disposable.html#isDisposed()">isDisposed</a></code></div>
 </section>
 </li>
 </ul>
@@ -959,18 +995,32 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="allowLegStep">
 <h3>allowLegStep</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">allowLegStep</span></div>
+<div class="block">If true and this is a legged unit, this unit can walk over blocks.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="hovering">
 <h3>hovering</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hovering</span></div>
+<div class="block">If true, this unit cannot drown, and will not be affected by the floor under it.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="omniMovement">
 <h3>omniMovement</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">omniMovement</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="showHeal">
+<h3>showHeal</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">showHeal</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="healColor">
+<h3>healColor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></span>&nbsp;<span class="element-name">healColor</span></div>
 </section>
 </li>
 <li>
@@ -1230,6 +1280,18 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="naval">
+<h3>naval</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">naval</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="drownTimeMultiplier">
+<h3>drownTimeMultiplier</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">drownTimeMultiplier</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="engineOffset">
 <h3>engineOffset</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">engineOffset</span></div>
@@ -1293,6 +1355,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="drawShields">
 <h3>drawShields</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">drawShields</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="drawBody">
+<h3>drawBody</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">drawBody</span></div>
 </section>
 </li>
 <li>
@@ -1430,10 +1498,23 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="buildTime">
+<h3>buildTime</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">buildTime</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="cachedRequirements">
 <h3>cachedRequirements</h3>
 <div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation in arc.util">@Nullable</a>
 </span><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</span>&nbsp;<span class="element-name">cachedRequirements</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="totalRequirements">
+<h3>totalRequirements</h3>
+<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation in arc.util">@Nullable</a>
+</span><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</span>&nbsp;<span class="element-name">totalRequirements</span></div>
 </section>
 </li>
 </ul>
@@ -1603,6 +1684,40 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="getBuildTime()">
+<h3>getBuildTime</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getBuildTime</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the time required to build this unit, as a value that takes into account reconstructors</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getTotalRequirements()">
+<h3>getTotalRequirements</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</span>&nbsp;<span class="element-name">getTotalRequirements</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>all items needed to build this unit, including reconstructor steps.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getRequirements(mindustry.type.UnitType[],float[])">
+<h3>getRequirements</h3>
+<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation in arc.util">@Nullable</a>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</span>&nbsp;<span class="element-name">getRequirements</span>&#8203;<span class="parameters">(<a href="../../arc/util/Nullable.html" title="annotation in arc.util">@Nullable</a>
+ <a href="UnitType.html" title="class in mindustry.type">UnitType</a>[]&nbsp;prevReturn,
+ <a href="../../arc/util/Nullable.html" title="annotation in arc.util">@Nullable</a>
+ float[]&nbsp;timeReturn)</span></div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>item requirements based on reconstructors or factories found; returns previous unit in array if provided</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="researchRequirements()">
 <h3>researchRequirements</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</span>&nbsp;<span class="element-name">researchRequirements</span>()</div>
@@ -1665,6 +1780,13 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="drawSoftShadow(mindustry.gen.Unit,float)">
+<h3>drawSoftShadow</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawSoftShadow</span>&#8203;<span class="parameters">(mindustry.gen.Unit&nbsp;unit,
+ float&nbsp;alpha)</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="drawItems(mindustry.gen.Unit)">
 <h3>drawItems</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawItems</span>&#8203;<span class="parameters">(mindustry.gen.Unit&nbsp;unit)</span></div>
@@ -1686,12 +1808,6 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="drawWeaponOutlines(mindustry.gen.Unit)">
 <h3>drawWeaponOutlines</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawWeaponOutlines</span>&#8203;<span class="parameters">(mindustry.gen.Unit&nbsp;unit)</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="applyOutlineColor(mindustry.gen.Unit)">
-<h3>applyOutlineColor</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">applyOutlineColor</span>&#8203;<span class="parameters">(mindustry.gen.Unit&nbsp;unit)</span></div>
 </section>
 </li>
 <li>
@@ -1735,6 +1851,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="drawMech(mindustry.gen.Mechc)">
 <h3>drawMech</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawMech</span>&#8203;<span class="parameters">(mindustry.gen.Mechc&nbsp;mech)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="applyOutlineColor(mindustry.gen.Unit)">
+<h3>applyOutlineColor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">applyOutlineColor</span>&#8203;<span class="parameters">(mindustry.gen.Unit&nbsp;unit)</span></div>
 </section>
 </li>
 <li>

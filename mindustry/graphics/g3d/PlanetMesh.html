@@ -80,16 +80,16 @@ loadScripts(document, 'script');</script>
 <section class="description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../../arc/util/Disposable.html" title="interface in arc.util">Disposable</a></code></dd>
+<dd><code><a href="GenericMesh.html" title="interface in mindustry.graphics.g3d">GenericMesh</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="HexMesh.html" title="class in mindustry.graphics.g3d">HexMesh</a></code>, <code><a href="ShaderSphereMesh.html" title="class in mindustry.graphics.g3d">ShaderSphereMesh</a></code></dd>
+<dd><code><a href="HexMesh.html" title="class in mindustry.graphics.g3d">HexMesh</a></code>, <code><a href="HexSkyMesh.html" title="class in mindustry.graphics.g3d">HexSkyMesh</a></code>, <code><a href="ShaderSphereMesh.html" title="class in mindustry.graphics.g3d">ShaderSphereMesh</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">PlanetMesh</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="../../../arc/util/Disposable.html" title="interface in arc.util">Disposable</a></span></div>
+implements <a href="GenericMesh.html" title="interface in mindustry.graphics.g3d">GenericMesh</a></span></div>
 <div class="block">Defines a mesh that is rendered for a planet. Subclasses provide a mesh and a shader.</div>
 </section>
 <section class="summary">
@@ -123,10 +123,12 @@ implements <a href="../../../arc/util/Disposable.html" title="interface in arc.u
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><span class="member-name-link"><a href="#%3Cinit%3E(mindustry.type.Planet,arc.graphics.Mesh,arc.graphics.gl.Shader)">PlanetMesh</a></span>&#8203;(<a href="../../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet,
+<div class="col-constructor-name even-row-color"><code><span class="member-name-link"><a href="#%3Cinit%3E()">PlanetMesh</a></span>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-constructor-name odd-row-color"><code><span class="member-name-link"><a href="#%3Cinit%3E(mindustry.type.Planet,arc.graphics.Mesh,arc.graphics.gl.Shader)">PlanetMesh</a></span>&#8203;(<a href="../../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet,
  <a href="../../../arc/graphics/Mesh.html" title="class in arc.graphics">Mesh</a>&nbsp;mesh,
  <a href="../../../arc/graphics/gl/Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -135,35 +137,28 @@ implements <a href="../../../arc/util/Disposable.html" title="interface in arc.u
 <section class="method-summary" id="method.summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel">
 <div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#dispose()">dispose</a></span>()</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#preRender(mindustry.graphics.g3d.PlanetParams)">preRender</a></span>&#8203;(<a href="PlanetParams.html" title="class in mindustry.graphics.g3d">PlanetParams</a>&nbsp;params)</code></div>
 <div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
-<div class="block">Releases all resources of this object.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#preRender()">preRender</a></span>()</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
 <div class="block">Should be overridden to set up any shader parameters such as planet position, normals, etc.</div>
 </div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#render(arc.math.geom.Mat3D,arc.math.geom.Mat3D)">render</a></span>&#8203;(<a href="../../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;projection,
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#render(mindustry.graphics.g3d.PlanetParams,arc.math.geom.Mat3D,arc.math.geom.Mat3D)">render</a></span>&#8203;(<a href="PlanetParams.html" title="class in mindustry.graphics.g3d">PlanetParams</a>&nbsp;params,
+ <a href="../../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;projection,
  <a href="../../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;transform)</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
-<div class="inherited-list">
-<h3 id="methods.inherited.from.class.arc.util.Disposable">Methods inherited from interface&nbsp;arc.util.<a href="../../../arc/util/Disposable.html" title="interface in arc.util">Disposable</a></h3>
-<code><a href="../../../arc/util/Disposable.html#isDisposed()">isDisposed</a></code></div>
 </section>
 </li>
 </ul>
@@ -178,19 +173,19 @@ implements <a href="../../../arc/util/Disposable.html" title="interface in arc.u
 <li>
 <section class="detail" id="mesh">
 <h3>mesh</h3>
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="../../../arc/graphics/Mesh.html" title="class in arc.graphics">Mesh</a></span>&nbsp;<span class="element-name">mesh</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../arc/graphics/Mesh.html" title="class in arc.graphics">Mesh</a></span>&nbsp;<span class="element-name">mesh</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="planet">
 <h3>planet</h3>
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="../../type/Planet.html" title="class in mindustry.type">Planet</a></span>&nbsp;<span class="element-name">planet</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../type/Planet.html" title="class in mindustry.type">Planet</a></span>&nbsp;<span class="element-name">planet</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="shader">
 <h3>shader</h3>
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="../../../arc/graphics/gl/Shader.html" title="class in arc.graphics.gl">Shader</a></span>&nbsp;<span class="element-name">shader</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../arc/graphics/gl/Shader.html" title="class in arc.graphics.gl">Shader</a></span>&nbsp;<span class="element-name">shader</span></div>
 </section>
 </li>
 </ul>
@@ -209,6 +204,12 @@ implements <a href="../../../arc/util/Disposable.html" title="interface in arc.u
  <a href="../../../arc/graphics/gl/Shader.html" title="class in arc.graphics.gl">Shader</a>&nbsp;shader)</span></div>
 </section>
 </li>
+<li>
+<section class="detail" id="&lt;init&gt;()">
+<h3>PlanetMesh</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">PlanetMesh</span>()</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -218,28 +219,25 @@ implements <a href="../../../arc/util/Disposable.html" title="interface in arc.u
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="preRender()">
+<section class="detail" id="preRender(mindustry.graphics.g3d.PlanetParams)">
 <h3>preRender</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">preRender</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">preRender</span>&#8203;<span class="parameters">(<a href="PlanetParams.html" title="class in mindustry.graphics.g3d">PlanetParams</a>&nbsp;params)</span></div>
 <div class="block">Should be overridden to set up any shader parameters such as planet position, normals, etc.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>params</code> - </dd>
+</dl>
 </section>
 </li>
 <li>
-<section class="detail" id="render(arc.math.geom.Mat3D,arc.math.geom.Mat3D)">
+<section class="detail" id="render(mindustry.graphics.g3d.PlanetParams,arc.math.geom.Mat3D,arc.math.geom.Mat3D)">
 <h3>render</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">render</span>&#8203;<span class="parameters">(<a href="../../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;projection,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">render</span>&#8203;<span class="parameters">(<a href="PlanetParams.html" title="class in mindustry.graphics.g3d">PlanetParams</a>&nbsp;params,
+ <a href="../../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;projection,
  <a href="../../../arc/math/geom/Mat3D.html" title="class in arc.math.geom">Mat3D</a>&nbsp;transform)</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="dispose()">
-<h3>dispose</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">dispose</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../../../arc/util/Disposable.html#dispose()">Disposable</a></code></span></div>
-<div class="block">Releases all resources of this object.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../../../arc/util/Disposable.html#dispose()">dispose</a></code>&nbsp;in interface&nbsp;<code><a href="../../../arc/util/Disposable.html" title="interface in arc.util">Disposable</a></code></dd>
+<dd><code><a href="GenericMesh.html#render(mindustry.graphics.g3d.PlanetParams,arc.math.geom.Mat3D,arc.math.geom.Mat3D)">render</a></code>&nbsp;in interface&nbsp;<code><a href="GenericMesh.html" title="interface in mindustry.graphics.g3d">GenericMesh</a></code></dd>
 </dl>
 </section>
 </li>

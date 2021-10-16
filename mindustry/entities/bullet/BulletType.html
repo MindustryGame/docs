@@ -82,7 +82,7 @@ loadScripts(document, 'script');</script>
 <section class="description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../../arc/util/Disposable.html" title="interface in arc.util">Disposable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="../../ctype/Content.html" title="class in mindustry.ctype">Content</a>&gt;</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="../../ctype/Content.html" title="class in mindustry.ctype">Content</a>&gt;</code></dd>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
@@ -133,6 +133,16 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <div class="col-last odd-row-color">
 <div class="block">Multiplier of how much base damage is done to tiles.</div>
 </div>
+<div class="col-first even-row-color"><code><a href="../Effect.html" title="class in mindustry.entities">Effect</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#chargeShootEffect">chargeShootEffect</a></span></code></div>
+<div class="col-last even-row-color">
+<div class="block">Effect created when charging completes; only usable in single-shot weapons with a firstShotDelay / shotDelay.</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#collideFloor">collideFloor</a></span></code></div>
+<div class="col-last odd-row-color">
+<div class="block">If true, this projectile collides with non-surface floors.</div>
+</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
 <div class="col-second even-row-color"><code><span class="member-name-link"><a href="#collides">collides</a></span></code></div>
 <div class="col-last even-row-color">
@@ -158,331 +168,336 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <div class="col-last even-row-color">
 <div class="block">Whether this bullet type collides with tiles.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#damage">damage</a></span></code></div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#collideTerrain">collideTerrain</a></span></code></div>
 <div class="col-last odd-row-color">
+<div class="block">If true, this projectile collides with static walls</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#damage">damage</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Direct damage dealt on hit.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../Effect.html" title="class in mindustry.entities">Effect</a></code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#despawnEffect">despawnEffect</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code><a href="../Effect.html" title="class in mindustry.entities">Effect</a></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#despawnEffect">despawnEffect</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Effect shown when bullet despawns.</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#despawnHit">despawnHit</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#despawnHit">despawnHit</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Whether to create hit effects on despawn.</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#despawnShake">despawnShake</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#despawnSound">despawnSound</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#despawnShake">despawnShake</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#despawnSound">despawnSound</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Sound made when hitting something or getting removed.</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#displayAmmoMultiplier">displayAmmoMultiplier</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#drag">drag</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#displayAmmoMultiplier">displayAmmoMultiplier</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#drag">drag</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Drag as fraction of velocity.</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#drawSize">drawSize</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#drawSize">drawSize</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Clipping hitbox.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#fragAngle">fragAngle</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="BulletType.html" title="class in mindustry.entities.bullet">BulletType</a></code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#fragBullet">fragBullet</a></span></code></div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#fragAngle">fragAngle</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#fragBullets">fragBullets</a></span></code></div>
+<div class="col-first odd-row-color"><code><a href="BulletType.html" title="class in mindustry.entities.bullet">BulletType</a></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#fragBullet">fragBullet</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#fragBullets">fragBullets</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#fragCone">fragCone</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#fragCone">fragCone</a></span></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#fragLifeMax">fragLifeMax</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#fragLifeMax">fragLifeMax</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#fragLifeMin">fragLifeMin</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#fragLifeMin">fragLifeMin</a></span></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#fragVelocityMax">fragVelocityMax</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#fragVelocityMax">fragVelocityMax</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#fragVelocityMin">fragVelocityMin</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#fragVelocityMin">fragVelocityMin</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#healPercent">healPercent</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#healPercent">healPercent</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">% of block health healed</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#hitColor">hitColor</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../Effect.html" title="class in mindustry.entities">Effect</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#hitEffect">hitEffect</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><code><a href="../../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#hitColor">hitColor</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../Effect.html" title="class in mindustry.entities">Effect</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#hitEffect">hitEffect</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Effect shown on direct hit.</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#hitShake">hitShake</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#hitSize">hitSize</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#hitShake">hitShake</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#hitSize">hitSize</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Hitbox size.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#hitSound">hitSound</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code><a href="../../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#hitSound">hitSound</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Sound made when hitting something or getting removed.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#hitSoundPitch">hitSoundPitch</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#hitSoundPitch">hitSoundPitch</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Pitch of the sound made when hitting something</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#hitSoundVolume">hitSoundVolume</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#hitSoundVolume">hitSoundVolume</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Volume of the sound made when hitting something</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#hittable">hittable</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#hittable">hittable</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Whether this bullet can be hit by point defense.</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#homingDelay">homingDelay</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#homingDelay">homingDelay</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Use a negative value to disable homing delay.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#homingPower">homingPower</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#homingRange">homingRange</a></span></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#homingPower">homingPower</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#impact">impact</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#homingRange">homingRange</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#impact">impact</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Should knockback follow the bullet's direction</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#inaccuracy">inaccuracy</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#inaccuracy">inaccuracy</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Extra inaccuracy when firing.</div>
 </div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#incendAmount">incendAmount</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#incendChance">incendChance</a></span></code></div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#incendAmount">incendAmount</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#incendSpread">incendSpread</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#incendChance">incendChance</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#instantDisappear">instantDisappear</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#incendSpread">incendSpread</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#instantDisappear">instantDisappear</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Whether to instantly make the bullet disappear.</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#keepVelocity">keepVelocity</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#keepVelocity">keepVelocity</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Whether velocity is inherited from the shooter.</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#killShooter">killShooter</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#killShooter">killShooter</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Whether to kill the shooter when this is shot.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#knockback">knockback</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#knockback">knockback</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Knockback in velocity.</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#layer">layer</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#layer">layer</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Z layer to drawn on.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#lifetime">lifetime</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#lifetime">lifetime</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Lifetime in ticks.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#lightColor">lightColor</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#lightning">lightning</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#lightningAngle">lightningAngle</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="../../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#lightningColor">lightningColor</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#lightColor">lightColor</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#lightningCone">lightningCone</a></span></code></div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#lightning">lightning</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#lightningDamage">lightningDamage</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#lightningAngle">lightningAngle</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#lightningColor">lightningColor</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#lightningCone">lightningCone</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#lightningDamage">lightningDamage</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Use a negative value to use default bullet damage.</div>
 </div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#lightningLength">lightningLength</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#lightningLengthRand">lightningLengthRand</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#lightningLength">lightningLength</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="BulletType.html" title="class in mindustry.entities.bullet">BulletType</a></code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#lightningType">lightningType</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#lightningLengthRand">lightningLengthRand</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="BulletType.html" title="class in mindustry.entities.bullet">BulletType</a></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#lightningType">lightningType</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">The bullet created at lightning points.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#lightOpacity">lightOpacity</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#lightRadius">lightRadius</a></span></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#lightOpacity">lightOpacity</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#makeFire">makeFire</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#lightRadius">lightRadius</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#makeFire">makeFire</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Whether to make fire on impact</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#maxRange">maxRange</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#maxRange">maxRange</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Bullet range override.</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#pierce">pierce</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#pierce">pierce</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Whether to pierce units.</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#pierceBuilding">pierceBuilding</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#pierceBuilding">pierceBuilding</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Whether to pierce buildings.</div>
 </div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#pierceCap">pierceCap</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#pierceCap">pierceCap</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Maximum # of pierced objects.</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#puddleAmount">puddleAmount</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../type/Liquid.html" title="class in mindustry.type">Liquid</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#puddleLiquid">puddleLiquid</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#puddleRange">puddleRange</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#puddles">puddles</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#recoil">recoil</a></span></code></div>
-<div class="col-last even-row-color">
-<div class="block">Recoil from shooter entities.</div>
-</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#reflectable">reflectable</a></span></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Whether this bullet can be reflected.</div>
-</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#reloadMultiplier">reloadMultiplier</a></span></code></div>
-<div class="col-last even-row-color">
-<div class="block">Multiplied by turret reload speed to get final shoot speed.</div>
-</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#scaleVelocity">scaleVelocity</a></span></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Whether to scale lifetime (not actually velocity!) to disappear at the target position.</div>
-</div>
-<div class="col-first even-row-color"><code><a href="../Effect.html" title="class in mindustry.entities">Effect</a></code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#shootEffect">shootEffect</a></span></code></div>
-<div class="col-last even-row-color">
-<div class="block">Effect created when shooting.</div>
-</div>
-<div class="col-first odd-row-color"><code><a href="../Effect.html" title="class in mindustry.entities">Effect</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#smokeEffect">smokeEffect</a></span></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Extra smoke effect created when shooting.</div>
-</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#speed">speed</a></span></code></div>
-<div class="col-last even-row-color">
-<div class="block">Speed in units/tick.</div>
-</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#splashDamage">splashDamage</a></span></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Damage dealt in splash.</div>
-</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#splashDamageRadius">splashDamageRadius</a></span></code></div>
-<div class="col-last even-row-color">
-<div class="block">Use a negative value to disable splash damage.</div>
-</div>
-<div class="col-first odd-row-color"><code><a href="../../type/StatusEffect.html" title="class in mindustry.type">StatusEffect</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#status">status</a></span></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Status effect applied on hit.</div>
-</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#statusDuration">statusDuration</a></span></code></div>
-<div class="col-last even-row-color">
-<div class="block">Intensity of applied status effect in terms of duration.</div>
-</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#trailChance">trailChance</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#puddleAmount">puddleAmount</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#trailColor">trailColor</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../Effect.html" title="class in mindustry.entities">Effect</a></code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#trailEffect">trailEffect</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../../../arc/math/Interp.html" title="interface in arc.math">Interp</a></code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#trailInterp">trailInterp</a></span></code></div>
+<div class="col-first even-row-color"><code><a href="../../type/Liquid.html" title="class in mindustry.type">Liquid</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#puddleLiquid">puddleLiquid</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#trailInterval">trailInterval</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#puddleRange">puddleRange</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#trailLength">trailLength</a></span></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#puddles">puddles</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#recoil">recoil</a></span></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Recoil from shooter entities.</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#reflectable">reflectable</a></span></code></div>
 <div class="col-last even-row-color">
-<div class="block">Any value <= 0 disables the trail.</div>
+<div class="block">Whether this bullet can be reflected.</div>
 </div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#trailParam">trailParam</a></span></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#reloadMultiplier">reloadMultiplier</a></span></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Multiplied by turret reload speed to get final shoot speed.</div>
+</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#trailRotation">trailRotation</a></span></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#scaleVelocity">scaleVelocity</a></span></code></div>
+<div class="col-last even-row-color">
+<div class="block">Whether to scale lifetime (not actually velocity!) to disappear at the target position.</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="../Effect.html" title="class in mindustry.entities">Effect</a></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#shootEffect">shootEffect</a></span></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Effect created when shooting.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="../Effect.html" title="class in mindustry.entities">Effect</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#smokeEffect">smokeEffect</a></span></code></div>
+<div class="col-last even-row-color">
+<div class="block">Extra smoke effect created when shooting.</div>
+</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#trailWidth">trailWidth</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#speed">speed</a></span></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Speed in units/tick.</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#splashDamage">splashDamage</a></span></code></div>
+<div class="col-last even-row-color">
+<div class="block">Damage dealt in splash.</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#splashDamageRadius">splashDamageRadius</a></span></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Use a negative value to disable splash damage.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="../../type/StatusEffect.html" title="class in mindustry.type">StatusEffect</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#status">status</a></span></code></div>
+<div class="col-last even-row-color">
+<div class="block">Status effect applied on hit.</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#statusDuration">statusDuration</a></span></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Intensity of applied status effect in terms of duration.</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#trailChance">trailChance</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#trailColor">trailColor</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../Effect.html" title="class in mindustry.entities">Effect</a></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#trailEffect">trailEffect</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../../../arc/math/Interp.html" title="interface in arc.math">Interp</a></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#trailInterp">trailInterp</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#weaveMag">weaveMag</a></span></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#trailInterval">trailInterval</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#trailLength">trailLength</a></span></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Any value <= 0 disables the trail.</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#trailParam">trailParam</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#trailRotation">trailRotation</a></span></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#trailWidth">trailWidth</a></span></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#weaveScale">weaveScale</a></span></code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#weaveMag">weaveMag</a></span></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#weaveScale">weaveScale</a></span></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields.inherited.from.class.mindustry.ctype.Content">Fields inherited from class&nbsp;mindustry.ctype.<a href="../../ctype/Content.html" title="class in mindustry.ctype">Content</a></h3>
@@ -679,13 +694,10 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 </div>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.mindustry.ctype.Content">Methods inherited from class&nbsp;mindustry.ctype.<a href="../../ctype/Content.html" title="class in mindustry.ctype">Content</a></h3>
-<code><a href="../../ctype/Content.html#compareTo(mindustry.ctype.Content)">compareTo</a>, <a href="../../ctype/Content.html#dispose()">dispose</a>, <a href="../../ctype/Content.html#hasErrored()">hasErrored</a>, <a href="../../ctype/Content.html#load()">load</a>, <a href="../../ctype/Content.html#loadIcon()">loadIcon</a>, <a href="../../ctype/Content.html#toString()">toString</a></code></div>
+<code><a href="../../ctype/Content.html#compareTo(mindustry.ctype.Content)">compareTo</a>, <a href="../../ctype/Content.html#hasErrored()">hasErrored</a>, <a href="../../ctype/Content.html#load()">load</a>, <a href="../../ctype/Content.html#loadIcon()">loadIcon</a>, <a href="../../ctype/Content.html#toString()">toString</a></code></div>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
-<div class="inherited-list">
-<h3 id="methods.inherited.from.class.arc.util.Disposable">Methods inherited from interface&nbsp;arc.util.<a href="../../../arc/util/Disposable.html" title="interface in arc.util">Disposable</a></h3>
-<code><a href="../../../arc/util/Disposable.html#isDisposed()">isDisposed</a></code></div>
 </section>
 </li>
 </ul>
@@ -786,6 +798,13 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <h3>shootEffect</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Effect.html" title="class in mindustry.entities">Effect</a></span>&nbsp;<span class="element-name">shootEffect</span></div>
 <div class="block">Effect created when shooting.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="chargeShootEffect">
+<h3>chargeShootEffect</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Effect.html" title="class in mindustry.entities">Effect</a></span>&nbsp;<span class="element-name">chargeShootEffect</span></div>
+<div class="block">Effect created when charging completes; only usable in single-shot weapons with a firstShotDelay / shotDelay.</div>
 </section>
 </li>
 <li>
@@ -940,6 +959,20 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <h3>collides</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">collides</span></div>
 <div class="block">Whether this bullet types collides with anything at all.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="collideFloor">
+<h3>collideFloor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">collideFloor</span></div>
+<div class="block">If true, this projectile collides with non-surface floors.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="collideTerrain">
+<h3>collideTerrain</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">collideTerrain</span></div>
+<div class="block">If true, this projectile collides with static walls</div>
 </section>
 </li>
 <li>

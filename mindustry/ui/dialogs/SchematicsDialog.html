@@ -130,7 +130,7 @@ loadScripts(document, 'script');</script>
 <h2>Field Summary</h2>
 <div class="inherited-list">
 <h3 id="fields.inherited.from.class.mindustry.ui.dialogs.BaseDialog">Fields inherited from class&nbsp;mindustry.ui.dialogs.<a href="BaseDialog.html" title="class in mindustry.ui.dialogs">BaseDialog</a></h3>
-<code><a href="BaseDialog.html#shouldPause">shouldPause</a></code></div>
+<code><a href="BaseDialog.html#shouldPause">shouldPause</a>, <a href="BaseDialog.html#wasPaused">wasPaused</a></code></div>
 <div class="inherited-list">
 <h3 id="fields.inherited.from.class.arc.scene.ui.Dialog">Fields inherited from class&nbsp;arc.scene.ui.<a href="../../../arc/scene/ui/Dialog.html" title="class in arc.scene.ui">Dialog</a></h3>
 <code><a href="../../../arc/scene/ui/Dialog.html#buttons">buttons</a>, <a href="../../../arc/scene/ui/Dialog.html#cont">cont</a>, <a href="../../../arc/scene/ui/Dialog.html#dragging">dragging</a>, <a href="../../../arc/scene/ui/Dialog.html#edge">edge</a>, <a href="../../../arc/scene/ui/Dialog.html#ignoreTouchDown">ignoreTouchDown</a>, <a href="../../../arc/scene/ui/Dialog.html#title">title</a>, <a href="../../../arc/scene/ui/Dialog.html#titleTable">titleTable</a></code></div>
@@ -166,21 +166,18 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#focusSearchField()">focusSearchField</a></span>()</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../../../arc/scene/ui/Dialog.html" title="class in arc.scene.ui">Dialog</a></code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#show()">show</a></span>()</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#showExport(mindustry.game.Schematic)">showExport</a></span>&#8203;(<a href="../../game/Schematic.html" title="class in mindustry.game">Schematic</a>&nbsp;s)</code></div>
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><a href="../../../arc/scene/ui/Dialog.html" title="class in arc.scene.ui">Dialog</a></code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#show()">show</a></span>()</code></div>
 <div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#showImport()">showImport</a></span>()</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#showExport(mindustry.game.Schematic)">showExport</a></span>&#8203;(<a href="../../game/Schematic.html" title="class in mindustry.game">Schematic</a>&nbsp;s)</code></div>
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#showInfo(mindustry.game.Schematic)">showInfo</a></span>&#8203;(<a href="../../game/Schematic.html" title="class in mindustry.game">Schematic</a>&nbsp;schematic)</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#showImport()">showImport</a></span>()</code></div>
 <div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#showInfo(mindustry.game.Schematic)">showInfo</a></span>&#8203;(<a href="../../game/Schematic.html" title="class in mindustry.game">Schematic</a>&nbsp;schematic)</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -246,12 +243,6 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="showExport(mindustry.game.Schematic)">
 <h3>showExport</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">showExport</span>&#8203;<span class="parameters">(<a href="../../game/Schematic.html" title="class in mindustry.game">Schematic</a>&nbsp;s)</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="focusSearchField()">
-<h3>focusSearchField</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">focusSearchField</span>()</div>
 </section>
 </li>
 <li>

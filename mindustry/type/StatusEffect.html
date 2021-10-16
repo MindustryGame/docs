@@ -86,7 +86,7 @@ loadScripts(document, 'script');</script>
 <section class="description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../arc/util/Disposable.html" title="interface in arc.util">Disposable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a>&gt;</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a>&gt;</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">StatusEffect</span>
@@ -182,38 +182,43 @@ loadScripts(document, 'script');</script>
 <div class="block">Affinity & opposite values for stat displays.</div>
 </div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#permanent">permanent</a></span></code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#parentizeEffect">parentizeEffect</a></span></code></div>
 <div class="col-last even-row-color">
+<div class="block">Should the effect be given a parent</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#permanent">permanent</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">If true, the effect never disappears.</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#reactive">reactive</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#reactive">reactive</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">If true, this effect will only react with other effects and cannot be applied.</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#reloadMultiplier">reloadMultiplier</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#reloadMultiplier">reloadMultiplier</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Unit reload multiplier.</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#show">show</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#show">show</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Whether to show this effect in the database.</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#speedMultiplier">speedMultiplier</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#speedMultiplier">speedMultiplier</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Unit speed multiplier.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#transitionDamage">transitionDamage</a></span></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#transitionDamage">transitionDamage</a></span></code></div>
+<div class="col-last even-row-color">
 <div class="block">Damage dealt upon transition to an affinity.</div>
 </div>
-<div class="col-first even-row-color"><code>protected <a href="../../arc/struct/ObjectMap.html" title="class in arc.struct">ObjectMap</a>&lt;<a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>,&#8203;<a href="StatusEffect.TransitionHandler.html" title="interface in mindustry.type">StatusEffect.TransitionHandler</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><span class="member-name-link"><a href="#transitions">transitions</a></span></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>protected <a href="../../arc/struct/ObjectMap.html" title="class in arc.struct">ObjectMap</a>&lt;<a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>,&#8203;<a href="StatusEffect.TransitionHandler.html" title="interface in mindustry.type">StatusEffect.TransitionHandler</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><span class="member-name-link"><a href="#transitions">transitions</a></span></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Transition handler map.</div>
 </div>
 </div>
@@ -327,13 +332,10 @@ loadScripts(document, 'script');</script>
 <code><a href="../ctype/UnlockableContent.html#checkStats()">checkStats</a>, <a href="../ctype/UnlockableContent.html#clearUnlock()">clearUnlock</a>, <a href="../ctype/UnlockableContent.html#createIcons(mindustry.graphics.MultiPacker)">createIcons</a>, <a href="../ctype/UnlockableContent.html#displayDescription()">displayDescription</a>, <a href="../ctype/UnlockableContent.html#emoji()">emoji</a>, <a href="../ctype/UnlockableContent.html#getDependencies(arc.func.Cons)">getDependencies</a>, <a href="../ctype/UnlockableContent.html#hasEmoji()">hasEmoji</a>, <a href="../ctype/UnlockableContent.html#icon(mindustry.ui.Cicon)">icon</a>, <a href="../ctype/UnlockableContent.html#loadIcon()">loadIcon</a>, <a href="../ctype/UnlockableContent.html#locked()">locked</a>, <a href="../ctype/UnlockableContent.html#logicVisible()">logicVisible</a>, <a href="../ctype/UnlockableContent.html#node()">node</a>, <a href="../ctype/UnlockableContent.html#onUnlock()">onUnlock</a>, <a href="../ctype/UnlockableContent.html#quietUnlock()">quietUnlock</a>, <a href="../ctype/UnlockableContent.html#researchRequirements()">researchRequirements</a>, <a href="../ctype/UnlockableContent.html#unlock()">unlock</a>, <a href="../ctype/UnlockableContent.html#unlocked()">unlocked</a>, <a href="../ctype/UnlockableContent.html#unlockedNow()">unlockedNow</a>, <a href="../ctype/UnlockableContent.html#unlockedNowHost()">unlockedNowHost</a></code></div>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.mindustry.ctype.Content">Methods inherited from class&nbsp;mindustry.ctype.<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a></h3>
-<code><a href="../ctype/Content.html#compareTo(mindustry.ctype.Content)">compareTo</a>, <a href="../ctype/Content.html#dispose()">dispose</a>, <a href="../ctype/Content.html#hasErrored()">hasErrored</a>, <a href="../ctype/Content.html#load()">load</a></code></div>
+<code><a href="../ctype/Content.html#compareTo(mindustry.ctype.Content)">compareTo</a>, <a href="../ctype/Content.html#hasErrored()">hasErrored</a>, <a href="../ctype/Content.html#load()">load</a></code></div>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
-<div class="inherited-list">
-<h3 id="methods.inherited.from.class.arc.util.Disposable">Methods inherited from interface&nbsp;arc.util.<a href="../../arc/util/Disposable.html" title="interface in arc.util">Disposable</a></h3>
-<code><a href="../../arc/util/Disposable.html#isDisposed()">isDisposed</a></code></div>
 </section>
 </li>
 </ul>
@@ -413,6 +415,13 @@ loadScripts(document, 'script');</script>
 <h3>effectChance</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">effectChance</span></div>
 <div class="block">Chance of effect appearing.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="parentizeEffect">
+<h3>parentizeEffect</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">parentizeEffect</span></div>
+<div class="block">Should the effect be given a parent</div>
 </section>
 </li>
 <li>
