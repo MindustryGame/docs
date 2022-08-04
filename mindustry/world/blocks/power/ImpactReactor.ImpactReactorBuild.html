@@ -148,7 +148,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ambientVolume()" class="member-name-link">ambientVolume</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onDestroyed()" class="member-name-link">onDestroyed</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createExplosion()" class="member-name-link">createExplosion</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#read(arc.util.io.Reads,byte)" class="member-name-link">read</a><wbr>(<a href="../../../../arc/util/io/Reads.html" title="class in arc.util.io">Reads</a>&nbsp;read,
@@ -174,7 +174,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.world.blocks.power.PowerGenerator.GeneratorBuild">Methods inherited from class&nbsp;mindustry.world.blocks.power.<a href="PowerGenerator.GeneratorBuild.html" title="class in mindustry.world.blocks.power">PowerGenerator.GeneratorBuild</a></h3>
-<code><a href="PowerGenerator.GeneratorBuild.html#draw()">draw</a>, <a href="PowerGenerator.GeneratorBuild.html#drawLight()">drawLight</a>, <a href="PowerGenerator.GeneratorBuild.html#getPowerProduction()">getPowerProduction</a>, <a href="PowerGenerator.GeneratorBuild.html#version()">version</a></code></div>
+<code><a href="PowerGenerator.GeneratorBuild.html#draw()">draw</a>, <a href="PowerGenerator.GeneratorBuild.html#drawLight()">drawLight</a>, <a href="PowerGenerator.GeneratorBuild.html#getPowerProduction()">getPowerProduction</a>, <a href="PowerGenerator.GeneratorBuild.html#onDestroyed()">onDestroyed</a>, <a href="PowerGenerator.GeneratorBuild.html#version()">version</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.gen.Building">Methods inherited from class&nbsp;mindustry.gen.Building</h3>
 <code>absorbLasers, acceptItem, acceptLiquid, acceptPayload, acceptStack, add, addPlan, addPlan, afterDestroyed, afterPickedUp, afterRead, allowUpdate, applyBoost, applyHealSuppression, applySlowdown, as, back, block, block, blockOn, buildConfiguration, buildOn, calculateHeat, calculateHeat, canConsume, canControlSelect, canDump, canDumpLiquid, canPickup, canResupply, canUnload, canWithdraw, cdump, cdump, changeTeam, cheating, checkSolid, checkSuppression, clampHealth, classId, closestCore, closestEnemyCore, collide, collision, conductsTo, config, configTapped, configure, configureAny, configured, consume, consumeTriggerValid, control, control, core, create, create, created, damage, damage, damage, damage, damageContinuous, damageContinuousPierce, damaged, damagePierce, damagePierce, dead, dead, delta, deselect, display, displayBars, displayConsumption, drawConfigure, drawCracks, drawDisabled, drawLiquidLight, drawrot, drawSelect, drawStatus, drawTeam, drawTeamTop, dropped, dump, dump, dumpAccumulate, dumpAccumulate, dumpLiquid, dumpLiquid, dumpLiquid, dumpPayload, edelta, efficiency, efficiency, enabled, enabled, explosionItemCap, findClosestEdge, floor, floorOn, flowItems, fogRadius, front, getCommandPosition, getCursor, getDisplayEfficiency, getDisplayIcon, getDisplayName, getLiquidDestination, getMaximumAccepted, getPayload, getPayloads, getPowerConnections, getProgressIncrease, getStackOffset, getX, getY, handleDamage, handleItem, handleLiquid, handlePayload, handleStack, handleString, handleUnitPayload, heal, heal, healFract, healSuppressionTime, healSuppressionTime, health, health, healthChanged, healthf, hitbox, hitSize, hitTime, hitTime, id, id, incrementDump, inFogTo, init, interactable, isAdded, isHealSuppressed, isInsulated, isLocal, isNull, isPayload, isRemote, isValid, items, items, itemTaken, kill, killed, lastAccessed, lastAccessed, lastDisabler, lastDisabler, lastHealTime, lastHealTime, left, liquids, liquids, maxHealth, maxHealth, moduleBitmask, moveForward, moveLiquid, moveLiquidForward, movePayload, nearby, nearby, noSleep, offload, onCommand, onConfigureBuildTapped, onConfigureClosed, onConfigureTapped, onControlSelect, onProximityAdded, onProximityRemoved, onProximityUpdate, onRemoved, onSolid, optionalEfficiency, optionalEfficiency, overwrote, payloadCheck, payloadDraw, payloadRotation, payloadRotation, pickedUp, placed, playerPlaced, pos, potentialEfficiency, potentialEfficiency, power, power, powerGraphRemoved, produced, produced, productionValid, progress, proximity, proximity, put, read, readAll, readBase, recentlyHealed, relativeTo, relativeTo, relativeTo, relativeToEdge, remove, removeFromProximity, removeStack, right, rotation, rotation, rotdeg, self, sense, senseObject, serialize, set, set, shouldActiveSound, shouldAmbientSound, shouldConsume, shouldHideConfigure, shouldShowConfigure, sleep, status, takePayload, tapped, team, team, tile, tile, tileOn, tileX, tileY, timer, timer, timer, timeScale, toString, transferLiquid, trns, trns, unitOn, unitRemoved, update, updateConsumption, updateEfficiencyMultiplier, updatePayload, updatePowerGraph, updateProximity, updateTableAlign, visibleFlags, visibleFlags, visualLiquid, visualLiquid, wasDamaged, wasDamaged, wasRecentlyDamaged, wasRecentlyHealed, wasVisible, wasVisible, writeAll, writeBase, x, x, y, y</code></div>
@@ -295,14 +295,12 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="onDestroyed()">
-<h3>onDestroyed</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onDestroyed</span>()</div>
+<section class="detail" id="createExplosion()">
+<h3>createExplosion</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">createExplosion</span>()</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code>onDestroyed</code>&nbsp;in interface&nbsp;<code>mindustry.gen.Buildingc</code></dd>
 <dt>Overrides:</dt>
-<dd><code>onDestroyed</code>&nbsp;in class&nbsp;<code>mindustry.gen.Building</code></dd>
+<dd><code><a href="PowerGenerator.GeneratorBuild.html#createExplosion()">createExplosion</a></code>&nbsp;in class&nbsp;<code><a href="PowerGenerator.GeneratorBuild.html" title="class in mindustry.world.blocks.power">PowerGenerator.GeneratorBuild</a></code></dd>
 </dl>
 </section>
 </li>
