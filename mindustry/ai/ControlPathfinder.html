@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../script.js"></script>
-<script type="text/javascript" src="../../script-dir/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="../../script-dir/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -138,9 +138,16 @@ loadScripts(document, 'script');</script>
  <a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;destination,
  <a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;out)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#nextTargetId()" class="member-name-link">nextTargetId</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPathPosition(mindustry.gen.Unit,int,arc.math.geom.Vec2,arc.math.geom.Vec2,boolean%5B%5D)" class="member-name-link">getPathPosition</a><wbr>(mindustry.gen.Unit&nbsp;unit,
+ int&nbsp;pathId,
+ <a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;destination,
+ <a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;out,
+ boolean[]&nbsp;noResultFound)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#nextTargetId()" class="member-name-link">nextTargetId</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -230,6 +237,24 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>pathId</code> - a unique ID for this location query, which should change every time the 'destination' vector is modified.</dd>
+<dt>Returns:</dt>
+<dd>whether a path is ready.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getPathPosition(mindustry.gen.Unit,int,arc.math.geom.Vec2,arc.math.geom.Vec2,boolean[])">
+<h3>getPathPosition</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">getPathPosition</span><wbr><span class="parameters">(mindustry.gen.Unit&nbsp;unit,
+ int&nbsp;pathId,
+ <a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;destination,
+ <a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;out,
+ <a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+ boolean[]&nbsp;noResultFound)</span></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>pathId</code> - a unique ID for this location query, which should change every time the 'destination' vector is modified.</dd>
+<dd><code>noResultFound</code> - extra return value for storing whether no valid path to the destination exists (thanks java!)</dd>
 <dt>Returns:</dt>
 <dd>whether a path is ready.</dd>
 </dl>

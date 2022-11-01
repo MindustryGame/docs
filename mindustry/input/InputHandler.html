@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../script.js"></script>
-<script type="text/javascript" src="../../script-dir/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="../../script-dir/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -108,8 +108,8 @@ implements <a href="../../arc/input/InputProcessor.html" title="interface in arc
 <div class="col-first even-row-color"><code>boolean</code></div>
 <div class="col-second even-row-color"><code><a href="#buildWasAutoPaused" class="member-name-link">buildWasAutoPaused</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>mindustry.gen.Building</code></div>
-<div class="col-second odd-row-color"><code><a href="#commandBuild" class="member-name-link">commandBuild</a></code></div>
+<div class="col-first odd-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;mindustry.gen.Building&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#commandBuildings" class="member-name-link">commandBuildings</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
 <div class="col-second even-row-color"><code><a href="#commandMode" class="member-name-link">commandMode</a></code></div>
@@ -264,8 +264,8 @@ implements <a href="../../arc/input/InputProcessor.html" title="interface in arc
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#clearItems(mindustry.gen.Building)" class="member-name-link">clearItems</a><wbr>(mindustry.gen.Building&nbsp;build)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#commandBuilding(mindustry.gen.Player,mindustry.gen.Building,arc.math.geom.Vec2)" class="member-name-link">commandBuilding</a><wbr>(mindustry.gen.Player&nbsp;player,
- mindustry.gen.Building&nbsp;build,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#commandBuilding(mindustry.gen.Player,int%5B%5D,arc.math.geom.Vec2)" class="member-name-link">commandBuilding</a><wbr>(mindustry.gen.Player&nbsp;player,
+ int[]&nbsp;buildings,
  <a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;target)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -377,52 +377,64 @@ implements <a href="../../arc/input/InputProcessor.html" title="interface in arc
  int&nbsp;y2,
  int&nbsp;maxLength)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawTop()" class="member-name-link">drawTop</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawSelection(int,int,int,int,int,arc.graphics.Color,arc.graphics.Color)" class="member-name-link">drawSelection</a><wbr>(int&nbsp;x1,
+ int&nbsp;y1,
+ int&nbsp;x2,
+ int&nbsp;y2,
+ int&nbsp;maxLength,
+ <a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a>&nbsp;col1,
+ <a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a>&nbsp;col2)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#dropItem(mindustry.gen.Player,float)" class="member-name-link">dropItem</a><wbr>(mindustry.gen.Player&nbsp;player,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawTop()" class="member-name-link">drawTop</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#dropItem(mindustry.gen.Player,float)" class="member-name-link">dropItem</a><wbr>(mindustry.gen.Player&nbsp;player,
  float&nbsp;angle)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flipPlans(arc.struct.Seq,boolean)" class="member-name-link">flipPlans</a><wbr>(<a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a>&gt;&nbsp;plans,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flipPlans(arc.struct.Seq,boolean)" class="member-name-link">flipPlans</a><wbr>(<a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a>&gt;&nbsp;plans,
  boolean&nbsp;x)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flushPlans(arc.struct.Seq)" class="member-name-link">flushPlans</a><wbr>(<a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a>&gt;&nbsp;plans)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flushPlansReverse(arc.struct.Seq)" class="member-name-link">flushPlansReverse</a><wbr>(<a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a>&gt;&nbsp;plans)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flushPlans(arc.struct.Seq)" class="member-name-link">flushPlans</a><wbr>(<a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a>&gt;&nbsp;plans)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flushSelectPlans(arc.struct.Seq)" class="member-name-link">flushSelectPlans</a><wbr>(<a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a>&gt;&nbsp;plans)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flushPlansReverse(arc.struct.Seq)" class="member-name-link">flushPlansReverse</a><wbr>(<a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a>&gt;&nbsp;plans)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMouseX()" class="member-name-link">getMouseX</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flushSelectPlans(arc.struct.Seq)" class="member-name-link">flushSelectPlans</a><wbr>(<a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a>&gt;&nbsp;plans)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMouseY()" class="member-name-link">getMouseY</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMouseX()" class="member-name-link">getMouseX</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlan(int,int)" class="member-name-link">getPlan</a><wbr>(int&nbsp;x,
- int&nbsp;y)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMouseY()" class="member-name-link">getMouseY</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlan(int,int,int,mindustry.entities.units.BuildPlan)" class="member-name-link">getPlan</a><wbr>(int&nbsp;x,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlan(int,int)" class="member-name-link">getPlan</a><wbr>(int&nbsp;x,
+ int&nbsp;y)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlan(int,int,int,mindustry.entities.units.BuildPlan)" class="member-name-link">getPlan</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;size,
  <a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a>&nbsp;skip)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the selection plan that overlaps this position, or null.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBreaking()" class="member-name-link">isBreaking</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDroppingItem()" class="member-name-link">isDroppingItem</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBreaking()" class="member-name-link">isBreaking</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPlacing()" class="member-name-link">isPlacing</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDroppingItem()" class="member-name-link">isDroppingItem</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPlacing()" class="member-name-link">isPlacing</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRebuildSelecting()" class="member-name-link">isRebuildSelecting</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isUsingSchematic()" class="member-name-link">isUsingSchematic</a>()</code></div>
@@ -861,10 +873,9 @@ implements <a href="../../arc/input/InputProcessor.html" title="interface in arc
 </section>
 </li>
 <li>
-<section class="detail" id="commandBuild">
-<h3>commandBuild</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type">mindustry.gen.Building</span>&nbsp;<span class="element-name">commandBuild</span></div>
+<section class="detail" id="commandBuildings">
+<h3>commandBuildings</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;mindustry.gen.Building&gt;</span>&nbsp;<span class="element-name">commandBuildings</span></div>
 </section>
 </li>
 <li>
@@ -1024,10 +1035,10 @@ implements <a href="../../arc/input/InputProcessor.html" title="interface in arc
 </section>
 </li>
 <li>
-<section class="detail" id="commandBuilding(mindustry.gen.Player,mindustry.gen.Building,arc.math.geom.Vec2)">
+<section class="detail" id="commandBuilding(mindustry.gen.Player,int[],arc.math.geom.Vec2)">
 <h3>commandBuilding</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">commandBuilding</span><wbr><span class="parameters">(mindustry.gen.Player&nbsp;player,
- mindustry.gen.Building&nbsp;build,
+ int[]&nbsp;buildings,
  <a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;target)</span></div>
 </section>
 </li>
@@ -1434,6 +1445,18 @@ implements <a href="../../arc/input/InputProcessor.html" title="interface in arc
 </section>
 </li>
 <li>
+<section class="detail" id="drawSelection(int,int,int,int,int,arc.graphics.Color,arc.graphics.Color)">
+<h3>drawSelection</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawSelection</span><wbr><span class="parameters">(int&nbsp;x1,
+ int&nbsp;y1,
+ int&nbsp;x2,
+ int&nbsp;y2,
+ int&nbsp;maxLength,
+ <a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a>&nbsp;col1,
+ <a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a>&nbsp;col2)</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="flushSelectPlans(arc.struct.Seq)">
 <h3>flushSelectPlans</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">flushSelectPlans</span><wbr><span class="parameters">(<a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a>&gt;&nbsp;plans)</span></div>
@@ -1563,6 +1586,12 @@ implements <a href="../../arc/input/InputProcessor.html" title="interface in arc
 <section class="detail" id="isBreaking()">
 <h3>isBreaking</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBreaking</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isRebuildSelecting()">
+<h3>isRebuildSelecting</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRebuildSelecting</span>()</div>
 </section>
 </li>
 <li>
