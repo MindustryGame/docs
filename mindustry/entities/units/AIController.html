@@ -81,7 +81,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="../../ai/types/AssemblerAI.html" title="class in mindustry.ai.types">AssemblerAI</a></code>, <code><a href="../../ai/types/BuilderAI.html" title="class in mindustry.ai.types">BuilderAI</a></code>, <code><a href="../../ai/types/CargoAI.html" title="class in mindustry.ai.types">CargoAI</a></code>, <code><a href="../../ai/types/CommandAI.html" title="class in mindustry.ai.types">CommandAI</a></code>, <code><a href="../../ai/types/DefenderAI.html" title="class in mindustry.ai.types">DefenderAI</a></code>, <code><a href="../../world/blocks/units/DroneCenter.EffectDroneAI.html" title="class in mindustry.world.blocks.units">DroneCenter.EffectDroneAI</a></code>, <code><a href="../../ai/types/FlyingAI.html" title="class in mindustry.ai.types">FlyingAI</a></code>, <code><a href="../../ai/types/GroundAI.html" title="class in mindustry.ai.types">GroundAI</a></code>, <code><a href="../../ai/types/HugAI.html" title="class in mindustry.ai.types">HugAI</a></code>, <code><a href="../../ai/types/LogicAI.html" title="class in mindustry.ai.types">LogicAI</a></code>, <code><a href="../../ai/types/MinerAI.html" title="class in mindustry.ai.types">MinerAI</a></code>, <code><a href="../../ai/types/MissileAI.html" title="class in mindustry.ai.types">MissileAI</a></code>, <code><a href="../../ai/types/RepairAI.html" title="class in mindustry.ai.types">RepairAI</a></code></dd>
+<dd><code><a href="../../ai/types/AssemblerAI.html" title="class in mindustry.ai.types">AssemblerAI</a></code>, <code><a href="../../ai/types/BoostAI.html" title="class in mindustry.ai.types">BoostAI</a></code>, <code><a href="../../ai/types/BuilderAI.html" title="class in mindustry.ai.types">BuilderAI</a></code>, <code><a href="../../ai/types/CargoAI.html" title="class in mindustry.ai.types">CargoAI</a></code>, <code><a href="../../ai/types/CommandAI.html" title="class in mindustry.ai.types">CommandAI</a></code>, <code><a href="../../ai/types/DefenderAI.html" title="class in mindustry.ai.types">DefenderAI</a></code>, <code><a href="../../world/blocks/units/DroneCenter.EffectDroneAI.html" title="class in mindustry.world.blocks.units">DroneCenter.EffectDroneAI</a></code>, <code><a href="../../ai/types/FlyingAI.html" title="class in mindustry.ai.types">FlyingAI</a></code>, <code><a href="../../ai/types/GroundAI.html" title="class in mindustry.ai.types">GroundAI</a></code>, <code><a href="../../ai/types/HugAI.html" title="class in mindustry.ai.types">HugAI</a></code>, <code><a href="../../ai/types/LogicAI.html" title="class in mindustry.ai.types">LogicAI</a></code>, <code><a href="../../ai/types/MinerAI.html" title="class in mindustry.ai.types">MinerAI</a></code>, <code><a href="../../ai/types/MissileAI.html" title="class in mindustry.ai.types">MissileAI</a></code>, <code><a href="../../ai/types/RepairAI.html" title="class in mindustry.ai.types">RepairAI</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">AIController</span>
@@ -178,6 +178,12 @@ implements <a href="UnitController.html" title="interface in mindustry.entities.
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#circleAttack(float)" class="member-name-link">circleAttack</a><wbr>(float&nbsp;circleLength)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#commandPosition(arc.math.geom.Vec2)" class="member-name-link">commandPosition</a><wbr>(<a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;pos)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#commandTarget(mindustry.gen.Teamc)" class="member-name-link">commandTarget</a><wbr>(mindustry.gen.Teamc&nbsp;moveTo)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#faceMovement()" class="member-name-link">faceMovement</a>()</code></div>
@@ -590,6 +596,18 @@ implements <a href="UnitController.html" title="interface in mindustry.entities.
  float&nbsp;range,
  boolean&nbsp;air,
  boolean&nbsp;ground)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="commandTarget(mindustry.gen.Teamc)">
+<h3>commandTarget</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">commandTarget</span><wbr><span class="parameters">(mindustry.gen.Teamc&nbsp;moveTo)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="commandPosition(arc.math.geom.Vec2)">
+<h3>commandPosition</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">commandPosition</span><wbr><span class="parameters">(<a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;pos)</span></div>
 </section>
 </li>
 <li>

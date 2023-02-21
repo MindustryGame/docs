@@ -100,14 +100,20 @@ implements <a href="../../arc/assets/Loadable.html" title="interface in arc.asse
 <div class="col-last even-row-color">
 <div class="block">Represents a mod's state.</div>
 </div>
-<div class="col-first odd-row-color"><code>static class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="Mods.ModLoadException.html" class="type-name-link" title="class in mindustry.mod">Mods.ModLoadException</a></code></div>
+<div class="col-first odd-row-color"><code>static final class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="Mods.ModDependency.html" class="type-name-link" title="class in mindustry.mod">Mods.ModDependency</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="Mods.ModMeta.html" class="type-name-link" title="class in mindustry.mod">Mods.ModMeta</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-second even-row-color"><code><a href="Mods.ModLoadException.html" class="type-name-link" title="class in mindustry.mod">Mods.ModLoadException</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="Mods.ModMeta.html" class="type-name-link" title="class in mindustry.mod">Mods.ModMeta</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Mod metadata information.</div>
 </div>
+<div class="col-first even-row-color"><code>static class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="Mods.ModResolutionContext.html" class="type-name-link" title="class in mindustry.mod">Mods.ModResolutionContext</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static enum&nbsp;</code></div>
 <div class="col-second odd-row-color"><code><a href="Mods.ModState.html" class="type-name-link" title="enum class in mindustry.mod">Mods.ModState</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
@@ -235,26 +241,21 @@ implements <a href="../../arc/assets/Loadable.html" title="interface in arc.asse
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/ClassLoader.html" title="class or interface in java.lang" class="external-link">ClassLoader</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mainLoader()" class="member-name-link">mainLoader</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeMod(mindustry.mod.Mods.LoadedMod)" class="member-name-link">removeMod</a><wbr>(<a href="Mods.LoadedMod.html" title="class in mindustry.mod">Mods.LoadedMod</a>&nbsp;mod)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Mods.LoadedMod.html" title="class in mindustry.mod">Mods.LoadedMod</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#orderedMods()" class="member-name-link">orderedMods</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeMod(mindustry.mod.Mods.LoadedMod)" class="member-name-link">removeMod</a><wbr>(<a href="Mods.LoadedMod.html" title="class in mindustry.mod">Mods.LoadedMod</a>&nbsp;mod)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Removes a mod file and marks it for requiring a restart.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#requiresReload()" class="member-name-link">requiresReload</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../../arc/files/Fi.html" title="class in arc.files">Fi</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveDependencies(arc.struct.Seq)" class="member-name-link">resolveDependencies</a><wbr>(<a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../../arc/files/Fi.html" title="class in arc.files">Fi</a>&gt;&nbsp;files)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Resolves the loading order of a list mods/plugins using their internal names.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveDependencies(java.lang.String,arc.struct.ObjectMap,arc.struct.OrderedSet,arc.struct.ObjectSet)" class="member-name-link">resolveDependencies</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;modName,
- <a href="../../arc/struct/ObjectMap.html" title="class in arc.struct">ObjectMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&gt;&nbsp;dependencies,
- <a href="../../arc/struct/OrderedSet.html" title="class in arc.struct">OrderedSet</a>&lt;<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;ordered,
- <a href="../../arc/struct/ObjectSet.html" title="class in arc.struct">ObjectSet</a>&lt;<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;visited)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#requiresReload()" class="member-name-link">requiresReload</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../arc/struct/OrderedMap.html" title="class in arc.struct">OrderedMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="Mods.ModState.html" title="enum class in mindustry.mod">Mods.ModState</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveDependencies(arc.struct.Seq)" class="member-name-link">resolveDependencies</a><wbr>(<a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Mods.ModMeta.html" title="class in mindustry.mod">Mods.ModMeta</a>&gt;&nbsp;metas)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Recursive search of dependencies</div>
+<div class="block">Resolves the loading order of a list mods/plugins using their internal names.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setEnabled(mindustry.mod.Mods.LoadedMod,boolean)" class="member-name-link">setEnabled</a><wbr>(<a href="Mods.LoadedMod.html" title="class in mindustry.mod">Mods.LoadedMod</a>&nbsp;mod,
@@ -427,6 +428,16 @@ implements <a href="../../arc/assets/Loadable.html" title="interface in arc.asse
 </section>
 </li>
 <li>
+<section class="detail" id="orderedMods()">
+<h3>orderedMods</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Mods.LoadedMod.html" title="class in mindustry.mod">Mods.LoadedMod</a>&gt;</span>&nbsp;<span class="element-name">orderedMods</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>mods ordered in the correct way needed for dependencies.</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="locateMod(java.lang.String)">
 <h3>locateMod</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Mods.LoadedMod.html" title="class in mindustry.mod">Mods.LoadedMod</a></span>&nbsp;<span class="element-name">locateMod</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
@@ -533,19 +544,8 @@ implements <a href="../../arc/assets/Loadable.html" title="interface in arc.asse
 <li>
 <section class="detail" id="resolveDependencies(arc.struct.Seq)">
 <h3>resolveDependencies</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../../arc/files/Fi.html" title="class in arc.files">Fi</a>&gt;</span>&nbsp;<span class="element-name">resolveDependencies</span><wbr><span class="parameters">(<a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../../arc/files/Fi.html" title="class in arc.files">Fi</a>&gt;&nbsp;files)</span></div>
-<div class="block">Resolves the loading order of a list mods/plugins using their internal names.
- It also skips non-mods files or folders.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="resolveDependencies(java.lang.String,arc.struct.ObjectMap,arc.struct.OrderedSet,arc.struct.ObjectSet)">
-<h3>resolveDependencies</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">resolveDependencies</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;modName,
- <a href="../../arc/struct/ObjectMap.html" title="class in arc.struct">ObjectMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&gt;&nbsp;dependencies,
- <a href="../../arc/struct/OrderedSet.html" title="class in arc.struct">OrderedSet</a>&lt;<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;ordered,
- <a href="../../arc/struct/ObjectSet.html" title="class in arc.struct">ObjectSet</a>&lt;<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;visited)</span></div>
-<div class="block">Recursive search of dependencies</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/OrderedMap.html" title="class in arc.struct">OrderedMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="Mods.ModState.html" title="enum class in mindustry.mod">Mods.ModState</a>&gt;</span>&nbsp;<span class="element-name">resolveDependencies</span><wbr><span class="parameters">(<a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Mods.ModMeta.html" title="class in mindustry.mod">Mods.ModMeta</a>&gt;&nbsp;metas)</span></div>
+<div class="block">Resolves the loading order of a list mods/plugins using their internal names.</div>
 </section>
 </li>
 </ul>
