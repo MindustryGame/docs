@@ -118,7 +118,9 @@ loadScripts(document, 'script');</script>
  <a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;end,
  <a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;attractor,
  <a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;result)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">inputs:</div>
+</div>
 </div>
 </div>
 </div>
@@ -168,6 +170,19 @@ loadScripts(document, 'script');</script>
  <a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;end,
  <a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;attractor,
  <a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;result)</span></div>
+<div class="block">inputs:</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>lengthA</code> - first line segment length</dd>
+<dd><code>lengthB</code> - second line segment length</dd>
+<dd><code>end</code> - length of the endpoint you want to reach</dd>
+<dd><code>attractor</code> - direction you want the result to be closer to (since there are usually 2 solutions)
+
+     output:</dd>
+<dd><code>result</code> - a point in-between (0, 0) and (end) such that (0, 0).dst(result) == lengthA and result.dst(end) == lengthB - or in basic terms, the position of a joint between (0, 0) and end where the two lengths of segments are lengthA and lengthB</dd>
+<dt>Returns:</dt>
+<dd>whether IK succeeded (this can fail if end is too far, for example)</dd>
+</dl>
 </section>
 </li>
 </ul>

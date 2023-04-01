@@ -100,29 +100,44 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected <a href="Pathfinder.PathCost.html" title="interface in mindustry.ai">Pathfinder.PathCost</a></code></div>
-<div class="col-second even-row-color"><code><a href="#cost" class="member-name-link">cost</a></code></div>
+<div class="col-first even-row-color"><code>int[]</code></div>
+<div class="col-second even-row-color"><code><a href="#completeWeights" class="member-name-link">completeWeights</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">the last "complete" weights of this tilemap.</div>
+</div>
+<div class="col-first odd-row-color"><code>protected <a href="Pathfinder.PathCost.html" title="interface in mindustry.ai">Pathfinder.PathCost</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#cost" class="member-name-link">cost</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function for calculating path cost.</div>
 </div>
-<div class="col-first odd-row-color"><code>protected int</code></div>
-<div class="col-second odd-row-color"><code><a href="#refreshRate" class="member-name-link">refreshRate</a></code></div>
+<div class="col-first even-row-color"><code>protected boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#dirty" class="member-name-link">dirty</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">If true, this flow field needs updating.</div>
+</div>
+<div class="col-first odd-row-color"><code>protected boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#hasComplete" class="member-name-link">hasComplete</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Whether there are valid weights in the complete array.</div>
+</div>
+<div class="col-first even-row-color"><code>protected int</code></div>
+<div class="col-second even-row-color"><code><a href="#refreshRate" class="member-name-link">refreshRate</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Refresh rate in milliseconds.</div>
 </div>
-<div class="col-first even-row-color"><code>int[]</code></div>
-<div class="col-second even-row-color"><code><a href="#searches" class="member-name-link">searches</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>int[]</code></div>
+<div class="col-second odd-row-color"><code><a href="#searches" class="member-name-link">searches</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">search IDs of each position - the highest, most recent search is prioritized and overwritten</div>
 </div>
-<div class="col-first odd-row-color"><code>protected <a href="../game/Team.html" title="class in mindustry.game">Team</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#team" class="member-name-link">team</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>protected <a href="../game/Team.html" title="class in mindustry.game">Team</a></code></div>
+<div class="col-second even-row-color"><code><a href="#team" class="member-name-link">team</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Team this path is for.</div>
 </div>
-<div class="col-first even-row-color"><code>int[]</code></div>
-<div class="col-second even-row-color"><code><a href="#weights" class="member-name-link">weights</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>int[]</code></div>
+<div class="col-second odd-row-color"><code><a href="#weights" class="member-name-link">weights</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">costs of getting to a specific tile</div>
 </div>
 </div>
@@ -160,6 +175,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#passable(int)" class="member-name-link">passable</a><wbr>(int&nbsp;pos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateTargetPositions()" class="member-name-link">updateTargetPositions</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -199,6 +217,20 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="hasComplete">
+<h3>hasComplete</h3>
+<div class="member-signature"><span class="modifiers">protected volatile</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasComplete</span></div>
+<div class="block">Whether there are valid weights in the complete array.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="dirty">
+<h3>dirty</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">dirty</span></div>
+<div class="block">If true, this flow field needs updating. This flag is only set to false once the flow field finishes and the weights are copied over.</div>
+</section>
+</li>
+<li>
 <section class="detail" id="weights">
 <h3>weights</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int[]</span>&nbsp;<span class="element-name">weights</span></div>
@@ -210,6 +242,13 @@ loadScripts(document, 'script');</script>
 <h3>searches</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int[]</span>&nbsp;<span class="element-name">searches</span></div>
 <div class="block">search IDs of each position - the highest, most recent search is prioritized and overwritten</div>
+</section>
+</li>
+<li>
+<section class="detail" id="completeWeights">
+<h3>completeWeights</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int[]</span>&nbsp;<span class="element-name">completeWeights</span></div>
+<div class="block">the last "complete" weights of this tilemap.</div>
 </section>
 </li>
 </ul>
@@ -234,6 +273,12 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="updateTargetPositions()">
+<h3>updateTargetPositions</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateTargetPositions</span>()</div>
+</section>
+</li>
 <li>
 <section class="detail" id="passable(int)">
 <h3>passable</h3>
