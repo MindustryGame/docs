@@ -101,26 +101,6 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">the depth buffer format, Format16 is default</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#displayScaleLargeScreenIfNonRetina" class="member-name-link">displayScaleLargeScreenIfNonRetina</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Scale factor to use on large screens without retina display, i.e.</div>
-</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#displayScaleLargeScreenIfRetina" class="member-name-link">displayScaleLargeScreenIfRetina</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Scale factor to use on large screens with retina display, i.e.</div>
-</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#displayScaleSmallScreenIfNonRetina" class="member-name-link">displayScaleSmallScreenIfNonRetina</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Scale factor to use on small screens without retina display, i.e.</div>
-</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#displayScaleSmallScreenIfRetina" class="member-name-link">displayScaleSmallScreenIfRetina</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Scale factor to use on small screens with retina display, i.e.</div>
-</div>
 <div class="col-first odd-row-color"><code><a href="../../func/Cons.html" title="interface in arc.func">Cons</a>&lt;<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#errorHandler" class="member-name-link">errorHandler</a></code></div>
 <div class="col-last odd-row-color">
@@ -272,63 +252,11 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="displayScaleLargeScreenIfRetina">
-<h3>displayScaleLargeScreenIfRetina</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">displayScaleLargeScreenIfRetina</span></div>
-<div class="block">Scale factor to use on large screens with retina display, i.e. iPad 3+ (has no effect on non-retina screens).
- <ul>
- <li>1.0 = no scaling (everything is in pixels)
- <li>0.5 = Arc will behave as you would only have half the pixels. I.e. instead of 2048x1536 you will work in 1024x768.
- This looks pixel perfect and will save you the trouble to create bigger graphics for the retina display.
- <li>any other value: scales the screens according to your scale factor. A scale factor oof 0.75, 0.8, 1.2, 1.5 etc. works
- very well without any artifacts!
- </ul></div>
-</section>
-</li>
-<li>
-<section class="detail" id="displayScaleSmallScreenIfRetina">
-<h3>displayScaleSmallScreenIfRetina</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">displayScaleSmallScreenIfRetina</span></div>
-<div class="block">Scale factor to use on small screens with retina display, i.e. iPhone 4+, iPod 4+ (has no effect on non-retina screens).
- <ul>
- <li>1.0 = no scaling (everything is in pixels)
- <li>0.5 = Arc will behave as you would only have half the pixels. I.e. instead of 960x640 you will work in 480x320. This
- looks pixel perfect and will save you the trouble to create bigger graphics for the retina display.
- <li>any other value: scales the screens according to your scale factor. A scale factor of 0.75, 0.8, 1.2, 1.5 etc. works
- very well without any artifacts!
- </ul></div>
-</section>
-</li>
-<li>
 <section class="detail" id="errorHandler">
 <h3>errorHandler</h3>
 <div class="member-signature"><span class="annotations"><a href="../../util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../func/Cons.html" title="interface in arc.func">Cons</a>&lt;<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;</span>&nbsp;<span class="element-name">errorHandler</span></div>
 <div class="block">handles any errors in the main loop.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="displayScaleLargeScreenIfNonRetina">
-<h3>displayScaleLargeScreenIfNonRetina</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">displayScaleLargeScreenIfNonRetina</span></div>
-<div class="block">Scale factor to use on large screens without retina display, i.e. iPad 1+2 (has no effect on retina screens).
- <ul>
- <li>1.0 = no scaling (everything is in pixels)
- <li>any other value: scales the screens according to your scale factor. A scale factor of 0.75, 0.8, 1.2, 1.5 etc. works
- very well without any artifacts!
- </ul></div>
-</section>
-</li>
-<li>
-<section class="detail" id="displayScaleSmallScreenIfNonRetina">
-<h3>displayScaleSmallScreenIfNonRetina</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">displayScaleSmallScreenIfNonRetina</span></div>
-<div class="block">Scale factor to use on small screens without retina display, i.e. iPhone 1-3, iPod 1-3 (has no effect on retina screens).
- <ul>
- <li>1.0 = no scaling (everything is in pixels)
- <li>any other value: scales the screens according to your scale factor. A scale factor of 0.75, 0.8, 1.2, 1.5 etc. works
- very well without any artifacts!
- </ul></div>
 </section>
 </li>
 <li>
