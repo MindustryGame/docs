@@ -78,6 +78,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Bloom</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Requires bloom shaders in 'bloomshaders' folder.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -118,8 +119,7 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;hasDepth,
  boolean&nbsp;useBlending)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Initialize bloom class that capsulate original scene capturate,
- thresholding, gaussian blurring and blending.</div>
+<div class="block">Initializes bloom class that encapsulates original scene capturate, thresholding, gaussian blurring and blending.</div>
 </div>
 </div>
 </section>
@@ -129,55 +129,63 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel">
 <div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#capture()" class="member-name-link">capture</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Call this before rendering scene.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#captureContinue()" class="member-name-link">captureContinue</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Start capturing again after pause, no clearing is done to framebuffer</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#capturePause()" class="member-name-link">capturePause</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Pause capturing to fbo.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dispose()" class="member-name-link">dispose</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Disposes all resources.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render()" class="member-name-link">render</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Renders the bloomed scene.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resize(int,int)" class="member-name-link">resize</a><wbr>(int&nbsp;width,
- int&nbsp;height)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resize(int,int,int)" class="member-name-link">resize</a><wbr>(int&nbsp;width,
- int&nbsp;height,
- int&nbsp;scaling)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../gl/FrameBuffer.html" title="class in arc.graphics.gl">FrameBuffer</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#buffer()" class="member-name-link">buffer</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resume()" class="member-name-link">resume</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#capture()" class="member-name-link">capture</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Rebinds the context.</div>
+<div class="block">Call this before rendering scene.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBloomIntesity(float)" class="member-name-link">setBloomIntesity</a><wbr>(float&nbsp;intensity)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#captureContinue()" class="member-name-link">captureContinue</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">set intensity for bloom.</div>
+<div class="block">Start capturing again after pause, no clearing is done to the buffer.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#capturePause()" class="member-name-link">capturePause</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Pause capturing to the buffer.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dispose()" class="member-name-link">dispose</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Disposes all resources.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render()" class="member-name-link">render</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Renders the bloomed scene.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resize(int,int)" class="member-name-link">resize</a><wbr>(int&nbsp;width,
+ int&nbsp;height)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resize(int,int,int)" class="member-name-link">resize</a><wbr>(int&nbsp;width,
+ int&nbsp;height,
+ int&nbsp;scaling)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resume()" class="member-name-link">resume</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Rebinds the context.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBloomIntensity(float)" class="member-name-link">setBloomIntensity</a><wbr>(float&nbsp;intensity)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Set intensity for bloom.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setBloomIntesity(float)" class="member-name-link">setBloomIntesity</a><wbr>(float&nbsp;intensity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setClearColor(float,float,float,float)" class="member-name-link">setClearColor</a><wbr>(float&nbsp;r,
@@ -185,17 +193,22 @@ loadScripts(document, 'script');</script>
  float&nbsp;b,
  float&nbsp;a)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Set clearing color for capturing buffer</div>
+<div class="block">Set clearing color for capturing buffer.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setOriginalIntesity(float)" class="member-name-link">setOriginalIntesity</a><wbr>(float&nbsp;intensity)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setOriginalIntensity(float)" class="member-name-link">setOriginalIntensity</a><wbr>(float&nbsp;intensity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">set intensity for original scene.</div>
+<div class="block">Set intensity for original scene.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setThreshold(float)" class="member-name-link">setThreshold</a><wbr>(float&nbsp;threshold)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">threshold for bright parts.</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setOriginalIntesity(float)" class="member-name-link">setOriginalIntesity</a><wbr>(float&nbsp;intensity)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setThreshold(float)" class="member-name-link">setThreshold</a><wbr>(float&nbsp;threshold)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Threshold for bright parts.</div>
 </div>
 </div>
 </div>
@@ -254,13 +267,11 @@ loadScripts(document, 'script');</script>
  int&nbsp;height,
  boolean&nbsp;hasDepth,
  boolean&nbsp;useBlending)</span></div>
-<div class="block">Initialize bloom class that capsulate original scene capturate,
- thresholding, gaussian blurring and blending.</div>
+<div class="block">Initializes bloom class that encapsulates original scene capturate, thresholding, gaussian blurring and blending.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>hasDepth</code> - do rendering need depth buffer</dd>
-<dd><code>useBlending</code> - does fbo need alpha channel and is blending enabled when final image is rendered.
- This allows combining background graphics and only doing blooming on certain objects.</dd>
+<dd><code>hasDepth</code> - Enables depth buffer.</dd>
+<dd><code>useBlending</code> - Enables alpha blending, allowing combining background graphics and only doing blooming on certain objects.</dd>
 </dl>
 </section>
 </li>
@@ -301,7 +312,7 @@ loadScripts(document, 'script');</script>
  float&nbsp;g,
  float&nbsp;b,
  float&nbsp;a)</span></div>
-<div class="block">Set clearing color for capturing buffer</div>
+<div class="block">Set clearing color for capturing buffer.</div>
 </section>
 </li>
 <li>
@@ -315,14 +326,14 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="capturePause()">
 <h3>capturePause</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">capturePause</span>()</div>
-<div class="block">Pause capturing to fbo.</div>
+<div class="block">Pause capturing to the buffer.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="captureContinue()">
 <h3>captureContinue</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">captureContinue</span>()</div>
-<div class="block">Start capturing again after pause, no clearing is done to framebuffer</div>
+<div class="block">Start capturing again after pause, no clearing is done to the buffer.</div>
 </section>
 </li>
 <li>
@@ -335,26 +346,38 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="setBloomIntesity(float)">
 <h3>setBloomIntesity</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBloomIntesity</span><wbr><span class="parameters">(float&nbsp;intensity)</span></div>
-<div class="block">set intensity for bloom. higher mean more brightening for spots that are
- over threshold</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>intensity</code> - multiplier for blurred texture in combining phase. must be
- positive.</dd>
-</dl>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBloomIntesity</span><wbr><span class="parameters">(float&nbsp;intensity)</span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="setOriginalIntesity(float)">
 <h3>setOriginalIntesity</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setOriginalIntesity</span><wbr><span class="parameters">(float&nbsp;intensity)</span></div>
-<div class="block">set intensity for original scene. under 1 mean darkening and over 1 means
- lightening</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setOriginalIntesity</span><wbr><span class="parameters">(float&nbsp;intensity)</span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="setBloomIntensity(float)">
+<h3>setBloomIntensity</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBloomIntensity</span><wbr><span class="parameters">(float&nbsp;intensity)</span></div>
+<div class="block">Set intensity for bloom. Higher means more brightening for spots that are over threshold.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>intensity</code> - multiplier for captured texture in combining phase. must be
- positive.</dd>
+<dd><code>intensity</code> - Multiplier for blurred texture in combining phase. Must be positive.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setOriginalIntensity(float)">
+<h3>setOriginalIntensity</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setOriginalIntensity</span><wbr><span class="parameters">(float&nbsp;intensity)</span></div>
+<div class="block">Set intensity for original scene. Under 1 means darkening and over 1 means lightening.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>intensity</code> - Multiplier for captured texture in combining phase. Must be positive.</dd>
 </dl>
 </section>
 </li>
@@ -362,10 +385,20 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="setThreshold(float)">
 <h3>setThreshold</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setThreshold</span><wbr><span class="parameters">(float&nbsp;threshold)</span></div>
-<div class="block">threshold for bright parts. everything under threshold is clamped to 0</div>
+<div class="block">Threshold for bright parts. Everything under threshold is set to 0.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>threshold</code> - must be in range 0..1</dd>
+<dd><code>threshold</code> - Must be in range [0..1].</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="buffer()">
+<h3>buffer</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../gl/FrameBuffer.html" title="class in arc.graphics.gl">FrameBuffer</a></span>&nbsp;<span class="element-name">buffer</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The unprocessed frame buffer this bloom captures. Advanced uses only.</dd>
 </dl>
 </section>
 </li>
