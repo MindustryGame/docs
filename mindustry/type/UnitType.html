@@ -83,7 +83,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a>&gt;</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a>&gt;</code>, <code><a href="../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
@@ -91,7 +91,8 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">UnitType</span>
-<span class="extends-implements">extends <a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></span></div>
+<span class="extends-implements">extends <a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a>
+implements <a href="../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -1072,13 +1073,16 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-mindustry.ctype.UnlockableContent">Fields inherited from class&nbsp;mindustry.ctype.<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></h3>
-<code><a href="../ctype/UnlockableContent.html#alwaysUnlocked">alwaysUnlocked</a>, <a href="../ctype/UnlockableContent.html#description">description</a>, <a href="../ctype/UnlockableContent.html#details">details</a>, <a href="../ctype/UnlockableContent.html#fullIcon">fullIcon</a>, <a href="../ctype/UnlockableContent.html#generateIcons">generateIcons</a>, <a href="../ctype/UnlockableContent.html#hideDetails">hideDetails</a>, <a href="../ctype/UnlockableContent.html#iconId">iconId</a>, <a href="../ctype/UnlockableContent.html#inlineDescription">inlineDescription</a>, <a href="../ctype/UnlockableContent.html#localizedName">localizedName</a>, <a href="../ctype/UnlockableContent.html#selectionSize">selectionSize</a>, <a href="../ctype/UnlockableContent.html#stats">stats</a>, <a href="../ctype/UnlockableContent.html#techNode">techNode</a>, <a href="../ctype/UnlockableContent.html#uiIcon">uiIcon</a>, <a href="../ctype/UnlockableContent.html#unlocked">unlocked</a></code></div>
+<code><a href="../ctype/UnlockableContent.html#alwaysUnlocked">alwaysUnlocked</a>, <a href="../ctype/UnlockableContent.html#description">description</a>, <a href="../ctype/UnlockableContent.html#details">details</a>, <a href="../ctype/UnlockableContent.html#fullIcon">fullIcon</a>, <a href="../ctype/UnlockableContent.html#generateIcons">generateIcons</a>, <a href="../ctype/UnlockableContent.html#hideDetails">hideDetails</a>, <a href="../ctype/UnlockableContent.html#iconId">iconId</a>, <a href="../ctype/UnlockableContent.html#inlineDescription">inlineDescription</a>, <a href="../ctype/UnlockableContent.html#localizedName">localizedName</a>, <a href="../ctype/UnlockableContent.html#selectionSize">selectionSize</a>, <a href="../ctype/UnlockableContent.html#stats">stats</a>, <a href="../ctype/UnlockableContent.html#techNode">techNode</a>, <a href="../ctype/UnlockableContent.html#techNodes">techNodes</a>, <a href="../ctype/UnlockableContent.html#uiIcon">uiIcon</a>, <a href="../ctype/UnlockableContent.html#unlocked">unlocked</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-mindustry.ctype.MappableContent">Fields inherited from class&nbsp;mindustry.ctype.<a href="../ctype/MappableContent.html" title="class in mindustry.ctype">MappableContent</a></h3>
 <code><a href="../ctype/MappableContent.html#name">name</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-mindustry.ctype.Content">Fields inherited from class&nbsp;mindustry.ctype.<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a></h3>
 <code><a href="../ctype/Content.html#id">id</a>, <a href="../ctype/Content.html#minfo">minfo</a></code></div>
+<div class="inherited-list">
+<h3 id="fields-inherited-from-class-mindustry.logic.Senseable">Fields inherited from interface&nbsp;mindustry.logic.<a href="../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></h3>
+<code><a href="../logic/Senseable.html#noSensed">noSensed</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -1261,6 +1265,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#researchRequirements()" class="member-name-link">researchRequirements</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sense(mindustry.logic.LAccess)" class="member-name-link">sense</a><wbr>(<a href="../logic/LAccess.html" title="enum class in mindustry.logic">LAccess</a>&nbsp;sensor)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#senseObject(mindustry.logic.LAccess)" class="member-name-link">senseObject</a><wbr>(<a href="../logic/LAccess.html" title="enum class in mindustry.logic">LAccess</a>&nbsp;sensor)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setEnginesMirror(mindustry.type.UnitType.UnitEngine...)" class="member-name-link">setEnginesMirror</a><wbr>(<a href="UnitType.UnitEngine.html" title="class in mindustry.type">UnitType.UnitEngine</a>...&nbsp;array)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -1314,7 +1324,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.ctype.UnlockableContent">Methods inherited from class&nbsp;mindustry.ctype.<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></h3>
-<code><a href="../ctype/UnlockableContent.html#checkStats()">checkStats</a>, <a href="../ctype/UnlockableContent.html#clearUnlock()">clearUnlock</a>, <a href="../ctype/UnlockableContent.html#displayDescription()">displayDescription</a>, <a href="../ctype/UnlockableContent.html#displayExtra(arc.scene.ui.layout.Table)">displayExtra</a>, <a href="../ctype/UnlockableContent.html#emoji()">emoji</a>, <a href="../ctype/UnlockableContent.html#hasEmoji()">hasEmoji</a>, <a href="../ctype/UnlockableContent.html#loadIcon()">loadIcon</a>, <a href="../ctype/UnlockableContent.html#locked()">locked</a>, <a href="../ctype/UnlockableContent.html#logicVisible()">logicVisible</a>, <a href="../ctype/UnlockableContent.html#makeOutline(mindustry.graphics.MultiPacker.PageType,mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,boolean,arc.graphics.Color,int)">makeOutline</a>, <a href="../ctype/UnlockableContent.html#makeOutline(mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,java.lang.String,arc.graphics.Color)">makeOutline</a>, <a href="../ctype/UnlockableContent.html#makeOutline(mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,java.lang.String,arc.graphics.Color,int)">makeOutline</a>, <a href="../ctype/UnlockableContent.html#onUnlock()">onUnlock</a>, <a href="../ctype/UnlockableContent.html#quietUnlock()">quietUnlock</a>, <a href="../ctype/UnlockableContent.html#showUnlock()">showUnlock</a>, <a href="../ctype/UnlockableContent.html#unlock()">unlock</a>, <a href="../ctype/UnlockableContent.html#unlocked()">unlocked</a>, <a href="../ctype/UnlockableContent.html#unlockedNow()">unlockedNow</a>, <a href="../ctype/UnlockableContent.html#unlockedNowHost()">unlockedNowHost</a></code></div>
+<code><a href="../ctype/UnlockableContent.html#checkStats()">checkStats</a>, <a href="../ctype/UnlockableContent.html#clearUnlock()">clearUnlock</a>, <a href="../ctype/UnlockableContent.html#displayDescription()">displayDescription</a>, <a href="../ctype/UnlockableContent.html#displayExtra(arc.scene.ui.layout.Table)">displayExtra</a>, <a href="../ctype/UnlockableContent.html#emoji()">emoji</a>, <a href="../ctype/UnlockableContent.html#getLogicId()">getLogicId</a>, <a href="../ctype/UnlockableContent.html#hasEmoji()">hasEmoji</a>, <a href="../ctype/UnlockableContent.html#loadIcon()">loadIcon</a>, <a href="../ctype/UnlockableContent.html#locked()">locked</a>, <a href="../ctype/UnlockableContent.html#logicVisible()">logicVisible</a>, <a href="../ctype/UnlockableContent.html#makeOutline(mindustry.graphics.MultiPacker.PageType,mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,boolean,arc.graphics.Color,int)">makeOutline</a>, <a href="../ctype/UnlockableContent.html#makeOutline(mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,java.lang.String,arc.graphics.Color)">makeOutline</a>, <a href="../ctype/UnlockableContent.html#makeOutline(mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,java.lang.String,arc.graphics.Color,int)">makeOutline</a>, <a href="../ctype/UnlockableContent.html#onUnlock()">onUnlock</a>, <a href="../ctype/UnlockableContent.html#quietUnlock()">quietUnlock</a>, <a href="../ctype/UnlockableContent.html#showUnlock()">showUnlock</a>, <a href="../ctype/UnlockableContent.html#unlock()">unlock</a>, <a href="../ctype/UnlockableContent.html#unlocked()">unlocked</a>, <a href="../ctype/UnlockableContent.html#unlockedNow()">unlockedNow</a>, <a href="../ctype/UnlockableContent.html#unlockedNowHost()">unlockedNowHost</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.ctype.MappableContent">Methods inherited from class&nbsp;mindustry.ctype.<a href="../ctype/MappableContent.html" title="class in mindustry.ctype">MappableContent</a></h3>
 <code><a href="../ctype/MappableContent.html#toString()">toString</a></code></div>
@@ -1324,6 +1334,9 @@ loadScripts(document, 'script');</script>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-mindustry.logic.Senseable">Methods inherited from interface&nbsp;mindustry.logic.<a href="../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></h3>
+<code><a href="../logic/Senseable.html#sense(mindustry.ctype.Content)">sense</a></code></div>
 </section>
 </li>
 </ul>
@@ -3017,6 +3030,26 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="../ctype/UnlockableContent.html#researchRequirements()">researchRequirements</a></code>&nbsp;in class&nbsp;<code><a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></code></dd>
 <dt>Returns:</dt>
 <dd>items needed to research this content</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="sense(mindustry.logic.LAccess)">
+<h3>sense</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">sense</span><wbr><span class="parameters">(<a href="../logic/LAccess.html" title="enum class in mindustry.logic">LAccess</a>&nbsp;sensor)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../logic/Senseable.html#sense(mindustry.logic.LAccess)">sense</a></code>&nbsp;in interface&nbsp;<code><a href="../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="senseObject(mindustry.logic.LAccess)">
+<h3>senseObject</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">senseObject</span><wbr><span class="parameters">(<a href="../logic/LAccess.html" title="enum class in mindustry.logic">LAccess</a>&nbsp;sensor)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../logic/Senseable.html#senseObject(mindustry.logic.LAccess)">senseObject</a></code>&nbsp;in interface&nbsp;<code><a href="../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></code></dd>
 </dl>
 </section>
 </li>

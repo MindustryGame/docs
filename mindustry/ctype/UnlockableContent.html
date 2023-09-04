@@ -172,14 +172,19 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">The tech tree node for this content, if applicable.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
-<div class="col-second even-row-color"><code><a href="#uiIcon" class="member-name-link">uiIcon</a></code></div>
+<div class="col-first even-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../content/TechTree.TechNode.html" title="class in mindustry.content">TechTree.TechNode</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#techNodes" class="member-name-link">techNodes</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Tech nodes for all trees that this content is part of.</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#uiIcon" class="member-name-link">uiIcon</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Icon of the content to use in UI.</div>
 </div>
-<div class="col-first odd-row-color"><code>protected boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#unlocked" class="member-name-link">unlocked</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>protected boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#unlocked" class="member-name-link">unlocked</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Unlock state.</div>
 </div>
 </div>
@@ -246,81 +251,84 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Iterates through any implicit dependencies of this content.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasEmoji()" class="member-name-link">hasEmoji</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLogicId()" class="member-name-link">getLogicId</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHidden()" class="member-name-link">isHidden</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Whether this content is always hidden in the content database dialog.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadIcon()" class="member-name-link">loadIcon</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Called right before load().</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#locked()" class="member-name-link">locked</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasEmoji()" class="member-name-link">hasEmoji</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logicVisible()" class="member-name-link">logicVisible</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHidden()" class="member-name-link">isHidden</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Whether this content is always hidden in the content database dialog.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadIcon()" class="member-name-link">loadIcon</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Called right before load().</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#locked()" class="member-name-link">locked</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makeOutline(mindustry.graphics.MultiPacker.PageType,mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,boolean,arc.graphics.Color,int)" class="member-name-link">makeOutline</a><wbr>(<a href="../graphics/MultiPacker.PageType.html" title="enum class in mindustry.graphics">MultiPacker.PageType</a>&nbsp;page,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logicVisible()" class="member-name-link">logicVisible</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makeOutline(mindustry.graphics.MultiPacker.PageType,mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,boolean,arc.graphics.Color,int)" class="member-name-link">makeOutline</a><wbr>(<a href="../graphics/MultiPacker.PageType.html" title="enum class in mindustry.graphics">MultiPacker.PageType</a>&nbsp;page,
  <a href="../graphics/MultiPacker.html" title="class in mindustry.graphics">MultiPacker</a>&nbsp;packer,
  <a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>&nbsp;region,
  boolean&nbsp;makeNew,
  <a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a>&nbsp;outlineColor,
  int&nbsp;outlineRadius)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makeOutline(mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,java.lang.String,arc.graphics.Color)" class="member-name-link">makeOutline</a><wbr>(<a href="../graphics/MultiPacker.html" title="class in mindustry.graphics">MultiPacker</a>&nbsp;packer,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makeOutline(mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,java.lang.String,arc.graphics.Color)" class="member-name-link">makeOutline</a><wbr>(<a href="../graphics/MultiPacker.html" title="class in mindustry.graphics">MultiPacker</a>&nbsp;packer,
  <a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>&nbsp;region,
  <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a>&nbsp;outlineColor)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makeOutline(mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,java.lang.String,arc.graphics.Color,int)" class="member-name-link">makeOutline</a><wbr>(<a href="../graphics/MultiPacker.html" title="class in mindustry.graphics">MultiPacker</a>&nbsp;packer,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makeOutline(mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,java.lang.String,arc.graphics.Color,int)" class="member-name-link">makeOutline</a><wbr>(<a href="../graphics/MultiPacker.html" title="class in mindustry.graphics">MultiPacker</a>&nbsp;packer,
  <a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>&nbsp;region,
  <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a>&nbsp;outlineColor,
  int&nbsp;outlineRadius)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onUnlock()" class="member-name-link">onUnlock</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onUnlock()" class="member-name-link">onUnlock</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Called when this content is unlocked.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#quietUnlock()" class="member-name-link">quietUnlock</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#quietUnlock()" class="member-name-link">quietUnlock</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Unlocks this content, but does not fire any events.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../type/ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#researchRequirements()" class="member-name-link">researchRequirements</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStats()" class="member-name-link">setStats</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../type/ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#researchRequirements()" class="member-name-link">researchRequirements</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStats()" class="member-name-link">setStats</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Initializes stats on demand.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showUnlock()" class="member-name-link">showUnlock</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unlock()" class="member-name-link">unlock</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showUnlock()" class="member-name-link">showUnlock</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unlock()" class="member-name-link">unlock</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Makes this piece of content unlocked; if it already unlocked, nothing happens.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unlocked()" class="member-name-link">unlocked</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unlockedNow()" class="member-name-link">unlockedNow</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unlocked()" class="member-name-link">unlocked</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unlockedNowHost()" class="member-name-link">unlockedNowHost</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unlockedNow()" class="member-name-link">unlockedNow</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unlockedNowHost()" class="member-name-link">unlockedNowHost</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -439,6 +447,13 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="techNodes">
+<h3>techNodes</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../content/TechTree.TechNode.html" title="class in mindustry.content">TechTree.TechNode</a>&gt;</span>&nbsp;<span class="element-name">techNodes</span></div>
+<div class="block">Tech nodes for all trees that this content is part of.</div>
+</section>
+</li>
+<li>
 <section class="detail" id="unlocked">
 <h3>unlocked</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">unlocked</span></div>
@@ -477,6 +492,12 @@ loadScripts(document, 'script');</script>
 <dt>Overrides:</dt>
 <dd><code><a href="Content.html#loadIcon()">loadIcon</a></code>&nbsp;in class&nbsp;<code><a href="Content.html" title="class in mindustry.ctype">Content</a></code></dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getLogicId()">
+<h3>getLogicId</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getLogicId</span>()</div>
 </section>
 </li>
 <li>

@@ -104,6 +104,9 @@ implements <a href="../../arc/ApplicationListener.html" title="interface in arc"
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="NetServer.TeamAssigner.html" class="type-name-link" title="interface in mindustry.core">NetServer.TeamAssigner</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="NetServer.VoteSession.html" class="type-name-link" title="class in mindustry.core">NetServer.VoteSession</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -130,10 +133,30 @@ implements <a href="../../arc/ApplicationListener.html" title="interface in arc"
 <div class="col-first odd-row-color"><code><a href="../../arc/util/CommandHandler.html" title="class in arc.util">CommandHandler</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#clientCommands" class="member-name-link">clientCommands</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="NetServer.InvalidCommandHandler.html" title="interface in mindustry.core">NetServer.InvalidCommandHandler</a></code></div>
-<div class="col-second even-row-color"><code><a href="#invalidHandler" class="member-name-link">invalidHandler</a></code></div>
+<div class="col-first even-row-color"><code><a href="NetServer.VoteSession.html" title="class in mindustry.core">NetServer.VoteSession</a></code></div>
+<div class="col-second even-row-color"><code><a href="#currentlyKicking" class="member-name-link">currentlyKicking</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Current kick session.</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="NetServer.InvalidCommandHandler.html" title="interface in mindustry.core">NetServer.InvalidCommandHandler</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#invalidHandler" class="member-name-link">invalidHandler</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Handles an incorrect command response.</div>
+</div>
+<div class="col-first even-row-color"><code>static int</code></div>
+<div class="col-second even-row-color"><code><a href="#kickDuration" class="member-name-link">kickDuration</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Duration of a kick in seconds.</div>
+</div>
+<div class="col-first odd-row-color"><code>static int</code></div>
+<div class="col-second odd-row-color"><code><a href="#voteCooldown" class="member-name-link">voteCooldown</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Cooldown between votes in seconds.</div>
+</div>
+<div class="col-first even-row-color"><code>static float</code></div>
+<div class="col-second even-row-color"><code><a href="#voteDuration" class="member-name-link">voteDuration</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Voting round duration in seconds.</div>
 </div>
 </div>
 </section>
@@ -332,6 +355,35 @@ implements <a href="../../arc/ApplicationListener.html" title="interface in arc"
 <h3>invalidHandler</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="NetServer.InvalidCommandHandler.html" title="interface in mindustry.core">NetServer.InvalidCommandHandler</a></span>&nbsp;<span class="element-name">invalidHandler</span></div>
 <div class="block">Handles an incorrect command response. Returns text that will be sent to player. Override for customisation.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="currentlyKicking">
+<h3>currentlyKicking</h3>
+<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="NetServer.VoteSession.html" title="class in mindustry.core">NetServer.VoteSession</a></span>&nbsp;<span class="element-name">currentlyKicking</span></div>
+<div class="block">Current kick session.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="kickDuration">
+<h3>kickDuration</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">kickDuration</span></div>
+<div class="block">Duration of a kick in seconds.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="voteDuration">
+<h3>voteDuration</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">voteDuration</span></div>
+<div class="block">Voting round duration in seconds.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="voteCooldown">
+<h3>voteCooldown</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">voteCooldown</span></div>
+<div class="block">Cooldown between votes in seconds.</div>
 </section>
 </li>
 </ul>
