@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../script.js"></script>
-<script type="text/javascript" src="../../../script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -35,7 +35,6 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">Package</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
-<li><a href="../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../index-all.html">Index</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
@@ -71,7 +70,7 @@ loadScripts(document, 'script');</script>
 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">mindustry.ai.types</a></div>
 <h1 title="Class CommandAI" class="title">Class CommandAI</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance"><a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">mindustry.entities.units.AIController</a>
 <div class="inheritance">mindustry.ai.types.CommandAI</div>
 </div>
@@ -99,72 +98,102 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>mindustry.gen.Teamc</code></div>
 <div class="col-second even-row-color"><code><a href="#attackTarget" class="member-name-link">attackTarget</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected static final <a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#cohesion" class="member-name-link">cohesion</a></code></div>
+<div class="col-first odd-row-color"><code>protected static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#avoidInterval" class="member-name-link">avoidInterval</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></code></div>
-<div class="col-second even-row-color"><code><a href="#command" class="member-name-link">command</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first even-row-color"><code>protected boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#blockingUnit" class="member-name-link">blockingUnit</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#command" class="member-name-link">command</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Current command this unit is following.</div>
 </div>
-<div class="col-first odd-row-color"><code>protected <a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#commandController" class="member-name-link">commandController</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>protected <a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></code></div>
+<div class="col-second even-row-color"><code><a href="#commandController" class="member-name-link">commandController</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Current controller instance based on command.</div>
 </div>
-<div class="col-first even-row-color"><code>protected boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#flocked" class="member-name-link">flocked</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected static final <a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#flockVec" class="member-name-link">flockVec</a></code></div>
+<div class="col-first odd-row-color"><code>arc.struct.Seq&lt;arc.math.geom.Position&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#commandQueue" class="member-name-link">commandQueue</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../UnitGroup.html" title="class in mindustry.ai">UnitGroup</a></code></div>
+<div class="col-second even-row-color"><code><a href="#group" class="member-name-link">group</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Group of units that were all commanded to reach the same point.</div>
+</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#groupIndex" class="member-name-link">groupIndex</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected <a href="../UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></code></div>
 <div class="col-second even-row-color"><code><a href="#lastCommand" class="member-name-link">lastCommand</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Last command type assigned.</div>
 </div>
-<div class="col-first odd-row-color"><code>protected <a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></code></div>
+<div class="col-first odd-row-color"><code>protected arc.math.geom.Vec2</code></div>
 <div class="col-second odd-row-color"><code><a href="#lastTargetPos" class="member-name-link">lastTargetPos</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected <a href="../../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;mindustry.gen.Unit&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#local" class="member-name-link">local</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected static final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#localInterval" class="member-name-link">localInterval</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected static final <a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></code></div>
-<div class="col-second even-row-color"><code><a href="#massCenter" class="member-name-link">massCenter</a></code></div>
+<div class="col-first even-row-color"><code>protected static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#maxCommandQueueSize" class="member-name-link">maxCommandQueueSize</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>protected static final boolean[]</code></div>
 <div class="col-second odd-row-color"><code><a href="#noFound" class="member-name-link">noFound</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected int</code></div>
-<div class="col-second even-row-color"><code><a href="#pathId" class="member-name-link">pathId</a></code></div>
+<div class="col-first even-row-color"><code>protected float</code></div>
+<div class="col-second even-row-color"><code><a href="#payloadPickupCooldown" class="member-name-link">payloadPickupCooldown</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected static final <a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#separation" class="member-name-link">separation</a></code></div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#readAttackTarget" class="member-name-link">readAttackTarget</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">ID of unit read as target.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="../UnitStance.html" title="class in mindustry.ai">UnitStance</a></code></div>
+<div class="col-second even-row-color"><code><a href="#stance" class="member-name-link">stance</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Stance, usually related to firing mode.</div>
+</div>
+<div class="col-first odd-row-color"><code>protected boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#stopAtTarget" class="member-name-link">stopAtTarget</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#stopAtTarget" class="member-name-link">stopAtTarget</a></code></div>
+<div class="col-second even-row-color"><code><a href="#stopWhenInRange" class="member-name-link">stopWhenInRange</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#stopWhenInRange" class="member-name-link">stopWhenInRange</a></code></div>
+<div class="col-first odd-row-color"><code>arc.math.geom.Vec2</code></div>
+<div class="col-second odd-row-color"><code><a href="#targetPos" class="member-name-link">targetPos</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></code></div>
-<div class="col-second even-row-color"><code><a href="#targetPos" class="member-name-link">targetPos</a></code></div>
+<div class="col-first even-row-color"><code>protected float</code></div>
+<div class="col-second even-row-color"><code><a href="#timeSpentBlocked" class="member-name-link">timeSpentBlocked</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../../arc/struct/IntSeq.html" title="class in arc.struct">IntSeq</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#unreachableBuildings" class="member-name-link">unreachableBuildings</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><code>protected static final <a href="../../world/blocks/payloads/UnitPayload.html" title="class in mindustry.world.blocks.payloads">UnitPayload</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#tmpPayload" class="member-name-link">tmpPayload</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>protected int</code></div>
+<div class="col-second even-row-color"><code><a href="#transferState" class="member-name-link">transferState</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#transferStateLoad" class="member-name-link">transferStateLoad</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>protected static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#transferStateNone" class="member-name-link">transferStateNone</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#transferStateUnload" class="member-name-link">transferStateUnload</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>arc.struct.IntSeq</code></div>
+<div class="col-second even-row-color"><code><a href="#unreachableBuildings" class="member-name-link">unreachableBuildings</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">All encountered unreachable buildings of this AI.</div>
 </div>
-<div class="col-first even-row-color"><code>protected static final <a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></code></div>
+<div class="col-first odd-row-color"><code>protected static final arc.math.geom.Vec2</code></div>
+<div class="col-second odd-row-color"><code><a href="#vecMovePos" class="member-name-link">vecMovePos</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>protected static final arc.math.geom.Vec2</code></div>
 <div class="col-second even-row-color"><code><a href="#vecOut" class="member-name-link">vecOut</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-mindustry.entities.units.AIController">Fields inherited from class&nbsp;mindustry.entities.units.<a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></h3>
-<code><a href="../../entities/units/AIController.html#fallback">fallback</a>, <a href="../../entities/units/AIController.html#noTargetTime">noTargetTime</a>, <a href="../../entities/units/AIController.html#rotateBackTimer">rotateBackTimer</a>, <a href="../../entities/units/AIController.html#target">target</a>, <a href="../../entities/units/AIController.html#timer">timer</a>, <a href="../../entities/units/AIController.html#timerTarget">timerTarget</a>, <a href="../../entities/units/AIController.html#timerTarget2">timerTarget2</a>, <a href="../../entities/units/AIController.html#timerTarget3">timerTarget3</a>, <a href="../../entities/units/AIController.html#timerTarget4">timerTarget4</a>, <a href="../../entities/units/AIController.html#unit">unit</a>, <a href="../../entities/units/AIController.html#vec">vec</a></code></div>
+<code><a href="../../entities/units/AIController.html#bomberTarget">bomberTarget</a>, <a href="../../entities/units/AIController.html#fallback">fallback</a>, <a href="../../entities/units/AIController.html#noTargetTime">noTargetTime</a>, <a href="../../entities/units/AIController.html#rotateBackTimer">rotateBackTimer</a>, <a href="../../entities/units/AIController.html#target">target</a>, <a href="../../entities/units/AIController.html#timer">timer</a>, <a href="../../entities/units/AIController.html#timerTarget">timerTarget</a>, <a href="../../entities/units/AIController.html#timerTarget2">timerTarget2</a>, <a href="../../entities/units/AIController.html#timerTarget3">timerTarget3</a>, <a href="../../entities/units/AIController.html#timerTarget4">timerTarget4</a>, <a href="../../entities/units/AIController.html#unit">unit</a>, <a href="../../entities/units/AIController.html#vec">vec</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -186,35 +215,51 @@ loadScripts(document, 'script');</script>
 <h2>Method Summary</h2>
 <div id="method-summary-table">
 <div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
-<div id="method-summary-table.tabpanel" role="tabpanel">
-<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#afterRead(mindustry.gen.Unit)" class="member-name-link">afterRead</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearCommands()" class="member-name-link">clearCommands</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#command(mindustry.ai.UnitCommand)" class="member-name-link">command</a><wbr>(<a href="../UnitCommand.html" title="class in mindustry.ai">UnitCommand</a>&nbsp;command)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Attempts to assign a command to this unit.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#commandPosition(arc.math.geom.Vec2)" class="member-name-link">commandPosition</a><wbr>(<a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;pos)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#commandPosition(arc.math.geom.Vec2)" class="member-name-link">commandPosition</a><wbr>(arc.math.geom.Vec2&nbsp;pos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#commandPosition(arc.math.geom.Vec2,boolean)" class="member-name-link">commandPosition</a><wbr>(<a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;pos,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#commandPosition(arc.math.geom.Vec2,boolean)" class="member-name-link">commandPosition</a><wbr>(arc.math.geom.Vec2&nbsp;pos,
  boolean&nbsp;stopWhenInRange)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#commandTarget(mindustry.gen.Teamc)" class="member-name-link">commandTarget</a><wbr>(mindustry.gen.Teamc&nbsp;moveTo)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#commandQueue(arc.math.geom.Position)" class="member-name-link">commandQueue</a><wbr>(arc.math.geom.Position&nbsp;location)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#commandTarget(mindustry.gen.Teamc,boolean)" class="member-name-link">commandTarget</a><wbr>(mindustry.gen.Teamc&nbsp;moveTo,
- boolean&nbsp;stopAtTarget)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#commandTarget(mindustry.gen.Teamc)" class="member-name-link">commandTarget</a><wbr>(mindustry.gen.Teamc&nbsp;moveTo)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currentCommand()" class="member-name-link">currentCommand</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#commandTarget(mindustry.gen.Teamc,boolean)" class="member-name-link">commandTarget</a><wbr>(mindustry.gen.Teamc&nbsp;moveTo,
+ boolean&nbsp;stopAtTarget)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#defaultBehavior()" class="member-name-link">defaultBehavior</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currentCommand()" class="member-name-link">currentCommand</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#defaultBehavior()" class="member-name-link">defaultBehavior</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>mindustry.gen.Teamc</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findMainTarget(float,float,float,boolean,boolean)" class="member-name-link">findMainTarget</a><wbr>(float&nbsp;x,
+ float&nbsp;y,
+ float&nbsp;range,
+ boolean&nbsp;air,
+ boolean&nbsp;ground)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>mindustry.gen.Teamc</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findTarget(float,float,float,boolean,boolean)" class="member-name-link">findTarget</a><wbr>(float&nbsp;x,
@@ -243,11 +288,17 @@ loadScripts(document, 'script');</script>
  float&nbsp;y,
  float&nbsp;range)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#retarget()" class="member-name-link">retarget</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removed(mindustry.gen.Unit)" class="member-name-link">removed</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setupLastPos()" class="member-name-link">setupLastPos</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#retarget()" class="member-name-link">retarget</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setupLastPos()" class="member-name-link">setupLastPos</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldFire()" class="member-name-link">shouldFire</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateUnit()" class="member-name-link">updateUnit</a>()</code></div>
@@ -257,13 +308,13 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.entities.units.AIController">Methods inherited from class&nbsp;mindustry.entities.units.<a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></h3>
-<code><a href="../../entities/units/AIController.html#checkTarget(mindustry.gen.Teamc,float,float,float)">checkTarget</a>, <a href="../../entities/units/AIController.html#circle(arc.math.geom.Position,float)">circle</a>, <a href="../../entities/units/AIController.html#circle(arc.math.geom.Position,float,float)">circle</a>, <a href="../../entities/units/AIController.html#circleAttack(float)">circleAttack</a>, <a href="../../entities/units/AIController.html#faceMovement()">faceMovement</a>, <a href="../../entities/units/AIController.html#faceTarget()">faceTarget</a>, <a href="../../entities/units/AIController.html#fallback()">fallback</a>, <a href="../../entities/units/AIController.html#findMainTarget(float,float,float,boolean,boolean)">findMainTarget</a>, <a href="../../entities/units/AIController.html#getClosestSpawner()">getClosestSpawner</a>, <a href="../../entities/units/AIController.html#init()">init</a>, <a href="../../entities/units/AIController.html#invalid(mindustry.gen.Teamc)">invalid</a>, <a href="../../entities/units/AIController.html#moveTo(arc.math.geom.Position,float)">moveTo</a>, <a href="../../entities/units/AIController.html#moveTo(arc.math.geom.Position,float,float)">moveTo</a>, <a href="../../entities/units/AIController.html#moveTo(arc.math.geom.Position,float,float,boolean,arc.math.geom.Vec2)">moveTo</a>, <a href="../../entities/units/AIController.html#moveTo(arc.math.geom.Position,float,float,boolean,arc.math.geom.Vec2,boolean)">moveTo</a>, <a href="../../entities/units/AIController.html#pathfind(int)">pathfind</a>, <a href="../../entities/units/AIController.html#shouldShoot()">shouldShoot</a>, <a href="../../entities/units/AIController.html#stopShooting()">stopShooting</a>, <a href="../../entities/units/AIController.html#target(float,float,float,boolean,boolean)">target</a>, <a href="../../entities/units/AIController.html#targetFlag(float,float,mindustry.world.meta.BlockFlag,boolean)">targetFlag</a>, <a href="../../entities/units/AIController.html#unit()">unit</a>, <a href="../../entities/units/AIController.html#unit(mindustry.gen.Unit)">unit</a>, <a href="../../entities/units/AIController.html#unloadPayloads()">unloadPayloads</a>, <a href="../../entities/units/AIController.html#updateMovement()">updateMovement</a>, <a href="../../entities/units/AIController.html#updateTargeting()">updateTargeting</a>, <a href="../../entities/units/AIController.html#updateVisuals()">updateVisuals</a>, <a href="../../entities/units/AIController.html#updateWeapons()">updateWeapons</a>, <a href="../../entities/units/AIController.html#useFallback()">useFallback</a></code></div>
+<code><a href="../../entities/units/AIController.html#alterPathfind(arc.math.geom.Vec2)">alterPathfind</a>, <a href="../../entities/units/AIController.html#checkTarget(mindustry.gen.Teamc,float,float,float)">checkTarget</a>, <a href="../../entities/units/AIController.html#circle(arc.math.geom.Position,float)">circle</a>, <a href="../../entities/units/AIController.html#circle(arc.math.geom.Position,float,float)">circle</a>, <a href="../../entities/units/AIController.html#circleAttack(float)">circleAttack</a>, <a href="../../entities/units/AIController.html#faceMovement()">faceMovement</a>, <a href="../../entities/units/AIController.html#faceTarget()">faceTarget</a>, <a href="../../entities/units/AIController.html#fallback()">fallback</a>, <a href="../../entities/units/AIController.html#getClosestSpawner()">getClosestSpawner</a>, <a href="../../entities/units/AIController.html#init()">init</a>, <a href="../../entities/units/AIController.html#invalid(mindustry.gen.Teamc)">invalid</a>, <a href="../../entities/units/AIController.html#moveTo(arc.math.geom.Position,float)">moveTo</a>, <a href="../../entities/units/AIController.html#moveTo(arc.math.geom.Position,float,float)">moveTo</a>, <a href="../../entities/units/AIController.html#moveTo(arc.math.geom.Position,float,float,boolean,arc.math.geom.Vec2)">moveTo</a>, <a href="../../entities/units/AIController.html#moveTo(arc.math.geom.Position,float,float,boolean,arc.math.geom.Vec2,boolean)">moveTo</a>, <a href="../../entities/units/AIController.html#pathfind(int)">pathfind</a>, <a href="../../entities/units/AIController.html#pathfind(int,boolean)">pathfind</a>, <a href="../../entities/units/AIController.html#prefSpeed()">prefSpeed</a>, <a href="../../entities/units/AIController.html#resetTimers()">resetTimers</a>, <a href="../../entities/units/AIController.html#shouldShoot()">shouldShoot</a>, <a href="../../entities/units/AIController.html#stopShooting()">stopShooting</a>, <a href="../../entities/units/AIController.html#target(float,float,float,boolean,boolean)">target</a>, <a href="../../entities/units/AIController.html#targetFlag(float,float,mindustry.world.meta.BlockFlag,boolean)">targetFlag</a>, <a href="../../entities/units/AIController.html#targetInvalidated()">targetInvalidated</a>, <a href="../../entities/units/AIController.html#unit()">unit</a>, <a href="../../entities/units/AIController.html#unit(mindustry.gen.Unit)">unit</a>, <a href="../../entities/units/AIController.html#unloadPayloads()">unloadPayloads</a>, <a href="../../entities/units/AIController.html#updateMovement()">updateMovement</a>, <a href="../../entities/units/AIController.html#updateTargeting()">updateTargeting</a>, <a href="../../entities/units/AIController.html#updateVisuals()">updateVisuals</a>, <a href="../../entities/units/AIController.html#updateWeapons()">updateWeapons</a>, <a href="../../entities/units/AIController.html#useFallback()">useFallback</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.entities.units.UnitController">Methods inherited from interface&nbsp;mindustry.entities.units.<a href="../../entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a></h3>
-<code><a href="../../entities/units/UnitController.html#isBeingControlled(mindustry.gen.Unit)">isBeingControlled</a>, <a href="../../entities/units/UnitController.html#isValidController()">isValidController</a>, <a href="../../entities/units/UnitController.html#removed(mindustry.gen.Unit)">removed</a></code></div>
+<code><a href="../../entities/units/UnitController.html#isValidController()">isValidController</a></code></div>
 </section>
 </li>
 </ul>
@@ -276,14 +327,28 @@ loadScripts(document, 'script');</script>
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="localInterval">
-<h3>localInterval</h3>
-<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">localInterval</span></div>
+<section class="detail" id="maxCommandQueueSize">
+<h3>maxCommandQueueSize</h3>
+<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">maxCommandQueueSize</span></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="../../../constant-values.html#mindustry.ai.types.CommandAI.localInterval">Constant Field Values</a></li>
+<li><a href="../../../constant-values.html#mindustry.ai.types.CommandAI.maxCommandQueueSize">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="avoidInterval">
+<h3>avoidInterval</h3>
+<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">avoidInterval</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list">
+<li><a href="../../../constant-values.html#mindustry.ai.types.CommandAI.avoidInterval">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -292,31 +357,13 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="vecOut">
 <h3>vecOut</h3>
-<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type"><a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></span>&nbsp;<span class="element-name">vecOut</span></div>
+<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type">arc.math.geom.Vec2</span>&nbsp;<span class="element-name">vecOut</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="flockVec">
-<h3>flockVec</h3>
-<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type"><a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></span>&nbsp;<span class="element-name">flockVec</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="separation">
-<h3>separation</h3>
-<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type"><a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></span>&nbsp;<span class="element-name">separation</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="cohesion">
-<h3>cohesion</h3>
-<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type"><a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></span>&nbsp;<span class="element-name">cohesion</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="massCenter">
-<h3>massCenter</h3>
-<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type"><a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></span>&nbsp;<span class="element-name">massCenter</span></div>
+<section class="detail" id="vecMovePos">
+<h3>vecMovePos</h3>
+<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type">arc.math.geom.Vec2</span>&nbsp;<span class="element-name">vecMovePos</span></div>
 </section>
 </li>
 <li>
@@ -326,24 +373,99 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="tmpPayload">
+<h3>tmpPayload</h3>
+<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type"><a href="../../world/blocks/payloads/UnitPayload.html" title="class in mindustry.world.blocks.payloads">UnitPayload</a></span>&nbsp;<span class="element-name">tmpPayload</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="transferStateNone">
+<h3>transferStateNone</h3>
+<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">transferStateNone</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list">
+<li><a href="../../../constant-values.html#mindustry.ai.types.CommandAI.transferStateNone">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="transferStateLoad">
+<h3>transferStateLoad</h3>
+<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">transferStateLoad</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list">
+<li><a href="../../../constant-values.html#mindustry.ai.types.CommandAI.transferStateLoad">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="transferStateUnload">
+<h3>transferStateUnload</h3>
+<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">transferStateUnload</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list">
+<li><a href="../../../constant-values.html#mindustry.ai.types.CommandAI.transferStateUnload">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="commandQueue">
+<h3>commandQueue</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;arc.math.geom.Position&gt;</span>&nbsp;<span class="element-name">commandQueue</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="targetPos">
 <h3>targetPos</h3>
-<div class="member-signature"><span class="annotations"><a href="../../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></span>&nbsp;<span class="element-name">targetPos</span></div>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.math.geom.Vec2</span>&nbsp;<span class="element-name">targetPos</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="attackTarget">
 <h3>attackTarget</h3>
-<div class="member-signature"><span class="annotations"><a href="../../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+<div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">mindustry.gen.Teamc</span>&nbsp;<span class="element-name">attackTarget</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="group">
+<h3>group</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../UnitGroup.html" title="class in mindustry.ai">UnitGroup</a></span>&nbsp;<span class="element-name">group</span></div>
+<div class="block">Group of units that were all commanded to reach the same point.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="groupIndex">
+<h3>groupIndex</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">groupIndex</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="unreachableBuildings">
 <h3>unreachableBuildings</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../arc/struct/IntSeq.html" title="class in arc.struct">IntSeq</a></span>&nbsp;<span class="element-name">unreachableBuildings</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.IntSeq</span>&nbsp;<span class="element-name">unreachableBuildings</span></div>
 <div class="block">All encountered unreachable buildings of this AI. Why a sequence? Because contains() is very rarely called on it.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="readAttackTarget">
+<h3>readAttackTarget</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">readAttackTarget</span></div>
+<div class="block">ID of unit read as target. This is set up after reading. Do not access!</div>
 </section>
 </li>
 <li>
@@ -361,39 +483,51 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="lastTargetPos">
 <h3>lastTargetPos</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></span>&nbsp;<span class="element-name">lastTargetPos</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">arc.math.geom.Vec2</span>&nbsp;<span class="element-name">lastTargetPos</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="pathId">
-<h3>pathId</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">pathId</span></div>
+<section class="detail" id="blockingUnit">
+<h3>blockingUnit</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">blockingUnit</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="local">
-<h3>local</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;mindustry.gen.Unit&gt;</span>&nbsp;<span class="element-name">local</span></div>
+<section class="detail" id="timeSpentBlocked">
+<h3>timeSpentBlocked</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">timeSpentBlocked</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="flocked">
-<h3>flocked</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">flocked</span></div>
+<section class="detail" id="payloadPickupCooldown">
+<h3>payloadPickupCooldown</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">payloadPickupCooldown</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="transferState">
+<h3>transferState</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">transferState</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="stance">
+<h3>stance</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../UnitStance.html" title="class in mindustry.ai">UnitStance</a></span>&nbsp;<span class="element-name">stance</span></div>
+<div class="block">Stance, usually related to firing mode.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="command">
 <h3>command</h3>
-<div class="member-signature"><span class="annotations"><a href="../../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></span>&nbsp;<span class="element-name">command</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></span>&nbsp;<span class="element-name">command</span></div>
 <div class="block">Current command this unit is following.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="commandController">
 <h3>commandController</h3>
-<div class="member-signature"><span class="annotations"><a href="../../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+<div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></span>&nbsp;<span class="element-name">commandController</span></div>
 <div class="block">Current controller instance based on command.</div>
 </section>
@@ -401,7 +535,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="lastCommand">
 <h3>lastCommand</h3>
-<div class="member-signature"><span class="annotations"><a href="../../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+<div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></span>&nbsp;<span class="element-name">lastCommand</span></div>
 <div class="block">Last command type assigned. Used for detecting command changes.</div>
 </section>
@@ -474,9 +608,65 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="clearCommands()">
+<h3>clearCommands</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearCommands</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="findMainTarget(float,float,float,boolean,boolean)">
+<h3>findMainTarget</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">mindustry.gen.Teamc</span>&nbsp;<span class="element-name">findMainTarget</span><wbr><span class="parameters">(float&nbsp;x,
+ float&nbsp;y,
+ float&nbsp;range,
+ boolean&nbsp;air,
+ boolean&nbsp;ground)</span></div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="../../entities/units/AIController.html#findMainTarget(float,float,float,boolean,boolean)">findMainTarget</a></code>&nbsp;in class&nbsp;<code><a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="defaultBehavior()">
 <h3>defaultBehavior</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">defaultBehavior</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="removed(mindustry.gen.Unit)">
+<h3>removed</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removed</span><wbr><span class="parameters">(mindustry.gen.Unit&nbsp;unit)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="commandQueue(arc.math.geom.Position)">
+<h3>commandQueue</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">commandQueue</span><wbr><span class="parameters">(arc.math.geom.Position&nbsp;location)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="afterRead(mindustry.gen.Unit)">
+<h3>afterRead</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">afterRead</span><wbr><span class="parameters">(mindustry.gen.Unit&nbsp;unit)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../entities/units/UnitController.html#afterRead(mindustry.gen.Unit)">afterRead</a></code>&nbsp;in interface&nbsp;<code><a href="../../entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a></code></dd>
+<dt>Overrides:</dt>
+<dd><code><a href="../../entities/units/AIController.html#afterRead(mindustry.gen.Unit)">afterRead</a></code>&nbsp;in class&nbsp;<code><a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="shouldFire()">
+<h3>shouldFire</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">shouldFire</span>()</div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="../../entities/units/AIController.html#shouldFire()">shouldFire</a></code>&nbsp;in class&nbsp;<code><a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></code></dd>
+<dt>Returns:</dt>
+<dd>whether the unit should actually fire bullets (as opposed to just targeting something)</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -545,7 +735,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="commandPosition(arc.math.geom.Vec2)">
 <h3>commandPosition</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">commandPosition</span><wbr><span class="parameters">(<a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;pos)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">commandPosition</span><wbr><span class="parameters">(arc.math.geom.Vec2&nbsp;pos)</span></div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="../../entities/units/AIController.html#commandPosition(arc.math.geom.Vec2)">commandPosition</a></code>&nbsp;in class&nbsp;<code><a href="../../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a></code></dd>
@@ -555,7 +745,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="commandPosition(arc.math.geom.Vec2,boolean)">
 <h3>commandPosition</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">commandPosition</span><wbr><span class="parameters">(<a href="../../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a>&nbsp;pos,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">commandPosition</span><wbr><span class="parameters">(arc.math.geom.Vec2&nbsp;pos,
  boolean&nbsp;stopWhenInRange)</span></div>
 </section>
 </li>

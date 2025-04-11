@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../script.js"></script>
-<script type="text/javascript" src="../../script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -35,7 +35,6 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">Package</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
-<li><a href="../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../index-all.html">Index</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
@@ -71,9 +70,11 @@ loadScripts(document, 'script');</script>
 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">mindustry.game</a></div>
 <h1 title="Class MapObjectives.ShapeMarker" class="title">Class MapObjectives.ShapeMarker</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance"><a href="MapObjectives.ObjectiveMarker.html" title="class in mindustry.game">mindustry.game.MapObjectives.ObjectiveMarker</a>
+<div class="inheritance"><a href="MapObjectives.PosMarker.html" title="class in mindustry.game">mindustry.game.MapObjectives.PosMarker</a>
 <div class="inheritance">mindustry.game.MapObjectives.ShapeMarker</div>
+</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
@@ -83,7 +84,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public static class </span><span class="element-name type-name-label">MapObjectives.ShapeMarker</span>
-<span class="extends-implements">extends <a href="MapObjectives.ObjectiveMarker.html" title="class in mindustry.game">MapObjectives.ObjectiveMarker</a></span></div>
+<span class="extends-implements">extends <a href="MapObjectives.PosMarker.html" title="class in mindustry.game">MapObjectives.PosMarker</a></span></div>
 <div class="block">Displays a shape with an outline and color.</div>
 </section>
 <section class="summary">
@@ -97,17 +98,17 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
+<div class="col-first even-row-color"><code>arc.graphics.Color</code></div>
 <div class="col-second even-row-color"><code><a href="#color" class="member-name-link">color</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#fill" class="member-name-link">fill</a></code></div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#endAngle" class="member-name-link">endAngle</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#outline" class="member-name-link">outline</a></code></div>
+<div class="col-second even-row-color"><code><a href="#fill" class="member-name-link">fill</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#pos" class="member-name-link">pos</a></code></div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#outline" class="member-name-link">outline</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
 <div class="col-second even-row-color"><code><a href="#radius" class="member-name-link">radius</a></code></div>
@@ -119,12 +120,18 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#sides" class="member-name-link">sides</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#stroke" class="member-name-link">stroke</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#startAngle" class="member-name-link">startAngle</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#stroke" class="member-name-link">stroke</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
+<h3 id="fields-inherited-from-class-mindustry.game.MapObjectives.PosMarker">Fields inherited from class&nbsp;mindustry.game.<a href="MapObjectives.PosMarker.html" title="class in mindustry.game">MapObjectives.PosMarker</a></h3>
+<code><a href="MapObjectives.PosMarker.html#pos">pos</a></code></div>
+<div class="inherited-list">
 <h3 id="fields-inherited-from-class-mindustry.game.MapObjectives.ObjectiveMarker">Fields inherited from class&nbsp;mindustry.game.<a href="MapObjectives.ObjectiveMarker.html" title="class in mindustry.game">MapObjectives.ObjectiveMarker</a></h3>
-<code><a href="MapObjectives.ObjectiveMarker.html#wasAdded">wasAdded</a></code></div>
+<code><a href="MapObjectives.ObjectiveMarker.html#arrayIndex">arrayIndex</a>, <a href="MapObjectives.ObjectiveMarker.html#autoscale">autoscale</a>, <a href="MapObjectives.ObjectiveMarker.html#drawLayer">drawLayer</a>, <a href="MapObjectives.ObjectiveMarker.html#minimap">minimap</a>, <a href="MapObjectives.ObjectiveMarker.html#world">world</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -154,25 +161,31 @@ loadScripts(document, 'script');</script>
 <h2>Method Summary</h2>
 <div id="method-summary-table">
 <div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
-<div id="method-summary-table.tabpanel" role="tabpanel">
-<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#draw()" class="member-name-link">draw</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#control(mindustry.logic.LMarkerControl,double,double,double)" class="member-name-link">control</a><wbr>(<a href="../logic/LMarkerControl.html" title="enum class in mindustry.logic">LMarkerControl</a>&nbsp;type,
+ double&nbsp;p1,
+ double&nbsp;p2,
+ double&nbsp;p3)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Called in the overlay draw layer.</div>
+<div class="block">Control marker with world processor code.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#draw(float)" class="member-name-link">draw</a><wbr>(float&nbsp;scaleFactor)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.game.MapObjectives.ObjectiveMarker">Methods inherited from class&nbsp;mindustry.game.<a href="MapObjectives.ObjectiveMarker.html" title="class in mindustry.game">MapObjectives.ObjectiveMarker</a></h3>
-<code><a href="MapObjectives.ObjectiveMarker.html#added()">added</a>, <a href="MapObjectives.ObjectiveMarker.html#drawMinimap(mindustry.graphics.MinimapRenderer)">drawMinimap</a>, <a href="MapObjectives.ObjectiveMarker.html#fetchText(java.lang.String)">fetchText</a>, <a href="MapObjectives.ObjectiveMarker.html#removed()">removed</a>, <a href="MapObjectives.ObjectiveMarker.html#typeName()">typeName</a></code></div>
+<code><a href="MapObjectives.ObjectiveMarker.html#fetchText(java.lang.String)">fetchText</a>, <a href="MapObjectives.ObjectiveMarker.html#setText(java.lang.String,boolean)">setText</a>, <a href="MapObjectives.ObjectiveMarker.html#setTexture(java.lang.String)">setTexture</a>, <a href="MapObjectives.ObjectiveMarker.html#typeName()">typeName</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -184,12 +197,6 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="pos">
-<h3>pos</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/math/geom/Vec2.html" title="class in arc.math.geom">Vec2</a></span>&nbsp;<span class="element-name">pos</span></div>
-</section>
-</li>
 <li>
 <section class="detail" id="radius">
 <h3>radius</h3>
@@ -206,6 +213,18 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="stroke">
 <h3>stroke</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">stroke</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="startAngle">
+<h3>startAngle</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">startAngle</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="endAngle">
+<h3>endAngle</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">endAngle</span></div>
 </section>
 </li>
 <li>
@@ -229,7 +248,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="color">
 <h3>color</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></span>&nbsp;<span class="element-name">color</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.Color</span>&nbsp;<span class="element-name">color</span></div>
 </section>
 </li>
 </ul>
@@ -271,14 +290,27 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="draw()">
+<section class="detail" id="draw(float)">
 <h3>draw</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">draw</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="MapObjectives.ObjectiveMarker.html#draw()">MapObjectives.ObjectiveMarker</a></code></span></div>
-<div class="block">Called in the overlay draw layer.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">draw</span><wbr><span class="parameters">(float&nbsp;scaleFactor)</span></div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code><a href="MapObjectives.ObjectiveMarker.html#draw()">draw</a></code>&nbsp;in class&nbsp;<code><a href="MapObjectives.ObjectiveMarker.html" title="class in mindustry.game">MapObjectives.ObjectiveMarker</a></code></dd>
+<dd><code><a href="MapObjectives.ObjectiveMarker.html#draw(float)">draw</a></code>&nbsp;in class&nbsp;<code><a href="MapObjectives.ObjectiveMarker.html" title="class in mindustry.game">MapObjectives.ObjectiveMarker</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="control(mindustry.logic.LMarkerControl,double,double,double)">
+<h3>control</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">control</span><wbr><span class="parameters">(<a href="../logic/LMarkerControl.html" title="enum class in mindustry.logic">LMarkerControl</a>&nbsp;type,
+ double&nbsp;p1,
+ double&nbsp;p2,
+ double&nbsp;p3)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="MapObjectives.ObjectiveMarker.html#control(mindustry.logic.LMarkerControl,double,double,double)">MapObjectives.ObjectiveMarker</a></code></span></div>
+<div class="block">Control marker with world processor code. Ignores NaN (null) values.</div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="MapObjectives.PosMarker.html#control(mindustry.logic.LMarkerControl,double,double,double)">control</a></code>&nbsp;in class&nbsp;<code><a href="MapObjectives.PosMarker.html" title="class in mindustry.game">MapObjectives.PosMarker</a></code></dd>
 </dl>
 </section>
 </li>

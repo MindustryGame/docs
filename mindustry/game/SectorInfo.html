@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../script.js"></script>
-<script type="text/javascript" src="../../script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -35,7 +35,6 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">Package</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
-<li><a href="../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../index-all.html">Index</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
@@ -71,13 +70,13 @@ loadScripts(document, 'script');</script>
 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">mindustry.game</a></div>
 <h1 title="Class SectorInfo" class="title">Class SectorInfo</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance">mindustry.game.SectorInfo</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">SectorInfo</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -155,7 +154,7 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">Launch destination.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/struct/ObjectMap.html" title="class in arc.struct">ObjectMap</a>&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</code></div>
+<div class="col-first even-row-color"><code>arc.struct.ObjectMap&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#export" class="member-name-link">export</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Export statistics.</div>
@@ -170,10 +169,26 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Whether this sector has any enemy spawns.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#icon" class="member-name-link">icon</a></code></div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#hasWorldProcessor" class="member-name-link">hasWorldProcessor</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Whether a world processor is on this map - implies that the map will get cleared.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#icon" class="member-name-link">icon</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Displayed icon.</div>
+</div>
+<div class="col-first odd-row-color"><code>arc.struct.ObjectFloatMap&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#importCooldownTimers" class="member-name-link">importCooldownTimers</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float[]</code></div>
+<div class="col-second even-row-color"><code><a href="#importRateCache" class="member-name-link">importRateCache</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>arc.struct.ObjectMap&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#imports" class="member-name-link">imports</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Import statistics, based on what launch pads are actually receiving.</div>
 </div>
 <div class="col-first even-row-color"><code><a href="../type/ItemSeq.html" title="class in mindustry.type">ItemSeq</a></code></div>
 <div class="col-second even-row-color"><code><a href="#items" class="member-name-link">items</a></code></div>
@@ -190,7 +205,7 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">How many minutes this sector has been captured.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#name" class="member-name-link">name</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Display name.</div>
@@ -200,17 +215,17 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Sector that was launched from.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/struct/ObjectMap.html" title="class in arc.struct">ObjectMap</a>&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</code></div>
+<div class="col-first odd-row-color"><code>arc.struct.ObjectMap&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#production" class="member-name-link">production</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Core input statistics.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/struct/ObjectMap.html" title="class in arc.struct">ObjectMap</a>&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</code></div>
+<div class="col-first even-row-color"><code>arc.struct.ObjectMap&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#rawProduction" class="member-name-link">rawProduction</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Raw item production statistics.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a>&gt;</code></div>
+<div class="col-first odd-row-color"><code>arc.struct.Seq&lt;<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#resources" class="member-name-link">resources</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Resources known to occur at this sector.</div>
@@ -259,26 +274,6 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#wave" class="member-name-link">wave</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Wave # from state</div>
-</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#waveDpsBase" class="member-name-link">waveDpsBase</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Special variables for simulation.</div>
-</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#waveDpsSlope" class="member-name-link">waveDpsSlope</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Special variables for simulation.</div>
-</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#waveHealthBase" class="member-name-link">waveHealthBase</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Special variables for simulation.</div>
-</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#waveHealthSlope" class="member-name-link">waveHealthSlope</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Special variables for simulation.</div>
 </div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
 <div class="col-second odd-row-color"><code><a href="#waves" class="member-name-link">waves</a></code></div>
@@ -332,8 +327,8 @@ loadScripts(document, 'script');</script>
 <h2>Method Summary</h2>
 <div id="method-summary-table">
 <div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
-<div id="method-summary-table.tabpanel" role="tabpanel">
-<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
@@ -342,35 +337,45 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#eachImport(mindustry.type.Planet,arc.func.Cons)" class="member-name-link">eachImport</a><wbr>(<a href="../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet,
- <a href="../../arc/func/Cons.html" title="interface in arc.func">Cons</a>&lt;<a href="../type/Sector.html" title="class in mindustry.type">Sector</a>&gt;&nbsp;cons)</code></div>
+ arc.func.Cons&lt;<a href="../type/Sector.html" title="class in mindustry.type">Sector</a>&gt;&nbsp;cons)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Iterates through every sector this one imports from.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../arc/struct/ObjectFloatMap.html" title="class in arc.struct">ObjectFloatMap</a>&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>arc.struct.ObjectFloatMap&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportRates()" class="member-name-link">exportRates</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExport(mindustry.type.Item)" class="member-name-link">getExport</a><wbr>(<a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../type/Sector.html" title="class in mindustry.type">Sector</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRealDestination()" class="member-name-link">getRealDestination</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getImportRate(mindustry.type.Planet,mindustry.type.Item)" class="member-name-link">getImportRate</a><wbr>(<a href="../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet,
+ <a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleCoreItem(mindustry.type.Item,int)" class="member-name-link">handleCoreItem</a><wbr>(<a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getImportRates(mindustry.type.Planet)" class="member-name-link">getImportRates</a><wbr>(<a href="../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleCoreItem(mindustry.type.Item,int)" class="member-name-link">handleCoreItem</a><wbr>(<a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item,
  int&nbsp;amount)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Handles core item changes.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleItemExport(mindustry.type.Item,int)" class="member-name-link">handleItemExport</a><wbr>(<a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleItemExport(mindustry.type.Item,int)" class="member-name-link">handleItemExport</a><wbr>(<a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item,
  int&nbsp;amount)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Updates export statistics.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleItemExport(mindustry.type.ItemStack)" class="member-name-link">handleItemExport</a><wbr>(<a href="../type/ItemStack.html" title="class in mindustry.type">ItemStack</a>&nbsp;stack)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Updates export statistics.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleItemExport(mindustry.type.ItemStack)" class="member-name-link">handleItemExport</a><wbr>(<a href="../type/ItemStack.html" title="class in mindustry.type">ItemStack</a>&nbsp;stack)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleItemImport(mindustry.type.Item,int)" class="member-name-link">handleItemImport</a><wbr>(<a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item,
+ int&nbsp;amount)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Updates export statistics.</div>
+<div class="block">Updates import statistics.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleProduction(mindustry.type.Item,int)" class="member-name-link">handleProduction</a><wbr>(<a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item,
@@ -378,14 +383,20 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Handles raw production stats.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../arc/struct/ObjectMap.html" title="class in arc.struct">ObjectMap</a>&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importStats(mindustry.type.Planet)" class="member-name-link">importStats</a><wbr>(<a href="../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasExport(mindustry.type.Item)" class="member-name-link">hasExport</a><wbr>(<a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepare()" class="member-name-link">prepare</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>arc.struct.ObjectMap&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#importStats(mindustry.type.Planet)" class="member-name-link">importStats</a><wbr>(<a href="../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepare()" class="member-name-link">prepare</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Prepare data for writing to a save.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshImportRates(mindustry.type.Planet)" class="member-name-link">refreshImportRates</a><wbr>(<a href="../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -400,8 +411,8 @@ loadScripts(document, 'script');</script>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -416,22 +427,29 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="production">
 <h3>production</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/ObjectMap.html" title="class in arc.struct">ObjectMap</a>&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</span>&nbsp;<span class="element-name">production</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.ObjectMap&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</span>&nbsp;<span class="element-name">production</span></div>
 <div class="block">Core input statistics.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="rawProduction">
 <h3>rawProduction</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/ObjectMap.html" title="class in arc.struct">ObjectMap</a>&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</span>&nbsp;<span class="element-name">rawProduction</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.ObjectMap&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</span>&nbsp;<span class="element-name">rawProduction</span></div>
 <div class="block">Raw item production statistics.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="export">
 <h3>export</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/ObjectMap.html" title="class in arc.struct">ObjectMap</a>&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</span>&nbsp;<span class="element-name">export</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.ObjectMap&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</span>&nbsp;<span class="element-name">export</span></div>
 <div class="block">Export statistics.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="imports">
+<h3>imports</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.ObjectMap&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</span>&nbsp;<span class="element-name">imports</span></div>
+<div class="block">Import statistics, based on what launch pads are actually receiving.</div>
 </section>
 </li>
 <li>
@@ -463,6 +481,13 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="hasWorldProcessor">
+<h3>hasWorldProcessor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasWorldProcessor</span></div>
+<div class="block">Whether a world processor is on this map - implies that the map will get cleared.</div>
+</section>
+</li>
+<li>
 <section class="detail" id="wasCaptured">
 <h3>wasCaptured</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">wasCaptured</span></div>
@@ -472,7 +497,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="origin">
 <h3>origin</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+<div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../type/Sector.html" title="class in mindustry.type">Sector</a></span>&nbsp;<span class="element-name">origin</span></div>
 <div class="block">Sector that was launched from.</div>
 </section>
@@ -480,7 +505,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="destination">
 <h3>destination</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+<div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../type/Sector.html" title="class in mindustry.type">Sector</a></span>&nbsp;<span class="element-name">destination</span></div>
 <div class="block">Launch destination.</div>
 </section>
@@ -488,7 +513,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="resources">
 <h3>resources</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a>&gt;</span>&nbsp;<span class="element-name">resources</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a>&gt;</span>&nbsp;<span class="element-name">resources</span></div>
 <div class="block">Resources known to occur at this sector.</div>
 </section>
 </li>
@@ -579,23 +604,23 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="name">
 <h3>name</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">name</span></div>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">name</span></div>
 <div class="block">Display name.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="icon">
 <h3>icon</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">icon</span></div>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">icon</span></div>
 <div class="block">Displayed icon.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="contentIcon">
 <h3>contentIcon</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+<div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></span>&nbsp;<span class="element-name">contentIcon</span></div>
 <div class="block">Displayed icon, as content.</div>
 </section>
@@ -612,13 +637,6 @@ loadScripts(document, 'script');</script>
 <h3>shown</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">shown</span></div>
 <div class="block">Whether this sector was indicated to the player or not.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastImported">
-<h3>lastImported</h3>
-<div class="member-signature"><span class="modifiers">public transient</span>&nbsp;<span class="return-type"><a href="../type/ItemSeq.html" title="class in mindustry.type">ItemSeq</a></span>&nbsp;<span class="element-name">lastImported</span></div>
-<div class="block">Temporary seq for last imported items. Do not use.</div>
 </section>
 </li>
 <li>
@@ -639,34 +657,6 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="sumDps">
 <h3>sumDps</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">sumDps</span></div>
-<div class="block">Special variables for simulation.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="waveHealthBase">
-<h3>waveHealthBase</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">waveHealthBase</span></div>
-<div class="block">Special variables for simulation.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="waveHealthSlope">
-<h3>waveHealthSlope</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">waveHealthSlope</span></div>
-<div class="block">Special variables for simulation.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="waveDpsBase">
-<h3>waveDpsBase</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">waveDpsBase</span></div>
-<div class="block">Special variables for simulation.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="waveDpsSlope">
-<h3>waveDpsSlope</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">waveDpsSlope</span></div>
 <div class="block">Special variables for simulation.</div>
 </section>
 </li>
@@ -703,6 +693,26 @@ loadScripts(document, 'script');</script>
 <h3>bossWave</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">bossWave</span></div>
 <div class="block">Wave where first boss shows up.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="importCooldownTimers">
+<h3>importCooldownTimers</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.ObjectFloatMap&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>&gt;</span>&nbsp;<span class="element-name">importCooldownTimers</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="importRateCache">
+<h3>importRateCache</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public transient</span>&nbsp;<span class="return-type">float[]</span>&nbsp;<span class="element-name">importRateCache</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="lastImported">
+<h3>lastImported</h3>
+<div class="member-signature"><span class="modifiers">public transient</span>&nbsp;<span class="return-type"><a href="../type/ItemSeq.html" title="class in mindustry.type">ItemSeq</a></span>&nbsp;<span class="element-name">lastImported</span></div>
+<div class="block">Temporary seq for last imported items. Do not use.</div>
 </section>
 </li>
 </ul>
@@ -744,16 +754,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getRealDestination()">
-<h3>getRealDestination</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../type/Sector.html" title="class in mindustry.type">Sector</a></span>&nbsp;<span class="element-name">getRealDestination</span>()</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>the real location items go when launched on this sector</dd>
-</dl>
-</section>
-</li>
-<li>
 <section class="detail" id="handleItemExport(mindustry.type.ItemStack)">
 <h3>handleItemExport</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">handleItemExport</span><wbr><span class="parameters">(<a href="../type/ItemStack.html" title="class in mindustry.type">ItemStack</a>&nbsp;stack)</span></div>
@@ -769,9 +769,46 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="handleItemImport(mindustry.type.Item,int)">
+<h3>handleItemImport</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">handleItemImport</span><wbr><span class="parameters">(<a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item,
+ int&nbsp;amount)</span></div>
+<div class="block">Updates import statistics.</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getExport(mindustry.type.Item)">
 <h3>getExport</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getExport</span><wbr><span class="parameters">(<a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="hasExport(mindustry.type.Item)">
+<h3>hasExport</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasExport</span><wbr><span class="parameters">(<a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="refreshImportRates(mindustry.type.Planet)">
+<h3>refreshImportRates</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">refreshImportRates</span><wbr><span class="parameters">(<a href="../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="getImportRates(mindustry.type.Planet)">
+<h3>getImportRates</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float[]</span>&nbsp;<span class="element-name">getImportRates</span><wbr><span class="parameters">(<a href="../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="getImportRate(mindustry.type.Planet,mindustry.type.Item)">
+<h3>getImportRate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getImportRate</span><wbr><span class="parameters">(<a href="../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet,
+ <a href="../type/Item.html" title="class in mindustry.type">Item</a>&nbsp;item)</span></div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the import rate of an item as item/second. This is the *raw* max import rate, not what landing pads are actually using.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -799,7 +836,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="exportRates()">
 <h3>exportRates</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/ObjectFloatMap.html" title="class in arc.struct">ObjectFloatMap</a>&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>&gt;</span>&nbsp;<span class="element-name">exportRates</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.ObjectFloatMap&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>&gt;</span>&nbsp;<span class="element-name">exportRates</span>()</div>
 </section>
 </li>
 <li>
@@ -811,7 +848,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="importStats(mindustry.type.Planet)">
 <h3>importStats</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/ObjectMap.html" title="class in arc.struct">ObjectMap</a>&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</span>&nbsp;<span class="element-name">importStats</span><wbr><span class="parameters">(<a href="../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.ObjectMap&lt;<a href="../type/Item.html" title="class in mindustry.type">Item</a>,<wbr><a href="SectorInfo.ExportStat.html" title="class in mindustry.game">SectorInfo.ExportStat</a>&gt;</span>&nbsp;<span class="element-name">importStats</span><wbr><span class="parameters">(<a href="../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet)</span></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a newly allocated map with import statistics. Use sparingly.</dd>
@@ -822,7 +859,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="eachImport(mindustry.type.Planet,arc.func.Cons)">
 <h3>eachImport</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">eachImport</span><wbr><span class="parameters">(<a href="../type/Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet,
- <a href="../../arc/func/Cons.html" title="interface in arc.func">Cons</a>&lt;<a href="../type/Sector.html" title="class in mindustry.type">Sector</a>&gt;&nbsp;cons)</span></div>
+ arc.func.Cons&lt;<a href="../type/Sector.html" title="class in mindustry.type">Sector</a>&gt;&nbsp;cons)</span></div>
 <div class="block">Iterates through every sector this one imports from.</div>
 </section>
 </li>

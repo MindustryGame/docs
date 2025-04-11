@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../script.js"></script>
-<script type="text/javascript" src="../../script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -35,7 +35,6 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">Package</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
-<li><a href="../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../index-all.html">Index</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
@@ -71,7 +70,7 @@ loadScripts(document, 'script');</script>
 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">mindustry.type</a></div>
 <h1 title="Class UnitType" class="title">Class UnitType</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance"><a href="../ctype/Content.html" title="class in mindustry.ctype">mindustry.ctype.Content</a>
 <div class="inheritance"><a href="../ctype/MappableContent.html" title="class in mindustry.ctype">mindustry.ctype.MappableContent</a>
 <div class="inheritance"><a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">mindustry.ctype.UnlockableContent</a>
@@ -83,7 +82,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a>&gt;</code>, <code><a href="../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a>&gt;</code>, <code><a href="../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
@@ -123,7 +122,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/abilities/Ability.html" title="class in mindustry.entities.abilities">Ability</a>&gt;</code></div>
+<div class="col-first even-row-color"><code>arc.struct.Seq&lt;<a href="../entities/abilities/Ability.html" title="class in mindustry.entities.abilities">Ability</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#abilities" class="member-name-link">abilities</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">list of "abilities", which are various behaviors that update each frame</div>
@@ -133,7 +132,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;? extends <a href="../entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a>&gt;</code></div>
+<div class="col-first even-row-color"><code>arc.func.Prov&lt;? extends <a href="../entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#aiController" class="member-name-link">aiController</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The default AI controller to assign on creation.</div>
@@ -144,46 +143,56 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="block">movement speed (world units/t)</div>
 </div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#allowedInPayloads" class="member-name-link">allowedInPayloads</a></code></div>
+<div class="col-second even-row-color"><code><a href="#allowChangeCommands" class="member-name-link">allowChangeCommands</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+<div class="block">A value of false is used to hide command changing UI in unit factories.</div>
 </div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#allowLegStep" class="member-name-link">allowLegStep</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#allowedInPayloads" class="member-name-link">allowedInPayloads</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#alwaysCreateOutline" class="member-name-link">alwaysCreateOutline</a></code></div>
+<div class="col-second even-row-color"><code><a href="#allowLegStep" class="member-name-link">allowLegStep</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#alwaysShootWhenMoving" class="member-name-link">alwaysShootWhenMoving</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#alwaysCreateOutline" class="member-name-link">alwaysCreateOutline</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#ammoCapacity" class="member-name-link">ammoCapacity</a></code></div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#alwaysShootWhenMoving" class="member-name-link">alwaysShootWhenMoving</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#ammoCapacity" class="member-name-link">ammoCapacity</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">amount of ammo this unit can hold (if the rule is enabled); &lt;0 to determine based on weapon fire rate.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="AmmoType.html" title="interface in mindustry.type">AmmoType</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#ammoType" class="member-name-link">ammoType</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="AmmoType.html" title="interface in mindustry.type">AmmoType</a></code></div>
+<div class="col-second even-row-color"><code><a href="#ammoType" class="member-name-link">ammoType</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">ammo this unit uses, if that system is enabled.</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#armor" class="member-name-link">armor</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#armor" class="member-name-link">armor</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">movement speed (world units/t)</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#autoDropBombs" class="member-name-link">autoDropBombs</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
 <div class="col-second odd-row-color"><code><a href="#autoFindTarget" class="member-name-link">autoFindTarget</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-first even-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
 <div class="col-second even-row-color"><code><a href="#baseJointRegion" class="member-name-link">baseJointRegion</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
@@ -191,7 +200,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">total length of a leg (both segments)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-first even-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
 <div class="col-second even-row-color"><code><a href="#baseRegion" class="member-name-link">baseRegion</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
@@ -205,120 +214,130 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="block">movement speed (world units/t)</div>
 </div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#bounded" class="member-name-link">bounded</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#boostWhenBuilding" class="member-name-link">boostWhenBuilding</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#bounded" class="member-name-link">bounded</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#buildBeamOffset" class="member-name-link">buildBeamOffset</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">movement speed (world units/t)</div>
+</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#buildBeamOffset" class="member-name-link">buildBeamOffset</a></code></div>
+<div class="col-second even-row-color"><code><a href="#buildRange" class="member-name-link">buildRange</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#buildRange" class="member-name-link">buildRange</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#buildSpeed" class="member-name-link">buildSpeed</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#buildSpeed" class="member-name-link">buildSpeed</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">movement speed (world units/t)</div>
-</div>
-<div class="col-first odd-row-color"><code>protected float</code></div>
-<div class="col-second odd-row-color"><code><a href="#buildTime" class="member-name-link">buildTime</a></code></div>
+<div class="col-first even-row-color"><code>protected float</code></div>
+<div class="col-second even-row-color"><code><a href="#buildTime" class="member-name-link">buildTime</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected <a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</code></div>
+<div class="col-second odd-row-color"><code><a href="#cachedRequirements" class="member-name-link">cachedRequirements</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected <a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</code></div>
-<div class="col-second even-row-color"><code><a href="#cachedRequirements" class="member-name-link">cachedRequirements</a></code></div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#canAttack" class="member-name-link">canAttack</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#canBoost" class="member-name-link">canBoost</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#canDrown" class="member-name-link">canDrown</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#canHeal" class="member-name-link">canHeal</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first even-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
+<div class="col-second even-row-color"><code><a href="#cellRegion" class="member-name-link">cellRegion</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#canAttack" class="member-name-link">canAttack</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#circleTarget" class="member-name-link">circleTarget</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#canBoost" class="member-name-link">canBoost</a></code></div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#clipSize" class="member-name-link">clipSize</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
-</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#canDrown" class="member-name-link">canDrown</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
-</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#canHeal" class="member-name-link">canHeal</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
-</div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#cellRegion" class="member-name-link">cellRegion</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#circleTarget" class="member-name-link">circleTarget</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
-</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#clipSize" class="member-name-link">clipSize</a></code></div>
-<div class="col-last odd-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../ai/UnitCommand.html" title="class in mindustry.ai">UnitCommand</a>[]</code></div>
-<div class="col-second even-row-color"><code><a href="#commands" class="member-name-link">commands</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>arc.struct.Seq&lt;<a href="../ai/UnitCommand.html" title="class in mindustry.ai">UnitCommand</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#commands" class="member-name-link">commands</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Commands available to this unit through RTS controls.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;? extends mindustry.gen.Unit&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#constructor" class="member-name-link">constructor</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>arc.func.Prov&lt;? extends mindustry.gen.Unit&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#constructor" class="member-name-link">constructor</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Creates a new instance of this unit class.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/func/Func.html" title="interface in arc.func">Func</a>&lt;mindustry.gen.Unit,<wbr>? extends <a href="../entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#controller" class="member-name-link">controller</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>arc.func.Func&lt;mindustry.gen.Unit,<wbr>? extends <a href="../entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#controller" class="member-name-link">controller</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function that chooses AI controller based on unit entity.</div>
 </div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#coreUnitDock" class="member-name-link">coreUnitDock</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#crashDamageMultiplier" class="member-name-link">crashDamageMultiplier</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">movement speed (world units/t)</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#crawlSlowdown" class="member-name-link">crawlSlowdown</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">magnitude of sine offset between segments</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#crawlSlowdownFrac" class="member-name-link">crawlSlowdownFrac</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">magnitude of sine offset between segments</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#createScorch" class="member-name-link">createScorch</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#coreUnitDock" class="member-name-link">coreUnitDock</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#createWreck" class="member-name-link">createWreck</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#crashDamageMultiplier" class="member-name-link">crashDamageMultiplier</a></code></div>
+<div class="col-second even-row-color"><code><a href="#crushDamage" class="member-name-link">crushDamage</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">magnitude of sine offset between segments</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="../entities/Effect.html" title="class in mindustry.entities">Effect</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#deathExplosionEffect" class="member-name-link">deathExplosionEffect</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">effect created when this unit dies</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#deathShake" class="member-name-link">deathShake</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#crawlSlowdown" class="member-name-link">crawlSlowdown</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">magnitude of sine offset between segments</div>
-</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#crawlSlowdownFrac" class="member-name-link">crawlSlowdownFrac</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">magnitude of sine offset between segments</div>
-</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#createScorch" class="member-name-link">createScorch</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
-</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#createWreck" class="member-name-link">createWreck</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
-</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#crushDamage" class="member-name-link">crushDamage</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">magnitude of sine offset between segments</div>
-</div>
-<div class="col-first even-row-color"><code><a href="../entities/Effect.html" title="class in mindustry.entities">Effect</a></code></div>
-<div class="col-second even-row-color"><code><a href="#deathExplosionEffect" class="member-name-link">deathExplosionEffect</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">effect created when this unit dies</div>
-</div>
-<div class="col-first odd-row-color"><code><a href="../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></code></div>
+<div class="col-first odd-row-color"><code>arc.audio.Sound</code></div>
 <div class="col-second odd-row-color"><code><a href="#deathSound" class="member-name-link">deathSound</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">sound played when this unit explodes (*not* when it is shot down)</div>
@@ -359,12 +378,22 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#drawMinimap" class="member-name-link">drawMinimap</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#drawMineBeam" class="member-name-link">drawMineBeam</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#drawShields" class="member-name-link">drawShields</a></code></div>
+<div class="col-second even-row-color"><code><a href="#drawMinimap" class="member-name-link">drawMinimap</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#drawShields" class="member-name-link">drawShields</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#drawSoftShadow" class="member-name-link">drawSoftShadow</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
@@ -373,12 +402,22 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#emitWalkEffect" class="member-name-link">emitWalkEffect</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Whether to emit a splashing effect in water (fasle implies emitWalkSound false).</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#emitWalkSound" class="member-name-link">emitWalkSound</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Whether to emit a splashing noise in water.</div>
+</div>
+<div class="col-first even-row-color"><code>arc.graphics.Color</code></div>
 <div class="col-second even-row-color"><code><a href="#engineColor" class="member-name-link">engineColor</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">override for all engine colors</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
+<div class="col-first odd-row-color"><code>arc.graphics.Color</code></div>
 <div class="col-second odd-row-color"><code><a href="#engineColorInner" class="member-name-link">engineColorInner</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">color for inner portions of engines</div>
@@ -393,7 +432,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="UnitType.UnitEngine.html" title="class in mindustry.type">UnitType.UnitEngine</a>&gt;</code></div>
+<div class="col-first even-row-color"><code>arc.struct.Seq&lt;<a href="UnitType.UnitEngine.html" title="class in mindustry.type">UnitType.UnitEngine</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#engines" class="member-name-link">engines</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">list of engines, or "thrusters"</div>
@@ -451,17 +490,27 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">TODO neither of these appear to do much</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#flying" class="member-name-link">flying</a></code></div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><a href="#flowfieldPathType" class="member-name-link">flowfieldPathType</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Cost type ID for flow field/enemy AI pathfinding.</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#flying" class="member-name-link">flying</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#flyingLayer" class="member-name-link">flyingLayer</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">movement speed (world units/t)</div>
 </div>
 <div class="col-first odd-row-color"><code>float</code></div>
 <div class="col-second odd-row-color"><code><a href="#fogRadius" class="member-name-link">fogRadius</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-first even-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
 <div class="col-second even-row-color"><code><a href="#footRegion" class="member-name-link">footRegion</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
@@ -469,63 +518,73 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#groundLayer" class="member-name-link">groundLayer</a></code></div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#generateFullIcon" class="member-name-link">generateFullIcon</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#groundLayer" class="member-name-link">groundLayer</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#healColor" class="member-name-link">healColor</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>arc.graphics.Color</code></div>
+<div class="col-second even-row-color"><code><a href="#healColor" class="member-name-link">healColor</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">color that this unit flashes when getting healed (if healFlash is true)</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#healFlash" class="member-name-link">healFlash</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#healFlash" class="member-name-link">healFlash</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#health" class="member-name-link">health</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#health" class="member-name-link">health</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#hidden" class="member-name-link">hidden</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#hidden" class="member-name-link">hidden</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#hitSize" class="member-name-link">hitSize</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#hitSize" class="member-name-link">hitSize</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#hittable" class="member-name-link">hittable</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#hittable" class="member-name-link">hittable</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#homingDelay" class="member-name-link">homingDelay</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#homingDelay" class="member-name-link">homingDelay</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">ticks that must pass before this missile starts homing.</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#hoverable" class="member-name-link">hoverable</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
-</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#hovering" class="member-name-link">hovering</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#hoverable" class="member-name-link">hoverable</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/struct/ObjectSet.html" title="class in arc.struct">ObjectSet</a>&lt;<a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#immunities" class="member-name-link">immunities</a></code></div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#hovering" class="member-name-link">hovering</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first odd-row-color"><code>arc.struct.ObjectSet&lt;<a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#immunities" class="member-name-link">immunities</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">None of the status effects in this set can be applied to this unit.</div>
 </div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#internal" class="member-name-link">internal</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#internal" class="member-name-link">internal</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#internalGenerateSprites" class="member-name-link">internalGenerateSprites</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
@@ -539,7 +598,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">amount of items this unit can carry; &lt;0 to determine based on hitSize.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-first even-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
 <div class="col-second even-row-color"><code><a href="#itemCircleRegion" class="member-name-link">itemCircleRegion</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
@@ -547,7 +606,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-first even-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
 <div class="col-second even-row-color"><code><a href="#jointRegion" class="member-name-link">jointRegion</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
@@ -560,176 +619,186 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last even-row-color">
 <div class="block">total length of a leg (both segments)</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-first odd-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
 <div class="col-second odd-row-color"><code><a href="#legBaseRegion" class="member-name-link">legBaseRegion</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#legContinuousMove" class="member-name-link">legContinuousMove</a></code></div>
+<div class="col-second even-row-color"><code><a href="#legBaseUnder" class="member-name-link">legBaseUnder</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">If true, the base (further away) leg region is drawn under instead of over.</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#legContinuousMove" class="member-name-link">legContinuousMove</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">If true, legs always try to move around even when the unit is not moving (leads to more natural behavior)</div>
 </div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#legCount" class="member-name-link">legCount</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><a href="#legCount" class="member-name-link">legCount</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">number of legs this unit has (must have the correct type to function!)</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#legExtension" class="member-name-link">legExtension</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">total length of a leg (both segments)</div>
-</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#legForwardScl" class="member-name-link">legForwardScl</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#legExtension" class="member-name-link">legExtension</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">total length of a leg (both segments)</div>
 </div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#legGroupSize" class="member-name-link">legGroupSize</a></code></div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#legForwardScl" class="member-name-link">legForwardScl</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">total length of a leg (both segments)</div>
+</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#legGroupSize" class="member-name-link">legGroupSize</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">size of groups in which legs move.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#legLength" class="member-name-link">legLength</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">total length of a leg (both segments)</div>
-</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#legLengthScl" class="member-name-link">legLengthScl</a></code></div>
+<div class="col-second even-row-color"><code><a href="#legLength" class="member-name-link">legLength</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">total length of a leg (both segments)</div>
 </div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#legMaxLength" class="member-name-link">legMaxLength</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#legLengthScl" class="member-name-link">legLengthScl</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">total length of a leg (both segments)</div>
 </div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#legMinLength" class="member-name-link">legMinLength</a></code></div>
+<div class="col-second even-row-color"><code><a href="#legMaxLength" class="member-name-link">legMaxLength</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">total length of a leg (both segments)</div>
 </div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#legMoveSpace" class="member-name-link">legMoveSpace</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#legMinLength" class="member-name-link">legMinLength</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">total length of a leg (both segments)</div>
 </div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#legPairOffset" class="member-name-link">legPairOffset</a></code></div>
+<div class="col-second even-row-color"><code><a href="#legMoveSpace" class="member-name-link">legMoveSpace</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">total length of a leg (both segments)</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#legPhysicsLayer" class="member-name-link">legPhysicsLayer</a></code></div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#legPairOffset" class="member-name-link">legPairOffset</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">total length of a leg (both segments)</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#legPhysicsLayer" class="member-name-link">legPhysicsLayer</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
-<div class="col-second even-row-color"><code><a href="#legRegion" class="member-name-link">legRegion</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#legSpeed" class="member-name-link">legSpeed</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">total length of a leg (both segments)</div>
-</div>
+<div class="col-first odd-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
+<div class="col-second odd-row-color"><code><a href="#legRegion" class="member-name-link">legRegion</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#legSplashDamage" class="member-name-link">legSplashDamage</a></code></div>
+<div class="col-second even-row-color"><code><a href="#legSpeed" class="member-name-link">legSpeed</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">total length of a leg (both segments)</div>
 </div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#legSplashRange" class="member-name-link">legSplashRange</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#legSplashDamage" class="member-name-link">legSplashDamage</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">total length of a leg (both segments)</div>
 </div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#legStraightLength" class="member-name-link">legStraightLength</a></code></div>
+<div class="col-second even-row-color"><code><a href="#legSplashRange" class="member-name-link">legSplashRange</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">total length of a leg (both segments)</div>
 </div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#legStraightness" class="member-name-link">legStraightness</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#legStraightLength" class="member-name-link">legStraightLength</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">total length of a leg (both segments)</div>
 </div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#lifetime" class="member-name-link">lifetime</a></code></div>
+<div class="col-second even-row-color"><code><a href="#legStraightness" class="member-name-link">legStraightness</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">total length of a leg (both segments)</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#lifetime" class="member-name-link">lifetime</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">lifetime of this missile.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#lightColor" class="member-name-link">lightColor</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>arc.graphics.Color</code></div>
+<div class="col-second even-row-color"><code><a href="#lightColor" class="member-name-link">lightColor</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Color of light that this unit produces when lighting is enabled in the map.</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#lightOpacity" class="member-name-link">lightOpacity</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">movement speed (world units/t)</div>
-</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#lightRadius" class="member-name-link">lightRadius</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#lightOpacity" class="member-name-link">lightOpacity</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#lockLegBase" class="member-name-link">lockLegBase</a></code></div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#lightRadius" class="member-name-link">lightRadius</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">If true, legs are locked to the base of the unit instead of being on an implicit rotating "mount".</div>
+<div class="block">movement speed (world units/t)</div>
 </div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#logicControllable" class="member-name-link">logicControllable</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#lockLegBase" class="member-name-link">lockLegBase</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">If true, legs are locked to the base of the unit instead of being on an implicit rotating "mount".</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#logicControllable" class="member-name-link">logicControllable</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></code></div>
-<div class="col-second even-row-color"><code><a href="#loopSound" class="member-name-link">loopSound</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>arc.audio.Sound</code></div>
+<div class="col-second odd-row-color"><code><a href="#loopSound" class="member-name-link">loopSound</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">sound played on loop when this unit is around.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#loopSoundVolume" class="member-name-link">loopSoundVolume</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#loopSoundVolume" class="member-name-link">loopSoundVolume</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">volume of loop sound</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#lowAltitude" class="member-name-link">lowAltitude</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#lowAltitude" class="member-name-link">lowAltitude</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#maxRange" class="member-name-link">maxRange</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#maxRange" class="member-name-link">maxRange</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#mechFrontSway" class="member-name-link">mechFrontSway</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#mechFrontSway" class="member-name-link">mechFrontSway</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">parameters for mech swaying animation</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#mechLandShake" class="member-name-link">mechLandShake</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#mechLandShake" class="member-name-link">mechLandShake</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">screen shake amount for when this mech lands after boosting</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
-<div class="col-second even-row-color"><code><a href="#mechLegColor" class="member-name-link">mechLegColor</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>arc.graphics.Color</code></div>
+<div class="col-second odd-row-color"><code><a href="#mechLegColor" class="member-name-link">mechLegColor</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">color that legs change to when moving, to simulate depth</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#mechSideSway" class="member-name-link">mechSideSway</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#mechSideSway" class="member-name-link">mechSideSway</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">parameters for mech swaying animation</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#mechStepParticles" class="member-name-link">mechStepParticles</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#mechStepParticles" class="member-name-link">mechStepParticles</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">whether particles are created when this mech takes a step</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#mechStride" class="member-name-link">mechStride</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#mechStride" class="member-name-link">mechStride</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">parameters for mech swaying animation</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#mineBeamOffset" class="member-name-link">mineBeamOffset</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">movement speed (world units/t)</div>
 </div>
 <div class="col-first even-row-color"><code>boolean</code></div>
 <div class="col-second even-row-color"><code><a href="#mineFloor" class="member-name-link">mineFloor</a></code></div>
@@ -741,17 +810,23 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">if true, harder materials will take longer to mine</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Item.html" title="class in mindustry.type">Item</a>&gt;</code></div>
+<div class="col-first even-row-color"><code>arc.struct.Seq&lt;<a href="Item.html" title="class in mindustry.type">Item</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#mineItems" class="member-name-link">mineItems</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Target items to mine.</div>
 </div>
+<div class="col-first odd-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
+<div class="col-second odd-row-color"><code><a href="#mineLaserEndRegion" class="member-name-link">mineLaserEndRegion</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
+<div class="col-second even-row-color"><code><a href="#mineLaserRegion" class="member-name-link">mineLaserRegion</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
 <div class="col-second odd-row-color"><code><a href="#mineRange" class="member-name-link">mineRange</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></code></div>
+<div class="col-first even-row-color"><code>arc.audio.Sound</code></div>
 <div class="col-second even-row-color"><code><a href="#mineSound" class="member-name-link">mineSound</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">continuous sound emitted when mining.</div>
@@ -791,7 +866,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
+<div class="col-first even-row-color"><code>arc.graphics.Color</code></div>
 <div class="col-second even-row-color"><code><a href="#outlineColor" class="member-name-link">outlineColor</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">color for outline generated around sprites</div>
@@ -801,7 +876,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">thickness for sprite outline</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-first even-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
 <div class="col-second even-row-color"><code><a href="#outlineRegion" class="member-name-link">outlineRegion</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
@@ -809,7 +884,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">if false, no sprite outlines are generated</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/part/DrawPart.html" title="class in mindustry.entities.part">DrawPart</a>&gt;</code></div>
+<div class="col-first even-row-color"><code>arc.struct.Seq&lt;<a href="../entities/part/DrawPart.html" title="class in mindustry.entities.part">DrawPart</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#parts" class="member-name-link">parts</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">extra (usually animated) visual parts</div>
@@ -819,71 +894,89 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">Function used for calculating cost of moving with ControlPathfinder.</div>
 </div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><a href="#pathCostId" class="member-name-link">pathCostId</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">ID for path cost, to be used in the control path finder.</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#payloadCapacity" class="member-name-link">payloadCapacity</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">movement speed (world units/t)</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#physics" class="member-name-link">physics</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#pickupUnits" class="member-name-link">pickupUnits</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#playerControllable" class="member-name-link">playerControllable</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first odd-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
+<div class="col-second odd-row-color"><code><a href="#previewRegion" class="member-name-link">previewRegion</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#payloadCapacity" class="member-name-link">payloadCapacity</a></code></div>
+<div class="col-second even-row-color"><code><a href="#range" class="member-name-link">range</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">movement speed (world units/t)</div>
+</div>
+<div class="col-first odd-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
+<div class="col-second odd-row-color"><code><a href="#region" class="member-name-link">region</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#researchCostMultiplier" class="member-name-link">researchCostMultiplier</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">movement speed (world units/t)</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#rippleScale" class="member-name-link">rippleScale</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">movement speed (world units/t)</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#riseSpeed" class="member-name-link">riseSpeed</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#physics" class="member-name-link">physics</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#rotateMoveFirst" class="member-name-link">rotateMoveFirst</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
-</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#pickupUnits" class="member-name-link">pickupUnits</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
-</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#playerControllable" class="member-name-link">playerControllable</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
-</div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
-<div class="col-second even-row-color"><code><a href="#previewRegion" class="member-name-link">previewRegion</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#range" class="member-name-link">range</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">movement speed (world units/t)</div>
-</div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
-<div class="col-second even-row-color"><code><a href="#region" class="member-name-link">region</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#researchCostMultiplier" class="member-name-link">researchCostMultiplier</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">movement speed (world units/t)</div>
 </div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#rippleScale" class="member-name-link">rippleScale</a></code></div>
+<div class="col-second even-row-color"><code><a href="#rotateSpeed" class="member-name-link">rotateSpeed</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#riseSpeed" class="member-name-link">riseSpeed</a></code></div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#rotateToBuilding" class="member-name-link">rotateToBuilding</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">movement speed (world units/t)</div>
-</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#rotateMoveFirst" class="member-name-link">rotateMoveFirst</a></code></div>
-<div class="col-last even-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#rotateSpeed" class="member-name-link">rotateSpeed</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">movement speed (world units/t)</div>
-</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#rotateToBuilding" class="member-name-link">rotateToBuilding</a></code></div>
+<div class="col-first even-row-color"><code>mindustry.gen.Unit</code></div>
+<div class="col-second even-row-color"><code><a href="#sample" class="member-name-link">sample</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
-</div>
-<div class="col-first odd-row-color"><code>mindustry.gen.Unit</code></div>
-<div class="col-second odd-row-color"><code><a href="#sample" class="member-name-link">sample</a></code></div>
-<div class="col-last odd-row-color">
 <div class="block">A sample of the unit that this type creates.</div>
+</div>
+<div class="col-first odd-row-color"><code>arc.graphics.g2d.TextureRegion[]</code></div>
+<div class="col-second odd-row-color"><code><a href="#segmentCellRegions" class="member-name-link">segmentCellRegions</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="UnitType.html" title="class in mindustry.type">UnitType</a></code></div>
+<div class="col-second even-row-color"><code><a href="#segmentEndUnit" class="member-name-link">segmentEndUnit</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">unit spawned at the end; if null, the segment unit is used</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#segmentLayerOrder" class="member-name-link">segmentLayerOrder</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">true - parent segments are on higher layers; false - parent segments are on lower layers than head</div>
 </div>
 <div class="col-first even-row-color"><code>float</code></div>
 <div class="col-second even-row-color"><code><a href="#segmentMag" class="member-name-link">segmentMag</a></code></div>
@@ -895,7 +988,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">magnitude of sine offset between segments</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>[]</code></div>
+<div class="col-first even-row-color"><code>arc.graphics.g2d.TextureRegion[]</code></div>
 <div class="col-second even-row-color"><code><a href="#segmentOutlineRegions" class="member-name-link">segmentOutlineRegions</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
@@ -903,23 +996,43 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">magnitude of sine offset between segments</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>[]</code></div>
+<div class="col-first even-row-color"><code>arc.graphics.g2d.TextureRegion[]</code></div>
 <div class="col-second even-row-color"><code><a href="#segmentRegions" class="member-name-link">segmentRegions</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#segmentRotSpeed" class="member-name-link">segmentRotSpeed</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#segmentRotationRange" class="member-name-link">segmentRotationRange</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">magnitude of sine offset between segments</div>
 </div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#segments" class="member-name-link">segments</a></code></div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#segmentRotSpeed" class="member-name-link">segmentRotSpeed</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">magnitude of sine offset between segments</div>
+</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#segments" class="member-name-link">segments</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">number of independent segments</div>
 </div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#segmentScl" class="member-name-link">segmentScl</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">magnitude of sine offset between segments</div>
+</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#segmentScl" class="member-name-link">segmentScl</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#segmentSpacing" class="member-name-link">segmentSpacing</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">magnitude of sine offset between segments</div>
+</div>
+<div class="col-first even-row-color"><code><a href="UnitType.html" title="class in mindustry.type">UnitType</a></code></div>
+<div class="col-second even-row-color"><code><a href="#segmentUnit" class="member-name-link">segmentUnit</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">unit spawned in segments; if null, the same unit is used</div>
+</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#segmentUnits" class="member-name-link">segmentUnits</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">TODO wave support - for multi-unit segmented units, this is the number of independent units that are spawned</div>
 </div>
 <div class="col-first even-row-color"><code>float</code></div>
 <div class="col-second even-row-color"><code><a href="#shadowElevation" class="member-name-link">shadowElevation</a></code></div>
@@ -931,7 +1044,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-first even-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
 <div class="col-second even-row-color"><code><a href="#shadowRegion" class="member-name-link">shadowRegion</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final float</code></div>
@@ -940,14 +1053,24 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-first even-row-color"><code>static final float</code></div>
 <div class="col-second even-row-color"><code><a href="#shadowTY" class="member-name-link">shadowTY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#singleTarget" class="member-name-link">singleTarget</a></code></div>
+<div class="col-first odd-row-color"><code>arc.graphics.Color</code></div>
+<div class="col-second odd-row-color"><code><a href="#shieldColor" class="member-name-link">shieldColor</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">override for unit shield colour.</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#singleTarget" class="member-name-link">singleTarget</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
-<div class="col-second even-row-color"><code><a href="#softShadowRegion" class="member-name-link">softShadowRegion</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
+<div class="col-second odd-row-color"><code><a href="#softShadowRegion" class="member-name-link">softShadowRegion</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#softShadowScl" class="member-name-link">softShadowScl</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">movement speed (world units/t)</div>
+</div>
 <div class="col-first odd-row-color"><code>float</code></div>
 <div class="col-second odd-row-color"><code><a href="#speed" class="member-name-link">speed</a></code></div>
 <div class="col-last odd-row-color">
@@ -958,45 +1081,55 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last even-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </div>
+<div class="col-first odd-row-color"><code>arc.struct.Seq&lt;<a href="../ai/UnitStance.html" title="class in mindustry.ai">UnitStance</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#stances" class="member-name-link">stances</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Stances this unit can have.</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#stepShake" class="member-name-link">stepShake</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">movement speed (world units/t)</div>
+</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#stepShake" class="member-name-link">stepShake</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#strafePenalty" class="member-name-link">strafePenalty</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#targetable" class="member-name-link">targetable</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#targetAir" class="member-name-link">targetAir</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first even-row-color"><code><a href="../world/meta/BlockFlag.html" title="enum class in mindustry.world.meta">BlockFlag</a>[]</code></div>
+<div class="col-second even-row-color"><code><a href="#targetFlags" class="member-name-link">targetFlags</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Flags to target based on priority.</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#targetGround" class="member-name-link">targetGround</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#strafePenalty" class="member-name-link">strafePenalty</a></code></div>
+<div class="col-second even-row-color"><code><a href="#targetPriority" class="member-name-link">targetPriority</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#targetable" class="member-name-link">targetable</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#targetUnderBlocks" class="member-name-link">targetUnderBlocks</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
-</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#targetAir" class="member-name-link">targetAir</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
-</div>
-<div class="col-first odd-row-color"><code><a href="../world/meta/BlockFlag.html" title="enum class in mindustry.world.meta">BlockFlag</a>[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#targetFlags" class="member-name-link">targetFlags</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Flags to target based on priority.</div>
-</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#targetGround" class="member-name-link">targetGround</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
-</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#targetPriority" class="member-name-link">targetPriority</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">movement speed (world units/t)</div>
 </div>
 <div class="col-first even-row-color"><code>protected <a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</code></div>
 <div class="col-second even-row-color"><code><a href="#totalRequirements" class="member-name-link">totalRequirements</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
+<div class="col-first odd-row-color"><code>arc.graphics.Color</code></div>
 <div class="col-second odd-row-color"><code><a href="#trailColor" class="member-name-link">trailColor</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">override for engine trail color</div>
@@ -1026,15 +1159,15 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last even-row-color">
 <div class="block">how much of a top part of a tread sprite is "cut off" relative to the pattern; this is corrected for</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/math/geom/Rect.html" title="class in arc.math.geom">Rect</a>[]</code></div>
+<div class="col-first odd-row-color"><code>arc.math.geom.Rect[]</code></div>
 <div class="col-second odd-row-color"><code><a href="#treadRects" class="member-name-link">treadRects</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">list of treads as rectangles in IMAGE COORDINATES, relative to the center.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-first even-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
 <div class="col-second even-row-color"><code><a href="#treadRegion" class="member-name-link">treadRegion</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>[][]</code></div>
+<div class="col-first odd-row-color"><code>arc.graphics.g2d.TextureRegion[][]</code></div>
 <div class="col-second odd-row-color"><code><a href="#treadRegions" class="member-name-link">treadRegions</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
@@ -1062,18 +1195,23 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last even-row-color">
 <div class="block">movement speed (world units/t)</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Weapon.html" title="class in mindustry.type">Weapon</a>&gt;</code></div>
+<div class="col-first odd-row-color"><code>arc.struct.Seq&lt;<a href="Weapon.html" title="class in mindustry.type">Weapon</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#weapons" class="member-name-link">weapons</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">All weapons that this unit will shoot with.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>[]</code></div>
-<div class="col-second even-row-color"><code><a href="#wreckRegions" class="member-name-link">wreckRegions</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#wobble" class="member-name-link">wobble</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</div>
+<div class="col-first odd-row-color"><code>arc.graphics.g2d.TextureRegion[]</code></div>
+<div class="col-second odd-row-color"><code><a href="#wreckRegions" class="member-name-link">wreckRegions</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-mindustry.ctype.UnlockableContent">Fields inherited from class&nbsp;mindustry.ctype.<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></h3>
-<code><a href="../ctype/UnlockableContent.html#alwaysUnlocked">alwaysUnlocked</a>, <a href="../ctype/UnlockableContent.html#description">description</a>, <a href="../ctype/UnlockableContent.html#details">details</a>, <a href="../ctype/UnlockableContent.html#fullIcon">fullIcon</a>, <a href="../ctype/UnlockableContent.html#generateIcons">generateIcons</a>, <a href="../ctype/UnlockableContent.html#hideDetails">hideDetails</a>, <a href="../ctype/UnlockableContent.html#iconId">iconId</a>, <a href="../ctype/UnlockableContent.html#inlineDescription">inlineDescription</a>, <a href="../ctype/UnlockableContent.html#localizedName">localizedName</a>, <a href="../ctype/UnlockableContent.html#selectionSize">selectionSize</a>, <a href="../ctype/UnlockableContent.html#stats">stats</a>, <a href="../ctype/UnlockableContent.html#techNode">techNode</a>, <a href="../ctype/UnlockableContent.html#techNodes">techNodes</a>, <a href="../ctype/UnlockableContent.html#uiIcon">uiIcon</a>, <a href="../ctype/UnlockableContent.html#unlocked">unlocked</a></code></div>
+<code><a href="../ctype/UnlockableContent.html#allDatabaseTabs">allDatabaseTabs</a>, <a href="../ctype/UnlockableContent.html#alwaysUnlocked">alwaysUnlocked</a>, <a href="../ctype/UnlockableContent.html#databaseTabs">databaseTabs</a>, <a href="../ctype/UnlockableContent.html#description">description</a>, <a href="../ctype/UnlockableContent.html#details">details</a>, <a href="../ctype/UnlockableContent.html#fullIcon">fullIcon</a>, <a href="../ctype/UnlockableContent.html#fullOverride">fullOverride</a>, <a href="../ctype/UnlockableContent.html#generateIcons">generateIcons</a>, <a href="../ctype/UnlockableContent.html#hideDatabase">hideDatabase</a>, <a href="../ctype/UnlockableContent.html#hideDetails">hideDetails</a>, <a href="../ctype/UnlockableContent.html#inlineDescription">inlineDescription</a>, <a href="../ctype/UnlockableContent.html#localizedName">localizedName</a>, <a href="../ctype/UnlockableContent.html#selectionSize">selectionSize</a>, <a href="../ctype/UnlockableContent.html#shownPlanets">shownPlanets</a>, <a href="../ctype/UnlockableContent.html#stats">stats</a>, <a href="../ctype/UnlockableContent.html#techNode">techNode</a>, <a href="../ctype/UnlockableContent.html#techNodes">techNodes</a>, <a href="../ctype/UnlockableContent.html#uiIcon">uiIcon</a>, <a href="../ctype/UnlockableContent.html#unlocked">unlocked</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-mindustry.ctype.MappableContent">Fields inherited from class&nbsp;mindustry.ctype.<a href="../ctype/MappableContent.html" title="class in mindustry.ctype">MappableContent</a></h3>
 <code><a href="../ctype/MappableContent.html#name">name</a></code></div>
@@ -1093,7 +1231,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">UnitType</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">UnitType</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -1104,8 +1242,8 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <h2>Method Summary</h2>
 <div id="method-summary-table">
 <div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
-<div id="method-summary-table.tabpanel" role="tabpanel">
-<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
@@ -1115,35 +1253,35 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#applyOutlineColor(mindustry.gen.Unit)" class="member-name-link">applyOutlineColor</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>arc.graphics.Color</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cellColor(mindustry.gen.Unit)" class="member-name-link">cellColor</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>mindustry.gen.Unit</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#create(mindustry.game.Team)" class="member-name-link">create</a><wbr>(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkEntityMapping(mindustry.gen.Unit)" class="member-name-link">checkEntityMapping</a><wbr>(mindustry.gen.Unit&nbsp;example)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createController(mindustry.gen.Unit)" class="member-name-link">createController</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>mindustry.gen.Unit</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#create(mindustry.game.Team)" class="member-name-link">create</a><wbr>(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createIcons(mindustry.graphics.MultiPacker)" class="member-name-link">createIcons</a><wbr>(<a href="../graphics/MultiPacker.html" title="class in mindustry.graphics">MultiPacker</a>&nbsp;packer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createController(mindustry.gen.Unit)" class="member-name-link">createController</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createIcons(mindustry.graphics.MultiPacker)" class="member-name-link">createIcons</a><wbr>(<a href="../graphics/MultiPacker.html" title="class in mindustry.graphics">MultiPacker</a>&nbsp;packer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Generate any special icons for this content.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#display(mindustry.gen.Unit,arc.scene.ui.layout.Table)" class="member-name-link">display</a><wbr>(mindustry.gen.Unit&nbsp;unit,
- <a href="../../arc/scene/ui/layout/Table.html" title="class in arc.scene.ui.layout">Table</a>&nbsp;table)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#draw(mindustry.gen.Unit)" class="member-name-link">draw</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#display(mindustry.gen.Unit,arc.scene.ui.layout.Table)" class="member-name-link">display</a><wbr>(mindustry.gen.Unit&nbsp;unit,
+ arc.scene.ui.layout.Table&nbsp;table)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawBody(mindustry.gen.Unit)" class="member-name-link">drawBody</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#draw(mindustry.gen.Unit)" class="member-name-link">draw</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawCell(mindustry.gen.Unit)" class="member-name-link">drawCell</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawBody(mindustry.gen.Unit)" class="member-name-link">drawBody</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawControl(mindustry.gen.Unit)" class="member-name-link">drawControl</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawCell(mindustry.gen.Unit)" class="member-name-link">drawCell</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawCrawl(mindustry.gen.Crawlc)" class="member-name-link">drawCrawl</a><wbr>(mindustry.gen.Crawlc&nbsp;crawl)</code></div>
@@ -1162,6 +1300,14 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawMech(mindustry.gen.Mechc)" class="member-name-link">drawMech</a><wbr>(mindustry.gen.Mechc&nbsp;mech)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawMining(mindustry.gen.Unit)" class="member-name-link">drawMining</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawMiningBeam(mindustry.gen.Unit,float,float)" class="member-name-link">drawMiningBeam</a><wbr>(mindustry.gen.Unit&nbsp;unit,
+ float&nbsp;px,
+ float&nbsp;py)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawOutline(mindustry.gen.Unit)" class="member-name-link">drawOutline</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
@@ -1212,7 +1358,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="block">Returns the type name of this piece of content.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDependencies(arc.func.Cons)" class="member-name-link">getDependencies</a><wbr>(<a href="../../arc/func/Cons.html" title="interface in arc.func">Cons</a>&lt;<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a>&gt;&nbsp;cons)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDependencies(arc.func.Cons)" class="member-name-link">getDependencies</a><wbr>(arc.func.Cons&lt;<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a>&gt;&nbsp;cons)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Iterates through any implicit dependencies of this content.</div>
 </div>
@@ -1220,7 +1366,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFirstRequirements()" class="member-name-link">getFirstRequirements</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRegionsToOutline(arc.struct.Seq)" class="member-name-link">getRegionsToOutline</a><wbr>(<a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>&gt;&nbsp;out)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRegionsToOutline(arc.struct.Seq)" class="member-name-link">getRegionsToOutline</a><wbr>(arc.struct.Seq&lt;arc.graphics.g2d.TextureRegion&gt;&nbsp;out)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRequirements(mindustry.type.UnitType%5B%5D,float%5B%5D)" class="member-name-link">getRequirements</a><wbr>(<a href="UnitType.html" title="class in mindustry.type">UnitType</a>[]&nbsp;prevReturn,
@@ -1268,7 +1414,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sense(mindustry.logic.LAccess)" class="member-name-link">sense</a><wbr>(<a href="../logic/LAccess.html" title="enum class in mindustry.logic">LAccess</a>&nbsp;sensor)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#senseObject(mindustry.logic.LAccess)" class="member-name-link">senseObject</a><wbr>(<a href="../logic/LAccess.html" title="enum class in mindustry.logic">LAccess</a>&nbsp;sensor)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -1281,50 +1427,66 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Initializes stats on demand.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>mindustry.gen.Unit</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(float,float)" class="member-name-link">spawn</a><wbr>(float&nbsp;x,
- float&nbsp;y)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>arc.graphics.Color</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shieldColor(mindustry.gen.Unit)" class="member-name-link">shieldColor</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>mindustry.gen.Unit</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(arc.math.geom.Position)" class="member-name-link">spawn</a><wbr>(<a href="../../arc/math/geom/Position.html" title="interface in arc.math.geom">Position</a>&nbsp;pos)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(float,float)" class="member-name-link">spawn</a><wbr>(float&nbsp;x,
+ float&nbsp;y)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>mindustry.gen.Unit</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(arc.math.geom.Position,mindustry.game.Team)" class="member-name-link">spawn</a><wbr>(<a href="../../arc/math/geom/Position.html" title="interface in arc.math.geom">Position</a>&nbsp;pos,
- <a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(arc.math.geom.Position)" class="member-name-link">spawn</a><wbr>(arc.math.geom.Position&nbsp;pos)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>mindustry.gen.Unit</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(mindustry.game.Team,float,float)" class="member-name-link">spawn</a><wbr>(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(arc.math.geom.Position,mindustry.game.Team)" class="member-name-link">spawn</a><wbr>(arc.math.geom.Position&nbsp;pos,
+ <a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>mindustry.gen.Unit</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(mindustry.game.Team,float,float)" class="member-name-link">spawn</a><wbr>(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team,
  float&nbsp;x,
  float&nbsp;y)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>mindustry.gen.Unit</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(mindustry.game.Team,float,float,float)" class="member-name-link">spawn</a><wbr>(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team,
+ float&nbsp;x,
+ float&nbsp;y,
+ float&nbsp;rotation)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>mindustry.gen.Unit</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(mindustry.game.Team,arc.math.geom.Position)" class="member-name-link">spawn</a><wbr>(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team,
- <a href="../../arc/math/geom/Position.html" title="interface in arc.math.geom">Position</a>&nbsp;pos)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(mindustry.game.Team,float,float,float,arc.func.Cons)" class="member-name-link">spawn</a><wbr>(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team,
+ float&nbsp;x,
+ float&nbsp;y,
+ float&nbsp;rotation,
+ arc.func.Cons&lt;mindustry.gen.Unit&gt;&nbsp;cons)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#supportsEnv(int)" class="member-name-link">supportsEnv</a><wbr>(int&nbsp;env)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>mindustry.gen.Unit</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(mindustry.game.Team,arc.math.geom.Position)" class="member-name-link">spawn</a><wbr>(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team,
+ arc.math.geom.Position&nbsp;pos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#targetable(mindustry.gen.Unit,mindustry.game.Team)" class="member-name-link">targetable</a><wbr>(mindustry.gen.Unit&nbsp;unit,
- <a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;targeter)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#supportsEnv(int)" class="member-name-link">supportsEnv</a><wbr>(int&nbsp;env)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(mindustry.gen.Unit)" class="member-name-link">update</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#targetable(mindustry.gen.Unit,mindustry.game.Team)" class="member-name-link">targetable</a><wbr>(mindustry.gen.Unit&nbsp;unit,
+ <a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;targeter)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePayload(mindustry.gen.Unit,mindustry.gen.Unit,mindustry.gen.Building)" class="member-name-link">updatePayload</a><wbr>(mindustry.gen.Unit&nbsp;unit,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(mindustry.gen.Unit)" class="member-name-link">update</a><wbr>(mindustry.gen.Unit&nbsp;unit)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePayload(mindustry.gen.Unit,mindustry.gen.Unit,mindustry.gen.Building)" class="member-name-link">updatePayload</a><wbr>(mindustry.gen.Unit&nbsp;unit,
  mindustry.gen.Unit&nbsp;unitHolder,
  mindustry.gen.Building&nbsp;buildingHolder)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validateWeapons()" class="member-name-link">validateWeapons</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validateWeapons()" class="member-name-link">validateWeapons</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.ctype.UnlockableContent">Methods inherited from class&nbsp;mindustry.ctype.<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></h3>
-<code><a href="../ctype/UnlockableContent.html#checkStats()">checkStats</a>, <a href="../ctype/UnlockableContent.html#clearUnlock()">clearUnlock</a>, <a href="../ctype/UnlockableContent.html#displayDescription()">displayDescription</a>, <a href="../ctype/UnlockableContent.html#displayExtra(arc.scene.ui.layout.Table)">displayExtra</a>, <a href="../ctype/UnlockableContent.html#emoji()">emoji</a>, <a href="../ctype/UnlockableContent.html#getLogicId()">getLogicId</a>, <a href="../ctype/UnlockableContent.html#hasEmoji()">hasEmoji</a>, <a href="../ctype/UnlockableContent.html#loadIcon()">loadIcon</a>, <a href="../ctype/UnlockableContent.html#locked()">locked</a>, <a href="../ctype/UnlockableContent.html#logicVisible()">logicVisible</a>, <a href="../ctype/UnlockableContent.html#makeOutline(mindustry.graphics.MultiPacker.PageType,mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,boolean,arc.graphics.Color,int)">makeOutline</a>, <a href="../ctype/UnlockableContent.html#makeOutline(mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,java.lang.String,arc.graphics.Color)">makeOutline</a>, <a href="../ctype/UnlockableContent.html#makeOutline(mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,java.lang.String,arc.graphics.Color,int)">makeOutline</a>, <a href="../ctype/UnlockableContent.html#onUnlock()">onUnlock</a>, <a href="../ctype/UnlockableContent.html#quietUnlock()">quietUnlock</a>, <a href="../ctype/UnlockableContent.html#showUnlock()">showUnlock</a>, <a href="../ctype/UnlockableContent.html#unlock()">unlock</a>, <a href="../ctype/UnlockableContent.html#unlocked()">unlocked</a>, <a href="../ctype/UnlockableContent.html#unlockedNow()">unlockedNow</a>, <a href="../ctype/UnlockableContent.html#unlockedNowHost()">unlockedNowHost</a></code></div>
+<code><a href="../ctype/UnlockableContent.html#checkStats()">checkStats</a>, <a href="../ctype/UnlockableContent.html#clearUnlock()">clearUnlock</a>, <a href="../ctype/UnlockableContent.html#displayDescription()">displayDescription</a>, <a href="../ctype/UnlockableContent.html#displayExtra(arc.scene.ui.layout.Table)">displayExtra</a>, <a href="../ctype/UnlockableContent.html#emoji()">emoji</a>, <a href="../ctype/UnlockableContent.html#emojiChar()">emojiChar</a>, <a href="../ctype/UnlockableContent.html#getLogicId()">getLogicId</a>, <a href="../ctype/UnlockableContent.html#hasEmoji()">hasEmoji</a>, <a href="../ctype/UnlockableContent.html#isOnPlanet(mindustry.type.Planet)">isOnPlanet</a>, <a href="../ctype/UnlockableContent.html#loadIcon()">loadIcon</a>, <a href="../ctype/UnlockableContent.html#locked()">locked</a>, <a href="../ctype/UnlockableContent.html#logicVisible()">logicVisible</a>, <a href="../ctype/UnlockableContent.html#makeOutline(mindustry.graphics.MultiPacker.PageType,mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,boolean,arc.graphics.Color,int)">makeOutline</a>, <a href="../ctype/UnlockableContent.html#makeOutline(mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,java.lang.String,arc.graphics.Color)">makeOutline</a>, <a href="../ctype/UnlockableContent.html#makeOutline(mindustry.graphics.MultiPacker,arc.graphics.g2d.TextureRegion,java.lang.String,arc.graphics.Color,int)">makeOutline</a>, <a href="../ctype/UnlockableContent.html#onUnlock()">onUnlock</a>, <a href="../ctype/UnlockableContent.html#postInit()">postInit</a>, <a href="../ctype/UnlockableContent.html#quietUnlock()">quietUnlock</a>, <a href="../ctype/UnlockableContent.html#showUnlock()">showUnlock</a>, <a href="../ctype/UnlockableContent.html#unlock()">unlock</a>, <a href="../ctype/UnlockableContent.html#unlocked()">unlocked</a>, <a href="../ctype/UnlockableContent.html#unlockedHost()">unlockedHost</a>, <a href="../ctype/UnlockableContent.html#unlockedNow()">unlockedNow</a>, <a href="../ctype/UnlockableContent.html#unlockedNowHost()">unlockedNowHost</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.ctype.MappableContent">Methods inherited from class&nbsp;mindustry.ctype.<a href="../ctype/MappableContent.html" title="class in mindustry.ctype">MappableContent</a></h3>
 <code><a href="../ctype/MappableContent.html#toString()">toString</a></code></div>
@@ -1332,8 +1494,8 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <h3 id="methods-inherited-from-class-mindustry.ctype.Content">Methods inherited from class&nbsp;mindustry.ctype.<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a></h3>
 <code><a href="../ctype/Content.html#compareTo(mindustry.ctype.Content)">compareTo</a>, <a href="../ctype/Content.html#hasErrored()">hasErrored</a>, <a href="../ctype/Content.html#isModded()">isModded</a>, <a href="../ctype/Content.html#isVanilla()">isVanilla</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.logic.Senseable">Methods inherited from interface&nbsp;mindustry.logic.<a href="../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></h3>
 <code><a href="../logic/Senseable.html#sense(mindustry.ctype.Content)">sense</a></code></div>
@@ -1443,6 +1605,13 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <section class="detail" id="hitSize">
 <h3>hitSize</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">hitSize</span></div>
+<div class="block">movement speed (world units/t)</div>
+</section>
+</li>
+<li>
+<section class="detail" id="deathShake">
+<h3>deathShake</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">deathShake</span></div>
 <div class="block">movement speed (world units/t)</div>
 </section>
 </li>
@@ -1573,6 +1742,13 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 </section>
 </li>
 <li>
+<section class="detail" id="flyingLayer">
+<h3>flyingLayer</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">flyingLayer</span></div>
+<div class="block">movement speed (world units/t)</div>
+</section>
+</li>
+<li>
 <section class="detail" id="payloadCapacity">
 <h3>payloadCapacity</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">payloadCapacity</span></div>
@@ -1597,6 +1773,13 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <section class="detail" id="buildBeamOffset">
 <h3>buildBeamOffset</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">buildBeamOffset</span></div>
+<div class="block">movement speed (world units/t)</div>
+</section>
+</li>
+<li>
+<section class="detail" id="mineBeamOffset">
+<h3>mineBeamOffset</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">mineBeamOffset</span></div>
 <div class="block">movement speed (world units/t)</div>
 </section>
 </li>
@@ -1664,6 +1847,13 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 </section>
 </li>
 <li>
+<section class="detail" id="softShadowScl">
+<h3>softShadowScl</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">softShadowScl</span></div>
+<div class="block">movement speed (world units/t)</div>
+</section>
+</li>
+<li>
 <section class="detail" id="fogRadius">
 <h3>fogRadius</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">fogRadius</span></div>
@@ -1706,6 +1896,13 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 </section>
 </li>
 <li>
+<section class="detail" id="wobble">
+<h3>wobble</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">wobble</span></div>
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</section>
+</li>
+<li>
 <section class="detail" id="targetAir">
 <h3>targetAir</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">targetAir</span></div>
@@ -1734,9 +1931,23 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 </section>
 </li>
 <li>
+<section class="detail" id="autoDropBombs">
+<h3>autoDropBombs</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">autoDropBombs</span></div>
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</section>
+</li>
+<li>
 <section class="detail" id="canBoost">
 <h3>canBoost</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canBoost</span></div>
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</section>
+</li>
+<li>
+<section class="detail" id="boostWhenBuilding">
+<h3>boostWhenBuilding</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">boostWhenBuilding</span></div>
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </section>
 </li>
@@ -1937,6 +2148,13 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 </section>
 </li>
 <li>
+<section class="detail" id="internalGenerateSprites">
+<h3>internalGenerateSprites</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">internalGenerateSprites</span></div>
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</section>
+</li>
+<li>
 <section class="detail" id="bounded">
 <h3>bounded</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">bounded</span></div>
@@ -1954,6 +2172,13 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <section class="detail" id="autoFindTarget">
 <h3>autoFindTarget</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">autoFindTarget</span></div>
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</section>
+</li>
+<li>
+<section class="detail" id="targetUnderBlocks">
+<h3>targetUnderBlocks</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">targetUnderBlocks</span></div>
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </section>
 </li>
@@ -1979,6 +2204,13 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 </section>
 </li>
 <li>
+<section class="detail" id="generateFullIcon">
+<h3>generateFullIcon</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">generateFullIcon</span></div>
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</section>
+</li>
+<li>
 <section class="detail" id="squareShape">
 <h3>squareShape</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">squareShape</span></div>
@@ -1989,6 +2221,13 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <section class="detail" id="drawBuildBeam">
 <h3>drawBuildBeam</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">drawBuildBeam</span></div>
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</section>
+</li>
+<li>
+<section class="detail" id="drawMineBeam">
+<h3>drawMineBeam</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">drawMineBeam</span></div>
 <div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
 </section>
 </li>
@@ -2021,6 +2260,13 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 </section>
 </li>
 <li>
+<section class="detail" id="drawSoftShadow">
+<h3>drawSoftShadow</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">drawSoftShadow</span></div>
+<div class="block">if true, this unit counts as an enemy in the wave counter (usually false for support-only units)</div>
+</section>
+</li>
+<li>
 <section class="detail" id="drawMinimap">
 <h3>drawMinimap</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">drawMinimap</span></div>
@@ -2030,70 +2276,78 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="aiController">
 <h3>aiController</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;? extends <a href="../entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a>&gt;</span>&nbsp;<span class="element-name">aiController</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.func.Prov&lt;? extends <a href="../entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a>&gt;</span>&nbsp;<span class="element-name">aiController</span></div>
 <div class="block">The default AI controller to assign on creation.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="controller">
 <h3>controller</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/func/Func.html" title="interface in arc.func">Func</a>&lt;mindustry.gen.Unit,<wbr>? extends <a href="../entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a>&gt;</span>&nbsp;<span class="element-name">controller</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.func.Func&lt;mindustry.gen.Unit,<wbr>? extends <a href="../entities/units/UnitController.html" title="interface in mindustry.entities.units">UnitController</a>&gt;</span>&nbsp;<span class="element-name">controller</span></div>
 <div class="block">Function that chooses AI controller based on unit entity.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="constructor">
 <h3>constructor</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/func/Prov.html" title="interface in arc.func">Prov</a>&lt;? extends mindustry.gen.Unit&gt;</span>&nbsp;<span class="element-name">constructor</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.func.Prov&lt;? extends mindustry.gen.Unit&gt;</span>&nbsp;<span class="element-name">constructor</span></div>
 <div class="block">Creates a new instance of this unit class.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="abilities">
 <h3>abilities</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/abilities/Ability.html" title="class in mindustry.entities.abilities">Ability</a>&gt;</span>&nbsp;<span class="element-name">abilities</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="../entities/abilities/Ability.html" title="class in mindustry.entities.abilities">Ability</a>&gt;</span>&nbsp;<span class="element-name">abilities</span></div>
 <div class="block">list of "abilities", which are various behaviors that update each frame</div>
 </section>
 </li>
 <li>
 <section class="detail" id="weapons">
 <h3>weapons</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Weapon.html" title="class in mindustry.type">Weapon</a>&gt;</span>&nbsp;<span class="element-name">weapons</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="Weapon.html" title="class in mindustry.type">Weapon</a>&gt;</span>&nbsp;<span class="element-name">weapons</span></div>
 <div class="block">All weapons that this unit will shoot with.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="immunities">
 <h3>immunities</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/ObjectSet.html" title="class in arc.struct">ObjectSet</a>&lt;<a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>&gt;</span>&nbsp;<span class="element-name">immunities</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.ObjectSet&lt;<a href="StatusEffect.html" title="class in mindustry.type">StatusEffect</a>&gt;</span>&nbsp;<span class="element-name">immunities</span></div>
 <div class="block">None of the status effects in this set can be applied to this unit.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="healColor">
 <h3>healColor</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></span>&nbsp;<span class="element-name">healColor</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.Color</span>&nbsp;<span class="element-name">healColor</span></div>
 <div class="block">color that this unit flashes when getting healed (if healFlash is true)</div>
 </section>
 </li>
 <li>
 <section class="detail" id="lightColor">
 <h3>lightColor</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></span>&nbsp;<span class="element-name">lightColor</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.Color</span>&nbsp;<span class="element-name">lightColor</span></div>
 <div class="block">Color of light that this unit produces when lighting is enabled in the map.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="shieldColor">
+<h3>shieldColor</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.Color</span>&nbsp;<span class="element-name">shieldColor</span></div>
+<div class="block">override for unit shield colour.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="deathSound">
 <h3>deathSound</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></span>&nbsp;<span class="element-name">deathSound</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.audio.Sound</span>&nbsp;<span class="element-name">deathSound</span></div>
 <div class="block">sound played when this unit explodes (*not* when it is shot down)</div>
 </section>
 </li>
 <li>
 <section class="detail" id="loopSound">
 <h3>loopSound</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></span>&nbsp;<span class="element-name">loopSound</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.audio.Sound</span>&nbsp;<span class="element-name">loopSound</span></div>
 <div class="block">sound played on loop when this unit is around.</div>
 </section>
 </li>
@@ -2128,7 +2382,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="treadEffect">
 <h3>treadEffect</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+<div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../entities/Effect.html" title="class in mindustry.entities">Effect</a></span>&nbsp;<span class="element-name">treadEffect</span></div>
 <div class="block">optional effect created when this tank moves</div>
 </section>
@@ -2136,14 +2390,14 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="parts">
 <h3>parts</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/part/DrawPart.html" title="class in mindustry.entities.part">DrawPart</a>&gt;</span>&nbsp;<span class="element-name">parts</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="../entities/part/DrawPart.html" title="class in mindustry.entities.part">DrawPart</a>&gt;</span>&nbsp;<span class="element-name">parts</span></div>
 <div class="block">extra (usually animated) visual parts</div>
 </section>
 </li>
 <li>
 <section class="detail" id="engines">
 <h3>engines</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="UnitType.UnitEngine.html" title="class in mindustry.type">UnitType.UnitEngine</a>&gt;</span>&nbsp;<span class="element-name">engines</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="UnitType.UnitEngine.html" title="class in mindustry.type">UnitType.UnitEngine</a>&gt;</span>&nbsp;<span class="element-name">engines</span></div>
 <div class="block">list of engines, or "thrusters"</div>
 </section>
 </li>
@@ -2157,15 +2411,15 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="engineColor">
 <h3>engineColor</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></span>&nbsp;<span class="element-name">engineColor</span></div>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.Color</span>&nbsp;<span class="element-name">engineColor</span></div>
 <div class="block">override for all engine colors</div>
 </section>
 </li>
 <li>
 <section class="detail" id="engineColorInner">
 <h3>engineColorInner</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></span>&nbsp;<span class="element-name">engineColorInner</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.Color</span>&nbsp;<span class="element-name">engineColorInner</span></div>
 <div class="block">color for inner portions of engines</div>
 </section>
 </li>
@@ -2179,23 +2433,37 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="trailColor">
 <h3>trailColor</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></span>&nbsp;<span class="element-name">trailColor</span></div>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.Color</span>&nbsp;<span class="element-name">trailColor</span></div>
 <div class="block">override for engine trail color</div>
+</section>
+</li>
+<li>
+<section class="detail" id="flowfieldPathType">
+<h3>flowfieldPathType</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">flowfieldPathType</span></div>
+<div class="block">Cost type ID for flow field/enemy AI pathfinding.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="pathCost">
 <h3>pathCost</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+<div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../ai/Pathfinder.PathCost.html" title="interface in mindustry.ai">Pathfinder.PathCost</a></span>&nbsp;<span class="element-name">pathCost</span></div>
 <div class="block">Function used for calculating cost of moving with ControlPathfinder. Does not affect "normal" flow field pathfinding.</div>
 </section>
 </li>
 <li>
+<section class="detail" id="pathCostId">
+<h3>pathCostId</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">pathCostId</span></div>
+<div class="block">ID for path cost, to be used in the control path finder. This is the value that actually matters; do not assign manually. Set in init().</div>
+</section>
+</li>
+<li>
 <section class="detail" id="sample">
 <h3>sample</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+<div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">mindustry.gen.Unit</span>&nbsp;<span class="element-name">sample</span></div>
 <div class="block">A sample of the unit that this type creates. Do not modify!</div>
 </section>
@@ -2208,24 +2476,38 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 </section>
 </li>
 <li>
+<section class="detail" id="allowChangeCommands">
+<h3>allowChangeCommands</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">allowChangeCommands</span></div>
+<div class="block">A value of false is used to hide command changing UI in unit factories.</div>
+</section>
+</li>
+<li>
 <section class="detail" id="commands">
 <h3>commands</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../ai/UnitCommand.html" title="class in mindustry.ai">UnitCommand</a>[]</span>&nbsp;<span class="element-name">commands</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="../ai/UnitCommand.html" title="class in mindustry.ai">UnitCommand</a>&gt;</span>&nbsp;<span class="element-name">commands</span></div>
 <div class="block">Commands available to this unit through RTS controls. An empty array means commands will be assigned based on unit capabilities in init().</div>
 </section>
 </li>
 <li>
 <section class="detail" id="defaultCommand">
 <h3>defaultCommand</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+<div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../ai/UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></span>&nbsp;<span class="element-name">defaultCommand</span></div>
 <div class="block">Command to assign to this unit upon creation. Null indicates the first command in the array.</div>
 </section>
 </li>
 <li>
+<section class="detail" id="stances">
+<h3>stances</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="../ai/UnitStance.html" title="class in mindustry.ai">UnitStance</a>&gt;</span>&nbsp;<span class="element-name">stances</span></div>
+<div class="block">Stances this unit can have.  An empty array means stances will be assigned based on unit capabilities in init().</div>
+</section>
+</li>
+<li>
 <section class="detail" id="outlineColor">
 <h3>outlineColor</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></span>&nbsp;<span class="element-name">outlineColor</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.Color</span>&nbsp;<span class="element-name">outlineColor</span></div>
 <div class="block">color for outline generated around sprites</div>
 </section>
 </li>
@@ -2302,7 +2584,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="mineSound">
 <h3>mineSound</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></span>&nbsp;<span class="element-name">mineSound</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.audio.Sound</span>&nbsp;<span class="element-name">mineSound</span></div>
 <div class="block">continuous sound emitted when mining.</div>
 </section>
 </li>
@@ -2316,7 +2598,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="mineItems">
 <h3>mineItems</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="Item.html" title="class in mindustry.type">Item</a>&gt;</span>&nbsp;<span class="element-name">mineItems</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="Item.html" title="class in mindustry.type">Item</a>&gt;</span>&nbsp;<span class="element-name">mineItems</span></div>
 <div class="block">Target items to mine. Used in MinerAI</div>
 </section>
 </li>
@@ -2440,6 +2722,13 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 </section>
 </li>
 <li>
+<section class="detail" id="legBaseUnder">
+<h3>legBaseUnder</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">legBaseUnder</span></div>
+<div class="block">If true, the base (further away) leg region is drawn under instead of over.</div>
+</section>
+</li>
+<li>
 <section class="detail" id="lockLegBase">
 <h3>lockLegBase</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">lockLegBase</span></div>
@@ -2465,6 +2754,20 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <h3>flipLegSide</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">flipLegSide</span></div>
 <div class="block">TODO neither of these appear to do much</div>
+</section>
+</li>
+<li>
+<section class="detail" id="emitWalkSound">
+<h3>emitWalkSound</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">emitWalkSound</span></div>
+<div class="block">Whether to emit a splashing noise in water.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="emitWalkEffect">
+<h3>emitWalkEffect</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">emitWalkEffect</span></div>
+<div class="block">Whether to emit a splashing effect in water (fasle implies emitWalkSound false).</div>
 </section>
 </li>
 <li>
@@ -2505,14 +2808,14 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="mechLegColor">
 <h3>mechLegColor</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></span>&nbsp;<span class="element-name">mechLegColor</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.Color</span>&nbsp;<span class="element-name">mechLegColor</span></div>
 <div class="block">color that legs change to when moving, to simulate depth</div>
 </section>
 </li>
 <li>
 <section class="detail" id="treadRects">
 <h3>treadRects</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/math/geom/Rect.html" title="class in arc.math.geom">Rect</a>[]</span>&nbsp;<span class="element-name">treadRects</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.math.geom.Rect[]</span>&nbsp;<span class="element-name">treadRects</span></div>
 <div class="block">list of treads as rectangles in IMAGE COORDINATES, relative to the center. these are mirrored.</div>
 </section>
 </li>
@@ -2535,6 +2838,36 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <h3>segments</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">segments</span></div>
 <div class="block">number of independent segments</div>
+</section>
+</li>
+<li>
+<section class="detail" id="segmentUnits">
+<h3>segmentUnits</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">segmentUnits</span></div>
+<div class="block">TODO wave support - for multi-unit segmented units, this is the number of independent units that are spawned</div>
+</section>
+</li>
+<li>
+<section class="detail" id="segmentUnit">
+<h3>segmentUnit</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="UnitType.html" title="class in mindustry.type">UnitType</a></span>&nbsp;<span class="element-name">segmentUnit</span></div>
+<div class="block">unit spawned in segments; if null, the same unit is used</div>
+</section>
+</li>
+<li>
+<section class="detail" id="segmentEndUnit">
+<h3>segmentEndUnit</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="UnitType.html" title="class in mindustry.type">UnitType</a></span>&nbsp;<span class="element-name">segmentEndUnit</span></div>
+<div class="block">unit spawned at the end; if null, the segment unit is used</div>
+</section>
+</li>
+<li>
+<section class="detail" id="segmentLayerOrder">
+<h3>segmentLayerOrder</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">segmentLayerOrder</span></div>
+<div class="block">true - parent segments are on higher layers; false - parent segments are on lower layers than head</div>
 </section>
 </li>
 <li>
@@ -2569,6 +2902,20 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <section class="detail" id="segmentMaxRot">
 <h3>segmentMaxRot</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">segmentMaxRot</span></div>
+<div class="block">magnitude of sine offset between segments</div>
+</section>
+</li>
+<li>
+<section class="detail" id="segmentSpacing">
+<h3>segmentSpacing</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">segmentSpacing</span></div>
+<div class="block">magnitude of sine offset between segments</div>
+</section>
+</li>
+<li>
+<section class="detail" id="segmentRotationRange">
+<h3>segmentRotationRange</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">segmentRotationRange</span></div>
 <div class="block">magnitude of sine offset between segments</div>
 </section>
 </li>
@@ -2610,109 +2957,127 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="baseRegion">
 <h3>baseRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">baseRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">baseRegion</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="legRegion">
 <h3>legRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">legRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">legRegion</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="region">
 <h3>region</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">region</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">region</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="previewRegion">
 <h3>previewRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">previewRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">previewRegion</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="shadowRegion">
 <h3>shadowRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">shadowRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">shadowRegion</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="cellRegion">
 <h3>cellRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">cellRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">cellRegion</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="itemCircleRegion">
 <h3>itemCircleRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">itemCircleRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">itemCircleRegion</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="softShadowRegion">
 <h3>softShadowRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">softShadowRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">softShadowRegion</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="jointRegion">
 <h3>jointRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">jointRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">jointRegion</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="footRegion">
 <h3>footRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">footRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">footRegion</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="legBaseRegion">
 <h3>legBaseRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">legBaseRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">legBaseRegion</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="baseJointRegion">
 <h3>baseJointRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">baseJointRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">baseJointRegion</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="outlineRegion">
 <h3>outlineRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">outlineRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">outlineRegion</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="treadRegion">
 <h3>treadRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">treadRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">treadRegion</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="mineLaserRegion">
+<h3>mineLaserRegion</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">mineLaserRegion</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="mineLaserEndRegion">
+<h3>mineLaserEndRegion</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">mineLaserEndRegion</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="wreckRegions">
 <h3>wreckRegions</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>[]</span>&nbsp;<span class="element-name">wreckRegions</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion[]</span>&nbsp;<span class="element-name">wreckRegions</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="segmentRegions">
 <h3>segmentRegions</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>[]</span>&nbsp;<span class="element-name">segmentRegions</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion[]</span>&nbsp;<span class="element-name">segmentRegions</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="segmentCellRegions">
+<h3>segmentCellRegions</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion[]</span>&nbsp;<span class="element-name">segmentCellRegions</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="segmentOutlineRegions">
 <h3>segmentOutlineRegions</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>[]</span>&nbsp;<span class="element-name">segmentOutlineRegions</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion[]</span>&nbsp;<span class="element-name">segmentOutlineRegions</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="treadRegions">
 <h3>treadRegions</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>[][]</span>&nbsp;<span class="element-name">treadRegions</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion[][]</span>&nbsp;<span class="element-name">treadRegions</span></div>
 </section>
 </li>
 <li>
@@ -2724,21 +3089,21 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="totalRequirements">
 <h3>totalRequirements</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+<div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</span>&nbsp;<span class="element-name">totalRequirements</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="cachedRequirements">
 <h3>cachedRequirements</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+<div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</span>&nbsp;<span class="element-name">cachedRequirements</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="firstRequirements">
 <h3>firstRequirements</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+<div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</span>&nbsp;<span class="element-name">firstRequirements</span></div>
 </section>
 </li>
@@ -2753,7 +3118,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.String)">
 <h3>UnitType</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">UnitType</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">UnitType</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
 </section>
 </li>
 </ul>
@@ -2777,6 +3142,30 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 </section>
 </li>
 <li>
+<section class="detail" id="spawn(mindustry.game.Team,float,float,float,arc.func.Cons)">
+<h3>spawn</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">mindustry.gen.Unit</span>&nbsp;<span class="element-name">spawn</span><wbr><span class="parameters">(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team,
+ float&nbsp;x,
+ float&nbsp;y,
+ float&nbsp;rotation,
+ @Nullable
+ arc.func.Cons&lt;mindustry.gen.Unit&gt;&nbsp;cons)</span></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>cons</code> - Callback that gets called with every unit that is spawned. This is used for multi-unit segmented units.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="spawn(mindustry.game.Team,float,float,float)">
+<h3>spawn</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">mindustry.gen.Unit</span>&nbsp;<span class="element-name">spawn</span><wbr><span class="parameters">(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team,
+ float&nbsp;x,
+ float&nbsp;y,
+ float&nbsp;rotation)</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="spawn(mindustry.game.Team,float,float)">
 <h3>spawn</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">mindustry.gen.Unit</span>&nbsp;<span class="element-name">spawn</span><wbr><span class="parameters">(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team,
@@ -2795,19 +3184,19 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <section class="detail" id="spawn(mindustry.game.Team,arc.math.geom.Position)">
 <h3>spawn</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">mindustry.gen.Unit</span>&nbsp;<span class="element-name">spawn</span><wbr><span class="parameters">(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team,
- <a href="../../arc/math/geom/Position.html" title="interface in arc.math.geom">Position</a>&nbsp;pos)</span></div>
+ arc.math.geom.Position&nbsp;pos)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="spawn(arc.math.geom.Position)">
 <h3>spawn</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">mindustry.gen.Unit</span>&nbsp;<span class="element-name">spawn</span><wbr><span class="parameters">(<a href="../../arc/math/geom/Position.html" title="interface in arc.math.geom">Position</a>&nbsp;pos)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">mindustry.gen.Unit</span>&nbsp;<span class="element-name">spawn</span><wbr><span class="parameters">(arc.math.geom.Position&nbsp;pos)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="spawn(arc.math.geom.Position,mindustry.game.Team)">
 <h3>spawn</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">mindustry.gen.Unit</span>&nbsp;<span class="element-name">spawn</span><wbr><span class="parameters">(<a href="../../arc/math/geom/Position.html" title="interface in arc.math.geom">Position</a>&nbsp;pos,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">mindustry.gen.Unit</span>&nbsp;<span class="element-name">spawn</span><wbr><span class="parameters">(arc.math.geom.Position&nbsp;pos,
  <a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</span></div>
 </section>
 </li>
@@ -2840,9 +3229,9 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <section class="detail" id="updatePayload(mindustry.gen.Unit,mindustry.gen.Unit,mindustry.gen.Building)">
 <h3>updatePayload</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updatePayload</span><wbr><span class="parameters">(mindustry.gen.Unit&nbsp;unit,
- <a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+ @Nullable
  mindustry.gen.Unit&nbsp;unitHolder,
- <a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+ @Nullable
  mindustry.gen.Building&nbsp;buildingHolder)</span></div>
 </section>
 </li>
@@ -2862,7 +3251,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <section class="detail" id="display(mindustry.gen.Unit,arc.scene.ui.layout.Table)">
 <h3>display</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">display</span><wbr><span class="parameters">(mindustry.gen.Unit&nbsp;unit,
- <a href="../../arc/scene/ui/layout/Table.html" title="class in arc.scene.ui.layout">Table</a>&nbsp;table)</span></div>
+ arc.scene.ui.layout.Table&nbsp;table)</span></div>
 </section>
 </li>
 <li>
@@ -2884,7 +3273,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="getDependencies(arc.func.Cons)">
 <h3>getDependencies</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">getDependencies</span><wbr><span class="parameters">(<a href="../../arc/func/Cons.html" title="interface in arc.func">Cons</a>&lt;<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a>&gt;&nbsp;cons)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">getDependencies</span><wbr><span class="parameters">(arc.func.Cons&lt;<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a>&gt;&nbsp;cons)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="../ctype/UnlockableContent.html#getDependencies(arc.func.Cons)">UnlockableContent</a></code></span></div>
 <div class="block">Iterates through any implicit dependencies of this content.
  For blocks, this would be the items required to build it.</div>
@@ -2925,6 +3314,12 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 </section>
 </li>
 <li>
+<section class="detail" id="checkEntityMapping(mindustry.gen.Unit)">
+<h3>checkEntityMapping</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">checkEntityMapping</span><wbr><span class="parameters">(mindustry.gen.Unit&nbsp;example)</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="init()">
 <h3>init</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">init</span>()</div>
@@ -2958,7 +3353,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="getRegionsToOutline(arc.struct.Seq)">
 <h3>getRegionsToOutline</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">getRegionsToOutline</span><wbr><span class="parameters">(<a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a>&gt;&nbsp;out)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">getRegionsToOutline</span><wbr><span class="parameters">(arc.struct.Seq&lt;arc.graphics.g2d.TextureRegion&gt;&nbsp;out)</span></div>
 </section>
 </li>
 <li>
@@ -3003,10 +3398,10 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="getRequirements(mindustry.type.UnitType[],float[])">
 <h3>getRequirements</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</span>&nbsp;<span class="element-name">getRequirements</span><wbr><span class="parameters">(<a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</span>&nbsp;<span class="element-name">getRequirements</span><wbr><span class="parameters">(@Nullable
  <a href="UnitType.html" title="class in mindustry.type">UnitType</a>[]&nbsp;prevReturn,
- <a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+ @Nullable
  float[]&nbsp;timeReturn)</span></div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -3017,7 +3412,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="getFirstRequirements()">
 <h3>getFirstRequirements</h3>
-<div class="member-signature"><span class="annotations"><a href="../../arc/util/Nullable.html" title="annotation interface in arc.util">@Nullable</a>
+<div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ItemStack.html" title="class in mindustry.type">ItemStack</a>[]</span>&nbsp;<span class="element-name">getFirstRequirements</span>()</div>
 </section>
 </li>
@@ -3046,7 +3441,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="senseObject(mindustry.logic.LAccess)">
 <h3>senseObject</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">senseObject</span><wbr><span class="parameters">(<a href="../logic/LAccess.html" title="enum class in mindustry.logic">LAccess</a>&nbsp;sensor)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">senseObject</span><wbr><span class="parameters">(<a href="../logic/LAccess.html" title="enum class in mindustry.logic">LAccess</a>&nbsp;sensor)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../logic/Senseable.html#senseObject(mindustry.logic.LAccess)">senseObject</a></code>&nbsp;in interface&nbsp;<code><a href="../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></code></dd>
@@ -3080,6 +3475,26 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 </section>
 </li>
 <li>
+<section class="detail" id="shieldColor(mindustry.gen.Unit)">
+<h3>shieldColor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.Color</span>&nbsp;<span class="element-name">shieldColor</span><wbr><span class="parameters">(mindustry.gen.Unit&nbsp;unit)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="drawMining(mindustry.gen.Unit)">
+<h3>drawMining</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawMining</span><wbr><span class="parameters">(mindustry.gen.Unit&nbsp;unit)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="drawMiningBeam(mindustry.gen.Unit,float,float)">
+<h3>drawMiningBeam</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawMiningBeam</span><wbr><span class="parameters">(mindustry.gen.Unit&nbsp;unit,
+ float&nbsp;px,
+ float&nbsp;py)</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="drawPayload(T)">
 <h3 id="drawPayload(mindustry.gen.Unit)">drawPayload</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters-long">&lt;T extends mindustry.gen.Unit &amp; mindustry.gen.Payloadc&gt;</span>
@@ -3090,12 +3505,6 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <section class="detail" id="drawShield(mindustry.gen.Unit)">
 <h3>drawShield</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawShield</span><wbr><span class="parameters">(mindustry.gen.Unit&nbsp;unit)</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="drawControl(mindustry.gen.Unit)">
-<h3>drawControl</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawControl</span><wbr><span class="parameters">(mindustry.gen.Unit&nbsp;unit)</span></div>
 </section>
 </li>
 <li>
@@ -3177,7 +3586,7 @@ implements <a href="../logic/Senseable.html" title="interface in mindustry.logic
 <li>
 <section class="detail" id="cellColor(mindustry.gen.Unit)">
 <h3>cellColor</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></span>&nbsp;<span class="element-name">cellColor</span><wbr><span class="parameters">(mindustry.gen.Unit&nbsp;unit)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.Color</span>&nbsp;<span class="element-name">cellColor</span><wbr><span class="parameters">(mindustry.gen.Unit&nbsp;unit)</span></div>
 </section>
 </li>
 <li>

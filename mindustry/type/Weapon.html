@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../script.js"></script>
-<script type="text/javascript" src="../../script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -35,7 +35,6 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">Package</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
-<li><a href="../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../index-all.html">Index</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
@@ -71,22 +70,22 @@ loadScripts(document, 'script');</script>
 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">mindustry.type</a></div>
 <h1 title="Class Weapon" class="title">Class Weapon</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance">mindustry.type.Weapon</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="weapons/BuildWeapon.html" title="class in mindustry.type.weapons">BuildWeapon</a></code>, <code><a href="weapons/PointDefenseWeapon.html" title="class in mindustry.type.weapons">PointDefenseWeapon</a></code>, <code><a href="weapons/RepairBeamWeapon.html" title="class in mindustry.type.weapons">RepairBeamWeapon</a></code></dd>
+<dd><code><a href="weapons/BuildWeapon.html" title="class in mindustry.type.weapons">BuildWeapon</a></code>, <code><a href="weapons/MineWeapon.html" title="class in mindustry.type.weapons">MineWeapon</a></code>, <code><a href="weapons/PointDefenseBulletWeapon.html" title="class in mindustry.type.weapons">PointDefenseBulletWeapon</a></code>, <code><a href="weapons/PointDefenseWeapon.html" title="class in mindustry.type.weapons">PointDefenseWeapon</a></code>, <code><a href="weapons/RepairBeamWeapon.html" title="class in mindustry.type.weapons">RepairBeamWeapon</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Weapon</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a></span></div>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
+implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a></span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -104,82 +103,92 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <div class="col-last even-row-color">
 <div class="block">whether this weapon can be automatically aimed by the unit</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#alternate" class="member-name-link">alternate</a></code></div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#aimChangeSpeed" class="member-name-link">aimChangeSpeed</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Speed at which the turret can change its bullet "aim" distance.</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#alternate" class="member-name-link">alternate</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">whether to shoot the weapons in different arms one after another, rather than all at once; only valid when mirror = true</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#alwaysContinuous" class="member-name-link">alwaysContinuous</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#alwaysContinuous" class="member-name-link">alwaysContinuous</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">whether this weapon uses continuous fire without reloading; implies continuous = true</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#alwaysShooting" class="member-name-link">alwaysShooting</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#alwaysShooting" class="member-name-link">alwaysShooting</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">whether this weapon is always shooting, regardless of targets ore cone</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#autoTarget" class="member-name-link">autoTarget</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#autoTarget" class="member-name-link">autoTarget</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">whether to automatically target relevant units in update(); only works when controllable = false.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#baseRotation" class="member-name-link">baseRotation</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#baseRotation" class="member-name-link">baseRotation</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">rotation at which this weapon starts at.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../entities/bullet/BulletType.html" title="class in mindustry.entities.bullet">BulletType</a></code></div>
-<div class="col-second even-row-color"><code><a href="#bullet" class="member-name-link">bullet</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code><a href="../entities/bullet/BulletType.html" title="class in mindustry.entities.bullet">BulletType</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#bullet" class="member-name-link">bullet</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">bullet shot</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#cellRegion" class="member-name-link">cellRegion</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
+<div class="col-second even-row-color"><code><a href="#cellRegion" class="member-name-link">cellRegion</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">cell region, must be same size as region (optional)</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></code></div>
-<div class="col-second even-row-color"><code><a href="#chargeSound" class="member-name-link">chargeSound</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>arc.audio.Sound</code></div>
+<div class="col-second odd-row-color"><code><a href="#chargeSound" class="member-name-link">chargeSound</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">sound used for weapons that have a delay</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#continuous" class="member-name-link">continuous</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#continuous" class="member-name-link">continuous</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">whether to hold the bullet in place while firing; it will still require reload.</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#controllable" class="member-name-link">controllable</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#controllable" class="member-name-link">controllable</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">whether this weapon can be aimed manually by players</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#cooldownTime" class="member-name-link">cooldownTime</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#cooldownTime" class="member-name-link">cooldownTime</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">ticks to cool down the heat region</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#display" class="member-name-link">display</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#display" class="member-name-link">display</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">whether weapon should appear in the stats of a unit with this weapon</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../entities/Effect.html" title="class in mindustry.entities">Effect</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#ejectEffect" class="member-name-link">ejectEffect</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="../entities/Effect.html" title="class in mindustry.entities">Effect</a></code></div>
+<div class="col-second even-row-color"><code><a href="#ejectEffect" class="member-name-link">ejectEffect</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">shell ejection effect</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#extraVelocity" class="member-name-link">extraVelocity</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">extra velocity that is added as a fraction</div>
 </div>
 <div class="col-first even-row-color"><code>boolean</code></div>
 <div class="col-second even-row-color"><code><a href="#flipSprite" class="member-name-link">flipSprite</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">whether to flip the weapon's sprite when rendering.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></code></div>
+<div class="col-first odd-row-color"><code>arc.graphics.Color</code></div>
 <div class="col-second odd-row-color"><code><a href="#heatColor" class="member-name-link">heatColor</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">heat region tint</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-first even-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
 <div class="col-second even-row-color"><code><a href="#heatRegion" class="member-name-link">heatRegion</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">heat region, must be same size as region (optional)</div>
@@ -219,17 +228,17 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <div class="col-last odd-row-color">
 <div class="block">whether to create a flipped copy of this weapon upon initialization.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/func/Func.html" title="interface in arc.func">Func</a>&lt;<a href="Weapon.html" title="class in mindustry.type">Weapon</a>,<wbr><a href="../entities/units/WeaponMount.html" title="class in mindustry.entities.units">WeaponMount</a>&gt;</code></div>
+<div class="col-first even-row-color"><code>arc.func.Func&lt;<a href="Weapon.html" title="class in mindustry.type">Weapon</a>,<wbr><a href="../entities/units/WeaponMount.html" title="class in mindustry.entities.units">WeaponMount</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#mountType" class="member-name-link">mountType</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">type of weapon mount to be used</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#name" class="member-name-link">name</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">displayed weapon region</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></code></div>
+<div class="col-first even-row-color"><code>arc.audio.Sound</code></div>
 <div class="col-second even-row-color"><code><a href="#noAmmoSound" class="member-name-link">noAmmoSound</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">sound played when there is nothing to shoot</div>
@@ -244,7 +253,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <div class="col-last even-row-color">
 <div class="block">internal value used for alternation - do not change!</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-first odd-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
 <div class="col-second odd-row-color"><code><a href="#outlineRegion" class="member-name-link">outlineRegion</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">outline region to display if top is false</div>
@@ -254,7 +263,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <div class="col-last even-row-color">
 <div class="block">should the shoot effects follow the unit (effects need followParent set to true for this to work)</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/part/DrawPart.html" title="class in mindustry.entities.part">DrawPart</a>&gt;</code></div>
+<div class="col-first odd-row-color"><code>arc.struct.Seq&lt;<a href="../entities/part/DrawPart.html" title="class in mindustry.entities.part">DrawPart</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#parts" class="member-name-link">parts</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">extra animated parts</div>
@@ -284,7 +293,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <div class="col-last even-row-color">
 <div class="block">time taken for weapon to return to starting position in ticks.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></code></div>
+<div class="col-first odd-row-color"><code>arc.graphics.g2d.TextureRegion</code></div>
 <div class="col-second odd-row-color"><code><a href="#region" class="member-name-link">region</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">displayed region (autoloaded)</div>
@@ -334,7 +343,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <div class="col-last even-row-color">
 <div class="block">whether this weapon should fire when its owner dies</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></code></div>
+<div class="col-first odd-row-color"><code>arc.audio.Sound</code></div>
 <div class="col-second odd-row-color"><code><a href="#shootSound" class="member-name-link">shootSound</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">sound used for shooting</div>
@@ -422,12 +431,17 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <div class="col-first even-row-color"><code>float</code></div>
 <div class="col-second even-row-color"><code><a href="#xRand" class="member-name-link">xRand</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Random spread on the X axis.</div>
+<div class="block">Random spread on the X/Y axis.</div>
 </div>
 <div class="col-first odd-row-color"><code>float</code></div>
 <div class="col-second odd-row-color"><code><a href="#y" class="member-name-link">y</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">offsets of weapon position on unit</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#yRand" class="member-name-link">yRand</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Random spread on the X/Y axis.</div>
 </div>
 </div>
 </section>
@@ -442,7 +456,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Weapon</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">Weapon</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">Weapon</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
@@ -453,14 +467,14 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <h2>Method Summary</h2>
 <div id="method-summary-table">
 <div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
-<div id="method-summary-table.tabpanel" role="tabpanel">
-<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addStats(mindustry.type.UnitType,arc.scene.ui.layout.Table)" class="member-name-link">addStats</a><wbr>(<a href="UnitType.html" title="class in mindustry.type">UnitType</a>&nbsp;u,
- <a href="../../arc/scene/ui/layout/Table.html" title="class in arc.scene.ui.layout">Table</a>&nbsp;t)</code></div>
+ arc.scene.ui.layout.Table&nbsp;t)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bullet(mindustry.gen.Unit,mindustry.entities.units.WeaponMount,float,float,float,mindustry.entities.Mover)" class="member-name-link">bullet</a><wbr>(mindustry.gen.Unit&nbsp;unit,
@@ -535,7 +549,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shotsPerSec()" class="member-name-link">shotsPerSec</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -546,8 +560,8 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -562,7 +576,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <li>
 <section class="detail" id="name">
 <h3>name</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">name</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">name</span></div>
 <div class="block">displayed weapon region</div>
 </section>
 </li>
@@ -633,7 +647,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <section class="detail" id="baseRotation">
 <h3>baseRotation</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">baseRotation</span></div>
-<div class="block">rotation at which this weapon starts at. TODO buggy!</div>
+<div class="block">rotation at which this weapon starts at.</div>
 </section>
 </li>
 <li>
@@ -655,6 +669,13 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <h3>alwaysContinuous</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">alwaysContinuous</span></div>
 <div class="block">whether this weapon uses continuous fire without reloading; implies continuous = true</div>
+</section>
+</li>
+<li>
+<section class="detail" id="aimChangeSpeed">
+<h3>aimChangeSpeed</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">aimChangeSpeed</span></div>
+<div class="block">Speed at which the turret can change its bullet "aim" distance. This is only used for point laser bullets.</div>
 </section>
 </li>
 <li>
@@ -808,7 +829,14 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <section class="detail" id="xRand">
 <h3>xRand</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">xRand</span></div>
-<div class="block">Random spread on the X axis.</div>
+<div class="block">Random spread on the X/Y axis.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="yRand">
+<h3>yRand</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">yRand</span></div>
+<div class="block">Random spread on the X/Y axis.</div>
 </section>
 </li>
 <li>
@@ -830,6 +858,13 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <h3>velocityRnd</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">velocityRnd</span></div>
 <div class="block">fraction of velocity that is random</div>
+</section>
+</li>
+<li>
+<section class="detail" id="extraVelocity">
+<h3>extraVelocity</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">extraVelocity</span></div>
+<div class="block">extra velocity that is added as a fraction</div>
 </section>
 </li>
 <li>
@@ -933,56 +968,56 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <li>
 <section class="detail" id="shootSound">
 <h3>shootSound</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></span>&nbsp;<span class="element-name">shootSound</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.audio.Sound</span>&nbsp;<span class="element-name">shootSound</span></div>
 <div class="block">sound used for shooting</div>
 </section>
 </li>
 <li>
 <section class="detail" id="chargeSound">
 <h3>chargeSound</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></span>&nbsp;<span class="element-name">chargeSound</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.audio.Sound</span>&nbsp;<span class="element-name">chargeSound</span></div>
 <div class="block">sound used for weapons that have a delay</div>
 </section>
 </li>
 <li>
 <section class="detail" id="noAmmoSound">
 <h3>noAmmoSound</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/audio/Sound.html" title="class in arc.audio">Sound</a></span>&nbsp;<span class="element-name">noAmmoSound</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.audio.Sound</span>&nbsp;<span class="element-name">noAmmoSound</span></div>
 <div class="block">sound played when there is nothing to shoot</div>
 </section>
 </li>
 <li>
 <section class="detail" id="region">
 <h3>region</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">region</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">region</span></div>
 <div class="block">displayed region (autoloaded)</div>
 </section>
 </li>
 <li>
 <section class="detail" id="heatRegion">
 <h3>heatRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">heatRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">heatRegion</span></div>
 <div class="block">heat region, must be same size as region (optional)</div>
 </section>
 </li>
 <li>
 <section class="detail" id="cellRegion">
 <h3>cellRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">cellRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">cellRegion</span></div>
 <div class="block">cell region, must be same size as region (optional)</div>
 </section>
 </li>
 <li>
 <section class="detail" id="outlineRegion">
 <h3>outlineRegion</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/g2d/TextureRegion.html" title="class in arc.graphics.g2d">TextureRegion</a></span>&nbsp;<span class="element-name">outlineRegion</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.g2d.TextureRegion</span>&nbsp;<span class="element-name">outlineRegion</span></div>
 <div class="block">outline region to display if top is false</div>
 </section>
 </li>
 <li>
 <section class="detail" id="heatColor">
 <h3>heatColor</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/graphics/Color.html" title="class in arc.graphics">Color</a></span>&nbsp;<span class="element-name">heatColor</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.graphics.Color</span>&nbsp;<span class="element-name">heatColor</span></div>
 <div class="block">heat region tint</div>
 </section>
 </li>
@@ -996,7 +1031,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <li>
 <section class="detail" id="mountType">
 <h3>mountType</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/func/Func.html" title="interface in arc.func">Func</a>&lt;<a href="Weapon.html" title="class in mindustry.type">Weapon</a>,<wbr><a href="../entities/units/WeaponMount.html" title="class in mindustry.entities.units">WeaponMount</a>&gt;</span>&nbsp;<span class="element-name">mountType</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.func.Func&lt;<a href="Weapon.html" title="class in mindustry.type">Weapon</a>,<wbr><a href="../entities/units/WeaponMount.html" title="class in mindustry.entities.units">WeaponMount</a>&gt;</span>&nbsp;<span class="element-name">mountType</span></div>
 <div class="block">type of weapon mount to be used</div>
 </section>
 </li>
@@ -1017,7 +1052,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <li>
 <section class="detail" id="parts">
 <h3>parts</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../arc/struct/Seq.html" title="class in arc.struct">Seq</a>&lt;<a href="../entities/part/DrawPart.html" title="class in mindustry.entities.part">DrawPart</a>&gt;</span>&nbsp;<span class="element-name">parts</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="../entities/part/DrawPart.html" title="class in mindustry.entities.part">DrawPart</a>&gt;</span>&nbsp;<span class="element-name">parts</span></div>
 <div class="block">extra animated parts</div>
 </section>
 </li>
@@ -1032,7 +1067,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.String)">
 <h3>Weapon</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Weapon</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Weapon</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
 </section>
 </li>
 <li>
@@ -1059,7 +1094,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <section class="detail" id="addStats(mindustry.type.UnitType,arc.scene.ui.layout.Table)">
 <h3>addStats</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addStats</span><wbr><span class="parameters">(<a href="UnitType.html" title="class in mindustry.type">UnitType</a>&nbsp;u,
- <a href="../../arc/scene/ui/layout/Table.html" title="class in arc.scene.ui.layout">Table</a>&nbsp;t)</span></div>
+ arc.scene.ui.layout.Table&nbsp;t)</span></div>
 </section>
 </li>
 <li>
@@ -1187,10 +1222,10 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <li>
 <section class="detail" id="toString()">
 <h3>toString</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
 </dl>
 </section>
 </li>
