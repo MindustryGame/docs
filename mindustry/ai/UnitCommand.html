@@ -134,7 +134,7 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Name of UI icon (from Icon class).</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../input/Binding.html" title="enum class in mindustry.input">Binding</a></code></div>
+<div class="col-first odd-row-color"><code>arc.input.KeyBind</code></div>
 <div class="col-second odd-row-color"><code><a href="#keybind" class="member-name-link">keybind</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Key to press for this command.</div>
@@ -157,13 +157,23 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>static <a href="UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#rebuildCommand" class="member-name-link">rebuildCommand</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></code></div>
-<div class="col-second even-row-color"><code><a href="#repairCommand" class="member-name-link">repairCommand</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#resetTarget" class="member-name-link">resetTarget</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#refreshOnSelect" class="member-name-link">refreshOnSelect</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">If true, this command refreshes the list of stances when selected TODO: do not use, this will likely be removed later!</div>
+</div>
+<div class="col-first odd-row-color"><code>static <a href="UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#repairCommand" class="member-name-link">repairCommand</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#resetTarget" class="member-name-link">resetTarget</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Whether to reset targets when switching to or from this command.</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#snapToBuilding" class="member-name-link">snapToBuilding</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Whether to snap the command destination to ally buildings.</div>
 </div>
 <div class="col-first even-row-color"><code>boolean</code></div>
 <div class="col-second even-row-color"><code><a href="#switchToMove" class="member-name-link">switchToMove</a></code></div>
@@ -194,9 +204,9 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;icon,
  arc.func.Func&lt;mindustry.gen.Unit,<wbr><a href="../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a>&gt;&nbsp;controller)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,java.lang.String,mindustry.input.Binding,arc.func.Func)" class="member-name-link">UnitCommand</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,java.lang.String,arc.input.KeyBind,arc.func.Func)" class="member-name-link">UnitCommand</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;icon,
- <a href="../input/Binding.html" title="enum class in mindustry.input">Binding</a>&nbsp;keybind,
+ arc.input.KeyBind&nbsp;keybind,
  arc.func.Func&lt;mindustry.gen.Unit,<wbr><a href="../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a>&gt;&nbsp;controller)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
@@ -355,16 +365,30 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="snapToBuilding">
+<h3>snapToBuilding</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">snapToBuilding</span></div>
+<div class="block">Whether to snap the command destination to ally buildings.</div>
+</section>
+</li>
+<li>
 <section class="detail" id="exactArrival">
 <h3>exactArrival</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">exactArrival</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="refreshOnSelect">
+<h3>refreshOnSelect</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">refreshOnSelect</span></div>
+<div class="block">If true, this command refreshes the list of stances when selected TODO: do not use, this will likely be removed later!</div>
+</section>
+</li>
+<li>
 <section class="detail" id="keybind">
 <h3>keybind</h3>
 <div class="member-signature"><span class="annotations">@Nullable
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../input/Binding.html" title="enum class in mindustry.input">Binding</a></span>&nbsp;<span class="element-name">keybind</span></div>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.input.KeyBind</span>&nbsp;<span class="element-name">keybind</span></div>
 <div class="block">Key to press for this command.</div>
 </section>
 </li>
@@ -385,11 +409,11 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="&lt;init&gt;(java.lang.String,java.lang.String,mindustry.input.Binding,arc.func.Func)">
+<section class="detail" id="&lt;init&gt;(java.lang.String,java.lang.String,arc.input.KeyBind,arc.func.Func)">
 <h3>UnitCommand</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">UnitCommand</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;icon,
- <a href="../input/Binding.html" title="enum class in mindustry.input">Binding</a>&nbsp;keybind,
+ arc.input.KeyBind&nbsp;keybind,
  arc.func.Func&lt;mindustry.gen.Unit,<wbr><a href="../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a>&gt;&nbsp;controller)</span></div>
 </section>
 </li>
