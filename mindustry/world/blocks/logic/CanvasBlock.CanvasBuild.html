@@ -78,7 +78,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>arc.math.geom.Position</code>, <code>arc.math.geom.QuadTree.QuadTreeObject</code>, <code><a href="../../../entities/Sized.html" title="interface in mindustry.entities">Sized</a></code>, <code>mindustry.gen.Buildingc</code>, <code>mindustry.gen.Entityc</code>, <code>mindustry.gen.Healthc</code>, <code>mindustry.gen.Posc</code>, <code>mindustry.gen.Teamc</code>, <code>mindustry.gen.Timerc</code>, <code><a href="../../../logic/Controllable.html" title="interface in mindustry.logic">Controllable</a></code>, <code><a href="../../../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></code>, <code><a href="../../../logic/Settable.html" title="interface in mindustry.logic">Settable</a></code>, <code><a href="../../../ui/Displayable.html" title="interface in mindustry.ui">Displayable</a></code></dd>
+<dd><code>arc.math.geom.Position</code>, <code>arc.math.geom.QuadTree.QuadTreeObject</code>, <code><a href="../../../entities/Sized.html" title="interface in mindustry.entities">Sized</a></code>, <code>mindustry.gen.Buildingc</code>, <code>mindustry.gen.Entityc</code>, <code>mindustry.gen.Healthc</code>, <code>mindustry.gen.Posc</code>, <code>mindustry.gen.Teamc</code>, <code>mindustry.gen.Timerc</code>, <code><a href="../../../logic/Controllable.html" title="interface in mindustry.logic">Controllable</a></code>, <code><a href="../../../logic/LReadable.html" title="interface in mindustry.logic">LReadable</a></code>, <code><a href="../../../logic/LWritable.html" title="interface in mindustry.logic">LWritable</a></code>, <code><a href="../../../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></code>, <code><a href="../../../logic/Settable.html" title="interface in mindustry.logic">Settable</a></code>, <code><a href="../../../ui/Displayable.html" title="interface in mindustry.ui">Displayable</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Enclosing class:</dt>
@@ -86,7 +86,8 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CanvasBlock.CanvasBuild</span>
-<span class="extends-implements">extends mindustry.gen.Building</span></div>
+<span class="extends-implements">extends mindustry.gen.Building
+implements <a href="../../../logic/LReadable.html" title="interface in mindustry.logic">LReadable</a>, <a href="../../../logic/LWritable.html" title="interface in mindustry.logic">LWritable</a></span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -108,6 +109,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>arc.graphics.Texture</code></div>
 <div class="col-second even-row-color"><code><a href="#texture" class="member-name-link">texture</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#updated" class="member-name-link">updated</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-mindustry.gen.Building">Fields inherited from class&nbsp;mindustry.gen.Building</h3>
@@ -150,6 +154,13 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#draw()" class="member-name-link">draw</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPixel(int)" class="member-name-link">getPixel</a><wbr>(int&nbsp;pos)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPixel(int,int)" class="member-name-link">getPixel</a><wbr>(int&nbsp;x,
+ int&nbsp;y)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onConfigureBuildTapped(mindustry.gen.Building)" class="member-name-link">onConfigureBuildTapped</a><wbr>(mindustry.gen.Building&nbsp;other)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -164,25 +175,51 @@ loadScripts(document, 'script');</script>
  byte&nbsp;revision)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove()" class="member-name-link">remove</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#read(mindustry.logic.LVar,mindustry.logic.LVar)" class="member-name-link">read</a><wbr>(<a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;position,
+ <a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;output)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setByte(byte%5B%5D,int,int)" class="member-name-link">setByte</a><wbr>(byte[]&nbsp;bytes,
- int&nbsp;bitOffset,
- int&nbsp;value)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readable(mindustry.logic.LExecutor)" class="member-name-link">readable</a><wbr>(<a href="../../../logic/LExecutor.html" title="class in mindustry.logic">LExecutor</a>&nbsp;exec)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateTexture()" class="member-name-link">updateTexture</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove()" class="member-name-link">remove</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sense(mindustry.logic.LAccess)" class="member-name-link">sense</a><wbr>(<a href="../../../logic/LAccess.html" title="enum class in mindustry.logic">LAccess</a>&nbsp;sensor)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setByte(byte%5B%5D,int,int)" class="member-name-link">setByte</a><wbr>(byte[]&nbsp;bytes,
+ int&nbsp;bitOffset,
+ int&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPixel(int,int)" class="member-name-link">setPixel</a><wbr>(int&nbsp;pos,
+ int&nbsp;index)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPixel(int,int,int)" class="member-name-link">setPixel</a><wbr>(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;index)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateTexture()" class="member-name-link">updateTexture</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writable(mindustry.logic.LExecutor)" class="member-name-link">writable</a><wbr>(<a href="../../../logic/LExecutor.html" title="class in mindustry.logic">LExecutor</a>&nbsp;exec)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(arc.util.io.Writes)" class="member-name-link">write</a><wbr>(arc.util.io.Writes&nbsp;write)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(mindustry.logic.LVar,mindustry.logic.LVar)" class="member-name-link">write</a><wbr>(<a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;position,
+ <a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.gen.Building">Methods inherited from class&nbsp;mindustry.gen.Building</h3>
-<code>absorbLasers, acceptItem, acceptLiquid, acceptPayload, acceptStack, add, addPlan, addPlan, afterDestroyed, afterPickedUp, afterRead, afterReadAll, allowUpdate, ambientVolume, applyBoost, applyHealSuppression, applyHealSuppression, applySlowdown, as, back, beforeWrite, blockOn, buildOn, calculateHeat, calculateHeat, canBeReplaced, canConsume, canControlSelect, canDump, canDumpLiquid, canPickup, canResupply, canUnload, canWithdraw, changeTeam, cheating, checkAllowUpdate, checkSolid, checkSuppression, clampHealth, classId, closestCore, closestEnemyCore, collide, collision, conductsTo, configTapped, configure, configureAny, configured, consume, consumeTriggerValid, control, control, core, create, create, created, damage, damage, damage, damage, damageContinuous, damageContinuousPierce, damaged, damagePierce, damagePierce, dead, dead, delta, deselect, display, displayBars, displayConsumption, drawConfigure, drawCracks, drawDisabled, drawItemSelection, drawLight, drawLiquidLight, drawrot, drawSelect, drawStatus, drawTeam, drawTeamTop, dropped, dump, dump, dumpAccumulate, dumpAccumulate, dumpLiquid, dumpLiquid, dumpLiquid, dumpPayload, eachEdge, edelta, efficiencyScale, explosionItemCap, findClosestEdge, floor, floorOn, flowItems, fogRadius, front, getCommandPosition, getCursor, getDisplayEfficiency, getDisplayIcon, getDisplayName, getLiquidDestination, getMaximumAccepted, getPayload, getPayloads, getPowerConnections, getPowerProduction, getProgressIncrease, getStackOffset, getX, getY, handleDamage, handleItem, handleLiquid, handlePayload, handleStack, handleString, handleUnitPayload, heal, heal, healFract, health, health, healthChanged, healthf, hitbox, hitSize, hitTime, hitTime, id, id, incrementDump, inFogTo, init, interactable, isAdded, isDiscovered, isHealSuppressed, isInsulated, isLocal, isPayload, isRemote, isValid, itemTaken, kill, killed, left, maxHealth, maxHealth, moduleBitmask, moveForward, moveLiquid, moveLiquidForward, movePayload, nearby, nearby, noSleep, offload, onCommand, onConfigureClosed, onConfigureTapped, onControlSelect, onDeconstructed, onDestroyed, onNearbyBuildAdded, onProximityAdded, onProximityRemoved, onRemoved, onSolid, overwrote, payloadCheck, payloadDraw, pickedUp, placed, playerPlaced, pos, powerGraphRemoved, produced, produced, productionValid, progress, puddleOn, put, read, readAll, readBase, readSync, recentlyHealed, relativeTo, relativeTo, relativeTo, relativeToEdge, removeFromProximity, removeStack, right, rotdeg, self, sense, sense, senseObject, serialize, set, set, setIndex__all, setIndex__build, setProp, setProp, setProp, shouldAmbientSound, shouldConsume, shouldHideConfigure, shouldShowConfigure, sleep, splashLiquid, status, takePayload, tapped, team, team, tileOn, tileX, tileY, timer, timer, timer, timeScale, toString, totalProgress, transferLiquid, trns, trns, unitOn, unitOnAny, unitRemoved, update, updateConsumption, updateEfficiencyMultiplier, updateFogVisibility, updateLastAccess, updatePayload, updatePowerGraph, updateProximity, updateTableAlign, updateTile, version, warmup, wasRecentlyDamaged, wasRecentlyHealed, writeAll, writeBase, writeSync, x, x, y, y</code></div>
+<code>absorbLasers, acceptItem, acceptLiquid, acceptPayload, acceptStack, add, addPlan, addPlan, afterDestroyed, afterPickedUp, afterRead, afterReadAll, allowUpdate, ambientVolume, applyBoost, applyHealSuppression, applyHealSuppression, applySlowdown, as, back, beforeWrite, blockOn, buildOn, calculateHeat, calculateHeat, canBeReplaced, canConsume, canControlSelect, canDump, canDumpLiquid, canPickup, canResupply, canUnload, canWithdraw, changeTeam, cheating, checkAllowUpdate, checkSolid, checkSuppression, clampHealth, classId, closestCore, closestEnemyCore, collide, collision, conductsTo, configTapped, configure, configureAny, configured, consume, consumeTriggerValid, control, control, core, create, create, created, damage, damage, damage, damage, damageContinuous, damageContinuousPierce, damaged, damagePierce, damagePierce, dead, dead, delta, deselect, display, displayBars, displayConsumption, drawConfigure, drawCracks, drawDisabled, drawItemSelection, drawLight, drawLiquidLight, drawrot, drawSelect, drawStatus, drawTeam, drawTeamTop, dropped, dump, dump, dumpAccumulate, dumpAccumulate, dumpLiquid, dumpLiquid, dumpLiquid, dumpPayload, eachEdge, edelta, efficiencyScale, explosionItemCap, findClosestEdge, floor, floorOn, flowItems, fogRadius, front, getCommandPosition, getCursor, getDisplayEfficiency, getDisplayIcon, getDisplayName, getLiquidDestination, getMaximumAccepted, getPayload, getPayloads, getPowerConnections, getPowerProduction, getProgressIncrease, getStackOffset, getX, getY, handleDamage, handleItem, handleLiquid, handlePayload, handleStack, handleString, handleUnitPayload, heal, heal, healFract, health, health, healthChanged, healthf, hitbox, hitSize, hitTime, hitTime, id, id, incrementDump, inFogTo, init, interactable, isAdded, isCommandable, isDiscovered, isHealSuppressed, isInsulated, isLocal, isPayload, isRemote, isValid, itemTaken, kill, killed, left, maxHealth, maxHealth, moduleBitmask, moveForward, moveLiquid, moveLiquidForward, movePayload, nearby, nearby, noSleep, offload, onCommand, onConfigureClosed, onConfigureTapped, onControlSelect, onDeconstructed, onDestroyed, onNearbyBuildAdded, onProximityAdded, onProximityRemoved, onRemoved, onSolid, overwrote, payloadCheck, payloadDraw, pickedUp, placed, playerPlaced, pos, powerGraphRemoved, produced, produced, productionValid, progress, puddleOn, put, read, readAll, readBase, readSync, recentlyHealed, relativeTo, relativeTo, relativeTo, relativeToEdge, removeFromProximity, removeStack, right, rotdeg, self, sense, senseObject, serialize, set, set, setIndex__all, setIndex__build, setProp, setProp, setProp, shouldAmbientSound, shouldConsume, shouldHideConfigure, shouldShowConfigure, sleep, splashLiquid, status, takePayload, tapped, team, team, tileOn, tileX, tileY, timer, timer, timer, timeScale, toString, totalProgress, transferLiquid, trns, trns, unitOn, unitOnAny, unitRemoved, update, updateConsumption, updateEfficiencyMultiplier, updateFogVisibility, updateLastAccess, updatePayload, updatePowerGraph, updateProximity, updateTableAlign, updateTile, version, warmup, wasRecentlyDamaged, wasRecentlyHealed, writeAll, writeBase, writeSync, x, x, y, y</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -222,6 +259,12 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">blending</span></div>
 </section>
 </li>
+<li>
+<section class="detail" id="updated">
+<h3>updated</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">updated</span></div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -244,6 +287,34 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="setPixel(int,int)">
+<h3>setPixel</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPixel</span><wbr><span class="parameters">(int&nbsp;pos,
+ int&nbsp;index)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="setPixel(int,int,int)">
+<h3>setPixel</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPixel</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;index)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="getPixel(int)">
+<h3>getPixel</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getPixel</span><wbr><span class="parameters">(int&nbsp;pos)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="getPixel(int,int)">
+<h3>getPixel</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getPixel</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y)</span></div>
+</section>
+</li>
 <li>
 <section class="detail" id="updateTexture()">
 <h3>updateTexture</h3>
@@ -275,12 +346,66 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="readable(mindustry.logic.LExecutor)">
+<h3>readable</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">readable</span><wbr><span class="parameters">(<a href="../../../logic/LExecutor.html" title="class in mindustry.logic">LExecutor</a>&nbsp;exec)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../logic/LReadable.html#readable(mindustry.logic.LExecutor)">readable</a></code>&nbsp;in interface&nbsp;<code><a href="../../../logic/LReadable.html" title="interface in mindustry.logic">LReadable</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="read(mindustry.logic.LVar,mindustry.logic.LVar)">
+<h3>read</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">read</span><wbr><span class="parameters">(<a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;position,
+ <a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;output)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../logic/LReadable.html#read(mindustry.logic.LVar,mindustry.logic.LVar)">read</a></code>&nbsp;in interface&nbsp;<code><a href="../../../logic/LReadable.html" title="interface in mindustry.logic">LReadable</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="writable(mindustry.logic.LExecutor)">
+<h3>writable</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">writable</span><wbr><span class="parameters">(<a href="../../../logic/LExecutor.html" title="class in mindustry.logic">LExecutor</a>&nbsp;exec)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../logic/LWritable.html#writable(mindustry.logic.LExecutor)">writable</a></code>&nbsp;in interface&nbsp;<code><a href="../../../logic/LWritable.html" title="interface in mindustry.logic">LWritable</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="write(mindustry.logic.LVar,mindustry.logic.LVar)">
+<h3>write</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">write</span><wbr><span class="parameters">(<a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;position,
+ <a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;value)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../logic/LWritable.html#write(mindustry.logic.LVar,mindustry.logic.LVar)">write</a></code>&nbsp;in interface&nbsp;<code><a href="../../../logic/LWritable.html" title="interface in mindustry.logic">LWritable</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="draw()">
 <h3>draw</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">draw</span>()</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code>draw</code>&nbsp;in class&nbsp;<code>mindustry.gen.Building</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="sense(mindustry.logic.LAccess)">
+<h3>sense</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">sense</span><wbr><span class="parameters">(<a href="../../../logic/LAccess.html" title="enum class in mindustry.logic">LAccess</a>&nbsp;sensor)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../logic/Senseable.html#sense(mindustry.logic.LAccess)">sense</a></code>&nbsp;in interface&nbsp;<code><a href="../../../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></code></dd>
+<dt>Overrides:</dt>
+<dd><code>sense</code>&nbsp;in class&nbsp;<code>mindustry.gen.Building</code></dd>
 </dl>
 </section>
 </li>

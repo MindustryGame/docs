@@ -118,6 +118,16 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">Name of UI icon (from Icon class).</div>
 </div>
+<div class="col-first even-row-color"><code>arc.struct.Bits</code></div>
+<div class="col-second even-row-color"><code><a href="#incompatibleBits" class="member-name-link">incompatibleBits</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Incompatible stances as a bitset for easier operations.</div>
+</div>
+<div class="col-first odd-row-color"><code>arc.struct.Seq&lt;<a href="UnitStance.html" title="class in mindustry.ai">UnitStance</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#incompatibleStances" class="member-name-link">incompatibleStances</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Stances that are mutually exclusive to this stance.</div>
+</div>
 <div class="col-first even-row-color"><code>arc.input.KeyBind</code></div>
 <div class="col-second even-row-color"><code><a href="#keybind" class="member-name-link">keybind</a></code></div>
 <div class="col-last even-row-color">
@@ -136,11 +146,13 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#ram" class="member-name-link">ram</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static <a href="UnitStance.html" title="class in mindustry.ai">UnitStance</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#shoot" class="member-name-link">shoot</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#stop" class="member-name-link">stop</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="UnitStance.html" title="class in mindustry.ai">UnitStance</a></code></div>
-<div class="col-second even-row-color"><code><a href="#stop" class="member-name-link">stop</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#toggle" class="member-name-link">toggle</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">If true, this stance can be toggled on or off.</div>
+</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-mindustry.ctype.MappableContent">Fields inherited from class&nbsp;mindustry.ctype.<a href="../ctype/MappableContent.html" title="class in mindustry.ctype">MappableContent</a></h3>
@@ -162,6 +174,11 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;icon,
  arc.input.KeyBind&nbsp;keybind)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,java.lang.String,arc.input.KeyBind,boolean)" class="member-name-link">UnitStance</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;icon,
+ arc.input.KeyBind&nbsp;keybind,
+ boolean&nbsp;toggle)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -187,21 +204,26 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>arc.scene.style.TextureRegionDrawable</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIcon()" class="member-name-link">getIcon</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadAll()" class="member-name-link">loadAll</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#localized()" class="member-name-link">localized</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#init()" class="member-name-link">init</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Called after all content and modules are created.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadAll()" class="member-name-link">loadAll</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#localized()" class="member-name-link">localized</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.ctype.Content">Methods inherited from class&nbsp;mindustry.ctype.<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a></h3>
-<code><a href="../ctype/Content.html#compareTo(mindustry.ctype.Content)">compareTo</a>, <a href="../ctype/Content.html#hasErrored()">hasErrored</a>, <a href="../ctype/Content.html#init()">init</a>, <a href="../ctype/Content.html#isModded()">isModded</a>, <a href="../ctype/Content.html#isVanilla()">isVanilla</a>, <a href="../ctype/Content.html#load()">load</a>, <a href="../ctype/Content.html#loadIcon()">loadIcon</a>, <a href="../ctype/Content.html#postInit()">postInit</a></code></div>
+<code><a href="../ctype/Content.html#compareTo(mindustry.ctype.Content)">compareTo</a>, <a href="../ctype/Content.html#hasErrored()">hasErrored</a>, <a href="../ctype/Content.html#isModded()">isModded</a>, <a href="../ctype/Content.html#isVanilla()">isVanilla</a>, <a href="../ctype/Content.html#load()">load</a>, <a href="../ctype/Content.html#loadIcon()">loadIcon</a>, <a href="../ctype/Content.html#postInit()">postInit</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -220,12 +242,6 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="stop">
 <h3>stop</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="UnitStance.html" title="class in mindustry.ai">UnitStance</a></span>&nbsp;<span class="element-name">stop</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="shoot">
-<h3>shoot</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="UnitStance.html" title="class in mindustry.ai">UnitStance</a></span>&nbsp;<span class="element-name">shoot</span></div>
 </section>
 </li>
 <li>
@@ -273,6 +289,27 @@ loadScripts(document, 'script');</script>
 <div class="block">Key to press for this stance.</div>
 </section>
 </li>
+<li>
+<section class="detail" id="incompatibleStances">
+<h3>incompatibleStances</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="UnitStance.html" title="class in mindustry.ai">UnitStance</a>&gt;</span>&nbsp;<span class="element-name">incompatibleStances</span></div>
+<div class="block">Stances that are mutually exclusive to this stance. This is used for convenience, for writing only!</div>
+</section>
+</li>
+<li>
+<section class="detail" id="incompatibleBits">
+<h3>incompatibleBits</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Bits</span>&nbsp;<span class="element-name">incompatibleBits</span></div>
+<div class="block">Incompatible stances as a bitset for easier operations. This is where incompatibility is actually stored.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="toggle">
+<h3>toggle</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">toggle</span></div>
+<div class="block">If true, this stance can be toggled on or off.</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -281,6 +318,15 @@ loadScripts(document, 'script');</script>
 <section class="constructor-details" id="constructor-detail">
 <h2>Constructor Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="&lt;init&gt;(java.lang.String,java.lang.String,arc.input.KeyBind,boolean)">
+<h3>UnitStance</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">UnitStance</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;icon,
+ arc.input.KeyBind&nbsp;keybind,
+ boolean&nbsp;toggle)</span></div>
+</section>
+</li>
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.String,java.lang.String,arc.input.KeyBind)">
 <h3>UnitStance</h3>
@@ -297,6 +343,18 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="init()">
+<h3>init</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">init</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="../ctype/Content.html#init()">Content</a></code></span></div>
+<div class="block">Called after all content and modules are created. Do not use to load regions or texture data!</div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="../ctype/Content.html#init()">init</a></code>&nbsp;in class&nbsp;<code><a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a></code></dd>
+</dl>
+</section>
+</li>
 <li>
 <section class="detail" id="localized()">
 <h3>localized</h3>

@@ -78,7 +78,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>arc.math.geom.Position</code>, <code>arc.math.geom.QuadTree.QuadTreeObject</code>, <code><a href="../../../entities/Sized.html" title="interface in mindustry.entities">Sized</a></code>, <code>mindustry.gen.Buildingc</code>, <code>mindustry.gen.Entityc</code>, <code>mindustry.gen.Healthc</code>, <code>mindustry.gen.Posc</code>, <code>mindustry.gen.Teamc</code>, <code>mindustry.gen.Timerc</code>, <code><a href="../../../logic/Controllable.html" title="interface in mindustry.logic">Controllable</a></code>, <code><a href="../../../logic/Ranged.html" title="interface in mindustry.logic">Ranged</a></code>, <code><a href="../../../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></code>, <code><a href="../../../logic/Settable.html" title="interface in mindustry.logic">Settable</a></code>, <code><a href="../../../ui/Displayable.html" title="interface in mindustry.ui">Displayable</a></code></dd>
+<dd><code>arc.math.geom.Position</code>, <code>arc.math.geom.QuadTree.QuadTreeObject</code>, <code><a href="../../../entities/Sized.html" title="interface in mindustry.entities">Sized</a></code>, <code>mindustry.gen.Buildingc</code>, <code>mindustry.gen.Entityc</code>, <code>mindustry.gen.Healthc</code>, <code>mindustry.gen.Posc</code>, <code>mindustry.gen.Teamc</code>, <code>mindustry.gen.Timerc</code>, <code><a href="../../../logic/Controllable.html" title="interface in mindustry.logic">Controllable</a></code>, <code><a href="../../../logic/LReadable.html" title="interface in mindustry.logic">LReadable</a></code>, <code><a href="../../../logic/LWritable.html" title="interface in mindustry.logic">LWritable</a></code>, <code><a href="../../../logic/Ranged.html" title="interface in mindustry.logic">Ranged</a></code>, <code><a href="../../../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></code>, <code><a href="../../../logic/Settable.html" title="interface in mindustry.logic">Settable</a></code>, <code><a href="../../../ui/Displayable.html" title="interface in mindustry.ui">Displayable</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Enclosing class:</dt>
@@ -87,7 +87,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">LogicBlock.LogicBuild</span>
 <span class="extends-implements">extends mindustry.gen.Building
-implements <a href="../../../logic/Ranged.html" title="interface in mindustry.logic">Ranged</a></span></div>
+implements <a href="../../../logic/Ranged.html" title="interface in mindustry.logic">Ranged</a>, <a href="../../../logic/LReadable.html" title="interface in mindustry.logic">LReadable</a>, <a href="../../../logic/LWritable.html" title="interface in mindustry.logic">LWritable</a></span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -207,6 +207,13 @@ implements <a href="../../../logic/Ranged.html" title="interface in mindustry.lo
  byte&nbsp;revision)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#read(mindustry.logic.LVar,mindustry.logic.LVar)" class="member-name-link">read</a><wbr>(<a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;position,
+ <a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;output)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readable(mindustry.logic.LExecutor)" class="member-name-link">readable</a><wbr>(<a href="../../../logic/LExecutor.html" title="class in mindustry.logic">LExecutor</a>&nbsp;exec)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readCompressed(byte%5B%5D,boolean)" class="member-name-link">readCompressed</a><wbr>(byte[]&nbsp;data,
  boolean&nbsp;relative)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -242,15 +249,22 @@ implements <a href="../../../logic/Ranged.html" title="interface in mindustry.lo
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#version()" class="member-name-link">version</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writable(mindustry.logic.LExecutor)" class="member-name-link">writable</a><wbr>(<a href="../../../logic/LExecutor.html" title="class in mindustry.logic">LExecutor</a>&nbsp;exec)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(arc.util.io.Writes)" class="member-name-link">write</a><wbr>(arc.util.io.Writes&nbsp;write)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(arc.util.io.Writes)" class="member-name-link">write</a><wbr>(arc.util.io.Writes&nbsp;write)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(mindustry.logic.LVar,mindustry.logic.LVar)" class="member-name-link">write</a><wbr>(<a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;position,
+ <a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.gen.Building">Methods inherited from class&nbsp;mindustry.gen.Building</h3>
-<code>absorbLasers, acceptItem, acceptLiquid, acceptPayload, acceptStack, add, addPlan, addPlan, afterDestroyed, afterPickedUp, afterRead, afterReadAll, allowUpdate, ambientVolume, applyBoost, applyHealSuppression, applyHealSuppression, applySlowdown, as, back, beforeWrite, blockOn, buildOn, calculateHeat, calculateHeat, canBeReplaced, canConsume, canControlSelect, canDump, canDumpLiquid, canResupply, canUnload, canWithdraw, changeTeam, cheating, checkAllowUpdate, checkSolid, checkSuppression, clampHealth, classId, closestCore, closestEnemyCore, collision, conductsTo, configTapped, configure, configureAny, configured, consume, consumeTriggerValid, control, control, core, create, create, created, damage, damage, damage, damageContinuous, damageContinuousPierce, damaged, damagePierce, damagePierce, dead, dead, delta, deselect, display, displayBars, displayConsumption, draw, drawCracks, drawDisabled, drawItemSelection, drawLight, drawLiquidLight, drawrot, drawStatus, drawTeam, drawTeamTop, dropped, dump, dump, dumpAccumulate, dumpAccumulate, dumpLiquid, dumpLiquid, dumpLiquid, dumpPayload, eachEdge, edelta, efficiencyScale, explosionItemCap, findClosestEdge, floor, floorOn, flowItems, fogRadius, front, getCommandPosition, getDisplayEfficiency, getDisplayIcon, getDisplayName, getLiquidDestination, getMaximumAccepted, getPayload, getPayloads, getPowerConnections, getPowerProduction, getProgressIncrease, getStackOffset, getX, getY, handleDamage, handleItem, handleLiquid, handlePayload, handleStack, handleString, handleUnitPayload, heal, heal, healFract, health, health, healthChanged, healthf, hitbox, hitSize, hitTime, hitTime, id, id, incrementDump, inFogTo, init, interactable, isAdded, isDiscovered, isHealSuppressed, isInsulated, isLocal, isPayload, isRemote, isValid, itemTaken, kill, killed, left, maxHealth, maxHealth, moduleBitmask, moveForward, moveLiquid, moveLiquidForward, movePayload, nearby, nearby, noSleep, offload, onCommand, onConfigureClosed, onConfigureTapped, onControlSelect, onDeconstructed, onDestroyed, onNearbyBuildAdded, onProximityAdded, onProximityRemoved, onProximityUpdate, onRemoved, onSolid, overwrote, payloadCheck, payloadDraw, pickedUp, placed, playerPlaced, pos, powerGraphRemoved, produced, produced, productionValid, progress, puddleOn, put, read, readAll, readBase, readSync, recentlyHealed, relativeTo, relativeTo, relativeTo, relativeToEdge, remove, removeStack, right, rotdeg, self, sense, sense, senseObject, serialize, set, set, setIndex__all, setIndex__build, setProp, setProp, setProp, shouldAmbientSound, shouldConsume, shouldHideConfigure, sleep, splashLiquid, status, takePayload, tapped, team, team, tileOn, tileX, tileY, timer, timer, timer, timeScale, toString, totalProgress, transferLiquid, trns, trns, unitOn, unitOnAny, unitRemoved, update, updateConsumption, updateEfficiencyMultiplier, updateFogVisibility, updateLastAccess, updatePayload, updatePowerGraph, updateProximity, updateTableAlign, warmup, wasRecentlyDamaged, wasRecentlyHealed, writeAll, writeBase, writeSync, x, x, y, y</code></div>
+<code>absorbLasers, acceptItem, acceptLiquid, acceptPayload, acceptStack, add, addPlan, addPlan, afterDestroyed, afterPickedUp, afterRead, afterReadAll, allowUpdate, ambientVolume, applyBoost, applyHealSuppression, applyHealSuppression, applySlowdown, as, back, beforeWrite, blockOn, buildOn, calculateHeat, calculateHeat, canBeReplaced, canConsume, canControlSelect, canDump, canDumpLiquid, canResupply, canUnload, canWithdraw, changeTeam, cheating, checkAllowUpdate, checkSolid, checkSuppression, clampHealth, classId, closestCore, closestEnemyCore, collision, conductsTo, configTapped, configure, configureAny, configured, consume, consumeTriggerValid, control, control, core, create, create, created, damage, damage, damage, damageContinuous, damageContinuousPierce, damaged, damagePierce, damagePierce, dead, dead, delta, deselect, display, displayBars, displayConsumption, draw, drawCracks, drawDisabled, drawItemSelection, drawLight, drawLiquidLight, drawrot, drawStatus, drawTeam, drawTeamTop, dropped, dump, dump, dumpAccumulate, dumpAccumulate, dumpLiquid, dumpLiquid, dumpLiquid, dumpPayload, eachEdge, edelta, efficiencyScale, explosionItemCap, findClosestEdge, floor, floorOn, flowItems, fogRadius, front, getCommandPosition, getDisplayEfficiency, getDisplayIcon, getDisplayName, getLiquidDestination, getMaximumAccepted, getPayload, getPayloads, getPowerConnections, getPowerProduction, getProgressIncrease, getStackOffset, getX, getY, handleDamage, handleItem, handleLiquid, handlePayload, handleStack, handleString, handleUnitPayload, heal, heal, healFract, health, health, healthChanged, healthf, hitbox, hitSize, hitTime, hitTime, id, id, incrementDump, inFogTo, init, interactable, isAdded, isCommandable, isDiscovered, isHealSuppressed, isInsulated, isLocal, isPayload, isRemote, isValid, itemTaken, kill, killed, left, maxHealth, maxHealth, moduleBitmask, moveForward, moveLiquid, moveLiquidForward, movePayload, nearby, nearby, noSleep, offload, onCommand, onConfigureClosed, onConfigureTapped, onControlSelect, onDeconstructed, onDestroyed, onNearbyBuildAdded, onProximityAdded, onProximityRemoved, onProximityUpdate, onRemoved, onSolid, overwrote, payloadCheck, payloadDraw, pickedUp, placed, playerPlaced, pos, powerGraphRemoved, produced, produced, productionValid, progress, puddleOn, put, read, readAll, readBase, readSync, recentlyHealed, relativeTo, relativeTo, relativeTo, relativeToEdge, remove, removeStack, right, rotdeg, self, sense, sense, senseObject, serialize, set, set, setIndex__all, setIndex__build, setProp, setProp, setProp, shouldAmbientSound, shouldConsume, shouldHideConfigure, sleep, splashLiquid, status, takePayload, tapped, team, team, tileOn, tileX, tileY, timer, timer, timer, timeScale, toString, totalProgress, transferLiquid, trns, trns, unitOn, unitOnAny, unitRemoved, update, updateConsumption, updateEfficiencyMultiplier, updateFogVisibility, updateLastAccess, updatePayload, updatePowerGraph, updateProximity, updateTableAlign, warmup, wasRecentlyDamaged, wasRecentlyHealed, writeAll, writeBase, writeSync, x, x, y, y</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -464,6 +478,48 @@ implements <a href="../../../logic/Ranged.html" title="interface in mindustry.lo
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code>updateTile</code>&nbsp;in class&nbsp;<code>mindustry.gen.Building</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="readable(mindustry.logic.LExecutor)">
+<h3>readable</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">readable</span><wbr><span class="parameters">(<a href="../../../logic/LExecutor.html" title="class in mindustry.logic">LExecutor</a>&nbsp;exec)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../logic/LReadable.html#readable(mindustry.logic.LExecutor)">readable</a></code>&nbsp;in interface&nbsp;<code><a href="../../../logic/LReadable.html" title="interface in mindustry.logic">LReadable</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="read(mindustry.logic.LVar,mindustry.logic.LVar)">
+<h3>read</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">read</span><wbr><span class="parameters">(<a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;position,
+ <a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;output)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../logic/LReadable.html#read(mindustry.logic.LVar,mindustry.logic.LVar)">read</a></code>&nbsp;in interface&nbsp;<code><a href="../../../logic/LReadable.html" title="interface in mindustry.logic">LReadable</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="writable(mindustry.logic.LExecutor)">
+<h3>writable</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">writable</span><wbr><span class="parameters">(<a href="../../../logic/LExecutor.html" title="class in mindustry.logic">LExecutor</a>&nbsp;exec)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../logic/LWritable.html#writable(mindustry.logic.LExecutor)">writable</a></code>&nbsp;in interface&nbsp;<code><a href="../../../logic/LWritable.html" title="interface in mindustry.logic">LWritable</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="write(mindustry.logic.LVar,mindustry.logic.LVar)">
+<h3>write</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">write</span><wbr><span class="parameters">(<a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;position,
+ <a href="../../../logic/LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;value)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../logic/LWritable.html#write(mindustry.logic.LVar,mindustry.logic.LVar)">write</a></code>&nbsp;in interface&nbsp;<code><a href="../../../logic/LWritable.html" title="interface in mindustry.logic">LWritable</a></code></dd>
 </dl>
 </section>
 </li>
