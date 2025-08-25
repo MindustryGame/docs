@@ -229,19 +229,27 @@ implements arc.assets.Loadable</span></div>
  int&nbsp;x,
  int&nbsp;y)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Creates an array of build plans from a schematic's data, centered on the provided x+y coordinates.</div>
+<div class="block">Creates an array of build plans from a schematic's data, centered on the provided x,y coordinates.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#write(mindustry.game.Schematic,arc.files.Fi)" class="member-name-link">write</a><wbr>(<a href="Schematic.html" title="class in mindustry.game">Schematic</a>&nbsp;schematic,
- arc.files.Fi&nbsp;file)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#write(mindustry.game.Schematic,java.io.OutputStream)" class="member-name-link">write</a><wbr>(<a href="Schematic.html" title="class in mindustry.game">Schematic</a>&nbsp;schematic,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/OutputStream.html" title="class or interface in java.io" class="external-link">OutputStream</a>&nbsp;output)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeBase64(mindustry.game.Schematic)" class="member-name-link">writeBase64</a><wbr>(<a href="Schematic.html" title="class in mindustry.game">Schematic</a>&nbsp;schematic)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>arc.struct.Seq&lt;<a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toPlans(mindustry.game.Schematic,int,int,boolean)" class="member-name-link">toPlans</a><wbr>(<a href="Schematic.html" title="class in mindustry.game">Schematic</a>&nbsp;schem,
+ int&nbsp;x,
+ int&nbsp;y,
+ boolean&nbsp;checkHidden)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Creates an array of build plans from a schematic's data, centered on the provided x,y coordinates.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#write(mindustry.game.Schematic,arc.files.Fi)" class="member-name-link">write</a><wbr>(<a href="Schematic.html" title="class in mindustry.game">Schematic</a>&nbsp;schematic,
+ arc.files.Fi&nbsp;file)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#write(mindustry.game.Schematic,java.io.OutputStream)" class="member-name-link">write</a><wbr>(<a href="Schematic.html" title="class in mindustry.game">Schematic</a>&nbsp;schematic,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/OutputStream.html" title="class or interface in java.io" class="external-link">OutputStream</a>&nbsp;output)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeBase64(mindustry.game.Schematic)" class="member-name-link">writeBase64</a><wbr>(<a href="Schematic.html" title="class in mindustry.game">Schematic</a>&nbsp;schematic)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Converts a schematic to base64.</div>
 </div>
 </div>
@@ -345,7 +353,17 @@ implements arc.assets.Loadable</span></div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a>&gt;</span>&nbsp;<span class="element-name">toPlans</span><wbr><span class="parameters">(<a href="Schematic.html" title="class in mindustry.game">Schematic</a>&nbsp;schem,
  int&nbsp;x,
  int&nbsp;y)</span></div>
-<div class="block">Creates an array of build plans from a schematic's data, centered on the provided x+y coordinates.</div>
+<div class="block">Creates an array of build plans from a schematic's data, centered on the provided x,y coordinates.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="toPlans(mindustry.game.Schematic,int,int,boolean)">
+<h3>toPlans</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a>&gt;</span>&nbsp;<span class="element-name">toPlans</span><wbr><span class="parameters">(<a href="Schematic.html" title="class in mindustry.game">Schematic</a>&nbsp;schem,
+ int&nbsp;x,
+ int&nbsp;y,
+ boolean&nbsp;checkHidden)</span></div>
+<div class="block">Creates an array of build plans from a schematic's data, centered on the provided x,y coordinates.</div>
 </section>
 </li>
 <li>
