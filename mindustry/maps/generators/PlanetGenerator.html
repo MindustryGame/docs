@@ -109,6 +109,9 @@ implements <a href="../../graphics/g3d/HexMesher.html" title="interface in mindu
 <div class="col-first even-row-color"><code>int</code></div>
 <div class="col-second even-row-color"><code><a href="#seed" class="member-name-link">seed</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected static <a href="../../type/ItemSeq.html" title="class in mindustry.type">ItemSeq</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#tmpItems" class="member-name-link">tmpItems</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-mindustry.maps.generators.BasicGenerator">Fields inherited from class&nbsp;mindustry.maps.generators.<a href="BasicGenerator.html" title="class in mindustry.maps.generators">BasicGenerator</a></h3>
@@ -152,51 +155,55 @@ implements <a href="../../graphics/g3d/HexMesher.html" title="interface in mindu
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#beforeSaveWrite(mindustry.type.Sector)" class="member-name-link">beforeSaveWrite</a><wbr>(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generate(mindustry.world.Tiles,mindustry.type.Sector,int)" class="member-name-link">generate</a><wbr>(<a href="../../world/Tiles.html" title="class in mindustry.world">Tiles</a>&nbsp;tiles,
- <a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sec,
- int&nbsp;seed)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../type/Sector.html" title="class in mindustry.type">Sector</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findLaunchCandidate(mindustry.type.Sector,mindustry.type.Sector)" class="member-name-link">findLaunchCandidate</a><wbr>(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;destination,
+ <a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;selected)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateSector(mindustry.type.Sector)" class="member-name-link">generateSector</a><wbr>(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#genTile(arc.math.geom.Vec3,mindustry.world.TileGen)" class="member-name-link">genTile</a><wbr>(arc.math.geom.Vec3&nbsp;position,
- <a href="../../world/TileGen.html" title="class in mindustry.world">TileGen</a>&nbsp;tile)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>arc.graphics.g2d.TextureRegion</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLockedIcon(mindustry.type.Sector)" class="member-name-link">getLockedIcon</a><wbr>(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;hovered)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generate(mindustry.world.Tiles,mindustry.type.Sector,mindustry.world.WorldParams)" class="member-name-link">generate</a><wbr>(<a href="../../world/Tiles.html" title="class in mindustry.world">Tiles</a>&nbsp;tiles,
+ <a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sec,
+ <a href="../../world/WorldParams.html" title="class in mindustry.world">WorldParams</a>&nbsp;params)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLockedText(mindustry.type.Sector,java.lang.StringBuilder)" class="member-name-link">getLockedText</a><wbr>(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;hovered,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html" title="class or interface in java.lang" class="external-link">StringBuilder</a>&nbsp;out)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateSector(mindustry.type.Sector)" class="member-name-link">generateSector</a><wbr>(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSectorSize(mindustry.type.Sector)" class="member-name-link">getSectorSize</a><wbr>(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#genTile(arc.math.geom.Vec3,mindustry.world.TileGen)" class="member-name-link">genTile</a><wbr>(arc.math.geom.Vec3&nbsp;position,
+ <a href="../../world/TileGen.html" title="class in mindustry.world">TileGen</a>&nbsp;tile)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSizeScl()" class="member-name-link">getSizeScl</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>arc.graphics.g2d.TextureRegion</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLockedIcon(mindustry.type.Sector)" class="member-name-link">getLockedIcon</a><wbr>(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;hovered)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#noise(float,float,double,double,double,double)" class="member-name-link">noise</a><wbr>(float&nbsp;x,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLockedText(mindustry.type.Sector,java.lang.StringBuilder)" class="member-name-link">getLockedText</a><wbr>(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;hovered,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html" title="class or interface in java.lang" class="external-link">StringBuilder</a>&nbsp;out)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSectorSize(mindustry.type.Sector)" class="member-name-link">getSectorSize</a><wbr>(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSizeScl()" class="member-name-link">getSizeScl</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#noise(float,float,double,double,double,double)" class="member-name-link">noise</a><wbr>(float&nbsp;x,
  float&nbsp;y,
  double&nbsp;octaves,
  double&nbsp;falloff,
  double&nbsp;scl,
  double&nbsp;mag)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onSectorCaptured(mindustry.type.Sector)" class="member-name-link">onSectorCaptured</a><wbr>(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onSectorLost(mindustry.type.Sector)" class="member-name-link">onSectorLost</a><wbr>(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onSectorCaptured(mindustry.type.Sector)" class="member-name-link">onSectorCaptured</a><wbr>(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onSectorLost(mindustry.type.Sector)" class="member-name-link">onSectorLost</a><wbr>(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.maps.generators.BasicGenerator">Methods inherited from class&nbsp;mindustry.maps.generators.<a href="BasicGenerator.html" title="class in mindustry.maps.generators">BasicGenerator</a></h3>
-<code><a href="BasicGenerator.html#blend(mindustry.world.Block,mindustry.world.Block,float)">blend</a>, <a href="BasicGenerator.html#brush(arc.struct.Seq,int)">brush</a>, <a href="BasicGenerator.html#cells(int)">cells</a>, <a href="BasicGenerator.html#cells(int,int,int,int)">cells</a>, <a href="BasicGenerator.html#cliffs()">cliffs</a>, <a href="BasicGenerator.html#decoration(float)">decoration</a>, <a href="BasicGenerator.html#distort(float,float)">distort</a>, <a href="BasicGenerator.html#each(arc.func.Intc2)">each</a>, <a href="BasicGenerator.html#erase(int,int,int)">erase</a>, <a href="BasicGenerator.html#generate()">generate</a>, <a href="BasicGenerator.html#generate(mindustry.world.Tiles)">generate</a>, <a href="BasicGenerator.html#inverseFloodFill(mindustry.world.Tile)">inverseFloodFill</a>, <a href="BasicGenerator.html#median(int)">median</a>, <a href="BasicGenerator.html#median(int,double)">median</a>, <a href="BasicGenerator.html#median(int,double,mindustry.world.Block)">median</a>, <a href="BasicGenerator.html#near(int,int,int,mindustry.world.Block)">near</a>, <a href="BasicGenerator.html#nearAir(int,int)">nearAir</a>, <a href="BasicGenerator.html#nearWall(int,int)">nearWall</a>, <a href="BasicGenerator.html#noise(float,float,double,double)">noise</a>, <a href="BasicGenerator.html#noise(float,float,double,double,double)">noise</a>, <a href="BasicGenerator.html#noise(mindustry.world.Block,mindustry.world.Block,int,float,float,float)">noise</a>, <a href="BasicGenerator.html#ore(mindustry.world.Block,mindustry.world.Block,float,float)">ore</a>, <a href="BasicGenerator.html#oreAround(mindustry.world.Block,mindustry.world.Block,int,float,float)">oreAround</a>, <a href="BasicGenerator.html#ores(arc.struct.Seq)">ores</a>, <a href="BasicGenerator.html#overlay(mindustry.world.Block,mindustry.world.Block,float,int,float,float,float)">overlay</a>, <a href="BasicGenerator.html#pass(arc.func.Intc2)">pass</a>, <a href="BasicGenerator.html#pathfind(int,int,int,int,mindustry.ai.Astar.TileHeuristic,mindustry.ai.Astar.DistanceHeuristic)">pathfind</a>, <a href="BasicGenerator.html#removeWall(int,int,int,arc.func.Boolf)">removeWall</a>, <a href="BasicGenerator.html#scatter(mindustry.world.Block,mindustry.world.Block,float)">scatter</a>, <a href="BasicGenerator.html#tech()">tech</a>, <a href="BasicGenerator.html#tech(mindustry.world.Block,mindustry.world.Block,mindustry.world.Block)">tech</a>, <a href="BasicGenerator.html#terrain(mindustry.world.Block,float,float,float)">terrain</a>, <a href="BasicGenerator.html#trimDark()">trimDark</a>, <a href="BasicGenerator.html#wallOre(mindustry.world.Block,mindustry.world.Block,float,float)">wallOre</a></code></div>
+<code><a href="BasicGenerator.html#blend(mindustry.world.Block,mindustry.world.Block,float)">blend</a>, <a href="BasicGenerator.html#brush(arc.struct.Seq,int)">brush</a>, <a href="BasicGenerator.html#cells(int)">cells</a>, <a href="BasicGenerator.html#cells(int,int,int,int)">cells</a>, <a href="BasicGenerator.html#cliffs()">cliffs</a>, <a href="BasicGenerator.html#decoration(float)">decoration</a>, <a href="BasicGenerator.html#distort(float,float)">distort</a>, <a href="BasicGenerator.html#each(arc.func.Intc2)">each</a>, <a href="BasicGenerator.html#erase(int,int,int)">erase</a>, <a href="BasicGenerator.html#generate()">generate</a>, <a href="BasicGenerator.html#generate(mindustry.world.Tiles,mindustry.world.WorldParams)">generate</a>, <a href="BasicGenerator.html#inverseFloodFill(mindustry.world.Tile)">inverseFloodFill</a>, <a href="BasicGenerator.html#median(int)">median</a>, <a href="BasicGenerator.html#median(int,double)">median</a>, <a href="BasicGenerator.html#median(int,double,mindustry.world.Block)">median</a>, <a href="BasicGenerator.html#near(int,int,int,mindustry.world.Block)">near</a>, <a href="BasicGenerator.html#nearAir(int,int)">nearAir</a>, <a href="BasicGenerator.html#nearWall(int,int)">nearWall</a>, <a href="BasicGenerator.html#noise(float,float,double,double)">noise</a>, <a href="BasicGenerator.html#noise(float,float,double,double,double)">noise</a>, <a href="BasicGenerator.html#noise(mindustry.world.Block,mindustry.world.Block,int,float,float,float)">noise</a>, <a href="BasicGenerator.html#ore(mindustry.world.Block,mindustry.world.Block,float,float)">ore</a>, <a href="BasicGenerator.html#oreAround(mindustry.world.Block,mindustry.world.Block,int,float,float)">oreAround</a>, <a href="BasicGenerator.html#ores(arc.struct.Seq)">ores</a>, <a href="BasicGenerator.html#overlay(mindustry.world.Block,mindustry.world.Block,float,int,float,float,float)">overlay</a>, <a href="BasicGenerator.html#pass(arc.func.Intc2)">pass</a>, <a href="BasicGenerator.html#pathfind(int,int,int,int,mindustry.ai.Astar.TileHeuristic,mindustry.ai.Astar.DistanceHeuristic)">pathfind</a>, <a href="BasicGenerator.html#removeWall(int,int,int,arc.func.Boolf)">removeWall</a>, <a href="BasicGenerator.html#scatter(mindustry.world.Block,mindustry.world.Block,float)">scatter</a>, <a href="BasicGenerator.html#tech()">tech</a>, <a href="BasicGenerator.html#tech(mindustry.world.Block,mindustry.world.Block,mindustry.world.Block)">tech</a>, <a href="BasicGenerator.html#terrain(mindustry.world.Block,float,float,float)">terrain</a>, <a href="BasicGenerator.html#trimDark()">trimDark</a>, <a href="BasicGenerator.html#wallOre(mindustry.world.Block,mindustry.world.Block,float,float)">wallOre</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -217,6 +224,13 @@ implements <a href="../../graphics/g3d/HexMesher.html" title="interface in mindu
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="tmpItems">
+<h3>tmpItems</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">protected static</span>&nbsp;<span class="return-type"><a href="../../type/ItemSeq.html" title="class in mindustry.type">ItemSeq</a></span>&nbsp;<span class="element-name">tmpItems</span></div>
+</section>
+</li>
 <li>
 <section class="detail" id="baseSeed">
 <h3>baseSeed</h3>
@@ -307,6 +321,15 @@ implements <a href="../../graphics/g3d/HexMesher.html" title="interface in mindu
 </section>
 </li>
 <li>
+<section class="detail" id="findLaunchCandidate(mindustry.type.Sector,mindustry.type.Sector)">
+<h3>findLaunchCandidate</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../type/Sector.html" title="class in mindustry.type">Sector</a></span>&nbsp;<span class="element-name">findLaunchCandidate</span><wbr><span class="parameters">(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;destination,
+ @Nullable
+ <a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;selected)</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="allowAcceleratorLanding(mindustry.type.Sector)">
 <h3>allowAcceleratorLanding</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">allowAcceleratorLanding</span><wbr><span class="parameters">(<a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sector)</span></div>
@@ -362,11 +385,11 @@ implements <a href="../../graphics/g3d/HexMesher.html" title="interface in mindu
 </section>
 </li>
 <li>
-<section class="detail" id="generate(mindustry.world.Tiles,mindustry.type.Sector,int)">
+<section class="detail" id="generate(mindustry.world.Tiles,mindustry.type.Sector,mindustry.world.WorldParams)">
 <h3>generate</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">generate</span><wbr><span class="parameters">(<a href="../../world/Tiles.html" title="class in mindustry.world">Tiles</a>&nbsp;tiles,
  <a href="../../type/Sector.html" title="class in mindustry.type">Sector</a>&nbsp;sec,
- int&nbsp;seed)</span></div>
+ <a href="../../world/WorldParams.html" title="class in mindustry.world">WorldParams</a>&nbsp;params)</span></div>
 </section>
 </li>
 </ul>

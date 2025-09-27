@@ -110,15 +110,25 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Offset parameters for shield.</div>
 </div>
-<div class="col-first odd-row-color"><code>arc.graphics.Color</code></div>
-<div class="col-second odd-row-color"><code><a href="#color" class="member-name-link">color</a></code></div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#chanceDeflect" class="member-name-link">chanceDeflect</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Bullet deflection chance.</div>
+</div>
+<div class="col-first even-row-color"><code>arc.graphics.Color</code></div>
+<div class="col-second even-row-color"><code><a href="#color" class="member-name-link">color</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Color override of the shield.</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#cooldown" class="member-name-link">cooldown</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#cooldown" class="member-name-link">cooldown</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Cooldown after the shield is broken, in ticks.</div>
+</div>
+<div class="col-first even-row-color"><code>arc.audio.Sound</code></div>
+<div class="col-second even-row-color"><code><a href="#deflectSound" class="member-name-link">deflectSound</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Deflection sound.</div>
 </div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
 <div class="col-second odd-row-color"><code><a href="#drawArc" class="member-name-link">drawArc</a></code></div>
@@ -130,26 +140,34 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Maximum shield.</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#offsetRegion" class="member-name-link">offsetRegion</a></code></div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#missileUnitMultiplier" class="member-name-link">missileUnitMultiplier</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Multiplier for shield damage taken from missile units.</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#offsetRegion" class="member-name-link">offsetRegion</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">If true, sprite position will be influenced by x/y.</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#radius" class="member-name-link">radius</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#radius" class="member-name-link">radius</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Shield radius.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#regen" class="member-name-link">regen</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#regen" class="member-name-link">regen</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Shield regen speed in damage/tick.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#region" class="member-name-link">region</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#region" class="member-name-link">region</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">If not null, will be drawn on top.</div>
 </div>
+<div class="col-first even-row-color"><code>protected static final arc.func.Cons&lt;mindustry.gen.Unit&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#unitConsumer" class="member-name-link">unitConsumer</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
 <div class="col-second odd-row-color"><code><a href="#whenShooting" class="member-name-link">whenShooting</a></code></div>
 <div class="col-last odd-row-color">
@@ -242,6 +260,12 @@ loadScripts(document, 'script');</script>
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="unitConsumer">
+<h3>unitConsumer</h3>
+<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type">arc.func.Cons&lt;mindustry.gen.Unit&gt;</span>&nbsp;<span class="element-name">unitConsumer</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="radius">
 <h3>radius</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">radius</span></div>
@@ -309,6 +333,27 @@ loadScripts(document, 'script');</script>
 <h3>width</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">width</span></div>
 <div class="block">Width of shield line.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="chanceDeflect">
+<h3>chanceDeflect</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">chanceDeflect</span></div>
+<div class="block">Bullet deflection chance. -1 to disable</div>
+</section>
+</li>
+<li>
+<section class="detail" id="deflectSound">
+<h3>deflectSound</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.audio.Sound</span>&nbsp;<span class="element-name">deflectSound</span></div>
+<div class="block">Deflection sound.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="missileUnitMultiplier">
+<h3>missileUnitMultiplier</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">missileUnitMultiplier</span></div>
+<div class="block">Multiplier for shield damage taken from missile units.</div>
 </section>
 </li>
 <li>
