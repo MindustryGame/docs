@@ -125,30 +125,40 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">If true, blocks don't require power or resources.</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#extraCoreBuildRadius" class="member-name-link">extraCoreBuildRadius</a></code></div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#checkPlacement" class="member-name-link">checkPlacement</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Whether the placeRangeCheck applies to this team</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#extraCoreBuildRadius" class="member-name-link">extraCoreBuildRadius</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Extra spacing added to the no-build zone around the core.</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#fillItems" class="member-name-link">fillItems</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#fillItems" class="member-name-link">fillItems</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">If true, the core is always filled to capacity with all items.</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#infiniteAmmo" class="member-name-link">infiniteAmmo</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#infiniteAmmo" class="member-name-link">infiniteAmmo</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">If true, this team has infinite unit ammo.</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#infiniteResources" class="member-name-link">infiniteResources</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#infiniteResources" class="member-name-link">infiniteResources</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">If true, resources are not consumed when building.</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#prebuildAi" class="member-name-link">prebuildAi</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#prebuildAi" class="member-name-link">prebuildAi</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">EXPERIMENTAL, DO NOT USE: Pre-built base AI.</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#protectCores" class="member-name-link">protectCores</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Whether the core no-build radius/polygonal protection applies to this team, unprotected teams are ignored by team assigner</div>
 </div>
 <div class="col-first even-row-color"><code>boolean</code></div>
 <div class="col-second even-row-color"><code><a href="#rtsAi" class="member-name-link">rtsAi</a></code></div>
@@ -213,6 +223,8 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">TeamRule</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(mindustry.game.Team)" class="member-name-link">TeamRule</a><wbr>(<a href="Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -239,6 +251,20 @@ loadScripts(document, 'script');</script>
 <h3>aiCoreSpawn</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">aiCoreSpawn</span></div>
 <div class="block">Whether, when AI is enabled, ships should be spawned from the core. TODO remove / unnecessary?</div>
+</section>
+</li>
+<li>
+<section class="detail" id="protectCores">
+<h3>protectCores</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">protectCores</span></div>
+<div class="block">Whether the core no-build radius/polygonal protection applies to this team, unprotected teams are ignored by team assigner</div>
+</section>
+</li>
+<li>
+<section class="detail" id="checkPlacement">
+<h3>checkPlacement</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">checkPlacement</span></div>
+<div class="block">Whether the placeRangeCheck applies to this team</div>
 </section>
 </li>
 <li>
@@ -400,6 +426,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;()">
 <h3>TeamRule</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TeamRule</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="&lt;init&gt;(mindustry.game.Team)">
+<h3>TeamRule</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TeamRule</span><wbr><span class="parameters">(<a href="Team.html" title="class in mindustry.game">Team</a>&nbsp;team)</span></div>
 </section>
 </li>
 </ul>
