@@ -169,6 +169,16 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code><a href="Sector.html" title="class in mindustry.type">Sector</a></code></div>
 <div class="col-second even-row-color"><code><a href="#sector" class="member-name-link">sector</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>arc.struct.Seq&lt;<a href="Sector.html" title="class in mindustry.type">Sector</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#shieldSectors" class="member-name-link">shieldSectors</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Sectors that prevent this sector from being landed on until they are completed.</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#showHidden" class="member-name-link">showHidden</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">If true, the icon and name is shown, even when it's a 'hidden' always-unlocked sector.</div>
+</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
 <div class="col-second odd-row-color"><code><a href="#showSectorLandInfo" class="member-name-link">showSectorLandInfo</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
@@ -178,7 +188,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-mindustry.ctype.UnlockableContent">Fields inherited from class&nbsp;mindustry.ctype.<a href="../ctype/UnlockableContent.html" title="class in mindustry.ctype">UnlockableContent</a></h3>
-<code><a href="../ctype/UnlockableContent.html#allDatabaseTabs">allDatabaseTabs</a>, <a href="../ctype/UnlockableContent.html#alwaysUnlocked">alwaysUnlocked</a>, <a href="../ctype/UnlockableContent.html#databaseTabs">databaseTabs</a>, <a href="../ctype/UnlockableContent.html#description">description</a>, <a href="../ctype/UnlockableContent.html#details">details</a>, <a href="../ctype/UnlockableContent.html#fullIcon">fullIcon</a>, <a href="../ctype/UnlockableContent.html#fullOverride">fullOverride</a>, <a href="../ctype/UnlockableContent.html#generateIcons">generateIcons</a>, <a href="../ctype/UnlockableContent.html#hideDatabase">hideDatabase</a>, <a href="../ctype/UnlockableContent.html#hideDetails">hideDetails</a>, <a href="../ctype/UnlockableContent.html#inlineDescription">inlineDescription</a>, <a href="../ctype/UnlockableContent.html#localizedName">localizedName</a>, <a href="../ctype/UnlockableContent.html#selectionSize">selectionSize</a>, <a href="../ctype/UnlockableContent.html#shownPlanets">shownPlanets</a>, <a href="../ctype/UnlockableContent.html#stats">stats</a>, <a href="../ctype/UnlockableContent.html#techNode">techNode</a>, <a href="../ctype/UnlockableContent.html#techNodes">techNodes</a>, <a href="../ctype/UnlockableContent.html#uiIcon">uiIcon</a>, <a href="../ctype/UnlockableContent.html#unlocked">unlocked</a></code></div>
+<code><a href="../ctype/UnlockableContent.html#allDatabaseTabs">allDatabaseTabs</a>, <a href="../ctype/UnlockableContent.html#alwaysUnlocked">alwaysUnlocked</a>, <a href="../ctype/UnlockableContent.html#credit">credit</a>, <a href="../ctype/UnlockableContent.html#databaseCategory">databaseCategory</a>, <a href="../ctype/UnlockableContent.html#databaseTabs">databaseTabs</a>, <a href="../ctype/UnlockableContent.html#databaseTag">databaseTag</a>, <a href="../ctype/UnlockableContent.html#description">description</a>, <a href="../ctype/UnlockableContent.html#details">details</a>, <a href="../ctype/UnlockableContent.html#fullIcon">fullIcon</a>, <a href="../ctype/UnlockableContent.html#fullOverride">fullOverride</a>, <a href="../ctype/UnlockableContent.html#generateIcons">generateIcons</a>, <a href="../ctype/UnlockableContent.html#hideDatabase">hideDatabase</a>, <a href="../ctype/UnlockableContent.html#hideDetails">hideDetails</a>, <a href="../ctype/UnlockableContent.html#inlineDescription">inlineDescription</a>, <a href="../ctype/UnlockableContent.html#localizedName">localizedName</a>, <a href="../ctype/UnlockableContent.html#selectionSize">selectionSize</a>, <a href="../ctype/UnlockableContent.html#shownPlanets">shownPlanets</a>, <a href="../ctype/UnlockableContent.html#stats">stats</a>, <a href="../ctype/UnlockableContent.html#techNode">techNode</a>, <a href="../ctype/UnlockableContent.html#techNodes">techNodes</a>, <a href="../ctype/UnlockableContent.html#uiIcon">uiIcon</a>, <a href="../ctype/UnlockableContent.html#unlocked">unlocked</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-mindustry.ctype.MappableContent">Fields inherited from class&nbsp;mindustry.ctype.<a href="../ctype/MappableContent.html" title="class in mindustry.ctype">MappableContent</a></h3>
 <code><a href="../ctype/MappableContent.html#name">name</a></code></div>
@@ -235,17 +245,22 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the type name of this piece of content.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initialize(mindustry.type.Planet,int)" class="member-name-link">initialize</a><wbr>(<a href="Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#init()" class="member-name-link">init</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Called after all content and modules are created.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initialize(mindustry.type.Planet,int)" class="member-name-link">initialize</a><wbr>(<a href="Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet,
  int&nbsp;sector)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHidden()" class="member-name-link">isHidden</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHidden()" class="member-name-link">isHidden</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Whether this content is always hidden in the content database dialog.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadIcon()" class="member-name-link">loadIcon</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadIcon()" class="member-name-link">loadIcon</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Called right before load().</div>
 </div>
 </div>
@@ -259,7 +274,7 @@ loadScripts(document, 'script');</script>
 <code><a href="../ctype/MappableContent.html#toString()">toString</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.ctype.Content">Methods inherited from class&nbsp;mindustry.ctype.<a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a></h3>
-<code><a href="../ctype/Content.html#compareTo(mindustry.ctype.Content)">compareTo</a>, <a href="../ctype/Content.html#hasErrored()">hasErrored</a>, <a href="../ctype/Content.html#init()">init</a>, <a href="../ctype/Content.html#isModded()">isModded</a>, <a href="../ctype/Content.html#isVanilla()">isVanilla</a>, <a href="../ctype/Content.html#load()">load</a></code></div>
+<code><a href="../ctype/Content.html#compareTo(mindustry.ctype.Content)">compareTo</a>, <a href="../ctype/Content.html#hasErrored()">hasErrored</a>, <a href="../ctype/Content.html#isModded()">isModded</a>, <a href="../ctype/Content.html#isVanilla()">isVanilla</a>, <a href="../ctype/Content.html#load()">load</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -344,6 +359,13 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="showHidden">
+<h3>showHidden</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">showHidden</span></div>
+<div class="block">If true, the icon and name is shown, even when it's a 'hidden' always-unlocked sector. TODO: this field may be changed, not sure how it should work</div>
+</section>
+</li>
+<li>
 <section class="detail" id="showSectorLandInfo">
 <h3>showSectorLandInfo</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">showSectorLandInfo</span></div>
@@ -382,6 +404,13 @@ loadScripts(document, 'script');</script>
 <h3>originalPosition</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">originalPosition</span></div>
 <div class="block">The original position of this sector; used for migration. Internal use for vanilla campaign only!</div>
+</section>
+</li>
+<li>
+<section class="detail" id="shieldSectors">
+<h3>shieldSectors</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="Sector.html" title="class in mindustry.type">Sector</a>&gt;</span>&nbsp;<span class="element-name">shieldSectors</span></div>
+<div class="block">Sectors that prevent this sector from being landed on until they are completed.</div>
 </section>
 </li>
 </ul>
@@ -440,6 +469,18 @@ loadScripts(document, 'script');</script>
 <h3>initialize</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">initialize</span><wbr><span class="parameters">(<a href="Planet.html" title="class in mindustry.type">Planet</a>&nbsp;planet,
  int&nbsp;sector)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="init()">
+<h3>init</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">init</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="../ctype/Content.html#init()">Content</a></code></span></div>
+<div class="block">Called after all content and modules are created. Do not use to load regions or texture data!</div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="../ctype/Content.html#init()">init</a></code>&nbsp;in class&nbsp;<code><a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a></code></dd>
+</dl>
 </section>
 </li>
 <li>
