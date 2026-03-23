@@ -111,7 +111,13 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static <a href="UnitStance.html" title="class in mindustry.ai">UnitStance</a></code></div>
-<div class="col-second even-row-color"><code><a href="#holdFire" class="member-name-link">holdFire</a></code></div>
+<div class="col-second even-row-color"><code><a href="#boost" class="member-name-link">boost</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="UnitStance.html" title="class in mindustry.ai">UnitStance</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#holdFire" class="member-name-link">holdFire</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="UnitStance.html" title="class in mindustry.ai">UnitStance</a></code></div>
+<div class="col-second even-row-color"><code><a href="#holdPosition" class="member-name-link">holdPosition</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#icon" class="member-name-link">icon</a></code></div>
@@ -119,7 +125,17 @@ loadScripts(document, 'script');</script>
 <div class="block">Name of UI icon (from Icon class).</div>
 </div>
 <div class="col-first even-row-color"><code>arc.struct.Bits</code></div>
-<div class="col-second even-row-color"><code><a href="#incompatibleBits" class="member-name-link">incompatibleBits</a></code></div>
+<div class="col-second even-row-color"><code><a href="#incompatibleCommandBits" class="member-name-link">incompatibleCommandBits</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Incompatible stances as a bitset for easier operations.</div>
+</div>
+<div class="col-first odd-row-color"><code>arc.struct.Seq&lt;<a href="UnitCommand.html" title="class in mindustry.ai">UnitCommand</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#incompatibleCommands" class="member-name-link">incompatibleCommands</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Commands that are mutually exclusive to this stance.</div>
+</div>
+<div class="col-first even-row-color"><code>arc.struct.Bits</code></div>
+<div class="col-second even-row-color"><code><a href="#incompatibleStanceBits" class="member-name-link">incompatibleStanceBits</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Incompatible stances as a bitset for easier operations.</div>
 </div>
@@ -209,15 +225,18 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Called after all content and modules are created.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadAll()" class="member-name-link">loadAll</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#localized()" class="member-name-link">localized</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCompatible(mindustry.ai.UnitCommand)" class="member-name-link">isCompatible</a><wbr>(<a href="UnitCommand.html" title="class in mindustry.ai">UnitCommand</a>&nbsp;other)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadAll()" class="member-name-link">loadAll</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#localized()" class="member-name-link">localized</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -269,6 +288,18 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="boost">
+<h3>boost</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="UnitStance.html" title="class in mindustry.ai">UnitStance</a></span>&nbsp;<span class="element-name">boost</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="holdPosition">
+<h3>holdPosition</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="UnitStance.html" title="class in mindustry.ai">UnitStance</a></span>&nbsp;<span class="element-name">holdPosition</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="mineAuto">
 <h3>mineAuto</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="UnitStance.html" title="class in mindustry.ai">UnitStance</a></span>&nbsp;<span class="element-name">mineAuto</span></div>
@@ -290,6 +321,13 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="incompatibleCommands">
+<h3>incompatibleCommands</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="UnitCommand.html" title="class in mindustry.ai">UnitCommand</a>&gt;</span>&nbsp;<span class="element-name">incompatibleCommands</span></div>
+<div class="block">Commands that are mutually exclusive to this stance. This is used for convenience, for writing only!</div>
+</section>
+</li>
+<li>
 <section class="detail" id="incompatibleStances">
 <h3>incompatibleStances</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="UnitStance.html" title="class in mindustry.ai">UnitStance</a>&gt;</span>&nbsp;<span class="element-name">incompatibleStances</span></div>
@@ -297,17 +335,24 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="incompatibleBits">
-<h3>incompatibleBits</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Bits</span>&nbsp;<span class="element-name">incompatibleBits</span></div>
-<div class="block">Incompatible stances as a bitset for easier operations. This is where incompatibility is actually stored.</div>
-</section>
-</li>
-<li>
 <section class="detail" id="toggle">
 <h3>toggle</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">toggle</span></div>
 <div class="block">If true, this stance can be toggled on or off.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="incompatibleStanceBits">
+<h3>incompatibleStanceBits</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Bits</span>&nbsp;<span class="element-name">incompatibleStanceBits</span></div>
+<div class="block">Incompatible stances as a bitset for easier operations. This is where incompatibility is actually stored.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="incompatibleCommandBits">
+<h3>incompatibleCommandBits</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Bits</span>&nbsp;<span class="element-name">incompatibleCommandBits</span></div>
+<div class="block">Incompatible stances as a bitset for easier operations. This is where incompatibility is actually stored.</div>
 </section>
 </li>
 </ul>
@@ -353,6 +398,13 @@ loadScripts(document, 'script');</script>
 <dt>Overrides:</dt>
 <dd><code><a href="../ctype/Content.html#init()">init</a></code>&nbsp;in class&nbsp;<code><a href="../ctype/Content.html" title="class in mindustry.ctype">Content</a></code></dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isCompatible(mindustry.ai.UnitCommand)">
+<h3>isCompatible</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCompatible</span><wbr><span class="parameters">(@Nullable
+ <a href="UnitCommand.html" title="class in mindustry.ai">UnitCommand</a>&nbsp;other)</span></div>
 </section>
 </li>
 <li>

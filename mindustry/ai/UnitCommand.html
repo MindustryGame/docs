@@ -110,25 +110,29 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static <a href="UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></code></div>
 <div class="col-second even-row-color"><code><a href="#assistCommand" class="member-name-link">assistCommand</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#boostCommand" class="member-name-link">boostCommand</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final arc.func.Func&lt;mindustry.gen.Unit,<wbr><a href="../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#controller" class="member-name-link">controller</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final arc.func.Func&lt;mindustry.gen.Unit,<wbr><a href="../entities/units/AIController.html" title="class in mindustry.entities.units">AIController</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#controller" class="member-name-link">controller</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Controller that this unit will use when this command is used.</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#drawTarget" class="member-name-link">drawTarget</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#drawTarget" class="member-name-link">drawTarget</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Whether to draw the movement/attack target.</div>
 </div>
-<div class="col-first even-row-color"><code>static <a href="UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></code></div>
-<div class="col-second even-row-color"><code><a href="#enterPayloadCommand" class="member-name-link">enterPayloadCommand</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#exactArrival" class="member-name-link">exactArrival</a></code></div>
+<div class="col-first odd-row-color"><code>static <a href="UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#enterPayloadCommand" class="member-name-link">enterPayloadCommand</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#exactArrival" class="member-name-link">exactArrival</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">If true, the unit will arrive at this command's exact endpoint.</div>
+</div>
+<div class="col-first odd-row-color"><code>arc.struct.Seq&lt;<a href="UnitStance.html" title="class in mindustry.ai">UnitStance</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#extraStances" class="member-name-link">extraStances</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Extra stances that are available when this command is selected.</div>
+</div>
 <div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#icon" class="member-name-link">icon</a></code></div>
 <div class="col-last even-row-color">
@@ -294,12 +298,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="boostCommand">
-<h3>boostCommand</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></span>&nbsp;<span class="element-name">boostCommand</span></div>
-</section>
-</li>
-<li>
 <section class="detail" id="enterPayloadCommand">
 <h3>enterPayloadCommand</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="UnitCommand.html" title="class in mindustry.ai">UnitCommand</a></span>&nbsp;<span class="element-name">enterPayloadCommand</span></div>
@@ -375,6 +373,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="exactArrival">
 <h3>exactArrival</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">exactArrival</span></div>
+<div class="block">If true, the unit will arrive at this command's exact endpoint.</div>
 </section>
 </li>
 <li>
@@ -390,6 +389,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.input.KeyBind</span>&nbsp;<span class="element-name">keybind</span></div>
 <div class="block">Key to press for this command.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="extraStances">
+<h3>extraStances</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="UnitStance.html" title="class in mindustry.ai">UnitStance</a>&gt;</span>&nbsp;<span class="element-name">extraStances</span></div>
+<div class="block">Extra stances that are available when this command is selected. These ignore incompatibleStances.</div>
 </section>
 </li>
 </ul>
