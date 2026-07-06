@@ -96,20 +96,22 @@ implements mindustry.gen.Posc, mindustry.gen.Drawc, mindustry.gen.Syncc</span></
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#flagAlignLeft" class="member-name-link">flagAlignLeft</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#duration" class="member-name-link">duration</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Duration in seconds.</div>
+</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#flagAlignRight" class="member-name-link">flagAlignRight</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#flagAlignLeft" class="member-name-link">flagAlignLeft</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#flagAutoscale" class="member-name-link">flagAutoscale</a></code></div>
+<div class="col-second even-row-color"><code><a href="#flagAlignRight" class="member-name-link">flagAlignRight</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#flagBackground" class="member-name-link">flagBackground</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#flagAutoscale" class="member-name-link">flagAutoscale</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#flagOnlyParentVisible" class="member-name-link">flagOnlyParentVisible</a></code></div>
+<div class="col-second even-row-color"><code><a href="#flagBackground" class="member-name-link">flagBackground</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
 <div class="col-second odd-row-color"><code><a href="#flagOutline" class="member-name-link">flagOutline</a></code></div>
@@ -181,6 +183,19 @@ implements mindustry.gen.Posc, mindustry.gen.Drawc, mindustry.gen.Syncc</span></
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">This MUST be called instead of remove()!</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hide(mindustry.gen.Player)" class="member-name-link">hide</a><wbr>(mindustry.gen.Player&nbsp;player)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Hides this player-specific label.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#show(mindustry.gen.Player)" class="member-name-link">show</a><wbr>(mindustry.gen.Player&nbsp;player)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Makes this label visible only to the specific player.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -198,7 +213,7 @@ implements mindustry.gen.Posc, mindustry.gen.Drawc, mindustry.gen.Syncc</span></
 <code>angleTo, angleTo, dst, dst, dst2, dst2, within, within</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.gen.Syncc">Methods inherited from interface&nbsp;mindustry.gen.Syncc</h3>
-<code>afterSync, handleSyncHidden, interpolate, isSyncHidden, lastUpdated, lastUpdated, readSync, readSyncManual, remove, snapInterpolation, snapSync, update, updateSpacing, updateSpacing, writeSync, writeSyncManual</code></div>
+<code>afterSync, handleSyncHidden, interpolate, isSyncHidden, lastUpdated, lastUpdated, readSync, readSyncManual, remove, snapInterpolation, snapSync, updateSpacing, updateSpacing, writeSync, writeSyncManual</code></div>
 </section>
 </li>
 </ul>
@@ -281,20 +296,6 @@ implements mindustry.gen.Posc, mindustry.gen.Drawc, mindustry.gen.Syncc</span></
 </section>
 </li>
 <li>
-<section class="detail" id="flagOnlyParentVisible">
-<h3>flagOnlyParentVisible</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">flagOnlyParentVisible</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="../../../constant-values.html#mindustry.entities.comp.WorldLabelComp.flagOnlyParentVisible">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
 <section class="detail" id="text">
 <h3>text</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">text</span></div>
@@ -325,6 +326,13 @@ implements mindustry.gen.Posc, mindustry.gen.Drawc, mindustry.gen.Syncc</span></
 <div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">mindustry.gen.Posc</span>&nbsp;<span class="element-name">parent</span></div>
 <div class="block">If not null, this label gets set to the parent position with x, y used as offsets.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="duration">
+<h3>duration</h3>
+<div class="member-signature"><span class="modifiers">public transient</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">duration</span></div>
+<div class="block">Duration in seconds. Ignored if zero or negative.</div>
 </section>
 </li>
 </ul>
@@ -360,6 +368,18 @@ implements mindustry.gen.Posc, mindustry.gen.Drawc, mindustry.gen.Syncc</span></
 </section>
 </li>
 <li>
+<section class="detail" id="update()">
+<h3>update</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>update</code>&nbsp;in interface&nbsp;<code>mindustry.gen.Entityc</code></dd>
+<dt>Specified by:</dt>
+<dd><code>update</code>&nbsp;in interface&nbsp;<code>mindustry.gen.Syncc</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="draw()">
 <h3>draw</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">draw</span>()</div>
@@ -380,6 +400,20 @@ implements mindustry.gen.Posc, mindustry.gen.Drawc, mindustry.gen.Syncc</span></
  float&nbsp;fontSize,
  int&nbsp;align,
  int&nbsp;lineAlign)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="show(mindustry.gen.Player)">
+<h3>show</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">show</span><wbr><span class="parameters">(mindustry.gen.Player&nbsp;player)</span></div>
+<div class="block">Makes this label visible only to the specific player. This must be called instead of add().</div>
+</section>
+</li>
+<li>
+<section class="detail" id="hide(mindustry.gen.Player)">
+<h3>hide</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">hide</span><wbr><span class="parameters">(mindustry.gen.Player&nbsp;player)</span></div>
+<div class="block">Hides this player-specific label. If you used <a href="#show(mindustry.gen.Player)"><code>show(Player)</code></a> previously, you must call this method instead of <a href="#hide()"><code>hide()</code></a>!</div>
 </section>
 </li>
 <li>

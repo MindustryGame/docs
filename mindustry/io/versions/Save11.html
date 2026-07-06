@@ -15,7 +15,11 @@
 <script type="text/javascript" src="../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var pathtoroot = "../../../";
+<script type="text/javascript">var evenRowColor = "even-row-color";
+var oddRowColor = "odd-row-color";
+var tableTab = "table-tab";
+var activeTableTab = "active-table-tab";
+var pathtoroot = "../../../";
 loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -49,7 +53,7 @@ loadScripts(document, 'script');</script>
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-detail">Constr</a>&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method-detail">Method</a></li>
 </ul>
 </div>
 <div class="nav-list-search"><label for="search-input">SEARCH:</label>
@@ -78,7 +82,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Save11</span>
 <span class="extends-implements">extends <a href="../SaveVersion.html" title="class in mindustry.io">SaveVersion</a></span></div>
-<div class="block">Adds patches in content header.</div>
+<div class="block">Adds patches in content header. Unlike >= 12, this version has patches before the content header.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -120,9 +124,28 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
+<div id="method-summary-table">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#read(java.io.DataInputStream,arc.util.io.CounterInputStream,mindustry.io.SaveReadState)" class="member-name-link">read</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/DataInputStream.html" title="class or interface in java.io" class="external-link">DataInputStream</a>&nbsp;stream,
+ arc.util.io.CounterInputStream&nbsp;counter,
+ <a href="../SaveReadState.html" title="class in mindustry.io">SaveReadState</a>&nbsp;saveState)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readDataPatches(java.io.DataInput,mindustry.io.SaveReadState)" class="member-name-link">readDataPatches</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/DataInput.html" title="class or interface in java.io" class="external-link">DataInput</a>&nbsp;stream,
+ <a href="../SaveReadState.html" title="class in mindustry.io">SaveReadState</a>&nbsp;saveState)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+</div>
+</div>
+</div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.io.SaveVersion">Methods inherited from class&nbsp;mindustry.io.<a href="../SaveVersion.html" title="class in mindustry.io">SaveVersion</a></h3>
-<code><a href="../SaveVersion.html#addCustomChunk(java.lang.String,mindustry.io.SaveFileReader.CustomChunk)">addCustomChunk</a>, <a href="../SaveVersion.html#getMeta(java.io.DataInput)">getMeta</a>, <a href="../SaveVersion.html#read(java.io.DataInputStream,arc.util.io.CounterInputStream,mindustry.world.WorldContext)">read</a>, <a href="../SaveVersion.html#readContentHeader(java.io.DataInput)">readContentHeader</a>, <a href="../SaveVersion.html#readContentPatches(java.io.DataInput)">readContentPatches</a>, <a href="../SaveVersion.html#readCustomChunks(java.io.DataInput)">readCustomChunks</a>, <a href="../SaveVersion.html#readEntities(java.io.DataInput)">readEntities</a>, <a href="../SaveVersion.html#readEntityMapping(java.io.DataInput)">readEntityMapping</a>, <a href="../SaveVersion.html#readMap(java.io.DataInput,mindustry.world.WorldContext)">readMap</a>, <a href="../SaveVersion.html#readMarkers(java.io.DataInput)">readMarkers</a>, <a href="../SaveVersion.html#readMeta(java.io.DataInput,mindustry.world.WorldContext)">readMeta</a>, <a href="../SaveVersion.html#readTeamBlocks(java.io.DataInput)">readTeamBlocks</a>, <a href="../SaveVersion.html#readWorldEntities(java.io.DataInput,arc.func.Prov%5B%5D)">readWorldEntities</a>, <a href="../SaveVersion.html#skipContentPatches(java.io.DataInput)">skipContentPatches</a>, <a href="../SaveVersion.html#write(java.io.DataOutputStream)">write</a>, <a href="../SaveVersion.html#write(java.io.DataOutputStream,arc.struct.StringMap)">write</a>, <a href="../SaveVersion.html#writeContentHeader(java.io.DataOutput)">writeContentHeader</a>, <a href="../SaveVersion.html#writeContentPatches(java.io.DataOutput)">writeContentPatches</a>, <a href="../SaveVersion.html#writeCustomChunks(java.io.DataOutput,boolean)">writeCustomChunks</a>, <a href="../SaveVersion.html#writeEntities(java.io.DataOutput)">writeEntities</a>, <a href="../SaveVersion.html#writeEntityMapping(java.io.DataOutput)">writeEntityMapping</a>, <a href="../SaveVersion.html#writeMap(java.io.DataOutput)">writeMap</a>, <a href="../SaveVersion.html#writeMarkers(java.io.DataOutput)">writeMarkers</a>, <a href="../SaveVersion.html#writeMeta(java.io.DataOutput,arc.struct.StringMap)">writeMeta</a>, <a href="../SaveVersion.html#writeTeamBlocks(java.io.DataOutput)">writeTeamBlocks</a>, <a href="../SaveVersion.html#writeWorldEntities(java.io.DataOutput)">writeWorldEntities</a></code></div>
+<code><a href="../SaveVersion.html#addCustomChunk(java.lang.String,mindustry.io.SaveFileReader.CustomChunk)">addCustomChunk</a>, <a href="../SaveVersion.html#getMeta(java.io.DataInput)">getMeta</a>, <a href="../SaveVersion.html#readContentHeader(java.io.DataInput)">readContentHeader</a>, <a href="../SaveVersion.html#readCustomChunks(java.io.DataInput)">readCustomChunks</a>, <a href="../SaveVersion.html#readEntities(java.io.DataInput)">readEntities</a>, <a href="../SaveVersion.html#readEntityMapping(java.io.DataInput)">readEntityMapping</a>, <a href="../SaveVersion.html#readMap(java.io.DataInput,mindustry.world.WorldContext)">readMap</a>, <a href="../SaveVersion.html#readMarkers(java.io.DataInput)">readMarkers</a>, <a href="../SaveVersion.html#readMeta(java.io.DataInput,mindustry.io.SaveReadState)">readMeta</a>, <a href="../SaveVersion.html#readRules(mindustry.io.SaveReadState)">readRules</a>, <a href="../SaveVersion.html#readTeamBlocks(java.io.DataInput)">readTeamBlocks</a>, <a href="../SaveVersion.html#readWorldEntities(java.io.DataInput,arc.func.Prov%5B%5D)">readWorldEntities</a>, <a href="../SaveVersion.html#write(java.io.DataOutputStream,mindustry.io.SaveOptions)">write</a>, <a href="../SaveVersion.html#writeContentHeader(java.io.DataOutput)">writeContentHeader</a>, <a href="../SaveVersion.html#writeCustomChunks(java.io.DataOutput,boolean)">writeCustomChunks</a>, <a href="../SaveVersion.html#writeDataPatches(java.io.DataOutput,boolean)">writeDataPatches</a>, <a href="../SaveVersion.html#writeEntities(java.io.DataOutput)">writeEntities</a>, <a href="../SaveVersion.html#writeEntityMapping(java.io.DataOutput)">writeEntityMapping</a>, <a href="../SaveVersion.html#writeMap(java.io.DataOutput)">writeMap</a>, <a href="../SaveVersion.html#writeMarkers(java.io.DataOutput)">writeMarkers</a>, <a href="../SaveVersion.html#writeMeta(java.io.DataOutput,arc.struct.StringMap)">writeMeta</a>, <a href="../SaveVersion.html#writeTeamBlocks(java.io.DataOutput)">writeTeamBlocks</a>, <a href="../SaveVersion.html#writeWorldEntities(java.io.DataOutput)">writeWorldEntities</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-mindustry.io.SaveFileReader">Methods inherited from class&nbsp;mindustry.io.<a href="../SaveFileReader.html" title="class in mindustry.io">SaveFileReader</a></h3>
 <code><a href="../SaveFileReader.html#mapFallback(java.lang.String)">mapFallback</a>, <a href="../SaveFileReader.html#readChunk(java.io.DataInput,mindustry.io.SaveFileReader.IORunnerLength)">readChunk</a>, <a href="../SaveFileReader.html#readChunkReads(java.io.DataInput,mindustry.io.SaveFileReader.IORunnerLength)">readChunkReads</a>, <a href="../SaveFileReader.html#readLegacyShortChunk(java.io.DataInput,mindustry.io.SaveFileReader.IORunnerLength)">readLegacyShortChunk</a>, <a href="../SaveFileReader.html#readRegion(java.lang.String,java.io.DataInput,arc.util.io.CounterInputStream,mindustry.io.SaveFileReader.IORunner)">readRegion</a>, <a href="../SaveFileReader.html#readStringMap(java.io.DataInput)">readStringMap</a>, <a href="../SaveFileReader.html#skipChunk(java.io.DataInput)">skipChunk</a>, <a href="../SaveFileReader.html#skipLegacyShortChunk(java.io.DataInput)">skipLegacyShortChunk</a>, <a href="../SaveFileReader.html#writeChunk(java.io.DataOutput,mindustry.io.SaveFileReader.IORunner)">writeChunk</a>, <a href="../SaveFileReader.html#writeRegion(java.lang.String,java.io.DataOutput,mindustry.io.SaveFileReader.IORunner)">writeRegion</a>, <a href="../SaveFileReader.html#writeStringMap(java.io.DataOutput,arc.struct.ObjectMap)">writeStringMap</a></code></div>
@@ -144,6 +167,43 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;()">
 <h3>Save11</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Save11</span>()</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<!-- ============ METHOD DETAIL ========== -->
+<li>
+<section class="method-details" id="method-detail">
+<h2>Method Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="read(java.io.DataInputStream,arc.util.io.CounterInputStream,mindustry.io.SaveReadState)">
+<h3>read</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">read</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/DataInputStream.html" title="class or interface in java.io" class="external-link">DataInputStream</a>&nbsp;stream,
+ arc.util.io.CounterInputStream&nbsp;counter,
+ <a href="../SaveReadState.html" title="class in mindustry.io">SaveReadState</a>&nbsp;saveState)</span>
+          throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="../SaveVersion.html#read(java.io.DataInputStream,arc.util.io.CounterInputStream,mindustry.io.SaveReadState)">read</a></code>&nbsp;in class&nbsp;<code><a href="../SaveVersion.html" title="class in mindustry.io">SaveVersion</a></code></dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="readDataPatches(java.io.DataInput,mindustry.io.SaveReadState)">
+<h3>readDataPatches</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readDataPatches</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/DataInput.html" title="class or interface in java.io" class="external-link">DataInput</a>&nbsp;stream,
+ <a href="../SaveReadState.html" title="class in mindustry.io">SaveReadState</a>&nbsp;saveState)</span>
+                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="../SaveVersion.html#readDataPatches(java.io.DataInput,mindustry.io.SaveReadState)">readDataPatches</a></code>&nbsp;in class&nbsp;<code><a href="../SaveVersion.html" title="class in mindustry.io">SaveVersion</a></code></dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+</dl>
 </section>
 </li>
 </ul>

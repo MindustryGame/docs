@@ -95,9 +95,12 @@ implements <a href="Net.NetProvider.html" title="interface in mindustry.net">Net
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="ArcNetProvider.PacketSerializer.html" class="type-name-link" title="class in mindustry.net">ArcNetProvider.PacketSerializer</a></code></div>
+<div class="col-first even-row-color"><code>class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="ArcNetProvider.ArcConnection.html" class="type-name-link" title="class in mindustry.net">ArcNetProvider.ArcConnection</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="ArcNetProvider.PacketSerializer.html" class="type-name-link" title="class in mindustry.net">ArcNetProvider.PacketSerializer</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -156,7 +159,7 @@ implements <a href="Net.NetProvider.html" title="interface in mindustry.net">Net
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>arc.net.Server.ServerConnectFilter</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConnectFilter()" class="member-name-link">getConnectFilter</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;mindustry.net.ArcNetProvider.ArcConnection&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="ArcNetProvider.ArcConnection.html" title="class in mindustry.net">ArcNetProvider.ArcConnection</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConnections()" class="member-name-link">getConnections</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Return all connected users.</div>
@@ -175,14 +178,34 @@ implements <a href="Net.NetProvider.html" title="interface in mindustry.net">Net
 <div class="block">Ping a host.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendAllServer(java.lang.Object,boolean)" class="member-name-link">sendAllServer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
+ boolean&nbsp;reliable)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sends a packet to all connected clients.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendAllServer(java.lang.Object,java.lang.Iterable,boolean)" class="member-name-link">sendAllServer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="NetConnection.html" title="class in mindustry.net">NetConnection</a>&gt;&nbsp;connections,
+ boolean&nbsp;reliable)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sends a packet to a specific list of clients.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendClient(java.lang.Object,boolean)" class="member-name-link">sendClient</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
  boolean&nbsp;reliable)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Send an object to the server.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setConnectFilter(arc.net.Server.ServerConnectFilter)" class="member-name-link">setConnectFilter</a><wbr>(arc.net.Server.ServerConnectFilter&nbsp;connectFilter)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendExceptServer(mindustry.net.NetConnection,java.lang.Object,boolean)" class="member-name-link">sendExceptServer</a><wbr>(<a href="NetConnection.html" title="class in mindustry.net">NetConnection</a>&nbsp;except,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
+ boolean&nbsp;reliable)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sends a packet to all connected clients, except the specified one.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setConnectFilter(arc.net.Server.ServerConnectFilter)" class="member-name-link">setConnectFilter</a><wbr>(arc.net.Server.ServerConnectFilter&nbsp;connectFilter)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets a connection filter by IP address.</div>
 </div>
 </div>
@@ -324,12 +347,53 @@ implements <a href="Net.NetProvider.html" title="interface in mindustry.net">Net
 <li>
 <section class="detail" id="getConnections()">
 <h3>getConnections</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;mindustry.net.ArcNetProvider.ArcConnection&gt;</span>&nbsp;<span class="element-name">getConnections</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="ArcNetProvider.ArcConnection.html" title="class in mindustry.net">ArcNetProvider.ArcConnection</a>&gt;</span>&nbsp;<span class="element-name">getConnections</span>()</div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="Net.NetProvider.html#getConnections()">Net.NetProvider</a></code></span></div>
 <div class="block">Return all connected users.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Net.NetProvider.html#getConnections()">getConnections</a></code>&nbsp;in interface&nbsp;<code><a href="Net.NetProvider.html" title="interface in mindustry.net">Net.NetProvider</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="sendAllServer(java.lang.Object,java.lang.Iterable,boolean)">
+<h3>sendAllServer</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendAllServer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="NetConnection.html" title="class in mindustry.net">NetConnection</a>&gt;&nbsp;connections,
+ boolean&nbsp;reliable)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="Net.NetProvider.html#sendAllServer(java.lang.Object,java.lang.Iterable,boolean)">Net.NetProvider</a></code></span></div>
+<div class="block">Sends a packet to a specific list of clients.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="Net.NetProvider.html#sendAllServer(java.lang.Object,java.lang.Iterable,boolean)">sendAllServer</a></code>&nbsp;in interface&nbsp;<code><a href="Net.NetProvider.html" title="interface in mindustry.net">Net.NetProvider</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="sendAllServer(java.lang.Object,boolean)">
+<h3>sendAllServer</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendAllServer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
+ boolean&nbsp;reliable)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="Net.NetProvider.html#sendAllServer(java.lang.Object,boolean)">Net.NetProvider</a></code></span></div>
+<div class="block">Sends a packet to all connected clients.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="Net.NetProvider.html#sendAllServer(java.lang.Object,boolean)">sendAllServer</a></code>&nbsp;in interface&nbsp;<code><a href="Net.NetProvider.html" title="interface in mindustry.net">Net.NetProvider</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="sendExceptServer(mindustry.net.NetConnection,java.lang.Object,boolean)">
+<h3>sendExceptServer</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendExceptServer</span><wbr><span class="parameters">(<a href="NetConnection.html" title="class in mindustry.net">NetConnection</a>&nbsp;except,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
+ boolean&nbsp;reliable)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="Net.NetProvider.html#sendExceptServer(mindustry.net.NetConnection,java.lang.Object,boolean)">Net.NetProvider</a></code></span></div>
+<div class="block">Sends a packet to all connected clients, except the specified one.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="Net.NetProvider.html#sendExceptServer(mindustry.net.NetConnection,java.lang.Object,boolean)">sendExceptServer</a></code>&nbsp;in interface&nbsp;<code><a href="Net.NetProvider.html" title="interface in mindustry.net">Net.NetProvider</a></code></dd>
 </dl>
 </section>
 </li>

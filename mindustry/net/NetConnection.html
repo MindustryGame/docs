@@ -75,6 +75,10 @@ loadScripts(document, 'script');</script>
 <div class="inheritance">mindustry.net.NetConnection</div>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>Direct Known Subclasses:</dt>
+<dd><code><a href="ArcNetProvider.ArcConnection.html" title="class in mindustry.net">ArcNetProvider.ArcConnection</a></code></dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">NetConnection</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
@@ -104,26 +108,34 @@ loadScripts(document, 'script');</script>
 <div class="block">When this connection was established.</div>
 </div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#hasBegunConnecting" class="member-name-link">hasBegunConnecting</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#determiningAssets" class="member-name-link">determiningAssets</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#hasConnected" class="member-name-link">hasConnected</a></code></div>
+<div class="col-second even-row-color"><code><a href="#hasBegunConnecting" class="member-name-link">hasBegunConnecting</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#hasDisconnected" class="member-name-link">hasDisconnected</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#hasConnected" class="member-name-link">hasConnected</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#kicked" class="member-name-link">kicked</a></code></div>
+<div class="col-second even-row-color"><code><a href="#hasDisconnected" class="member-name-link">hasDisconnected</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#lastReceivedClientSnapshot" class="member-name-link">lastReceivedClientSnapshot</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#kicked" class="member-name-link">kicked</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><a href="#lastReceivedClientSnapshot" class="member-name-link">lastReceivedClientSnapshot</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">ID of last received client snapshot.</div>
 </div>
-<div class="col-first even-row-color"><code>long</code></div>
-<div class="col-second even-row-color"><code><a href="#lastReceivedClientTime" class="member-name-link">lastReceivedClientTime</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>long</code></div>
+<div class="col-second odd-row-color"><code><a href="#lastReceivedClientTime" class="member-name-link">lastReceivedClientTime</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Timestamp of last received snapshot.</div>
+</div>
+<div class="col-first even-row-color"><code>arc.struct.Seq&lt;mindustry.gen.Syncc&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#localEntities" class="member-name-link">localEntities</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Entities that only this player will get synced to them.</div>
 </div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
 <div class="col-second odd-row-color"><code><a href="#mobile" class="member-name-link">mobile</a></code></div>
@@ -139,37 +151,32 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>mindustry.gen.Player</code></div>
 <div class="col-second even-row-color"><code><a href="#player" class="member-name-link">player</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>arc.struct.Seq&lt;<a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#rejectedRequests" class="member-name-link">rejectedRequests</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#receivingAssets" class="member-name-link">receivingAssets</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>arc.struct.Seq&lt;<a href="../entities/units/BuildPlan.html" title="class in mindustry.entities.units">BuildPlan</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#rejectedRequests" class="member-name-link">rejectedRequests</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Build requests that have been recently rejected.</div>
 </div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#snapshotsSent" class="member-name-link">snapshotsSent</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Count of snapshots sent from server.</div>
-</div>
-<div class="col-first odd-row-color"><code>long</code></div>
-<div class="col-second odd-row-color"><code><a href="#syncTime" class="member-name-link">syncTime</a></code></div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#usid" class="member-name-link">usid</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#usid" class="member-name-link">usid</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#uuid" class="member-name-link">uuid</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#viewHeight" class="member-name-link">viewHeight</a></code></div>
+<div class="col-second even-row-color"><code><a href="#uuid" class="member-name-link">uuid</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#viewWidth" class="member-name-link">viewWidth</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#viewHeight" class="member-name-link">viewHeight</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#viewX" class="member-name-link">viewX</a></code></div>
+<div class="col-second even-row-color"><code><a href="#viewWidth" class="member-name-link">viewWidth</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#viewY" class="member-name-link">viewY</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#viewX" class="member-name-link">viewX</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#viewY" class="member-name-link">viewY</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -197,49 +204,60 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConnected()" class="member-name-link">isConnected</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#kick()" class="member-name-link">kick</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#blacklist()" class="member-name-link">blacklist</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConnected()" class="member-name-link">isConnected</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#kick()" class="member-name-link">kick</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Kick with the standard kick reason.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#kick(java.lang.String)" class="member-name-link">kick</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;reason)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#kick(java.lang.String)" class="member-name-link">kick</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;reason)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Kick with an arbitrary reason.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#kick(java.lang.String,long)" class="member-name-link">kick</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;reason,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#kick(java.lang.String,long)" class="member-name-link">kick</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;reason,
  long&nbsp;duration)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Kick with an arbitrary reason.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#kick(mindustry.net.Packets.KickReason)" class="member-name-link">kick</a><wbr>(<a href="Packets.KickReason.html" title="enum class in mindustry.net">Packets.KickReason</a>&nbsp;reason)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Kick with a special, localized reason.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#kick(mindustry.net.Packets.KickReason)" class="member-name-link">kick</a><wbr>(<a href="Packets.KickReason.html" title="enum class in mindustry.net">Packets.KickReason</a>&nbsp;reason)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#kick(mindustry.net.Packets.KickReason,long)" class="member-name-link">kick</a><wbr>(<a href="Packets.KickReason.html" title="enum class in mindustry.net">Packets.KickReason</a>&nbsp;reason,
+ long&nbsp;kickDuration)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Kick with a special, localized reason.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#kick(mindustry.net.Packets.KickReason,long)" class="member-name-link">kick</a><wbr>(<a href="Packets.KickReason.html" title="enum class in mindustry.net">Packets.KickReason</a>&nbsp;reason,
- long&nbsp;kickDuration)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Kick with a special, localized reason.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#kickDisconnect()" class="member-name-link">kickDisconnect</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#send(java.lang.Object,boolean)" class="member-name-link">send</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#kickDisconnect()" class="member-name-link">kickDisconnect</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#send(java.lang.Object,boolean)" class="member-name-link">send</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
  boolean&nbsp;reliable)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendStream(mindustry.net.Streamable)" class="member-name-link">sendStream</a><wbr>(<a href="Streamable.html" title="class in mindustry.net">Streamable</a>&nbsp;stream)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendStream(mindustry.net.Streamable)" class="member-name-link">sendStream</a><wbr>(<a href="Streamable.html" title="class in mindustry.net">Streamable</a>&nbsp;stream)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendStream(mindustry.net.Streamable,java.io.ByteArrayOutputStream)" class="member-name-link">sendStream</a><wbr>(<a href="Streamable.html" title="class in mindustry.net">Streamable</a>&nbsp;stream,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ByteArrayOutputStream.html" title="class or interface in java.io" class="external-link">ByteArrayOutputStream</a>&nbsp;data)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendStreamAsync(mindustry.net.Streamable,java.io.ByteArrayOutputStream)" class="member-name-link">sendStreamAsync</a><wbr>(<a href="Streamable.html" title="class in mindustry.net">Streamable</a>&nbsp;stream,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ByteArrayOutputStream.html" title="class or interface in java.io" class="external-link">ByteArrayOutputStream</a>&nbsp;data)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -301,12 +319,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="syncTime">
-<h3>syncTime</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">syncTime</span></div>
-</section>
-</li>
-<li>
 <section class="detail" id="connectTime">
 <h3>connectTime</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">connectTime</span></div>
@@ -318,13 +330,6 @@ loadScripts(document, 'script');</script>
 <h3>lastReceivedClientSnapshot</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">lastReceivedClientSnapshot</span></div>
 <div class="block">ID of last received client snapshot.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="snapshotsSent">
-<h3>snapshotsSent</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">snapshotsSent</span></div>
-<div class="block">Count of snapshots sent from server.</div>
 </section>
 </li>
 <li>
@@ -356,6 +361,13 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="localEntities">
+<h3>localEntities</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;mindustry.gen.Syncc&gt;</span>&nbsp;<span class="element-name">localEntities</span></div>
+<div class="block">Entities that only this player will get synced to them.</div>
+</section>
+</li>
+<li>
 <section class="detail" id="hasConnected">
 <h3>hasConnected</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasConnected</span></div>
@@ -365,6 +377,18 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="hasBegunConnecting">
 <h3>hasBegunConnecting</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasBegunConnecting</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="determiningAssets">
+<h3>determiningAssets</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">determiningAssets</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="receivingAssets">
+<h3>receivingAssets</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">receivingAssets</span></div>
 </section>
 </li>
 <li>
@@ -469,9 +493,29 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="sendStreamAsync(mindustry.net.Streamable,java.io.ByteArrayOutputStream)">
+<h3>sendStreamAsync</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendStreamAsync</span><wbr><span class="parameters">(<a href="Streamable.html" title="class in mindustry.net">Streamable</a>&nbsp;stream,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ByteArrayOutputStream.html" title="class or interface in java.io" class="external-link">ByteArrayOutputStream</a>&nbsp;data)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="sendStream(mindustry.net.Streamable,java.io.ByteArrayOutputStream)">
+<h3>sendStream</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendStream</span><wbr><span class="parameters">(<a href="Streamable.html" title="class in mindustry.net">Streamable</a>&nbsp;stream,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ByteArrayOutputStream.html" title="class or interface in java.io" class="external-link">ByteArrayOutputStream</a>&nbsp;data)</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="sendStream(mindustry.net.Streamable)">
 <h3>sendStream</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendStream</span><wbr><span class="parameters">(<a href="Streamable.html" title="class in mindustry.net">Streamable</a>&nbsp;stream)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="blacklist()">
+<h3>blacklist</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">blacklist</span>()</div>
 </section>
 </li>
 <li>

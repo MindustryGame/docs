@@ -148,14 +148,19 @@ implements arc.ApplicationListener</span></div>
 <div class="col-last even-row-color">
 <div class="block">Duration of a kick in seconds.</div>
 </div>
-<div class="col-first odd-row-color"><code>static int</code></div>
-<div class="col-second odd-row-color"><code><a href="#voteCooldown" class="member-name-link">voteCooldown</a></code></div>
+<div class="col-first odd-row-color"><code>long</code></div>
+<div class="col-second odd-row-color"><code><a href="#snapshotSyncTime" class="member-name-link">snapshotSyncTime</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Used for entity snapshot timing.</div>
+</div>
+<div class="col-first even-row-color"><code>static int</code></div>
+<div class="col-second even-row-color"><code><a href="#voteCooldown" class="member-name-link">voteCooldown</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Cooldown between votes in seconds.</div>
 </div>
-<div class="col-first even-row-color"><code>static float</code></div>
-<div class="col-second even-row-color"><code><a href="#voteDuration" class="member-name-link">voteDuration</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>static float</code></div>
+<div class="col-second odd-row-color"><code><a href="#voteDuration" class="member-name-link">voteDuration</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Voting round duration in seconds.</div>
 </div>
 </div>
@@ -268,14 +273,12 @@ implements arc.ApplicationListener</span></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#connectConfirm(mindustry.gen.Player)" class="member-name-link">connectConfirm</a><wbr>(mindustry.gen.Player&nbsp;player)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#debugStatusClient(int,int,int)" class="member-name-link">debugStatusClient</a><wbr>(int&nbsp;value,
- int&nbsp;lastClientSnapshot,
- int&nbsp;snapshotsSent)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#debugStatusClient(int,int)" class="member-name-link">debugStatusClient</a><wbr>(int&nbsp;value,
+ int&nbsp;lastClientSnapshot)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#debugStatusClientUnreliable(int,int,int)" class="member-name-link">debugStatusClientUnreliable</a><wbr>(int&nbsp;value,
- int&nbsp;lastClientSnapshot,
- int&nbsp;snapshotsSent)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#debugStatusClientUnreliable(int,int)" class="member-name-link">debugStatusClientUnreliable</a><wbr>(int&nbsp;value,
+ int&nbsp;lastClientSnapshot)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fixName(java.lang.String)" class="member-name-link">fixName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
@@ -305,52 +308,91 @@ implements arc.ApplicationListener</span></div>
 <div class="block">Should only be used on the headless backend.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requestBlockSnapshot(mindustry.gen.Player,int)" class="member-name-link">requestBlockSnapshot</a><wbr>(mindustry.gen.Player&nbsp;player,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requestAssets(mindustry.gen.Player,short%5B%5D)" class="member-name-link">requestAssets</a><wbr>(mindustry.gen.Player&nbsp;player,
+ short[]&nbsp;ids)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requestBlockSnapshot(mindustry.gen.Player,int)" class="member-name-link">requestBlockSnapshot</a><wbr>(mindustry.gen.Player&nbsp;player,
  int&nbsp;pos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requestDebugStatus(mindustry.gen.Player)" class="member-name-link">requestDebugStatus</a><wbr>(mindustry.gen.Player&nbsp;player)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendWorldData(mindustry.gen.Player)" class="member-name-link">sendWorldData</a><wbr>(mindustry.gen.Player&nbsp;player)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#serverBinaryPacketReliable(mindustry.gen.Player,java.lang.String,byte%5B%5D)" class="member-name-link">serverBinaryPacketReliable</a><wbr>(mindustry.gen.Player&nbsp;player,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
- byte[]&nbsp;contents)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#serverBinaryPacketUnreliable(mindustry.gen.Player,java.lang.String,byte%5B%5D)" class="member-name-link">serverBinaryPacketUnreliable</a><wbr>(mindustry.gen.Player&nbsp;player,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
- byte[]&nbsp;contents)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requestDebugStatus(mindustry.gen.Player)" class="member-name-link">requestDebugStatus</a><wbr>(mindustry.gen.Player&nbsp;player)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#serverPacketReliable(mindustry.gen.Player,java.lang.String,java.lang.String)" class="member-name-link">serverPacketReliable</a><wbr>(mindustry.gen.Player&nbsp;player,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;contents)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#serverPacketUnreliable(mindustry.gen.Player,java.lang.String,java.lang.String)" class="member-name-link">serverPacketUnreliable</a><wbr>(mindustry.gen.Player&nbsp;player,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;contents)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#syncBuilding(mindustry.gen.Building)" class="member-name-link">syncBuilding</a><wbr>(mindustry.gen.Building&nbsp;build)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requestWorld(mindustry.gen.Player)" class="member-name-link">requestWorld</a><wbr>(mindustry.gen.Player&nbsp;player)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendAssetRequirements(mindustry.gen.Player)" class="member-name-link">sendAssetRequirements</a><wbr>(mindustry.gen.Player&nbsp;player)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#votesRequired()" class="member-name-link">votesRequired</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendEntitySnapshots(arc.struct.Seq,short,byte%5B%5D)" class="member-name-link">sendEntitySnapshots</a><wbr>(arc.struct.Seq&lt;<a href="../net/NetConnection.html" title="class in mindustry.net">NetConnection</a>&gt;&nbsp;connections,
+ short&nbsp;amount,
+ byte[]&nbsp;data)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeBlockSnapshots()" class="member-name-link">writeBlockSnapshots</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendWorldAndAssets(mindustry.gen.Player)" class="member-name-link">sendWorldAndAssets</a><wbr>(mindustry.gen.Player&nbsp;player)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendWorldData(mindustry.gen.Player)" class="member-name-link">sendWorldData</a><wbr>(mindustry.gen.Player&nbsp;player)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#serverBinaryPacketReliable(mindustry.gen.Player,java.lang.String,byte%5B%5D)" class="member-name-link">serverBinaryPacketReliable</a><wbr>(mindustry.gen.Player&nbsp;player,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
+ byte[]&nbsp;contents)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#serverBinaryPacketUnreliable(mindustry.gen.Player,java.lang.String,byte%5B%5D)" class="member-name-link">serverBinaryPacketUnreliable</a><wbr>(mindustry.gen.Player&nbsp;player,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
+ byte[]&nbsp;contents)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#serverPacketReliable(mindustry.gen.Player,java.lang.String,java.lang.String)" class="member-name-link">serverPacketReliable</a><wbr>(mindustry.gen.Player&nbsp;player,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;contents)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#serverPacketUnreliable(mindustry.gen.Player,java.lang.String,java.lang.String)" class="member-name-link">serverPacketUnreliable</a><wbr>(mindustry.gen.Player&nbsp;player,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;contents)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#syncBuilding(mindustry.gen.Building)" class="member-name-link">syncBuilding</a><wbr>(mindustry.gen.Building&nbsp;build)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#votesRequired()" class="member-name-link">votesRequired</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeBlockSnapshots()" class="member-name-link">writeBlockSnapshots</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sends a block snapshot to all players.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeEntitySnapshot(mindustry.gen.Player)" class="member-name-link">writeEntitySnapshot</a><wbr>(mindustry.gen.Player&nbsp;player)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeCustomEntitySnapshot(mindustry.gen.Player,java.lang.Iterable)" class="member-name-link">writeCustomEntitySnapshot</a><wbr>(mindustry.gen.Player&nbsp;player,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;mindustry.gen.Syncc&gt;&nbsp;entities)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Writes a custom snapshot containing player-local entities; this is for entities other players don't see.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeEntity(mindustry.gen.Syncc,java.io.DataOutputStream)" class="member-name-link">writeEntity</a><wbr>(mindustry.gen.Syncc&nbsp;entity,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/DataOutputStream.html" title="class or interface in java.io" class="external-link">DataOutputStream</a>&nbsp;dataStream)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeEntitySnapshotsAll()" class="member-name-link">writeEntitySnapshotsAll</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Does not check isSyncHidden.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeEntitySnapshotsTeam(mindustry.game.Team,arc.struct.Seq)" class="member-name-link">writeEntitySnapshotsTeam</a><wbr>(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team,
+ arc.struct.Seq&lt;mindustry.gen.Player&gt;&nbsp;players)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks isSyncHidden for only one player per team.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeStateSnapshot()" class="member-name-link">writeStateSnapshot</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -432,6 +474,13 @@ implements arc.ApplicationListener</span></div>
 <div class="block">Cooldown between votes in seconds.</div>
 </section>
 </li>
+<li>
+<section class="detail" id="snapshotSyncTime">
+<h3>snapshotSyncTime</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">snapshotSyncTime</span></div>
+<div class="block">Used for entity snapshot timing.</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -454,6 +503,12 @@ implements arc.ApplicationListener</span></div>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="sendWorldAndAssets(mindustry.gen.Player)">
+<h3>sendWorldAndAssets</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendWorldAndAssets</span><wbr><span class="parameters">(mindustry.gen.Player&nbsp;player)</span></div>
+</section>
+</li>
 <li>
 <section class="detail" id="init()">
 <h3>init</h3>
@@ -481,6 +536,12 @@ implements arc.ApplicationListener</span></div>
 <h3>assignTeam</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../game/Team.html" title="class in mindustry.game">Team</a></span>&nbsp;<span class="element-name">assignTeam</span><wbr><span class="parameters">(mindustry.gen.Player&nbsp;current,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;mindustry.gen.Player&gt;&nbsp;players)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="sendAssetRequirements(mindustry.gen.Player)">
+<h3>sendAssetRequirements</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendAssetRequirements</span><wbr><span class="parameters">(mindustry.gen.Player&nbsp;player)</span></div>
 </section>
 </li>
 <li>
@@ -536,19 +597,17 @@ implements arc.ApplicationListener</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="debugStatusClient(int,int,int)">
+<section class="detail" id="debugStatusClient(int,int)">
 <h3>debugStatusClient</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">debugStatusClient</span><wbr><span class="parameters">(int&nbsp;value,
- int&nbsp;lastClientSnapshot,
- int&nbsp;snapshotsSent)</span></div>
+ int&nbsp;lastClientSnapshot)</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="debugStatusClientUnreliable(int,int,int)">
+<section class="detail" id="debugStatusClientUnreliable(int,int)">
 <h3>debugStatusClientUnreliable</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">debugStatusClientUnreliable</span><wbr><span class="parameters">(int&nbsp;value,
- int&nbsp;lastClientSnapshot,
- int&nbsp;snapshotsSent)</span></div>
+ int&nbsp;lastClientSnapshot)</span></div>
 </section>
 </li>
 <li>
@@ -670,6 +729,19 @@ implements arc.ApplicationListener</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="requestWorld(mindustry.gen.Player)">
+<h3>requestWorld</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">requestWorld</span><wbr><span class="parameters">(mindustry.gen.Player&nbsp;player)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="requestAssets(mindustry.gen.Player,short[])">
+<h3>requestAssets</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">requestAssets</span><wbr><span class="parameters">(mindustry.gen.Player&nbsp;player,
+ short[]&nbsp;ids)</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="connectConfirm(mindustry.gen.Player)">
 <h3>connectConfirm</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">connectConfirm</span><wbr><span class="parameters">(mindustry.gen.Player&nbsp;player)</span></div>
@@ -724,10 +796,68 @@ implements arc.ApplicationListener</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="writeEntitySnapshot(mindustry.gen.Player)">
-<h3>writeEntitySnapshot</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writeEntitySnapshot</span><wbr><span class="parameters">(mindustry.gen.Player&nbsp;player)</span>
-                         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<section class="detail" id="writeStateSnapshot()">
+<h3>writeStateSnapshot</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writeStateSnapshot</span>()
+                        throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="writeEntitySnapshotsAll()">
+<h3>writeEntitySnapshotsAll</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writeEntitySnapshotsAll</span>()
+                             throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Does not check isSyncHidden. Call this if no entities are hidden.</div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="writeEntitySnapshotsTeam(mindustry.game.Team,arc.struct.Seq)">
+<h3>writeEntitySnapshotsTeam</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writeEntitySnapshotsTeam</span><wbr><span class="parameters">(<a href="../game/Team.html" title="class in mindustry.game">Team</a>&nbsp;team,
+ arc.struct.Seq&lt;mindustry.gen.Player&gt;&nbsp;players)</span>
+                              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Checks isSyncHidden for only one player per team. Called if FoW is enabled.</div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="sendEntitySnapshots(arc.struct.Seq,short,byte[])">
+<h3>sendEntitySnapshots</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendEntitySnapshots</span><wbr><span class="parameters">(arc.struct.Seq&lt;<a href="../net/NetConnection.html" title="class in mindustry.net">NetConnection</a>&gt;&nbsp;connections,
+ short&nbsp;amount,
+ byte[]&nbsp;data)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="writeCustomEntitySnapshot(mindustry.gen.Player,java.lang.Iterable)">
+<h3>writeCustomEntitySnapshot</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writeCustomEntitySnapshot</span><wbr><span class="parameters">(mindustry.gen.Player&nbsp;player,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;mindustry.gen.Syncc&gt;&nbsp;entities)</span>
+                               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Writes a custom snapshot containing player-local entities; this is for entities other players don't see.</div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="writeEntity(mindustry.gen.Syncc,java.io.DataOutputStream)">
+<h3>writeEntity</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writeEntity</span><wbr><span class="parameters">(mindustry.gen.Syncc&nbsp;entity,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/DataOutputStream.html" title="class or interface in java.io" class="external-link">DataOutputStream</a>&nbsp;dataStream)</span>
+                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>

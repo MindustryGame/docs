@@ -166,6 +166,17 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="EntityGroup.html" title="type parameter in EntityGroup">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#first()" class="member-name-link">first</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fixedUpdate(int)" class="member-name-link">fixedUpdate</a><wbr>(int&nbsp;targetFps)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Calls <a href="#fixedUpdate(int,int)"><code>fixedUpdate(int, int)</code></a> with a maximum of 10 updates per frame.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fixedUpdate(int,int)" class="member-name-link">fixedUpdate</a><wbr>(int&nbsp;targetUps,
+ int&nbsp;maxUpdatesPerFrame)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Updates this entity group at a fixed rate and delta time, regardless of framerate.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="EntityGroup.html" title="type parameter in EntityGroup">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getByID(int)" class="member-name-link">getByID</a><wbr>(int&nbsp;id)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -330,6 +341,23 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base
 <section class="detail" id="update()">
 <h3>update</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="fixedUpdate(int)">
+<h3>fixedUpdate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">fixedUpdate</span><wbr><span class="parameters">(int&nbsp;targetFps)</span></div>
+<div class="block">Calls <a href="#fixedUpdate(int,int)"><code>fixedUpdate(int, int)</code></a> with a maximum of 10 updates per frame.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="fixedUpdate(int,int)">
+<h3>fixedUpdate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">fixedUpdate</span><wbr><span class="parameters">(int&nbsp;targetUps,
+ int&nbsp;maxUpdatesPerFrame)</span></div>
+<div class="block">Updates this entity group at a fixed rate and delta time, regardless of framerate.
+ If updates per frame exceed , they will be skipped - visually, the game will look like it is slowing down.
+ For example, a value of 60 targetUps and 10 maxUpdatesPerFrame will mean that the game only starts slowing down below (60 / 10) = 6 FPS.</div>
 </section>
 </li>
 <li>

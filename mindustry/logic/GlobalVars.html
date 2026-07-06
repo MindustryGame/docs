@@ -125,12 +125,9 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Global random state.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final arc.struct.Seq&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#soundNames" class="member-name-link">soundNames</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="../ctype/ContentType.html" title="enum class in mindustry.ctype">ContentType</a>[]</code></div>
+<div class="col-second odd-row-color"><code><a href="#writableLookableContent" class="member-name-link">writableLookableContent</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="../ctype/ContentType.html" title="enum class in mindustry.ctype">ContentType</a>[]</code></div>
-<div class="col-second even-row-color"><code><a href="#writableLookableContent" class="member-name-link">writableLookableContent</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -209,6 +206,14 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putEntryOnly(java.lang.String)" class="member-name-link">putEntryOnly</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove(java.lang.String)" class="member-name-link">remove</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove(mindustry.logic.LVar)" class="member-name-link">remove</a><wbr>(<a href="LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;lvar)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Removes a global variable - used for data patch reset.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(java.lang.String,double)" class="member-name-link">set</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  double&nbsp;value)</code></div>
@@ -301,12 +306,6 @@ loadScripts(document, 'script');</script>
 <div class="block">Global random state.</div>
 </section>
 </li>
-<li>
-<section class="detail" id="soundNames">
-<h3>soundNames</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">soundNames</span></div>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -379,23 +378,24 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="get(java.lang.String)">
 <h3>get</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LVar.html" title="class in mindustry.logic">LVar</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LVar.html" title="class in mindustry.logic">LVar</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>a constant variable if there is a constant with this name, otherwise null.
- Attempt to get privileged variable from non-privileged logic executor returns null constant.</dd>
+<dd>a constant variable if there is a constant with this name, or null.</dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="get(java.lang.String,boolean)">
 <h3>get</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LVar.html" title="class in mindustry.logic">LVar</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LVar.html" title="class in mindustry.logic">LVar</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  boolean&nbsp;privileged)</span></div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>a constant variable by name
- Attempt to get privileged variable from non-privileged logic executor returns null constant.</dd>
+<dd>a constant variable by name.
+ Attempting to get privileged variable from a non-privileged logic executor returns a null constant.</dd>
 </dl>
 </section>
 </li>
@@ -424,6 +424,19 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;privileged,
  boolean&nbsp;hidden)</span></div>
 <div class="block">Adds a constant value by name.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="remove(mindustry.logic.LVar)">
+<h3>remove</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="LVar.html" title="class in mindustry.logic">LVar</a>&nbsp;lvar)</span></div>
+<div class="block">Removes a global variable - used for data patch reset. This variable is assumed not to be privileged or have a documentation entry.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="remove(java.lang.String)">
+<h3>remove</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
 </section>
 </li>
 <li>

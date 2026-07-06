@@ -111,36 +111,48 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">normal, ambient music, plays at any time</div>
 </div>
-<div class="col-first odd-row-color"><code>arc.struct.Seq&lt;arc.audio.Music&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#bossMusic" class="member-name-link">bossMusic</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><code>protected mindustry.audio.SoundControl.AudioThread</code></div>
+<div class="col-second odd-row-color"><code><a href="#ambientThread" class="member-name-link">ambientThread</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>arc.struct.Seq&lt;arc.audio.Music&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#bossMusic" class="member-name-link">bossMusic</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">music used explicitly after boss spawns</div>
 </div>
-<div class="col-first even-row-color"><code>protected arc.audio.Music</code></div>
-<div class="col-second even-row-color"><code><a href="#current" class="member-name-link">current</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>arc.struct.Seq&lt;arc.audio.Music&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#darkMusic" class="member-name-link">darkMusic</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><code>protected arc.audio.Music</code></div>
+<div class="col-second odd-row-color"><code><a href="#current" class="member-name-link">current</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>arc.struct.Seq&lt;arc.audio.Music&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#darkMusic" class="member-name-link">darkMusic</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">darker music, used in times of conflict</div>
 </div>
-<div class="col-first even-row-color"><code>protected float</code></div>
-<div class="col-second even-row-color"><code><a href="#fade" class="member-name-link">fade</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected arc.audio.AudioFilter</code></div>
-<div class="col-second odd-row-color"><code><a href="#filter" class="member-name-link">filter</a></code></div>
+<div class="col-first odd-row-color"><code>protected float</code></div>
+<div class="col-second odd-row-color"><code><a href="#fade" class="member-name-link">fade</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#finTime" class="member-name-link">finTime</a></code></div>
+<div class="col-first even-row-color"><code>protected arc.audio.AudioFilter</code></div>
+<div class="col-second even-row-color"><code><a href="#filter" class="member-name-link">filter</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#foutTime" class="member-name-link">foutTime</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#finTime" class="member-name-link">finTime</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#foutTime" class="member-name-link">foutTime</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#keepSilent" class="member-name-link">keepSilent</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected long</code></div>
 <div class="col-second even-row-color"><code><a href="#lastPlayed" class="member-name-link">lastPlayed</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>protected arc.audio.Music</code></div>
 <div class="col-second odd-row-color"><code><a href="#lastRandomPlayed" class="member-name-link">lastRandomPlayed</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>protected boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#launchingAmbientThread" class="member-name-link">launchingAmbientThread</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected arc.struct.Seq&lt;<a href="SoundControl.SoundData.html" title="class in mindustry.audio">SoundControl.SoundData</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#localData" class="member-name-link">localData</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
 <div class="col-second even-row-color"><code><a href="#musicChance" class="member-name-link">musicChance</a></code></div>
@@ -187,17 +199,41 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addAmbientSource(mindustry.audio.AmbientSource)" class="member-name-link">addAmbientSource</a><wbr>(<a href="AmbientSource.html" title="interface in mindustry.audio">AmbientSource</a>&nbsp;source)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#alwaysPlayMusic()" class="member-name-link">alwaysPlayMusic</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static arc.audio.Music</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findMusic(java.lang.String)" class="member-name-link">findMusic</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected arc.struct.Seq&lt;arc.audio.Music&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAmbientMusic()" class="member-name-link">getAmbientMusic</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected arc.struct.Seq&lt;arc.audio.Music&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBossMusic()" class="member-name-link">getBossMusic</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected arc.struct.Seq&lt;arc.audio.Music&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDarkMusic()" class="member-name-link">getDarkMusic</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDark()" class="member-name-link">isDark</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Whether to play dark music.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPlaying()" class="member-name-link">isPlaying</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#keepSilent()" class="member-name-link">keepSilent</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loop(arc.audio.Sound,float)" class="member-name-link">loop</a><wbr>(arc.audio.Sound&nbsp;sound,
  float&nbsp;volume)</code></div>
@@ -218,41 +254,45 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Plays and fades in a music track.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playOnce(arc.audio.Music)" class="member-name-link">playOnce</a><wbr>(arc.audio.Music&nbsp;music)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playMusic(arc.audio.Music,boolean)" class="member-name-link">playMusic</a><wbr>(arc.audio.Music&nbsp;music,
+ boolean&nbsp;interrupt)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playOnce(arc.audio.Music)" class="member-name-link">playOnce</a><wbr>(arc.audio.Music&nbsp;music)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Plays a music track once and only once.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playRandom()" class="member-name-link">playRandom</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playRandom()" class="member-name-link">playRandom</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Plays a random track.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reload()" class="member-name-link">reload</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setupFilters()" class="member-name-link">setupFilters</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reload()" class="member-name-link">reload</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldPlay()" class="member-name-link">shouldPlay</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setupFilters()" class="member-name-link">setupFilters</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#silence()" class="member-name-link">silence</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldPlay()" class="member-name-link">shouldPlay</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#silence()" class="member-name-link">silence</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Fades out the current track, unless it has already been silenced.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Update and play the right music track.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateLoops()" class="member-name-link">updateLoops</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateLoops()" class="member-name-link">updateLoops</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -365,6 +405,31 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="keepSilent">
+<h3>keepSilent</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">keepSilent</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="ambientThread">
+<h3>ambientThread</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">protected</span>&nbsp;<span class="return-type">mindustry.audio.SoundControl.AudioThread</span>&nbsp;<span class="element-name">ambientThread</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="launchingAmbientThread">
+<h3>launchingAmbientThread</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">launchingAmbientThread</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="localData">
+<h3>localData</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;<a href="SoundControl.SoundData.html" title="class in mindustry.audio">SoundControl.SoundData</a>&gt;</span>&nbsp;<span class="element-name">localData</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="wasPlaying">
 <h3>wasPlaying</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">wasPlaying</span></div>
@@ -417,30 +482,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="loop(arc.audio.Sound,float)">
-<h3>loop</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loop</span><wbr><span class="parameters">(arc.audio.Sound&nbsp;sound,
- float&nbsp;volume)</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="loop(arc.audio.Sound,arc.math.geom.Position,float)">
-<h3>loop</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loop</span><wbr><span class="parameters">(arc.audio.Sound&nbsp;sound,
- arc.math.geom.Position&nbsp;pos,
- float&nbsp;volume)</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="loop(arc.audio.Sound,arc.math.geom.Position,float,float)">
-<h3>loop</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loop</span><wbr><span class="parameters">(arc.audio.Sound&nbsp;sound,
- arc.math.geom.Position&nbsp;pos,
- float&nbsp;volume,
- float&nbsp;pitch)</span></div>
-</section>
-</li>
-<li>
 <section class="detail" id="stop()">
 <h3>stop</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stop</span>()</div>
@@ -454,9 +495,23 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="updateLoops()">
-<h3>updateLoops</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateLoops</span>()</div>
+<section class="detail" id="keepSilent()">
+<h3>keepSilent</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">keepSilent</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="playMusic(arc.audio.Music,boolean)">
+<h3>playMusic</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">playMusic</span><wbr><span class="parameters">(@Nullable
+ arc.audio.Music&nbsp;music,
+ boolean&nbsp;interrupt)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="isPlaying()">
+<h3>isPlaying</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isPlaying</span>()</div>
 </section>
 </li>
 <li>
@@ -464,6 +519,30 @@ loadScripts(document, 'script');</script>
 <h3>playRandom</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">playRandom</span>()</div>
 <div class="block">Plays a random track.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="alwaysPlayMusic()">
+<h3>alwaysPlayMusic</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">alwaysPlayMusic</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getBossMusic()">
+<h3>getBossMusic</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;arc.audio.Music&gt;</span>&nbsp;<span class="element-name">getBossMusic</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getAmbientMusic()">
+<h3>getAmbientMusic</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;arc.audio.Music&gt;</span>&nbsp;<span class="element-name">getAmbientMusic</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getDarkMusic()">
+<h3>getDarkMusic</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;arc.audio.Music&gt;</span>&nbsp;<span class="element-name">getDarkMusic</span>()</div>
 </section>
 </li>
 <li>
@@ -500,6 +579,49 @@ loadScripts(document, 'script');</script>
 <h3>silence</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">silence</span>()</div>
 <div class="block">Fades out the current track, unless it has already been silenced.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="findMusic(java.lang.String)">
+<h3>findMusic</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">arc.audio.Music</span>&nbsp;<span class="element-name">findMusic</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="loop(arc.audio.Sound,float)">
+<h3>loop</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loop</span><wbr><span class="parameters">(arc.audio.Sound&nbsp;sound,
+ float&nbsp;volume)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="loop(arc.audio.Sound,arc.math.geom.Position,float)">
+<h3>loop</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loop</span><wbr><span class="parameters">(arc.audio.Sound&nbsp;sound,
+ arc.math.geom.Position&nbsp;pos,
+ float&nbsp;volume)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="loop(arc.audio.Sound,arc.math.geom.Position,float,float)">
+<h3>loop</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loop</span><wbr><span class="parameters">(arc.audio.Sound&nbsp;sound,
+ arc.math.geom.Position&nbsp;pos,
+ float&nbsp;volume,
+ float&nbsp;pitch)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="addAmbientSource(mindustry.audio.AmbientSource)">
+<h3>addAmbientSource</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addAmbientSource</span><wbr><span class="parameters">(<a href="AmbientSource.html" title="interface in mindustry.audio">AmbientSource</a>&nbsp;source)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="updateLoops()">
+<h3>updateLoops</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateLoops</span>()</div>
 </section>
 </li>
 </ul>
