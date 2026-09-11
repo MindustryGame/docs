@@ -79,7 +79,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>arc.math.geom.Position</code>, <code>arc.math.geom.QuadTree.QuadTreeObject</code>, <code><a href="../../../audio/AmbientSource.html" title="interface in mindustry.audio">AmbientSource</a></code>, <code><a href="../../../entities/Sized.html" title="interface in mindustry.entities">Sized</a></code>, <code>mindustry.gen.Buildingc</code>, <code>mindustry.gen.Entityc</code>, <code>mindustry.gen.Healthc</code>, <code>mindustry.gen.Posc</code>, <code>mindustry.gen.Teamc</code>, <code>mindustry.gen.Timerc</code>, <code><a href="../../../logic/Controllable.html" title="interface in mindustry.logic">Controllable</a></code>, <code><a href="../../../logic/LReadable.html" title="interface in mindustry.logic">LReadable</a></code>, <code><a href="../../../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></code>, <code><a href="../../../logic/Settable.html" title="interface in mindustry.logic">Settable</a></code>, <code><a href="../../../ui/Displayable.html" title="interface in mindustry.ui">Displayable</a></code></dd>
+<dd><code>arc.math.geom.Position</code>, <code>arc.math.geom.QuadTree.QuadTreeObject</code>, <code><a href="../../../audio/AmbientSource.html" title="interface in mindustry.audio">AmbientSource</a></code>, <code><a href="../../../entities/Sized.html" title="interface in mindustry.entities">Sized</a></code>, <code>mindustry.gen.Buildingc</code>, <code>mindustry.gen.Entityc</code>, <code>mindustry.gen.Healthc</code>, <code>mindustry.gen.Posc</code>, <code>mindustry.gen.Teamc</code>, <code>mindustry.gen.Timerc</code>, <code><a href="../../../logic/Controllable.html" title="interface in mindustry.logic">Controllable</a></code>, <code><a href="../../../logic/LPrintable.html" title="interface in mindustry.logic">LPrintable</a></code>, <code><a href="../../../logic/LReadable.html" title="interface in mindustry.logic">LReadable</a></code>, <code><a href="../../../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></code>, <code><a href="../../../logic/Settable.html" title="interface in mindustry.logic">Settable</a></code>, <code><a href="../../../ui/Displayable.html" title="interface in mindustry.ui">Displayable</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Enclosing class:</dt>
@@ -88,7 +88,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">MessageBlock.MessageBuild</span>
 <span class="extends-implements">extends mindustry.gen.Building
-implements <a href="../../../logic/LReadable.html" title="interface in mindustry.logic">LReadable</a></span></div>
+implements <a href="../../../logic/LReadable.html" title="interface in mindustry.logic">LReadable</a>, <a href="../../../logic/LPrintable.html" title="interface in mindustry.logic">LPrintable</a></span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -163,6 +163,12 @@ implements <a href="../../../logic/LReadable.html" title="interface in mindustry
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onConfigureBuildTapped(mindustry.gen.Building)" class="member-name-link">onConfigureBuildTapped</a><wbr>(mindustry.gen.Building&nbsp;other)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(java.lang.StringBuilder)" class="member-name-link">print</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html" title="class or interface in java.lang" class="external-link">StringBuilder</a>&nbsp;text)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#printable(mindustry.logic.LExecutor)" class="member-name-link">printable</a><wbr>(<a href="../../../logic/LExecutor.html" title="class in mindustry.logic">LExecutor</a>&nbsp;exec)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#read(arc.util.io.Reads,byte)" class="member-name-link">read</a><wbr>(arc.util.io.Reads&nbsp;read,
@@ -309,6 +315,26 @@ implements <a href="../../../logic/LReadable.html" title="interface in mindustry
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../../logic/LReadable.html#read(mindustry.logic.LVar,mindustry.logic.LVar)">read</a></code>&nbsp;in interface&nbsp;<code><a href="../../../logic/LReadable.html" title="interface in mindustry.logic">LReadable</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="printable(mindustry.logic.LExecutor)">
+<h3>printable</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">printable</span><wbr><span class="parameters">(<a href="../../../logic/LExecutor.html" title="class in mindustry.logic">LExecutor</a>&nbsp;exec)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../logic/LPrintable.html#printable(mindustry.logic.LExecutor)">printable</a></code>&nbsp;in interface&nbsp;<code><a href="../../../logic/LPrintable.html" title="interface in mindustry.logic">LPrintable</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="print(java.lang.StringBuilder)">
+<h3>print</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">print</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html" title="class or interface in java.lang" class="external-link">StringBuilder</a>&nbsp;text)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../logic/LPrintable.html#print(java.lang.StringBuilder)">print</a></code>&nbsp;in interface&nbsp;<code><a href="../../../logic/LPrintable.html" title="interface in mindustry.logic">LPrintable</a></code></dd>
 </dl>
 </section>
 </li>

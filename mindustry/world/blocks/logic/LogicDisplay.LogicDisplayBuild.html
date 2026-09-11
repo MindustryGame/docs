@@ -79,7 +79,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>arc.math.geom.Position</code>, <code>arc.math.geom.QuadTree.QuadTreeObject</code>, <code><a href="../../../audio/AmbientSource.html" title="interface in mindustry.audio">AmbientSource</a></code>, <code><a href="../../../entities/Sized.html" title="interface in mindustry.entities">Sized</a></code>, <code>mindustry.gen.Buildingc</code>, <code>mindustry.gen.Entityc</code>, <code>mindustry.gen.Healthc</code>, <code>mindustry.gen.Posc</code>, <code>mindustry.gen.Teamc</code>, <code>mindustry.gen.Timerc</code>, <code><a href="../../../logic/Controllable.html" title="interface in mindustry.logic">Controllable</a></code>, <code><a href="../../../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></code>, <code><a href="../../../logic/Settable.html" title="interface in mindustry.logic">Settable</a></code>, <code><a href="../../../ui/Displayable.html" title="interface in mindustry.ui">Displayable</a></code></dd>
+<dd><code>arc.math.geom.Position</code>, <code>arc.math.geom.QuadTree.QuadTreeObject</code>, <code><a href="../../../audio/AmbientSource.html" title="interface in mindustry.audio">AmbientSource</a></code>, <code><a href="../../../entities/Sized.html" title="interface in mindustry.entities">Sized</a></code>, <code>mindustry.gen.Buildingc</code>, <code>mindustry.gen.Entityc</code>, <code>mindustry.gen.Healthc</code>, <code>mindustry.gen.Posc</code>, <code>mindustry.gen.Teamc</code>, <code>mindustry.gen.Timerc</code>, <code><a href="../../../logic/Controllable.html" title="interface in mindustry.logic">Controllable</a></code>, <code><a href="../../../logic/LDrawable.html" title="interface in mindustry.logic">LDrawable</a></code>, <code><a href="../../../logic/Senseable.html" title="interface in mindustry.logic">Senseable</a></code>, <code><a href="../../../logic/Settable.html" title="interface in mindustry.logic">Settable</a></code>, <code><a href="../../../ui/Displayable.html" title="interface in mindustry.ui">Displayable</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
@@ -91,7 +91,8 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">LogicDisplay.LogicDisplayBuild</span>
-<span class="extends-implements">extends mindustry.gen.Building</span></div>
+<span class="extends-implements">extends mindustry.gen.Building
+implements <a href="../../../logic/LDrawable.html" title="interface in mindustry.logic">LDrawable</a></span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -119,15 +120,18 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>long</code></div>
 <div class="col-second even-row-color"><code><a href="#operations" class="member-name-link">operations</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="LogicDisplay.LogicDisplayBuild.html" title="class in mindustry.world.blocks.logic">LogicDisplay.LogicDisplayBuild</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#rootDisplay" class="member-name-link">rootDisplay</a></code></div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#processing" class="member-name-link">processing</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#stroke" class="member-name-link">stroke</a></code></div>
+<div class="col-first even-row-color"><code><a href="LogicDisplay.LogicDisplayBuild.html" title="class in mindustry.world.blocks.logic">LogicDisplay.LogicDisplayBuild</a></code></div>
+<div class="col-second even-row-color"><code><a href="#rootDisplay" class="member-name-link">rootDisplay</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>arc.math.Mat</code></div>
-<div class="col-second odd-row-color"><code><a href="#transform" class="member-name-link">transform</a></code></div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#stroke" class="member-name-link">stroke</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>arc.math.Mat</code></div>
+<div class="col-second even-row-color"><code><a href="#transform" class="member-name-link">transform</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-mindustry.gen.Building">Fields inherited from class&nbsp;mindustry.gen.Building</h3>
@@ -168,33 +172,36 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#draw()" class="member-name-link">draw</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#draw(arc.struct.LongSeq)" class="member-name-link">draw</a><wbr>(arc.struct.LongSeq&nbsp;graphicsBuffer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawable(mindustry.logic.LExecutor)" class="member-name-link">drawable</a><wbr>(<a href="../../../logic/LExecutor.html" title="class in mindustry.logic">LExecutor</a>&nbsp;exec)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ensureBuffer()" class="member-name-link">ensureBuffer</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flushCommands(arc.struct.LongSeq)" class="member-name-link">flushCommands</a><wbr>(arc.struct.LongSeq&nbsp;graphicsBuffer)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBufferRegion(arc.graphics.g2d.TextureRegion)" class="member-name-link">getBufferRegion</a><wbr>(arc.graphics.g2d.TextureRegion&nbsp;region)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBufferRegion(arc.graphics.g2d.TextureRegion)" class="member-name-link">getBufferRegion</a><wbr>(arc.graphics.g2d.TextureRegion&nbsp;region)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processCommands()" class="member-name-link">processCommands</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processCommands()" class="member-name-link">processCommands</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#read(arc.util.io.Reads,byte)" class="member-name-link">read</a><wbr>(arc.util.io.Reads&nbsp;read,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#read(arc.util.io.Reads,byte)" class="member-name-link">read</a><wbr>(arc.util.io.Reads&nbsp;read,
  byte&nbsp;revision)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove()" class="member-name-link">remove</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sense(mindustry.logic.LAccess)" class="member-name-link">sense</a><wbr>(<a href="../../../logic/LAccess.html" title="enum class in mindustry.logic">LAccess</a>&nbsp;sensor)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#version()" class="member-name-link">version</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(arc.util.io.Writes)" class="member-name-link">write</a><wbr>(arc.util.io.Writes&nbsp;write)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove()" class="member-name-link">remove</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sense(mindustry.logic.LAccess)" class="member-name-link">sense</a><wbr>(<a href="../../../logic/LAccess.html" title="enum class in mindustry.logic">LAccess</a>&nbsp;sensor)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#version()" class="member-name-link">version</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(arc.util.io.Writes)" class="member-name-link">write</a><wbr>(arc.util.io.Writes&nbsp;write)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -271,6 +278,12 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">index</span></div>
 </section>
 </li>
+<li>
+<section class="detail" id="processing">
+<h3>processing</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">processing</span></div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -316,9 +329,23 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="flushCommands(arc.struct.LongSeq)">
-<h3>flushCommands</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">flushCommands</span><wbr><span class="parameters">(arc.struct.LongSeq&nbsp;graphicsBuffer)</span></div>
+<section class="detail" id="drawable(mindustry.logic.LExecutor)">
+<h3>drawable</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">drawable</span><wbr><span class="parameters">(<a href="../../../logic/LExecutor.html" title="class in mindustry.logic">LExecutor</a>&nbsp;exec)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../logic/LDrawable.html#drawable(mindustry.logic.LExecutor)">drawable</a></code>&nbsp;in interface&nbsp;<code><a href="../../../logic/LDrawable.html" title="interface in mindustry.logic">LDrawable</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="draw(arc.struct.LongSeq)">
+<h3>draw</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">draw</span><wbr><span class="parameters">(arc.struct.LongSeq&nbsp;graphicsBuffer)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../logic/LDrawable.html#draw(arc.struct.LongSeq)">draw</a></code>&nbsp;in interface&nbsp;<code><a href="../../../logic/LDrawable.html" title="interface in mindustry.logic">LDrawable</a></code></dd>
+</dl>
 </section>
 </li>
 <li>

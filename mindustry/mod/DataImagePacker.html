@@ -94,6 +94,11 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#regionPrefix" class="member-name-link">regionPrefix</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#serverRegionPrefix" class="member-name-link">serverRegionPrefix</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Prefix for images pushed dynamically by the server via <a href="#addTexture(java.lang.String,byte%5B%5D)"><code>addTexture(String, byte[])</code></a>, as opposed to map/mod data patches.</div>
+</div>
 </div>
 </section>
 </li>
@@ -122,14 +127,25 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pack(arc.struct.Seq)" class="member-name-link">pack</a><wbr>(arc.struct.Seq&lt;<a href="data/ImageAsset.html" title="class in mindustry.mod.data">ImageAsset</a>&gt;&nbsp;images)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addTexture(java.lang.String,byte%5B%5D)" class="member-name-link">addTexture</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ byte[]&nbsp;pngData)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Packs a new set of images.</div>
+<div class="block">Decodes PNG bytes and registers them into the atlas under "netRegionPrefix + name", replacing any existing image with the same name.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#printStats(arc.graphics.g2d.PixmapPacker,arc.graphics.g2d.PixmapPacker)" class="member-name-link">printStats</a><wbr>(arc.graphics.g2d.PixmapPacker&nbsp;mainPacker,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pack(arc.struct.Seq)" class="member-name-link">pack</a><wbr>(arc.struct.Seq&lt;<a href="data/ImageAsset.html" title="class in mindustry.mod.data">ImageAsset</a>&gt;&nbsp;images)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Packs a new set of images.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#printStats(arc.graphics.g2d.PixmapPacker,arc.graphics.g2d.PixmapPacker)" class="member-name-link">printStats</a><wbr>(arc.graphics.g2d.PixmapPacker&nbsp;mainPacker,
  arc.graphics.g2d.PixmapPacker&nbsp;envPacker)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeTextureQueued(java.lang.String)" class="member-name-link">removeTextureQueued</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Queues a texture for removal.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unload()" class="member-name-link">unload</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -159,6 +175,21 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="see-list">
 <li><a href="../../constant-values.html#mindustry.mod.DataImagePacker.regionPrefix">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="serverRegionPrefix">
+<h3>serverRegionPrefix</h3>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">serverRegionPrefix</span></div>
+<div class="block">Prefix for images pushed dynamically by the server via <a href="#addTexture(java.lang.String,byte%5B%5D)"><code>addTexture(String, byte[])</code></a>, as opposed to map/mod data patches.</div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list">
+<li><a href="../../constant-values.html#mindustry.mod.DataImagePacker.serverRegionPrefix">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -197,6 +228,21 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="unload()">
 <h3>unload</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">unload</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="addTexture(java.lang.String,byte[])">
+<h3>addTexture</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addTexture</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ byte[]&nbsp;pngData)</span></div>
+<div class="block">Decodes PNG bytes and registers them into the atlas under "netRegionPrefix + name", replacing any existing image with the same name. Safe to call from any thread.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="removeTextureQueued(java.lang.String)">
+<h3>removeTextureQueued</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeTextureQueued</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="block">Queues a texture for removal. Will run after any pending <a href="#addTexture(java.lang.String,byte%5B%5D)"><code>addTexture(java.lang.String, byte[])</code></a> calls so that races do not occur.</div>
 </section>
 </li>
 <li>

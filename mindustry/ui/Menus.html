@@ -78,7 +78,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Menus</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Class for handling menus and notifications across the network. Unstable API!</div>
+<div class="block">Class for handling menus and notifications across the network.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -92,11 +92,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="Menus.MenuListener.html" class="type-name-link" title="interface in mindustry.ui">Menus.MenuListener</a></code></div>
+<div class="col-second even-row-color"><code><a href="Menus.MenuBuilderListener.html" class="type-name-link" title="interface in mindustry.ui">Menus.MenuBuilderListener</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static interface&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="Menus.TextInputListener.html" class="type-name-link" title="interface in mindustry.ui">Menus.TextInputListener</a></code></div>
+<div class="col-second odd-row-color"><code><a href="Menus.MenuListener.html" class="type-name-link" title="interface in mindustry.ui">Menus.MenuListener</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="Menus.TextInputListener.html" class="type-name-link" title="interface in mindustry.ui">Menus.TextInputListener</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -143,10 +146,23 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hideHudText()" class="member-name-link">hideHudText</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#infoMessage(java.lang.String)" class="member-name-link">infoMessage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hideMenuBuilder(int)" class="member-name-link">hideMenuBuilder</a><wbr>(int&nbsp;menuId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#infoPopup(java.lang.String,float,int,int,int,int,int)" class="member-name-link">infoPopup</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#infoMessage(java.lang.String)" class="member-name-link">infoMessage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#infoPopup(java.lang.String,float,int,int,int,int,int)" class="member-name-link">infoPopup</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+ float&nbsp;duration,
+ int&nbsp;align,
+ int&nbsp;top,
+ int&nbsp;left,
+ int&nbsp;bottom,
+ int&nbsp;right)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#infoPopup(java.lang.String,java.lang.String,float,int,int,int,int,int)" class="member-name-link">infoPopup</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id,
  float&nbsp;duration,
  int&nbsp;align,
  int&nbsp;top,
@@ -155,8 +171,7 @@ loadScripts(document, 'script');</script>
  int&nbsp;right)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#infoPopup(java.lang.String,java.lang.String,float,int,int,int,int,int)" class="member-name-link">infoPopup</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#infoPopupReliable(java.lang.String,float,int,int,int,int,int)" class="member-name-link">infoPopupReliable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  float&nbsp;duration,
  int&nbsp;align,
  int&nbsp;top,
@@ -165,7 +180,8 @@ loadScripts(document, 'script');</script>
  int&nbsp;right)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#infoPopupReliable(java.lang.String,float,int,int,int,int,int)" class="member-name-link">infoPopupReliable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#infoPopupReliable(java.lang.String,java.lang.String,float,int,int,int,int,int)" class="member-name-link">infoPopupReliable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id,
  float&nbsp;duration,
  int&nbsp;align,
  int&nbsp;top,
@@ -174,55 +190,24 @@ loadScripts(document, 'script');</script>
  int&nbsp;right)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#infoPopupReliable(java.lang.String,java.lang.String,float,int,int,int,int,int)" class="member-name-link">infoPopupReliable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id,
- float&nbsp;duration,
- int&nbsp;align,
- int&nbsp;top,
- int&nbsp;left,
- int&nbsp;bottom,
- int&nbsp;right)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#infoToast(java.lang.String,float)" class="member-name-link">infoToast</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#infoToast(java.lang.String,float)" class="member-name-link">infoToast</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  float&nbsp;duration)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#label(java.lang.String,float,float,float)" class="member-name-link">label</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
- float&nbsp;duration,
- float&nbsp;worldx,
- float&nbsp;worldy)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#label(java.lang.String,int,float,float,float)" class="member-name-link">label</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
- int&nbsp;id,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#label(java.lang.String,float,float,float)" class="member-name-link">label</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  float&nbsp;duration,
  float&nbsp;worldx,
  float&nbsp;worldy)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#label(java.lang.String,int,float,float,float,int)" class="member-name-link">label</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
- int&nbsp;id,
- float&nbsp;duration,
- float&nbsp;worldx,
- float&nbsp;worldy,
- int&nbsp;flags)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#labelReliable(java.lang.String,float,float,float)" class="member-name-link">labelReliable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
- float&nbsp;duration,
- float&nbsp;worldx,
- float&nbsp;worldy)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#labelReliable(java.lang.String,int,float,float,float)" class="member-name-link">labelReliable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#label(java.lang.String,int,float,float,float)" class="member-name-link">label</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  int&nbsp;id,
  float&nbsp;duration,
  float&nbsp;worldx,
  float&nbsp;worldy)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#labelReliable(java.lang.String,int,float,float,float,int)" class="member-name-link">labelReliable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#label(java.lang.String,int,float,float,float,int)" class="member-name-link">label</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  int&nbsp;id,
  float&nbsp;duration,
  float&nbsp;worldx,
@@ -230,10 +215,50 @@ loadScripts(document, 'script');</script>
  int&nbsp;flags)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#menu(int,java.lang.String,java.lang.String,java.lang.String%5B%5D%5B%5D)" class="member-name-link">menu</a><wbr>(int&nbsp;menuId,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#labelReliable(java.lang.String,float,float,float)" class="member-name-link">labelReliable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+ float&nbsp;duration,
+ float&nbsp;worldx,
+ float&nbsp;worldy)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#labelReliable(java.lang.String,int,float,float,float)" class="member-name-link">labelReliable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+ int&nbsp;id,
+ float&nbsp;duration,
+ float&nbsp;worldx,
+ float&nbsp;worldy)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#labelReliable(java.lang.String,int,float,float,float,int)" class="member-name-link">labelReliable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+ int&nbsp;id,
+ float&nbsp;duration,
+ float&nbsp;worldx,
+ float&nbsp;worldy,
+ int&nbsp;flags)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#menu(int,java.lang.String,java.lang.String,java.lang.String%5B%5D%5B%5D)" class="member-name-link">menu</a><wbr>(int&nbsp;menuId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[][]&nbsp;options)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#menuBuilder(int,long,java.lang.String,boolean,boolean,boolean,mindustry.ui.builder.UiBuilder.NodeBuilder)" class="member-name-link">menuBuilder</a><wbr>(int&nbsp;id,
+ long&nbsp;token,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title,
+ boolean&nbsp;hideOnClick,
+ boolean&nbsp;hidePrevious,
+ boolean&nbsp;fillScreen,
+ <a href="builder/UiBuilder.NodeBuilder.html" title="class in mindustry.ui.builder">UiBuilder.NodeBuilder</a>&lt;?&gt;&nbsp;builder)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#menuBuilderChoose(mindustry.gen.Player,int,mindustry.ui.builder.MenuResult)" class="member-name-link">menuBuilderChoose</a><wbr>(mindustry.gen.Player&nbsp;player,
+ int&nbsp;menuId,
+ <a href="builder/MenuResult.html" title="class in mindustry.ui.builder">MenuResult</a>&nbsp;results)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#menuBuilderUpdate(int,java.lang.String,mindustry.ui.builder.UiBuilder.NodeBuilder)" class="member-name-link">menuBuilderUpdate</a><wbr>(int&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tableId,
+ <a href="builder/UiBuilder.NodeBuilder.html" title="class in mindustry.ui.builder">UiBuilder.NodeBuilder</a>&lt;?&gt;&nbsp;builder)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#menuChoose(mindustry.gen.Player,int,int)" class="member-name-link">menuChoose</a><wbr>(mindustry.gen.Player&nbsp;player,
@@ -246,50 +271,55 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#registerMenu(mindustry.ui.Menus.MenuListener)" class="member-name-link">registerMenu</a><wbr>(<a href="Menus.MenuListener.html" title="interface in mindustry.ui">Menus.MenuListener</a>&nbsp;listener)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Register a *global* menu listener.</div>
+<div class="block">Register a global menu listener.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#registerTextInput(mindustry.ui.Menus.TextInputListener)" class="member-name-link">registerTextInput</a><wbr>(<a href="Menus.TextInputListener.html" title="interface in mindustry.ui">Menus.TextInputListener</a>&nbsp;listener)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#registerMenuBuilder(mindustry.ui.Menus.MenuBuilderListener)" class="member-name-link">registerMenuBuilder</a><wbr>(<a href="Menus.MenuBuilderListener.html" title="interface in mindustry.ui">Menus.MenuBuilderListener</a>&nbsp;listener)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Register a global menu builder listener.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#registerTextInput(mindustry.ui.Menus.TextInputListener)" class="member-name-link">registerTextInput</a><wbr>(<a href="Menus.TextInputListener.html" title="interface in mindustry.ui">Menus.TextInputListener</a>&nbsp;listener)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Register a *global* text input listener.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeWorldLabel(int)" class="member-name-link">removeWorldLabel</a><wbr>(int&nbsp;id)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setHudText(java.lang.String)" class="member-name-link">setHudText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeWorldLabel(int)" class="member-name-link">removeWorldLabel</a><wbr>(int&nbsp;id)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setHudTextReliable(java.lang.String)" class="member-name-link">setHudTextReliable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setHudText(java.lang.String)" class="member-name-link">setHudText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setHudTextReliable(java.lang.String)" class="member-name-link">setHudTextReliable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">TCP version</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textInput(int,java.lang.String,java.lang.String,int,java.lang.String,boolean)" class="member-name-link">textInput</a><wbr>(int&nbsp;textInputId,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textInput(int,java.lang.String,java.lang.String,int,java.lang.String,boolean)" class="member-name-link">textInput</a><wbr>(int&nbsp;textInputId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  int&nbsp;textLength,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;def,
  boolean&nbsp;numeric)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textInput(int,java.lang.String,java.lang.String,int,java.lang.String,boolean,boolean)" class="member-name-link">textInput</a><wbr>(int&nbsp;textInputId,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textInput(int,java.lang.String,java.lang.String,int,java.lang.String,boolean,boolean)" class="member-name-link">textInput</a><wbr>(int&nbsp;textInputId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  int&nbsp;textLength,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;def,
  boolean&nbsp;numeric,
  boolean&nbsp;allowEmpty)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textInputResult(mindustry.gen.Player,int,java.lang.String)" class="member-name-link">textInputResult</a><wbr>(mindustry.gen.Player&nbsp;player,
- int&nbsp;textInputId,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#warningToast(int,java.lang.String)" class="member-name-link">warningToast</a><wbr>(int&nbsp;unicode,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textInputResult(mindustry.gen.Player,int,java.lang.String)" class="member-name-link">textInputResult</a><wbr>(mindustry.gen.Player&nbsp;player,
+ int&nbsp;textInputId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#warningToast(int,java.lang.String)" class="member-name-link">warningToast</a><wbr>(int&nbsp;unicode,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -325,7 +355,14 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="registerMenu(mindustry.ui.Menus.MenuListener)">
 <h3>registerMenu</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">registerMenu</span><wbr><span class="parameters">(<a href="Menus.MenuListener.html" title="interface in mindustry.ui">Menus.MenuListener</a>&nbsp;listener)</span></div>
-<div class="block">Register a *global* menu listener. If no option is chosen, the option is returned as -1.</div>
+<div class="block">Register a global menu listener. If no option is chosen, the option is returned as -1. This API is soft-deprecated; use <a href="builder/MenuBuilder.html" title="class in mindustry.ui.builder"><code>MenuBuilder</code></a> and <a href="#registerMenuBuilder(mindustry.ui.Menus.MenuBuilderListener)"><code>registerMenuBuilder(mindustry.ui.Menus.MenuBuilderListener)</code></a> instead.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="registerMenuBuilder(mindustry.ui.Menus.MenuBuilderListener)">
+<h3>registerMenuBuilder</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">registerMenuBuilder</span><wbr><span class="parameters">(<a href="Menus.MenuBuilderListener.html" title="interface in mindustry.ui">Menus.MenuBuilderListener</a>&nbsp;listener)</span></div>
+<div class="block">Register a global menu builder listener. This is not the same as the 'old' MenuListener API; use it with <a href="builder/MenuBuilder.html" title="class in mindustry.ui.builder"><code>MenuBuilder</code></a>.</div>
 </section>
 </li>
 <li>
@@ -333,6 +370,42 @@ loadScripts(document, 'script');</script>
 <h3>registerTextInput</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">registerTextInput</span><wbr><span class="parameters">(<a href="Menus.TextInputListener.html" title="interface in mindustry.ui">Menus.TextInputListener</a>&nbsp;listener)</span></div>
 <div class="block">Register a *global* text input listener. If no text is provided, the text is returned as null.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="menuBuilder(int,long,java.lang.String,boolean,boolean,boolean,mindustry.ui.builder.UiBuilder.NodeBuilder)">
+<h3>menuBuilder</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">menuBuilder</span><wbr><span class="parameters">(int&nbsp;id,
+ long&nbsp;token,
+ @Nullable
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title,
+ boolean&nbsp;hideOnClick,
+ boolean&nbsp;hidePrevious,
+ boolean&nbsp;fillScreen,
+ <a href="builder/UiBuilder.NodeBuilder.html" title="class in mindustry.ui.builder">UiBuilder.NodeBuilder</a>&lt;?&gt;&nbsp;builder)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="menuBuilderUpdate(int,java.lang.String,mindustry.ui.builder.UiBuilder.NodeBuilder)">
+<h3>menuBuilderUpdate</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">menuBuilderUpdate</span><wbr><span class="parameters">(int&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tableId,
+ <a href="builder/UiBuilder.NodeBuilder.html" title="class in mindustry.ui.builder">UiBuilder.NodeBuilder</a>&lt;?&gt;&nbsp;builder)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="hideMenuBuilder(int)">
+<h3>hideMenuBuilder</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">hideMenuBuilder</span><wbr><span class="parameters">(int&nbsp;menuId)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="menuBuilderChoose(mindustry.gen.Player,int,mindustry.ui.builder.MenuResult)">
+<h3>menuBuilderChoose</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">menuBuilderChoose</span><wbr><span class="parameters">(@Nullable
+ mindustry.gen.Player&nbsp;player,
+ int&nbsp;menuId,
+ <a href="builder/MenuResult.html" title="class in mindustry.ui.builder">MenuResult</a>&nbsp;results)</span></div>
 </section>
 </li>
 <li>

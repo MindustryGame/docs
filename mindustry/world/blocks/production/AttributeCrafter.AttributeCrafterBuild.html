@@ -108,7 +108,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-mindustry.world.blocks.production.GenericCrafter.GenericCrafterBuild">Fields inherited from class&nbsp;mindustry.world.blocks.production.<a href="GenericCrafter.GenericCrafterBuild.html" title="class in mindustry.world.blocks.production">GenericCrafter.GenericCrafterBuild</a></h3>
-<code><a href="GenericCrafter.GenericCrafterBuild.html#progress">progress</a>, <a href="GenericCrafter.GenericCrafterBuild.html#totalProgress">totalProgress</a>, <a href="GenericCrafter.GenericCrafterBuild.html#warmup">warmup</a></code></div>
+<code><a href="GenericCrafter.GenericCrafterBuild.html#outputAccumulator">outputAccumulator</a>, <a href="GenericCrafter.GenericCrafterBuild.html#progress">progress</a>, <a href="GenericCrafter.GenericCrafterBuild.html#totalProgress">totalProgress</a>, <a href="GenericCrafter.GenericCrafterBuild.html#warmup">warmup</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-mindustry.gen.Building">Fields inherited from class&nbsp;mindustry.gen.Building</h3>
 <code>added, block, bulletDamageEvent, cdump, dead, dumpAccum, efficiency, enabled, healSuppressionTime, health, hitDuration, hitTime, id, index__build, indexerBuildIndex, indexerBuildTypeIndex, initialized, items, lastAccessed, lastDamageTime, lastDisabler, lastHealTime, liquids, maxHealth, optionalEfficiency, potentialEfficiency, power, proximity, recentDamageTime, rotation, shouldConsumePower, sleeping, sleepingEntities, sleepTime, suppressColor, team, teamChangeEvent, tempBuilds, tile, timer, timeScale, timeScaleDuration, timeToSleep, tmpTiles, visibleFlags, visualLiquid, wasDamaged, wasVisible, x, y</code></div>
@@ -153,9 +153,17 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onProximityUpdate()" class="member-name-link">onProximityUpdate</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pickedUp()" class="member-name-link">pickedUp</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#outputMultiplier()" class="member-name-link">outputMultiplier</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pickedUp()" class="member-name-link">pickedUp</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scaleOutput(float)" class="member-name-link">scaleOutput</a><wbr>(float&nbsp;amount)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Allows scaling the crafter's output dynamically.</div>
+</div>
 </div>
 </div>
 </div>
@@ -224,6 +232,12 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="outputMultiplier()">
+<h3>outputMultiplier</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">outputMultiplier</span>()</div>
+</section>
+</li>
+<li>
 <section class="detail" id="efficiencyMultiplier()">
 <h3>efficiencyMultiplier</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">efficiencyMultiplier</span>()</div>
@@ -236,6 +250,18 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code>efficiencyScale</code>&nbsp;in class&nbsp;<code>mindustry.gen.Building</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="scaleOutput(float)">
+<h3>scaleOutput</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">scaleOutput</span><wbr><span class="parameters">(float&nbsp;amount)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="GenericCrafter.GenericCrafterBuild.html#scaleOutput(float)">GenericCrafter.GenericCrafterBuild</a></code></span></div>
+<div class="block">Allows scaling the crafter's output dynamically.</div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="GenericCrafter.GenericCrafterBuild.html#scaleOutput(float)">scaleOutput</a></code>&nbsp;in class&nbsp;<code><a href="GenericCrafter.GenericCrafterBuild.html" title="class in mindustry.world.blocks.production">GenericCrafter.GenericCrafterBuild</a></code></dd>
 </dl>
 </section>
 </li>

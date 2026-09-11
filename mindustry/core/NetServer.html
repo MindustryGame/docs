@@ -307,6 +307,17 @@ implements arc.ApplicationListener</span></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Should only be used on the headless backend.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeTexture(java.lang.String)" class="member-name-link">removeTexture</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Removes a texture previously sent with <a href="#sendTexture(java.lang.String,byte%5B%5D)"><code>sendTexture(String, byte[])</code></a> from every connected client.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeTexture(mindustry.net.NetConnection,java.lang.String)" class="member-name-link">removeTexture</a><wbr>(<a href="../net/NetConnection.html" title="class in mindustry.net">NetConnection</a>&nbsp;con,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Removes a texture previously sent with <a href="#sendTexture(mindustry.net.NetConnection,java.lang.String,byte%5B%5D)"><code>sendTexture(NetConnection, String, byte[])</code></a> from a single client.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requestAssets(mindustry.gen.Player,short%5B%5D)" class="member-name-link">requestAssets</a><wbr>(mindustry.gen.Player&nbsp;player,
  short[]&nbsp;ids)</code></div>
@@ -329,6 +340,19 @@ implements arc.ApplicationListener</span></div>
  short&nbsp;amount,
  byte[]&nbsp;data)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendTexture(java.lang.String,byte%5B%5D)" class="member-name-link">sendTexture</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ byte[]&nbsp;pngData)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Streams a texture to every connected client.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendTexture(mindustry.net.NetConnection,java.lang.String,byte%5B%5D)" class="member-name-link">sendTexture</a><wbr>(<a href="../net/NetConnection.html" title="class in mindustry.net">NetConnection</a>&nbsp;con,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ byte[]&nbsp;pngData)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Streams a texture to a single connected client.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendWorldAndAssets(mindustry.gen.Player)" class="member-name-link">sendWorldAndAssets</a><wbr>(mindustry.gen.Player&nbsp;player)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -548,6 +572,45 @@ implements arc.ApplicationListener</span></div>
 <section class="detail" id="sendWorldData(mindustry.gen.Player)">
 <h3>sendWorldData</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendWorldData</span><wbr><span class="parameters">(mindustry.gen.Player&nbsp;player)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="sendTexture(mindustry.net.NetConnection,java.lang.String,byte[])">
+<h3>sendTexture</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendTexture</span><wbr><span class="parameters">(<a href="../net/NetConnection.html" title="class in mindustry.net">NetConnection</a>&nbsp;con,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ byte[]&nbsp;pngData)</span></div>
+<div class="block">Streams a texture to a single connected client. This may take some time if the image is large or if the connection is poor.
+ Make sure to call <a href="#removeTexture(mindustry.net.NetConnection,java.lang.String)"><code>removeTexture(NetConnection, String)</code></a> when the image is no longer needed to prevent resource leaks.
+ Use <code>PixmapIO.writePngBytes(arc.graphics.Pixmap)</code> to get Pixmap bytes. Respect <a href="../mod/DataPatcher.html#maxImageSize"><code>DataPatcher.maxImageSize</code></a>.
+ Should be called on main thread to ensure correct ordering of sends (multiple with same name), and removals (remove called right after adding).</div>
+</section>
+</li>
+<li>
+<section class="detail" id="sendTexture(java.lang.String,byte[])">
+<h3>sendTexture</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendTexture</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ byte[]&nbsp;pngData)</span></div>
+<div class="block">Streams a texture to every connected client.
+ See <a href="#sendTexture(mindustry.net.NetConnection,java.lang.String,byte%5B%5D)"><code>sendTexture(NetConnection, String, byte[])</code></a> for more info.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="removeTexture(mindustry.net.NetConnection,java.lang.String)">
+<h3>removeTexture</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeTexture</span><wbr><span class="parameters">(<a href="../net/NetConnection.html" title="class in mindustry.net">NetConnection</a>&nbsp;con,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="block">Removes a texture previously sent with <a href="#sendTexture(mindustry.net.NetConnection,java.lang.String,byte%5B%5D)"><code>sendTexture(NetConnection, String, byte[])</code></a> from a single client.
+ If called while the texture is in use, it will be replaced with a black rectangle. Do not do this.
+ Should be called on main thread for the same reasons as sendTexture.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="removeTexture(java.lang.String)">
+<h3>removeTexture</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeTexture</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="block">Removes a texture previously sent with <a href="#sendTexture(java.lang.String,byte%5B%5D)"><code>sendTexture(String, byte[])</code></a> from every connected client.
+ See <a href="#removeTexture(mindustry.net.NetConnection,java.lang.String)"><code>removeTexture(NetConnection, String)</code></a> for more info.</div>
 </section>
 </li>
 <li>

@@ -77,7 +77,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>arc.util.serialization.Json.JsonSerializable</code>, <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code></dd>
+<dd><code>arc.util.serialization.Json.JsonSerializable</code></dd>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
@@ -90,16 +90,8 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract static class </span><span class="element-name type-name-label">MapObjectives.ObjectiveMarker</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements arc.util.serialization.Json.JsonSerializable, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></span></div>
+implements arc.util.serialization.Json.JsonSerializable</span></div>
 <div class="block">Marker used for drawing various content to indicate something along with an objective. Mostly used as UI overlay.</div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="../../serialized-form.html#mindustry.game.MapObjectives.ObjectiveMarker">Serialized Form</a></li>
-</ul>
-</dd>
-</dl>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -112,27 +104,27 @@ implements arc.util.serialization.Json.JsonSerializable, <a href="https://docs.o
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#arrayIndex" class="member-name-link">arrayIndex</a></code></div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#autoscale" class="member-name-link">autoscale</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Internal use only! Do not access.</div>
-</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#autoscale" class="member-name-link">autoscale</a></code></div>
-<div class="col-last odd-row-color">
 <div class="block">Whether to scale marker corresponding to player's zoom level.</div>
 </div>
-<div class="col-first even-row-color"><code>protected float</code></div>
-<div class="col-second even-row-color"><code><a href="#drawLayer" class="member-name-link">drawLayer</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>protected float</code></div>
+<div class="col-second odd-row-color"><code><a href="#drawLayer" class="member-name-link">drawLayer</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">On which z-sorting layer is marker drawn.</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><a href="#light" class="member-name-link">light</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Whether to use the marker as light.</div>
+</div>
+<div class="col-first odd-row-color"><code>int</code></div>
 <div class="col-second odd-row-color"><code><a href="#minimap" class="member-name-link">minimap</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">Whether to display marker on minimap.</div>
+<div class="block">Whether to display marker on the minimap.</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-first even-row-color"><code>int</code></div>
 <div class="col-second even-row-color"><code><a href="#world" class="member-name-link">world</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Whether to display marker in the world.</div>
@@ -175,26 +167,29 @@ implements arc.util.serialization.Json.JsonSerializable, <a href="https://docs.o
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#draw(float)" class="member-name-link">draw</a><wbr>(float&nbsp;scaleFactor)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fetchText(java.lang.String)" class="member-name-link">fetchText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#read(arc.util.serialization.Json,arc.util.serialization.JsonValue)" class="member-name-link">read</a><wbr>(arc.util.serialization.Json&nbsp;json,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawLight(float)" class="member-name-link">drawLight</a><wbr>(float&nbsp;scaleFactor)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fetchText(java.lang.String)" class="member-name-link">fetchText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#read(arc.util.serialization.Json,arc.util.serialization.JsonValue)" class="member-name-link">read</a><wbr>(arc.util.serialization.Json&nbsp;json,
  arc.util.serialization.JsonValue&nbsp;jsonData)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setText(java.lang.String,boolean)" class="member-name-link">setText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
+ boolean&nbsp;fetch)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setText(java.lang.String,boolean)" class="member-name-link">setText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
- boolean&nbsp;fetch)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTexture(java.lang.Object)" class="member-name-link">setTexture</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;texture)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTexture(java.lang.Object)" class="member-name-link">setTexture</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;texture)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#typeName()" class="member-name-link">typeName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#typeName()" class="member-name-link">typeName</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(arc.util.serialization.Json)" class="member-name-link">write</a><wbr>(arc.util.serialization.Json&nbsp;json)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(arc.util.serialization.Json)" class="member-name-link">write</a><wbr>(arc.util.serialization.Json&nbsp;json)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -213,24 +208,24 @@ implements arc.util.serialization.Json.JsonSerializable, <a href="https://docs.o
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="arrayIndex">
-<h3>arrayIndex</h3>
-<div class="member-signature"><span class="modifiers">public transient</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">arrayIndex</span></div>
-<div class="block">Internal use only! Do not access.</div>
-</section>
-</li>
-<li>
 <section class="detail" id="world">
 <h3>world</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">world</span></div>
-<div class="block">Whether to display marker in the world.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">world</span></div>
+<div class="block">Whether to display marker in the world. Do not modify directly if added, use control() instead.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="minimap">
 <h3>minimap</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">minimap</span></div>
-<div class="block">Whether to display marker on minimap.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">minimap</span></div>
+<div class="block">Whether to display marker on the minimap. Do not modify directly if added, use control() instead.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="light">
+<h3>light</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">light</span></div>
+<div class="block">Whether to use the marker as light. Do not modify directly if added, use control() instead.</div>
 </section>
 </li>
 <li>
@@ -276,6 +271,12 @@ implements arc.util.serialization.Json.JsonSerializable, <a href="https://docs.o
 </section>
 </li>
 <li>
+<section class="detail" id="drawLight(float)">
+<h3>drawLight</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawLight</span><wbr><span class="parameters">(float&nbsp;scaleFactor)</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="control(mindustry.logic.LMarkerControl,double,double,double)">
 <h3>control</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">control</span><wbr><span class="parameters">(<a href="../logic/LMarkerControl.html" title="enum class in mindustry.logic">LMarkerControl</a>&nbsp;type,
@@ -309,12 +310,6 @@ implements arc.util.serialization.Json.JsonSerializable, <a href="https://docs.o
 </section>
 </li>
 <li>
-<section class="detail" id="fetchText(java.lang.String)">
-<h3>fetchText</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">fetchText</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</span></div>
-</section>
-</li>
-<li>
 <section class="detail" id="write(arc.util.serialization.Json)">
 <h3>write</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">write</span><wbr><span class="parameters">(arc.util.serialization.Json&nbsp;json)</span></div>
@@ -333,6 +328,12 @@ implements arc.util.serialization.Json.JsonSerializable, <a href="https://docs.o
 <dt>Specified by:</dt>
 <dd><code>read</code>&nbsp;in interface&nbsp;<code>arc.util.serialization.Json.JsonSerializable</code></dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="fetchText(java.lang.String)">
+<h3>fetchText</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">fetchText</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</span></div>
 </section>
 </li>
 </ul>

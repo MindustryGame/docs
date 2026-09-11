@@ -102,15 +102,43 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>float</code></div>
 <div class="col-second odd-row-color"><code><a href="#amount" class="member-name-link">amount</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>protected float</code></div>
+<div class="col-second even-row-color"><code><a href="#downTimer" class="member-name-link">downTimer</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#hasHealed" class="member-name-link">hasHealed</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="../Effect.html" title="class in mindustry.entities">Effect</a></code></div>
 <div class="col-second even-row-color"><code><a href="#healEffect" class="member-name-link">healEffect</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#healPercent" class="member-name-link">healPercent</a></code></div>
+<div class="col-first odd-row-color"><code>protected boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#healNow" class="member-name-link">healNow</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#parentizeEffects" class="member-name-link">parentizeEffects</a></code></div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#healPercent" class="member-name-link">healPercent</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected float</code></div>
+<div class="col-second odd-row-color"><code><a href="#healthChange" class="member-name-link">healthChange</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>protected float</code></div>
+<div class="col-second even-row-color"><code><a href="#healthMissing" class="member-name-link">healthMissing</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected float</code></div>
+<div class="col-second odd-row-color"><code><a href="#healTimer" class="member-name-link">healTimer</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><a href="#maxTargets" class="member-name-link">maxTargets</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Maximum number of units healed.</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#parentizeEffects" class="member-name-link">parentizeEffects</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#randDesync" class="member-name-link">randDesync</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Random initial reload multiplier to check for damaged units.</div>
+</div>
 <div class="col-first odd-row-color"><code>float</code></div>
 <div class="col-second odd-row-color"><code><a href="#range" class="member-name-link">range</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
@@ -122,17 +150,45 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">Multiplies healing to units of the same type by this amount.</div>
 </div>
-<div class="col-first even-row-color"><code>arc.audio.Sound</code></div>
-<div class="col-second even-row-color"><code><a href="#sound" class="member-name-link">sound</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#smartDowntime" class="member-name-link">smartDowntime</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">If all damaged units havent been hurt for at least this amount of time, force healing them, regardless of thresholds.</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#smartHeal" class="member-name-link">smartHeal</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">If true, this ability will consider missing hp, number of targets, cooldowns...etc.</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#smartHealPercent" class="member-name-link">smartHealPercent</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">If a damaged unit health % is lower than this heal it as soon as possible.</div>
+</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#soundVolume" class="member-name-link">soundVolume</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#smartHealStrength" class="member-name-link">smartHealStrength</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">A multiplier on potential healing efficiency.</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#smartInterval" class="member-name-link">smartInterval</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">How often to check for healing when at least 1 damaged unit is found.</div>
+</div>
+<div class="col-first odd-row-color"><code>arc.audio.Sound</code></div>
+<div class="col-second odd-row-color"><code><a href="#sound" class="member-name-link">sound</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#soundVolume" class="member-name-link">soundVolume</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected float</code></div>
+<div class="col-second odd-row-color"><code><a href="#sumMaxHealth" class="member-name-link">sumMaxHealth</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected float</code></div>
-<div class="col-second even-row-color"><code><a href="#timer" class="member-name-link">timer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#sumTypeMult" class="member-name-link">sumTypeMult</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#wasHealed" class="member-name-link">wasHealed</a></code></div>
+<div class="col-first odd-row-color"><code>protected static arc.struct.Seq&lt;mindustry.gen.Unit&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#targets" class="member-name-link">targets</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
@@ -148,15 +204,17 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(float,float,float)" class="member-name-link">RepairFieldAbility</a><wbr>(float&nbsp;amount,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">RepairFieldAbility</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(float,float,float)" class="member-name-link">RepairFieldAbility</a><wbr>(float&nbsp;amount,
  float&nbsp;reload,
  float&nbsp;range)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(float,float,float,float)" class="member-name-link">RepairFieldAbility</a><wbr>(float&nbsp;amount,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(float,float,float,float)" class="member-name-link">RepairFieldAbility</a><wbr>(float&nbsp;amount,
  float&nbsp;reload,
  float&nbsp;range,
  float&nbsp;healPercent)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -259,15 +317,106 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="timer">
-<h3>timer</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">timer</span></div>
+<section class="detail" id="maxTargets">
+<h3>maxTargets</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">maxTargets</span></div>
+<div class="block">Maximum number of units healed.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="wasHealed">
-<h3>wasHealed</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">wasHealed</span></div>
+<section class="detail" id="smartHeal">
+<h3>smartHeal</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">smartHeal</span></div>
+<div class="block">If true, this ability will consider missing hp, number of targets, cooldowns...etc.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="smartHealPercent">
+<h3>smartHealPercent</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">smartHealPercent</span></div>
+<div class="block">If a damaged unit health % is lower than this heal it as soon as possible. Values close to 1f will likely waste healing potential.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="smartHealStrength">
+<h3>smartHealStrength</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">smartHealStrength</span></div>
+<div class="block">A multiplier on potential healing efficiency. High values -> efficient aoe healing. Low values -> efficient single target healing.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="smartDowntime">
+<h3>smartDowntime</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">smartDowntime</span></div>
+<div class="block">If all damaged units havent been hurt for at least this amount of time, force healing them, regardless of thresholds.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="smartInterval">
+<h3>smartInterval</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">smartInterval</span></div>
+<div class="block">How often to check for healing when at least 1 damaged unit is found.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="randDesync">
+<h3>randDesync</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">randDesync</span></div>
+<div class="block">Random initial reload multiplier to check for damaged units. Useful for desyncing healer timers once.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="targets">
+<h3>targets</h3>
+<div class="member-signature"><span class="modifiers">protected static</span>&nbsp;<span class="return-type">arc.struct.Seq&lt;mindustry.gen.Unit&gt;</span>&nbsp;<span class="element-name">targets</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="healTimer">
+<h3>healTimer</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">healTimer</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="downTimer">
+<h3>downTimer</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">downTimer</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="healthMissing">
+<h3>healthMissing</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">healthMissing</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="sumMaxHealth">
+<h3>sumMaxHealth</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">sumMaxHealth</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="sumTypeMult">
+<h3>sumTypeMult</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">sumTypeMult</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="healthChange">
+<h3>healthChange</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">healthChange</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="hasHealed">
+<h3>hasHealed</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasHealed</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="healNow">
+<h3>healNow</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">healNow</span></div>
 </section>
 </li>
 </ul>
@@ -278,6 +427,12 @@ loadScripts(document, 'script');</script>
 <section class="constructor-details" id="constructor-detail">
 <h2>Constructor Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="&lt;init&gt;()">
+<h3>RepairFieldAbility</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">RepairFieldAbility</span>()</div>
+</section>
+</li>
 <li>
 <section class="detail" id="&lt;init&gt;(float,float,float)">
 <h3>RepairFieldAbility</h3>
